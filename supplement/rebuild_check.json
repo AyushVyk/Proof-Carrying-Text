@@ -1,0 +1,29 @@
+{
+ "physics": {
+  "leaves_compared": 178,
+  "mismatches": [],
+  "keys_not_rebuilt": [
+   "physics.pct_deployed.answers_on_an_unstated_condition",
+   "physics.rag.hallucination_rate_bounds_pct",
+   "physics.baseline.hallucination_rate_bounds_pct"
+  ]
+ },
+ "chemistry": {
+  "leaves_compared": 183,
+  "mismatches": [],
+  "keys_not_rebuilt": [
+   "chemistry.pct_deployed.answers_on_an_unstated_condition",
+   "chemistry.rag.hallucination_rate_bounds_pct",
+   "chemistry.baseline.hallucination_rate_bounds_pct"
+  ]
+ },
+ "biology": {
+  "leaves_compared": 184,
+  "mismatches": [],
+  "keys_not_rebuilt": [
+   "biology.pct_deployed.answers_on_an_unstated_condition",
+   "biology.rag.hallucination_rate_bounds_pct",
+   "biology.baseline.hallucination_rate_bounds_pct"
+  ]
+ }
+}

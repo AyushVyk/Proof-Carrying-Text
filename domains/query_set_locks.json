@@ -1,0 +1,8 @@
+{
+  "domains/chemistry/queries/natural_language.json": "44d49ab79c047334187adae3f02fbed34a39b7f7a1087af84632e8a78ea07217",
+  "domains/biology/queries/natural_language.json": "86a23d5ff5896c8122bf191b91791df926cb4696f72836853999f28359c3883c",
+  "domains/physics/queries/queries_300.json": "be61d51bd742fa487348df60c032edd12914ec286ec9bf7d9db3318f8a6f4b2b",
+  "domains/chemistry/queries/dev/natural_language.json": "fdadae48b8d3bebe056068a01cfb3039ad00fa7fc9d28b4d84d25a1ff7fb0b56",
+  "domains/biology/queries/dev/natural_language.json": "622f909a8b76568bbbe80a89f0fe50cd4e85d7293f7a1a58953801c896936b94",
+  "domains/physics/queries/dev/queries_300.json": "a8ef1c1660b1ddfbeec6957cb5410631f3c9fa8a7baabd3e6edf7850f4ac33b6"
+}

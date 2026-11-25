@@ -1,0 +1,2312 @@
+{
+  "_note": "Unblinding key for results/manual_review_blind.jsonl. Rows are the locked scorer's manual_review cases in results/scores.json (test run 2026-11-24). Do not open while reviewing.",
+  "old_scored_rows": 0,
+  "carried_over": 0,
+  "key": {
+    "804fadaba6b2": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 2
+    },
+    "d60d1413d716": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 4
+    },
+    "266288c0336b": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 5
+    },
+    "c4785c6c52c6": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 11
+    },
+    "66c09720c315": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 12
+    },
+    "e55ec845fa2a": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 30
+    },
+    "2104a3bb5c5c": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 30
+    },
+    "5daa5eb09d4d": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 31
+    },
+    "238d03786b8b": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 32
+    },
+    "98db0aaacd33": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 33
+    },
+    "a15062ded912": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 34
+    },
+    "a2ec94868d0d": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 34
+    },
+    "4398ba2af0cc": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 35
+    },
+    "928a5a562e92": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 36
+    },
+    "d9e0d7799f99": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 37
+    },
+    "85b79768861d": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 38
+    },
+    "463680fa5c37": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 45
+    },
+    "761ad8814bf5": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 48
+    },
+    "a37ff309b1c7": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 49
+    },
+    "2a190856d28f": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 55
+    },
+    "ab3500f13b09": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 57
+    },
+    "43cbd965bb21": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 58
+    },
+    "d047f4e4707f": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 60
+    },
+    "4586ba98c2dc": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 63
+    },
+    "1d0b5d14f949": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 65
+    },
+    "983ee58e0b8c": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 65
+    },
+    "1ff54b111994": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 77
+    },
+    "5cab6fd90edf": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 78
+    },
+    "e39bc279f92b": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 80
+    },
+    "f2f90946047a": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 81
+    },
+    "ac40d727053e": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 82
+    },
+    "eecc5d9b19ca": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 82
+    },
+    "76acee16bd9a": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 83
+    },
+    "0a6188624b0a": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 83
+    },
+    "76421f89382a": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 87
+    },
+    "7a5ea234b5f4": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 88
+    },
+    "32b15159d3a4": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 97
+    },
+    "5cc247d0c659": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 98
+    },
+    "33deddc02834": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 100
+    },
+    "cc691a286180": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 106
+    },
+    "671758f5840c": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 108
+    },
+    "0e168c032c63": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 109
+    },
+    "0dd5e4a07a74": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 109
+    },
+    "4138bfeaab9b": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 110
+    },
+    "f723a0a999ab": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 110
+    },
+    "75915d138e00": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 111
+    },
+    "c0cb18e86a1d": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 111
+    },
+    "138ee5bdd8d7": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 114
+    },
+    "ec9a6c986a85": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 115
+    },
+    "99ea41d9f932": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 116
+    },
+    "6a6955e75d14": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 117
+    },
+    "8f694af5cdcc": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 119
+    },
+    "bfb67b857fae": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 120
+    },
+    "be7d9367d248": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 122
+    },
+    "0abcd35f44b0": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 123
+    },
+    "76df16516a5d": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 125
+    },
+    "4f8a89fed76d": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 126
+    },
+    "a069c5b4643c": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 128
+    },
+    "ad98e92e4ff6": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 129
+    },
+    "21e656eecd52": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 139
+    },
+    "0f1d286eee75": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 139
+    },
+    "482c98246fcd": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 140
+    },
+    "ee1fa24c561c": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 141
+    },
+    "d66f1bf403bb": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 145
+    },
+    "6c1939fad02e": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 148
+    },
+    "bef5f6ad0a90": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 160
+    },
+    "5d1d8079cb47": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 161
+    },
+    "4566c9f5c64a": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 161
+    },
+    "ce983639f922": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 162
+    },
+    "7248ae1b0a48": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 162
+    },
+    "7a74ebb90b71": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 163
+    },
+    "d2405cd36241": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 163
+    },
+    "392aaf0658d5": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 168
+    },
+    "ed4ef628c475": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 168
+    },
+    "990b3e0fc9b3": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 169
+    },
+    "909f18abaac4": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 170
+    },
+    "2497913d9e9a": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 171
+    },
+    "3e9d0435d4b4": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 174
+    },
+    "2d85c5bcdec2": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 176
+    },
+    "7a7b11672b69": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 176
+    },
+    "4ab64df43a34": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 182
+    },
+    "2e2cd74a9c46": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 186
+    },
+    "0fd1e079e90e": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 186
+    },
+    "d240746ce63f": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 187
+    },
+    "e51d023240de": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 187
+    },
+    "5c9de539088c": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 190
+    },
+    "fc312047ef41": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 190
+    },
+    "792a10610203": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 191
+    },
+    "dec6d5074fb6": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 194
+    },
+    "41db94fdbf5a": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 194
+    },
+    "70ae070726f5": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 195
+    },
+    "6bca513a7cba": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 198
+    },
+    "d670d3433648": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 200
+    },
+    "c867557c4aa5": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 201
+    },
+    "a429c911a4a1": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 201
+    },
+    "f871cf6a6990": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 202
+    },
+    "6462c7fd7d9d": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 202
+    },
+    "b198ea415d9f": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 205
+    },
+    "97fab475b301": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 205
+    },
+    "548fff6ee4f6": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 208
+    },
+    "bd43c73b7f57": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 211
+    },
+    "438f68a4d46e": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 212
+    },
+    "04f30608fd5e": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 212
+    },
+    "58f135e56db1": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 213
+    },
+    "3cfcf5ba6759": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 214
+    },
+    "151ef564c1b3": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 215
+    },
+    "b938f5809f7b": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 216
+    },
+    "3525750b6592": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 216
+    },
+    "35fc76328b40": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 217
+    },
+    "78a9d47def00": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 220
+    },
+    "988c8c29cdcc": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 220
+    },
+    "4b7dbc23f7f7": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 224
+    },
+    "99f9c5759d37": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 224
+    },
+    "72d7edd25a47": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 228
+    },
+    "fb3e362393ac": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 230
+    },
+    "c839991581c0": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 231
+    },
+    "a4ebda97636b": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 231
+    },
+    "4a274af6730b": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 232
+    },
+    "f8022cc7c840": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 232
+    },
+    "8e2d2dc22bcc": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 235
+    },
+    "11e3a984b7c9": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 239
+    },
+    "44a337629403": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 239
+    },
+    "f2ef5c228bad": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 241
+    },
+    "cd39584bcdde": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 246
+    },
+    "a8409ff8d29a": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 246
+    },
+    "583cbecf4901": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 248
+    },
+    "9026e4149582": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 250
+    },
+    "209af54ac5f4": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 250
+    },
+    "c09e9cd3ab0e": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 1
+    },
+    "70b81180be42": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 6
+    },
+    "04d04d3e359d": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 7
+    },
+    "b7586adf4bd3": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 7
+    },
+    "cfec33f19f43": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 8
+    },
+    "9235cf863fea": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 9
+    },
+    "12791fccdc0b": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 10
+    },
+    "3a093778bcf2": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 12
+    },
+    "5bcba48f8bff": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 12
+    },
+    "67fd5c844745": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 13
+    },
+    "a2e612e0cff6": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 14
+    },
+    "3e77246af310": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 15
+    },
+    "3a053bf80a9a": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 16
+    },
+    "e1bd26216d87": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 16
+    },
+    "565c17738cbf": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 17
+    },
+    "5ef40b2d6f9c": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 17
+    },
+    "e0a7559691a8": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 18
+    },
+    "d2e125ed2e5b": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 18
+    },
+    "ac8f5ab9c63b": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 19
+    },
+    "46e50fc0ca5f": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 20
+    },
+    "a2823d19f10a": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 21
+    },
+    "8ca8ce704cca": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 21
+    },
+    "73dd25cbe743": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 22
+    },
+    "05acfb87456f": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 22
+    },
+    "cbcdee7bc0c3": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 23
+    },
+    "d80a3887f78d": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 24
+    },
+    "53a883e5dbe1": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 35
+    },
+    "da491e84d201": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 36
+    },
+    "2c6a15fdc4f8": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 49
+    },
+    "ca7985a72140": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 57
+    },
+    "eb4209e7c6fb": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 61
+    },
+    "5b5977b8aaf3": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 61
+    },
+    "34d73f2e6e62": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 63
+    },
+    "e148e05267c3": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 69
+    },
+    "20d7d75b7f68": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 70
+    },
+    "af332d5b1dc8": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 81
+    },
+    "421aa1b06cf5": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 89
+    },
+    "e90cad2cb774": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 90
+    },
+    "6745f6eca7d1": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 95
+    },
+    "7d627a554950": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 97
+    },
+    "c0539e3d3603": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 98
+    },
+    "4c677b787696": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 99
+    },
+    "3ee1eb6a2ee8": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 102
+    },
+    "f143ef497209": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 103
+    },
+    "9cfb18f813ab": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 105
+    },
+    "179b872e1b61": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 106
+    },
+    "e2ebdf250a7a": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 106
+    },
+    "ff4555fdc44a": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 107
+    },
+    "1a8f359188cd": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 109
+    },
+    "f6851c7fc6b5": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 109
+    },
+    "812c32f9c12e": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 110
+    },
+    "08d798c93618": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 111
+    },
+    "4b240cd55f37": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 112
+    },
+    "b958b6a92ac7": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 112
+    },
+    "28726f4f87be": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 113
+    },
+    "4ec1b5c124ef": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 113
+    },
+    "2c1c37000a0f": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 115
+    },
+    "97d7096276df": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 118
+    },
+    "2e541b6cc080": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 118
+    },
+    "029ff2046e84": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 119
+    },
+    "b68712393ef2": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 120
+    },
+    "3f12d8d291eb": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 120
+    },
+    "089eaaf037c1": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 121
+    },
+    "72d0e41dbda1": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 121
+    },
+    "c5b2c9a7c929": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 122
+    },
+    "17bcb6c76229": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 126
+    },
+    "2e066cd2dcb2": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 127
+    },
+    "1cabd68e1f1d": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 128
+    },
+    "30f15c2711d9": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 130
+    },
+    "47be5ca60e0b": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 131
+    },
+    "f42bda8278f5": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 132
+    },
+    "bdbdaf3e635d": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 136
+    },
+    "3474b6c6aded": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 136
+    },
+    "43c6c72c6965": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 137
+    },
+    "f570d14727db": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 139
+    },
+    "fc735bba4fa3": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 140
+    },
+    "c7cdd587cee1": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 141
+    },
+    "0b922d5902ac": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 141
+    },
+    "acdd78fbef68": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 142
+    },
+    "fce7b3ddf6d7": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 142
+    },
+    "df7f7322ba79": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 143
+    },
+    "34d51b3b2ccd": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 143
+    },
+    "76067523e35e": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 144
+    },
+    "5ebaae34a9e1": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 145
+    },
+    "eed29a0f9dfe": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 146
+    },
+    "cc9ff2e1e84f": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 146
+    },
+    "e4e3ec6bf6c7": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 148
+    },
+    "8506635362a7": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 148
+    },
+    "de9d239fe578": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 149
+    },
+    "ea7aef044e39": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 150
+    },
+    "61a7114e4391": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 151
+    },
+    "514cc41c1446": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 151
+    },
+    "bd77f588fa99": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 152
+    },
+    "44c9a886164f": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 152
+    },
+    "3fe7fd24cc89": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 153
+    },
+    "a1afb5949f53": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 156
+    },
+    "efb93aa95dee": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 156
+    },
+    "1461724d78c8": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 157
+    },
+    "6a8efbaf6603": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 163
+    },
+    "f8442fce6231": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 173
+    },
+    "9afc7914c8a7": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 173
+    },
+    "178ad8d32c1b": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 174
+    },
+    "3d34d9c19224": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 175
+    },
+    "691ed3e82e41": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 175
+    },
+    "006df53458dc": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 177
+    },
+    "90a7363bba48": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 178
+    },
+    "b92c450b0a22": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 179
+    },
+    "3cbdc1d3d1e6": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 180
+    },
+    "f240987b6c89": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 180
+    },
+    "14e8b7d30d7c": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 181
+    },
+    "a1c76d19f02e": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 182
+    },
+    "b87bf6917688": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 182
+    },
+    "af8fc3e3aaa1": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 186
+    },
+    "f5d402176a15": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 188
+    },
+    "9c7fe0e54541": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 188
+    },
+    "3e214d3b1c6f": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 189
+    },
+    "3a476dfdc65a": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 191
+    },
+    "7bb60570eeef": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 192
+    },
+    "ddbd36554fb3": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 195
+    },
+    "076f7934754d": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 196
+    },
+    "aeef2b0919ad": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 197
+    },
+    "a7e3c8e7acd6": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 198
+    },
+    "de6f09f8f230": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 198
+    },
+    "9dab157d67ed": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 199
+    },
+    "23c063a88fba": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 200
+    },
+    "24fdf64c3304": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 201
+    },
+    "6ec637a57112": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 202
+    },
+    "8ab8f2f3597e": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 202
+    },
+    "9e18599503ae": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 203
+    },
+    "095f9f081fc5": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 204
+    },
+    "3fc34bf9777b": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 206
+    },
+    "98204a65d24a": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 206
+    },
+    "9707bd53f17c": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 207
+    },
+    "175e3bb8e28d": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 207
+    },
+    "6c078c399dd0": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 208
+    },
+    "10c3dd5b720c": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 210
+    },
+    "d5121e24996b": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 211
+    },
+    "e7ff07470c48": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 212
+    },
+    "3af0ceaa482b": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 212
+    },
+    "adf1f8a8fa22": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 213
+    },
+    "d4bcbd714dc1": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 213
+    },
+    "25468a577169": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 214
+    },
+    "c4c9bf8b2824": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 216
+    },
+    "04571ccb514e": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 216
+    },
+    "c2bc7be3f5c5": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 218
+    },
+    "620ab9f9619a": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 219
+    },
+    "cc2416303500": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 220
+    },
+    "f6d7f579b2f5": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 221
+    },
+    "0a5542235a82": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 222
+    },
+    "0571e74fb3be": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 222
+    },
+    "2cc5a17530d5": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 223
+    },
+    "27f10adbfcd8": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 223
+    },
+    "f5d8a1d6648c": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 225
+    },
+    "a7f13accd741": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 226
+    },
+    "02838fd0201c": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 231
+    },
+    "be716aa6b857": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 231
+    },
+    "e68ff837cf05": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 232
+    },
+    "c939731afd3e": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 235
+    },
+    "df902362273c": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 237
+    },
+    "fdfbfcfe000c": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 237
+    },
+    "bd112143f9c7": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 238
+    },
+    "3f02496e4610": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 238
+    },
+    "ce1a8ca93b40": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 239
+    },
+    "30d2e233a39b": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 242
+    },
+    "d8359433f3af": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 243
+    },
+    "0fe8d9cccde2": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 243
+    },
+    "b9e53f992d44": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 244
+    },
+    "237df234101b": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 245
+    },
+    "100ddd161d79": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 246
+    },
+    "ec855d9db487": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 250
+    },
+    "c361322f0bf1": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 252
+    },
+    "80bede264cf4": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 1
+    },
+    "82b1ca961f62": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 5
+    },
+    "74a44c5e28c9": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 9
+    },
+    "4c94e6c02327": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 14
+    },
+    "0704507870fc": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 15
+    },
+    "324ba1c546ca": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 17
+    },
+    "af1756976322": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 23
+    },
+    "d29c402c2532": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 23
+    },
+    "f1886756f6aa": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 24
+    },
+    "a2429cea420f": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 27
+    },
+    "edf77f1e442b": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 30
+    },
+    "cd42f0bc772f": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 34
+    },
+    "49399abc7f25": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 51
+    },
+    "1d75ec10adb9": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 55
+    },
+    "2b3b0b91d768": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 60
+    },
+    "14780582cd6d": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 63
+    },
+    "60139977f106": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 66
+    },
+    "0f52af3bc2ff": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 69
+    },
+    "595864062b14": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 70
+    },
+    "0570f4e31517": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 71
+    },
+    "3215a5f6e824": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 74
+    },
+    "ca01fc5afd24": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 76
+    },
+    "2a4a821a6359": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 78
+    },
+    "96c7e20d3c67": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 79
+    },
+    "f92f584a0384": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 84
+    },
+    "12eccdc54a15": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 86
+    },
+    "5115f3460eed": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 87
+    },
+    "03c04e40ad98": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 89
+    },
+    "b7edf790c348": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 90
+    },
+    "1e82488bb8dc": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 97
+    },
+    "119c97cdcd5f": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 98
+    },
+    "7a102ad30409": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 101
+    },
+    "67c68b50618a": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 101
+    },
+    "9c9d398f620f": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 103
+    },
+    "9804af31d7bc": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 103
+    },
+    "96dd894abb8f": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 103
+    },
+    "451ce8901bec": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 105
+    },
+    "dfaba30113e3": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 105
+    },
+    "082575b67f71": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 105
+    },
+    "545a84ce24de": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 106
+    },
+    "2ed977592bf7": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 106
+    },
+    "b6dc0bf900e4": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 106
+    },
+    "2c87f22acb01": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 107
+    },
+    "33cc550360fd": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 108
+    },
+    "1096b39a4cd4": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 108
+    },
+    "3e5ab8dfc3ee": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 108
+    },
+    "f6cf627f37f5": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 110
+    },
+    "88f6c2fbf070": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 113
+    },
+    "c5896ef7b994": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 116
+    },
+    "551a6edddeee": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 116
+    },
+    "1c5f5d559d62": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 116
+    },
+    "0ee348fdc2b6": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 119
+    },
+    "16161d3afc62": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 119
+    },
+    "990b0d9ccb50": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 120
+    },
+    "f51bcfada67c": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 121
+    },
+    "caba19807bc3": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 128
+    },
+    "3c6328dec5c9": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 129
+    },
+    "6d783be617a2": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 130
+    },
+    "2af4812a4da9": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 131
+    },
+    "57fae908ef3c": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 133
+    },
+    "6a81f2738fe5": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 135
+    },
+    "95eb1eabf4cf": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 138
+    },
+    "c8e965881da9": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 139
+    },
+    "bff1119fb92b": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 140
+    },
+    "157d213d766e": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 142
+    },
+    "1c980c978a2d": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 143
+    },
+    "3056bd401e98": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 144
+    },
+    "8a9c50c6e9fa": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 146
+    },
+    "de0cce9508e6": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 148
+    },
+    "70f7a53e05bd": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 152
+    },
+    "e91254027350": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 154
+    },
+    "d4fd6ac9fb47": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 156
+    },
+    "905a6ba02c4e": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 157
+    },
+    "c48f07b2b044": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 158
+    },
+    "7204a2b99b9b": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 158
+    },
+    "2f5357c8a97a": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 159
+    },
+    "c3d048797f36": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 159
+    },
+    "baa9a814800a": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 160
+    },
+    "16325c580734": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 161
+    },
+    "7fef17efc82d": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 162
+    },
+    "6d4b75259570": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 162
+    },
+    "6d01f7fc4686": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 163
+    },
+    "6d6ded9a49c9": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 166
+    },
+    "47ef00293d6d": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 167
+    },
+    "d2f883d020d6": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 167
+    },
+    "258ae1dce744": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 168
+    },
+    "b02511971c3a": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 168
+    },
+    "b6d2edf772ef": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 169
+    },
+    "e6366a3643cd": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 169
+    },
+    "fae065bf4ca4": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 170
+    },
+    "dc03ac83ffec": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 171
+    },
+    "a5647846de07": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 171
+    },
+    "82a580c0ddf3": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 173
+    },
+    "572fc620b0ba": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 174
+    },
+    "c3fbde18e4b1": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 175
+    },
+    "d7e7096107ff": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 176
+    },
+    "33209fd9c005": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 176
+    },
+    "6214f2de2960": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 177
+    },
+    "c7c639209f53": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 178
+    },
+    "ba046228da4e": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 179
+    },
+    "25e74afac79c": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 181
+    },
+    "037ab79178be": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 186
+    },
+    "e5804b11c600": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 187
+    },
+    "01deda58eefc": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 189
+    },
+    "7bf1122901b2": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 189
+    },
+    "caf2bdefd578": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 191
+    },
+    "3cc47201baec": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 195
+    },
+    "514c106fdb2b": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 201
+    },
+    "3733d51d95e4": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 202
+    },
+    "19d4949a1a8d": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 203
+    },
+    "058e2a06ebdd": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 204
+    },
+    "47339e2e2825": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 204
+    },
+    "7efe9045e035": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 205
+    },
+    "f6c39300f34c": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 205
+    },
+    "ebc584fbcbbd": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 206
+    },
+    "73c36cf1c656": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 206
+    },
+    "ef205e65d80c": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 207
+    },
+    "55e0d8b8e0c7": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 207
+    },
+    "2839f4cc1b4b": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 207
+    },
+    "75e48599969a": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 208
+    },
+    "1c3e18afcce0": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 208
+    },
+    "6f2bbfda6b69": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 209
+    },
+    "b7b5cb2eee9a": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 209
+    },
+    "2e9c30c034f7": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 209
+    },
+    "69070ae6207d": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 210
+    },
+    "5dfcffe5d31f": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 210
+    },
+    "4597fb2a8fc9": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 212
+    },
+    "dc9f5af11038": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 212
+    },
+    "aeb08b0c4bd3": {
+      "domain": "biology",
+      "system": "pct_deployed",
+      "query_id": 213
+    },
+    "996f588c22be": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 213
+    },
+    "1fed78937456": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 214
+    },
+    "75c0ab30d9fa": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 214
+    },
+    "2393db52cba9": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 216
+    },
+    "7c3f349a3a0f": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 217
+    },
+    "89128cd12b8d": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 218
+    },
+    "13778889ab7c": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 219
+    },
+    "ec3008a972f9": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 221
+    },
+    "4d80a7164091": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 222
+    },
+    "45c88136e6cb": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 223
+    },
+    "16500f25f765": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 224
+    },
+    "b49c3cdd1910": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 224
+    },
+    "34b9422f7264": {
+      "domain": "biology",
+      "system": "rag",
+      "query_id": 226
+    },
+    "3b4c7fd373a1": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 227
+    },
+    "11ca29337e8d": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 228
+    },
+    "6110de9ab01a": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 229
+    },
+    "735c0debd105": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 232
+    },
+    "4989fad83163": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 233
+    },
+    "c5cbc7f3380c": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 234
+    },
+    "a436084c9315": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 235
+    },
+    "0f5ffc04f1c8": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 236
+    },
+    "4393f0ea2f25": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 237
+    },
+    "5682c5ea82a5": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 238
+    },
+    "d5840cb1c5ed": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 239
+    },
+    "cf5c2652afdf": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 240
+    },
+    "a2796c4dc26f": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 241
+    },
+    "fc63c66b3d94": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 243
+    },
+    "16de391fc42e": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 244
+    },
+    "1ed0f0f88c12": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 245
+    },
+    "8202ebb8120b": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 247
+    },
+    "7558018b7bbd": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 249
+    },
+    "999cc73bb5a5": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 251
+    },
+    "00a47ebce07e": {
+      "domain": "biology",
+      "system": "baseline",
+      "query_id": 253
+    }
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "_provenance": {
+    "law": "Conservation of atoms: in a chemical reaction atoms are neither created nor destroyed, so for each element the total number of atoms among the reactants equals the total among the products. Law of conservation of mass (Lavoisier); atomic interpretation (Dalton). OpenStax Chemistry 2e, Ch 4.1 (Writing and Balancing Chemical Equations).",
+    "what_is_given": "Molecular composition (atoms of each element per formula unit) is chemistry, so it is encoded as primitives. The stoichiometric coefficients are NOT given -- they are what the engine derives. One coefficient is supplied per query as the choice of basis (e.g. 'per mole of CH4'), which is a normalisation choice, not an answer.",
+    "what_each_rule_is": "Each rule is one element's conservation equation for one reaction, rearranged to give one coefficient in terms of coefficients already derived. The formula is a single arithmetic expression over its bound inputs -- no system solving, no elimination, no search. The guard states the applicability condition (the divisor, i.e. the element's count in the target species, must be non-zero).",
+    "honest_limitation": "The input list of a conservation rule enumerates exactly the species containing that element in THIS reaction, so rule arity is reaction-specific and a rule cannot be reused across reactions. See _architectural_note.",
+    "_architectural_note": "A single generic conservation rule is not expressible: conservation of element E requires summing over all species containing E, whose number varies per reaction, while a rule's `inputs` is a fixed JSON list and the formula sandbox exposes no aggregation (no sum, len, min, max). Each (reaction, element) therefore needs its own rule."
+  },
+
+  "context_transitions": [],
+  "_context_transitions_note": "Each reaction is its own context and every rule for a reaction lives in it, so no subgoal crosses a context boundary.",
+  "predicate_aliases": {},
+  "_predicate_aliases_note": "No synonyms; each coefficient and each atom count has exactly one predicate name.",
+
+  "primitives": [
+    { "id": "H_in_H2",   "predicate": "atoms_H_in_H2",   "context": "composition", "value": 2, "unit": "atoms", "source": "Molecular formula H2. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "O_in_O2",   "predicate": "atoms_O_in_O2",   "context": "composition", "value": 2, "unit": "atoms", "source": "Molecular formula O2. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "H_in_H2O",  "predicate": "atoms_H_in_H2O",  "context": "composition", "value": 2, "unit": "atoms", "source": "Molecular formula H2O. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "O_in_H2O",  "predicate": "atoms_O_in_H2O",  "context": "composition", "value": 1, "unit": "atoms", "source": "Molecular formula H2O. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "C_in_CH4",  "predicate": "atoms_C_in_CH4",  "context": "composition", "value": 1, "unit": "atoms", "source": "Molecular formula CH4. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "H_in_CH4",  "predicate": "atoms_H_in_CH4",  "context": "composition", "value": 4, "unit": "atoms", "source": "Molecular formula CH4. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "C_in_CO2",  "predicate": "atoms_C_in_CO2",  "context": "composition", "value": 1, "unit": "atoms", "source": "Molecular formula CO2. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "O_in_CO2",  "predicate": "atoms_O_in_CO2",  "context": "composition", "value": 2, "unit": "atoms", "source": "Molecular formula CO2. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "N_in_NO",   "predicate": "atoms_N_in_NO",   "context": "composition", "value": 1, "unit": "atoms", "source": "Molecular formula NO. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "O_in_NO",   "predicate": "atoms_O_in_NO",   "context": "composition", "value": 1, "unit": "atoms", "source": "Molecular formula NO. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "N_in_NO2",  "predicate": "atoms_N_in_NO2",  "context": "composition", "value": 1, "unit": "atoms", "source": "Molecular formula NO2. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "O_in_NO2",  "predicate": "atoms_O_in_NO2",  "context": "composition", "value": 2, "unit": "atoms", "source": "Molecular formula NO2. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "N_in_N2O3", "predicate": "atoms_N_in_N2O3", "context": "composition", "value": 2, "unit": "atoms", "source": "Molecular formula N2O3. OpenStax Chemistry 2e, Ch 2.4." },
+    { "id": "O_in_N2O3", "predicate": "atoms_O_in_N2O3", "context": "composition", "value": 3, "unit": "atoms", "source": "Molecular formula N2O3. OpenStax Chemistry 2e, Ch 2.4." }
+  ],
+
+  "rules": [
+    {
+      "id": "h2o_from_hydrogen_conservation",
+      "predicate": "coeff_H2O",
+      "context": "hydrogen_combustion",
+      "inputs": [
+        { "name": "c_H2", "predicate": "coeff_H2", "unit": "coefficient" },
+        { "name": "H_H2", "predicate": "atoms_H_in_H2", "unit": "atoms" },
+        { "name": "H_H2O", "predicate": "atoms_H_in_H2O", "unit": "atoms" }
+      ],
+      "output": { "predicate": "coeff_H2O", "unit": "coefficient" },
+      "guard": "H_H2O != 0",
+      "formula": "c_H2 * H_H2 / H_H2O",
+      "proof": "Conservation of hydrogen in H2 + O2 -> H2O. H2 is the only reactant containing H and H2O the only product containing H, so coeff_H2O * atoms_H_in_H2O = coeff_H2 * atoms_H_in_H2. Rearranged for coeff_H2O. Guard: the divisor atoms_H_in_H2O must be non-zero, i.e. H2O must actually contain hydrogen. Law of conservation of mass (Lavoisier); OpenStax Chemistry 2e, Ch 4.1."
+    },
+    {
+      "id": "o2_from_oxygen_conservation",
+      "predicate": "coeff_O2",
+      "context": "hydrogen_combustion",
+      "inputs": [
+        { "name": "c_H2O", "predicate": "coeff_H2O", "unit": "coefficient" },
+        { "name": "O_H2O", "predicate": "atoms_O_in_H2O", "unit": "atoms" },
+        { "name": "O_O2", "predicate": "atoms_O_in_O2", "unit": "atoms" }
+      ],
+      "output": { "predicate": "coeff_O2", "unit": "coefficient" },
+      "guard": "O_O2 != 0",
+      "formula": "c_H2O * O_H2O / O_O2",
+      "proof": "Conservation of oxygen in H2 + O2 -> H2O. O2 is the only reactant containing O and H2O the only product containing O, so coeff_O2 * atoms_O_in_O2 = coeff_H2O * atoms_O_in_H2O. Rearranged for coeff_O2. Requires coeff_H2O, which hydrogen conservation supplies first. OpenStax Chemistry 2e, Ch 4.1."
+    },
+
+    {
+      "id": "co2_from_carbon_conservation",
+      "predicate": "coeff_CO2",
+      "context": "methane_combustion",
+      "inputs": [
+        { "name": "c_CH4", "predicate": "coeff_CH4", "unit": "coefficient" },
+        { "name": "C_CH4", "predicate": "atoms_C_in_CH4", "unit": "atoms" },
+        { "name": "C_CO2", "predicate": "atoms_C_in_CO2", "unit": "atoms" }
+      ],
+      "output": { "predicate": "coeff_CO2", "unit": "coefficient" },
+      "guard": "C_CO2 != 0",
+      "formula": "c_CH4 * C_CH4 / C_CO2",
+      "proof": "Conservation of carbon in CH4 + O2 -> CO2 + H2O. CH4 is the only reactant containing C and CO2 the only product containing C, so coeff_CO2 * atoms_C_in_CO2 = coeff_CH4 * atoms_C_in_CH4. Rearranged for coeff_CO2. OpenStax Chemistry 2e, Ch 4.1."
+    },
+    {
+      "id": "h2o_from_hydrogen_conservation_methane",
+      "predicate": "coeff_H2O",
+      "context": "methane_combustion",
+      "inputs": [
+        { "name": "c_CH4", "predicate": "coeff_CH4", "unit": "coefficient" },
+        { "name": "H_CH4", "predicate": "atoms_H_in_CH4", "unit": "atoms" },
+        { "name": "H_H2O", "predicate": "atoms_H_in_H2O", "unit": "atoms" }
+      ],
+      "output": { "predicate": "coeff_H2O", "unit": "coefficient" },
+      "guard": "H_H2O != 0",
+      "formula": "c_CH4 * H_CH4 / H_H2O",
+      "proof": "Conservation of hydrogen in CH4 + O2 -> CO2 + H2O. CH4 is the only reactant containing H and H2O the only product containing H, so coeff_H2O * atoms_H_in_H2O = coeff_CH4 * atoms_H_in_CH4. Rearranged for coeff_H2O. OpenStax Chemistry 2e, Ch 4.1."
+    },
+    {
+      "id": "o2_from_oxygen_conservation_methane",
+      "predicate": "coeff_O2",
+      "context": "methane_combustion",
+      "inputs": [
+        { "name": "c_CO2", "predicate": "coeff_CO2", "unit": "coefficient" },
+        { "name": "O_CO2", "predicate": "atoms_O_in_CO2", "unit": "atoms" },
+        { "name": "c_H2O", "predicate": "coeff_H2O", "unit": "coefficient" },
+        { "name": "O_H2O", "predicate": "atoms_O_in_H2O", "unit": "atoms" },
+        { "name": "O_O2", "predicate": "atoms_O_in_O2", "unit": "atoms" }
+      ],
+      "output": { "predicate": "coeff_O2", "unit": "coefficient" },
+      "guard": "O_O2 != 0",
+      "formula": "(c_CO2 * O_CO2 + c_H2O * O_H2O) / O_O2",
+      "proof": "Conservation of oxygen in CH4 + O2 -> CO2 + H2O. O2 is the only reactant containing O; CO2 and H2O are the products containing O, so coeff_O2 * atoms_O_in_O2 = coeff_CO2 * atoms_O_in_CO2 + coeff_H2O * atoms_O_in_H2O. Rearranged for coeff_O2. Requires coeff_CO2 and coeff_H2O, which carbon and hydrogen conservation supply first. Note the input list enumerates exactly the O-bearing species of THIS reaction -- see _architectural_note. OpenStax Chemistry 2e, Ch 4.1."
+    },
+
+    {
+      "id": "n2o3_from_nitrogen_conservation",
+      "predicate": "coeff_N2O3",
+      "context": "nitrogen_oxide_synthesis",
+      "inputs": [
+        { "name": "c_NO", "predicate": "coeff_NO", "unit": "coefficient" },
+        { "name": "N_NO", "predicate": "atoms_N_in_NO", "unit": "atoms" },
+        { "name": "c_NO2", "predicate": "coeff_NO2", "unit": "coefficient" },
+        { "name": "N_NO2", "predicate": "atoms_N_in_NO2", "unit": "atoms" },
+        { "name": "N_N2O3", "predicate": "atoms_N_in_N2O3", "unit": "atoms" }
+      ],
+      "output": { "predicate": "coeff_N2O3", "unit": "coefficient" },
+      "guard": "N_N2O3 != 0",
+      "formula": "(c_NO * N_NO + c_NO2 * N_NO2) / N_N2O3",
+      "proof": "Conservation of nitrogen in NO + NO2 -> N2O3. Both reactants contain N, so coeff_N2O3 * atoms_N_in_N2O3 = coeff_NO * atoms_N_in_NO + coeff_NO2 * atoms_N_in_NO2. Rearranged for coeff_N2O3. Truth-preserving, but it requires BOTH reactant coefficients. OpenStax Chemistry 2e, Ch 4.1."
+    },
+    {
+      "id": "no2_from_nitrogen_conservation",
+      "predicate": "coeff_NO2",
+      "context": "nitrogen_oxide_synthesis",
+      "inputs": [
+        { "name": "c_N2O3", "predicate": "coeff_N2O3", "unit": "coefficient" },
+        { "name": "N_N2O3", "predicate": "atoms_N_in_N2O3", "unit": "atoms" },
+        { "name": "c_NO", "predicate": "coeff_NO", "unit": "coefficient" },
+        { "name": "N_NO", "predicate": "atoms_N_in_NO", "unit": "atoms" },
+        { "name": "N_NO2", "predicate": "atoms_N_in_NO2", "unit": "atoms" }
+      ],
+      "output": { "predicate": "coeff_NO2", "unit": "coefficient" },
+      "guard": "N_NO2 != 0",
+      "formula": "(c_N2O3 * N_N2O3 - c_NO * N_NO) / N_NO2",
+      "proof": "Conservation of nitrogen in NO + NO2 -> N2O3, rearranged for coeff_NO2. Truth-preserving, but it requires coeff_N2O3, which nitrogen conservation can only give from coeff_NO AND coeff_NO2 -- the quantity being derived. OpenStax Chemistry 2e, Ch 4.1."
+    },
+    {
+      "id": "no2_from_oxygen_conservation",
+      "predicate": "coeff_NO2",
+      "context": "nitrogen_oxide_synthesis",
+      "inputs": [
+        { "name": "c_N2O3", "predicate": "coeff_N2O3", "unit": "coefficient" },
+        { "name": "O_N2O3", "predicate": "atoms_O_in_N2O3", "unit": "atoms" },
+        { "name": "c_NO", "predicate": "coeff_NO", "unit": "coefficient" },
+        { "name": "O_NO", "predicate": "atoms_O_in_NO", "unit": "atoms" },
+        { "name": "O_NO2", "predicate": "atoms_O_in_NO2", "unit": "atoms" }
+      ],
+      "output": { "predicate": "coeff_NO2", "unit": "coefficient" },
+      "guard": "O_NO2 != 0",
+      "formula": "(c_N2O3 * O_N2O3 - c_NO * O_NO) / O_NO2",
+      "proof": "Conservation of oxygen in NO + NO2 -> N2O3, rearranged for coeff_NO2. Truth-preserving, but like the nitrogen form it requires coeff_N2O3, which is itself only obtainable from coeff_NO2. The two conservation laws are simultaneous, not sequential. OpenStax Chemistry 2e, Ch 4.1."
+    },
+    {
+      "id": "n2o3_from_oxygen_conservation",
+      "predicate": "coeff_N2O3",
+      "context": "nitrogen_oxide_synthesis",
+      "inputs": [
+        { "name": "c_NO", "predicate": "coeff_NO", "unit": "coefficient" },
+        { "name": "O_NO", "predicate": "atoms_O_in_NO", "unit": "atoms" },
+        { "name": "c_NO2", "predicate": "coeff_NO2", "unit": "coefficient" },
+        { "name": "O_NO2", "predicate": "atoms_O_in_NO2", "unit": "atoms" },
+        { "name": "O_N2O3", "predicate": "atoms_O_in_N2O3", "unit": "atoms" }
+      ],
+      "output": { "predicate": "coeff_N2O3", "unit": "coefficient" },
+      "guard": "O_N2O3 != 0",
+      "formula": "(c_NO * O_NO + c_NO2 * O_NO2) / O_N2O3",
+      "proof": "Conservation of oxygen in NO + NO2 -> N2O3, rearranged for coeff_N2O3. Requires both reactant coefficients. OpenStax Chemistry 2e, Ch 4.1."
+    }
+  ]
+}

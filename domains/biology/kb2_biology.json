@@ -1,0 +1,953 @@
+{
+  "predicates": [
+    {
+      "predicate": "taxon",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "description": "The taxon the evidence resolves to. The parser always emits this one predicate; tools/eval/eval_biology.py maps a named candidate taxon to its rank level and builds the real taxon_<level> engine goal.",
+      "example_queries": [
+        "what is it",
+        "is it a mammal",
+        "what kind of cat is this"
+      ]
+    },
+    {
+      "predicate": "taxon_1",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 1,
+      "rank": "subphylum",
+      "description": "The level-1 (subphylum) taxon the evidence resolves to.",
+      "permitted_values": [
+        "vertebrate"
+      ],
+      "example_queries": [
+        "what subphylum is it"
+      ]
+    },
+    {
+      "predicate": "taxon_2",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 2,
+      "rank": "clade_or_class",
+      "description": "The level-2 (clade_or_class) taxon the evidence resolves to.",
+      "permitted_values": [
+        "amniote",
+        "amphibian",
+        "fish"
+      ],
+      "example_queries": [
+        "what clade_or_class is it"
+      ]
+    },
+    {
+      "predicate": "taxon_3",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 3,
+      "rank": "class",
+      "description": "The level-3 (class) taxon the evidence resolves to.",
+      "permitted_values": [
+        "bird",
+        "mammal",
+        "reptile"
+      ],
+      "example_queries": [
+        "what class is it"
+      ]
+    },
+    {
+      "predicate": "taxon_4",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 4,
+      "rank": "infraclass",
+      "description": "The level-4 (infraclass) taxon the evidence resolves to.",
+      "permitted_values": [
+        "marsupial",
+        "monotreme",
+        "placental"
+      ],
+      "example_queries": [
+        "what infraclass is it"
+      ]
+    },
+    {
+      "predicate": "taxon_5",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 5,
+      "rank": "order",
+      "description": "The level-5 (order) taxon the evidence resolves to.",
+      "permitted_values": [
+        "carnivore",
+        "cetacean",
+        "primate",
+        "rodent"
+      ],
+      "example_queries": [
+        "what order is it"
+      ]
+    },
+    {
+      "predicate": "taxon_6",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 6,
+      "rank": "family",
+      "description": "The level-6 (family) taxon the evidence resolves to.",
+      "permitted_values": [
+        "felidae"
+      ],
+      "example_queries": [
+        "what family is it"
+      ]
+    },
+    {
+      "predicate": "taxon_7",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 7,
+      "rank": "subfamily",
+      "description": "The level-7 (subfamily) taxon the evidence resolves to.",
+      "permitted_values": [
+        "felinae",
+        "pantherinae"
+      ],
+      "example_queries": [
+        "what subfamily is it"
+      ]
+    },
+    {
+      "predicate": "taxon_8",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 8,
+      "rank": "lineage",
+      "description": "The level-8 (lineage) taxon the evidence resolves to.",
+      "permitted_values": [
+        "domestic_cat_lineage",
+        "lynx_lineage",
+        "ocelot_lineage",
+        "panthera_lineage",
+        "puma_lineage"
+      ],
+      "example_queries": [
+        "what lineage is it"
+      ]
+    },
+    {
+      "predicate": "taxon_9",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 9,
+      "rank": "genus",
+      "description": "The level-9 (genus) taxon the evidence resolves to.",
+      "permitted_values": [
+        "genus_acinonyx",
+        "genus_felis",
+        "genus_herpailurus",
+        "genus_leopardus",
+        "genus_lynx",
+        "genus_neofelis",
+        "genus_panthera",
+        "genus_puma"
+      ],
+      "example_queries": [
+        "what genus is it"
+      ]
+    },
+    {
+      "predicate": "taxon_10",
+      "unit": "taxon",
+      "contexts": [
+        "biology_taxonomy"
+      ],
+      "level": 10,
+      "rank": "species",
+      "description": "The level-10 (species) taxon the evidence resolves to.",
+      "permitted_values": [
+        "black_footed_cat",
+        "bobcat",
+        "canada_lynx",
+        "cheetah",
+        "clouded_leopard",
+        "cougar",
+        "domestic_cat",
+        "eurasian_lynx",
+        "geoffroys_cat",
+        "iberian_lynx",
+        "jaguar",
+        "jaguarundi",
+        "jungle_cat",
+        "leopard",
+        "lion",
+        "margay",
+        "ocelot",
+        "oncilla",
+        "sand_cat",
+        "snow_leopard",
+        "sunda_clouded_leopard",
+        "tiger"
+      ],
+      "example_queries": [
+        "what species is it"
+      ]
+    }
+  ],
+  "bindings_schema": [
+    {
+      "predicate": "candidate_taxon",
+      "unit": "label",
+      "value_type": "token",
+      "permitted_values": [
+        "amniote",
+        "amphibian",
+        "bird",
+        "black_footed_cat",
+        "bobcat",
+        "canada_lynx",
+        "carnivore",
+        "cetacean",
+        "cheetah",
+        "clouded_leopard",
+        "cougar",
+        "domestic_cat",
+        "domestic_cat_lineage",
+        "eurasian_lynx",
+        "felidae",
+        "felinae",
+        "fish",
+        "genus_acinonyx",
+        "genus_felis",
+        "genus_herpailurus",
+        "genus_leopardus",
+        "genus_lynx",
+        "genus_neofelis",
+        "genus_panthera",
+        "genus_puma",
+        "geoffroys_cat",
+        "iberian_lynx",
+        "jaguar",
+        "jaguarundi",
+        "jungle_cat",
+        "leopard",
+        "lion",
+        "lynx_lineage",
+        "mammal",
+        "margay",
+        "marsupial",
+        "monotreme",
+        "ocelot",
+        "ocelot_lineage",
+        "oncilla",
+        "panthera_lineage",
+        "pantherinae",
+        "placental",
+        "primate",
+        "puma_lineage",
+        "reptile",
+        "rodent",
+        "sand_cat",
+        "snow_leopard",
+        "sunda_clouded_leopard",
+        "tiger",
+        "vertebrate"
+      ],
+      "aliases": [
+        "the group being asked about"
+      ],
+      "note": "Omit entirely when the query asks 'what is it' rather than 'is it a Y'.",
+      "description": "The group the query asks the organism to be checked against (omit when the query asks what the organism is).",
+      "value_names": {
+        "black_footed_cat": [
+          "Black-footed cat",
+          "Felis nigripes"
+        ],
+        "bobcat": [
+          "Bobcat",
+          "Lynx rufus"
+        ],
+        "canada_lynx": [
+          "Canada lynx",
+          "Lynx canadensis"
+        ],
+        "cheetah": [
+          "Acinonyx jubatus",
+          "Cheetah"
+        ],
+        "clouded_leopard": [
+          "Clouded leopard",
+          "Neofelis nebulosa"
+        ],
+        "cougar": [
+          "Cougar",
+          "Puma concolor"
+        ],
+        "domestic_cat": [
+          "Domestic cat",
+          "Felis catus"
+        ],
+        "domestic_cat_lineage": [
+          "Domestic cat lineage"
+        ],
+        "eurasian_lynx": [
+          "Eurasian lynx",
+          "Lynx lynx"
+        ],
+        "genus_acinonyx": [
+          "Acinonyx",
+          "genus Acinonyx"
+        ],
+        "genus_felis": [
+          "Felis",
+          "genus Felis"
+        ],
+        "genus_herpailurus": [
+          "Herpailurus",
+          "genus Herpailurus"
+        ],
+        "genus_leopardus": [
+          "Leopardus",
+          "genus Leopardus"
+        ],
+        "genus_lynx": [
+          "Lynx",
+          "genus Lynx"
+        ],
+        "genus_neofelis": [
+          "Neofelis",
+          "genus Neofelis"
+        ],
+        "genus_panthera": [
+          "Panthera",
+          "genus Panthera"
+        ],
+        "genus_puma": [
+          "Puma",
+          "genus Puma"
+        ],
+        "geoffroys_cat": [
+          "Geoffroys cat",
+          "Leopardus geoffroyi"
+        ],
+        "iberian_lynx": [
+          "Iberian lynx",
+          "Lynx pardinus"
+        ],
+        "jaguar": [
+          "Jaguar",
+          "Panthera onca"
+        ],
+        "jaguarundi": [
+          "Herpailurus yagouaroundi",
+          "Jaguarundi"
+        ],
+        "jungle_cat": [
+          "Felis chaus",
+          "Jungle cat"
+        ],
+        "leopard": [
+          "Leopard",
+          "Panthera pardus"
+        ],
+        "lion": [
+          "Lion",
+          "Panthera leo"
+        ],
+        "lynx_lineage": [
+          "Lynx lineage"
+        ],
+        "margay": [
+          "Leopardus wiedii",
+          "Margay"
+        ],
+        "ocelot": [
+          "Leopardus pardalis",
+          "Ocelot"
+        ],
+        "ocelot_lineage": [
+          "Ocelot lineage"
+        ],
+        "oncilla": [
+          "Leopardus tigrinus",
+          "Oncilla"
+        ],
+        "panthera_lineage": [
+          "Panthera lineage"
+        ],
+        "puma_lineage": [
+          "Puma lineage"
+        ],
+        "sand_cat": [
+          "Felis margarita",
+          "Sand cat"
+        ],
+        "snow_leopard": [
+          "Panthera uncia",
+          "Snow leopard"
+        ],
+        "sunda_clouded_leopard": [
+          "Neofelis diardi",
+          "Sunda clouded leopard"
+        ],
+        "tiger": [
+          "Panthera tigris",
+          "Tiger"
+        ]
+      }
+    },
+    {
+      "predicate": "is_felid",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "it is a cat",
+        "this cat"
+      ],
+      "description": "The organism is a cat (a member of the cat family)."
+    },
+    {
+      "predicate": "body_length",
+      "unit": "cm",
+      "value_type": "number",
+      "aliases": [
+        "head-body length in cm",
+        "it is N cm long"
+      ],
+      "description": "Head-body length of the cat, in centimetres."
+    },
+    {
+      "predicate": "geographic_range",
+      "unit": "region",
+      "value_type": "token",
+      "permitted_values": [
+        "borneo",
+        "caspian",
+        "caucasus",
+        "central_africa",
+        "central_america",
+        "eastern_africa",
+        "eastern_europe",
+        "himalayas",
+        "iberia",
+        "indian_subcontinent",
+        "iran",
+        "middle_east",
+        "mongolia",
+        "north_america",
+        "russia",
+        "siberia",
+        "south_america",
+        "southeast_asia",
+        "southern_africa",
+        "southern_china",
+        "sub_saharan_africa",
+        "sumatra",
+        "western_africa",
+        "worldwide"
+      ],
+      "aliases": [
+        "where it was observed"
+      ],
+      "description": "Region where the cat was observed or lives."
+    },
+    {
+      "predicate": "habitat",
+      "unit": "habitat",
+      "value_type": "token",
+      "permitted_values": [
+        "desert",
+        "domesticated",
+        "forest",
+        "grassland",
+        "inland_wetlands",
+        "rocky_areas",
+        "savanna",
+        "shrubland"
+      ],
+      "aliases": [
+        "the terrain it lives in"
+      ],
+      "description": "Habitat or terrain where the cat was observed or lives."
+    },
+    {
+      "predicate": "amniotic_egg",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "amniotic egg"
+      ],
+      "description": "Embryo develops within an amniotic egg."
+    },
+    {
+      "predicate": "aquatic_larval_stage",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "aquatic larval stage"
+      ],
+      "description": "Life cycle passes through an aquatic larval stage."
+    },
+    {
+      "predicate": "ectothermic",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "ectothermic"
+      ],
+      "description": "Ectothermic: regulates body temperature from external heat sources."
+    },
+    {
+      "predicate": "ever_growing_incisors",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "ever growing incisors"
+      ],
+      "description": "Has continuously growing incisors."
+    },
+    {
+      "predicate": "forward_facing_eyes",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "forward facing eyes"
+      ],
+      "description": "Has forward-facing eyes."
+    },
+    {
+      "predicate": "has_backbone",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has backbone"
+      ],
+      "description": "Possesses a vertebral column (backbone)."
+    },
+    {
+      "predicate": "has_blowhole",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has blowhole"
+      ],
+      "description": "Breathes through a blowhole on top of the head."
+    },
+    {
+      "predicate": "has_carnassial_teeth",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has carnassial teeth"
+      ],
+      "description": "Has carnassial (shearing) teeth."
+    },
+    {
+      "predicate": "has_feathers",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has feathers"
+      ],
+      "description": "Bears feathers."
+    },
+    {
+      "predicate": "has_fins",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has fins"
+      ],
+      "description": "Bears fins for locomotion."
+    },
+    {
+      "predicate": "has_flippers",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has flippers"
+      ],
+      "description": "Forelimbs modified into flippers."
+    },
+    {
+      "predicate": "has_gills",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has gills"
+      ],
+      "description": "Respires with gills."
+    },
+    {
+      "predicate": "has_hair",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has hair"
+      ],
+      "description": "Bears hair."
+    },
+    {
+      "predicate": "has_keratin_scales",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has keratin scales"
+      ],
+      "description": "Dry skin bearing keratinized scales."
+    },
+    {
+      "predicate": "has_placenta",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has placenta"
+      ],
+      "description": "Embryo sustained by a placenta."
+    },
+    {
+      "predicate": "has_pouch",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "has pouch"
+      ],
+      "description": "Young complete development in a maternal pouch (marsupium)."
+    },
+    {
+      "predicate": "lays_eggs",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "lays eggs"
+      ],
+      "description": "Reproduces by laying eggs (oviparous)."
+    },
+    {
+      "predicate": "live_birth",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "live birth"
+      ],
+      "description": "Gives birth to live young."
+    },
+    {
+      "predicate": "moist_permeable_skin",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "moist permeable skin"
+      ],
+      "description": "Has moist, permeable skin used in gas exchange."
+    },
+    {
+      "predicate": "opposable_thumb",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "opposable thumb"
+      ],
+      "description": "Has an opposable thumb."
+    },
+    {
+      "predicate": "produces_milk",
+      "unit": "trait",
+      "value_type": "boolean",
+      "aliases": [
+        "produces milk"
+      ],
+      "description": "Nourishes its young with milk from mammary glands."
+    }
+  ],
+  "parser_prompt": {
+    "_note": "Domain text for pct/parser.py; see make_parser_prompts.py.",
+    "header": "You translate natural-language biology classification queries into a single JSON object.\n\nRULE #1 (HIGHEST PRIORITY): `predicate` is ALWAYS the literal string \"taxon\", `unit` is\nalways \"taxon\", and `context` is always \"biology_taxonomy\". You never choose a predicate.\nWhat varies is only `bindings`.\n\nRULE #2: If the query asks whether the organism IS a named group (\"is a dolphin a mammal\",\n\"is this cat a tiger\", \"why is X a bird\"), put that group's name in the binding\n`candidate_taxon`. If the query asks WHAT the organism is (\"what is it\", \"what kind of cat\nis this\", \"identify it\"), OMIT `candidate_taxon` entirely.\n\nJSON SCHEMA (the entire output, with no extra fields):\n{\"predicate\": \"taxon\", \"unit\": \"taxon\", \"context\": \"biology_taxonomy\",\n \"bindings\": {<binding_name>: {\"value\": <number|string|true>, \"unit\": <string>}}}\n\n",
+    "footer": "\n\nSTRICT RULES:\n1. Output exactly ONE JSON object. No commentary, no markdown fences, no extra text.\n2. Only these four top-level keys: predicate, unit, context, bindings.\n3. `predicate` is \"taxon\", `unit` is \"taxon\", `context` is \"biology_taxonomy\". Always.\n4. Every binding name must appear in ALLOWED BINDINGS, with the unit listed for it.\n5. Each binding is {\"value\": <...>, \"unit\": <string>}, never a bare value.\n6. For a binding listed with \"one of: ...\", the value MUST be one of those exact tokens.\n   Never invent a token. If the query names a region or habitat not on the list, omit the\n   binding.\n7. EXTRACT-ONLY RULE (CRITICAL): bindings may contain ONLY facts the query explicitly\n   STATES. You must NEVER fill in a trait or measurement from your own knowledge of the\n   organism. If the query names an animal but describes nothing about it, the bindings\n   must be EMPTY except for candidate_taxon. Do not add has_backbone because you know\n   dolphins have one. Do not add body_length because you know how big a jaguar is. The\n   engine classifies from stated evidence only; supplying unstated facts is an error.\n8. Trait bindings are presence assertions: value true when the query says the organism\n   HAS the trait. If the query does not mention a trait, omit it.\n9. OUT-OF-SCOPE RULE: if the query is not a biological classification question, or names\n   a group not in ALLOWED BINDINGS' candidate_taxon list, set `predicate` to the literal\n   string \"OUT_OF_SCOPE\", unit \"n/a\", context \"n/a\", and leave bindings empty.\n\nEXAMPLES:\n\nInput: Query: Suppose an organism has hair, produces milk, develops in an amniotic egg, gives birth to live young, has continuously growing incisors, has a placenta and has a vertebral column. Can it be classified as a vertebrate?\nOutput: {\"predicate\": \"taxon\", \"unit\": \"taxon\", \"context\": \"biology_taxonomy\", \"bindings\": {\"candidate_taxon\": {\"value\": \"vertebrate\", \"unit\": \"label\"}, \"has_backbone\": {\"value\": true, \"unit\": \"trait\"}, \"amniotic_egg\": {\"value\": true, \"unit\": \"trait\"}, \"produces_milk\": {\"value\": true, \"unit\": \"trait\"}, \"has_hair\": {\"value\": true, \"unit\": \"trait\"}, \"live_birth\": {\"value\": true, \"unit\": \"trait\"}, \"has_placenta\": {\"value\": true, \"unit\": \"trait\"}, \"ever_growing_incisors\": {\"value\": true, \"unit\": \"trait\"}}}\n\nInput: Query: An animal lays eggs, starts life as an aquatic larva, has a vertebral column and has moist, permeable skin. What is it?\nOutput: {\"predicate\": \"taxon\", \"unit\": \"taxon\", \"context\": \"biology_taxonomy\", \"bindings\": {\"has_backbone\": {\"value\": true, \"unit\": \"trait\"}, \"moist_permeable_skin\": {\"value\": true, \"unit\": \"trait\"}, \"aquatic_larval_stage\": {\"value\": true, \"unit\": \"trait\"}, \"lays_eggs\": {\"value\": true, \"unit\": \"trait\"}}}\n\nInput: Query: Field notes describe a wild cat with a head-body length of 32.25 cm, recorded in savanna in southern Africa. Is this a member of the cat family Felidae?\nOutput: {\"predicate\": \"taxon\", \"unit\": \"taxon\", \"context\": \"biology_taxonomy\", \"bindings\": {\"candidate_taxon\": {\"value\": \"felidae\", \"unit\": \"label\"}, \"is_felid\": {\"value\": true, \"unit\": \"trait\"}, \"body_length\": {\"value\": 32.25, \"unit\": \"cm\"}, \"geographic_range\": {\"value\": \"southern_africa\", \"unit\": \"region\"}, \"habitat\": {\"value\": \"savanna\", \"unit\": \"habitat\"}}}\n\nInput: Query: Identify the following: a wild cat with a head-body length of 54.27 cm, recorded in savanna in North America.\nOutput: {\"predicate\": \"taxon\", \"unit\": \"taxon\", \"context\": \"biology_taxonomy\", \"bindings\": {\"is_felid\": {\"value\": true, \"unit\": \"trait\"}, \"body_length\": {\"value\": 54.27, \"unit\": \"cm\"}, \"geographic_range\": {\"value\": \"north_america\", \"unit\": \"region\"}, \"habitat\": {\"value\": \"savanna\", \"unit\": \"habitat\"}}}\n\nInput: Query: An animal gives birth to live young, has an amniotic egg, feeds its young on milk, has carnassial teeth, has a backbone, has hair and has a placenta. It is a wild cat with a head-body length of 36.25 cm, recorded in grassland in Southeast Asia. Is it a jungle cat?\nOutput: {\"predicate\": \"taxon\", \"unit\": \"taxon\", \"context\": \"biology_taxonomy\", \"bindings\": {\"candidate_taxon\": {\"value\": \"jungle_cat\", \"unit\": \"label\"}, \"has_backbone\": {\"value\": true, \"unit\": \"trait\"}, \"amniotic_egg\": {\"value\": true, \"unit\": \"trait\"}, \"produces_milk\": {\"value\": true, \"unit\": \"trait\"}, \"has_hair\": {\"value\": true, \"unit\": \"trait\"}, \"live_birth\": {\"value\": true, \"unit\": \"trait\"}, \"has_placenta\": {\"value\": true, \"unit\": \"trait\"}, \"has_carnassial_teeth\": {\"value\": true, \"unit\": \"trait\"}, \"is_felid\": {\"value\": true, \"unit\": \"trait\"}, \"body_length\": {\"value\": 36.25, \"unit\": \"cm\"}, \"geographic_range\": {\"value\": \"southeast_asia\", \"unit\": \"region\"}, \"habitat\": {\"value\": \"grassland\", \"unit\": \"habitat\"}}}\n\nInput: Query: What enzyme joins Okazaki fragments together?\nOutput: {\"predicate\": \"OUT_OF_SCOPE\", \"unit\": \"n/a\", \"context\": \"n/a\", \"bindings\": {}}\n",
+    "followup": "You update a structured biology classification goal based on a follow-up query.\n\nYou will receive:\n  PREVIOUS GOAL: <JSON object>\n  NEW QUERY: <natural language>\n\nOutput exactly ONE JSON object: the updated goal. Rules:\n1. Keys and shape must equal the previous goal (predicate, unit, context, bindings).\n2. `predicate`, `unit` and `context` MUST be identical to the previous goal.\n3. Keep every binding from the previous goal; change only the ones the new query\n   explicitly references.\n4. Never add a fact the new query does not state.\n5. Output JSON only, no commentary.\n\nEXAMPLE:\nPREVIOUS GOAL: {\"predicate\": \"taxon\", \"unit\": \"taxon\", \"context\": \"biology_taxonomy\", \"bindings\": {\"is_felid\": {\"value\": true, \"unit\": \"trait\"}, \"body_length\": {\"value\": 230, \"unit\": \"cm\"}, \"geographic_range\": {\"value\": \"southeast_asia\", \"unit\": \"region\"}, \"habitat\": {\"value\": \"shrubland\", \"unit\": \"habitat\"}}}\nNEW QUERY: what if it were 90 cm instead\nOUTPUT: {\"predicate\": \"taxon\", \"unit\": \"taxon\", \"context\": \"biology_taxonomy\", \"bindings\": {\"is_felid\": {\"value\": true, \"unit\": \"trait\"}, \"body_length\": {\"value\": 90, \"unit\": \"cm\"}, \"geographic_range\": {\"value\": \"southeast_asia\", \"unit\": \"region\"}, \"habitat\": {\"value\": \"shrubland\", \"unit\": \"habitat\"}}}\n",
+    "_examples_note": "EXAMPLES drawn from the development set only (tools/build/build_dev_prompt_examples.py, 2026-11-23): at most one per query form, the dev gold goal state as output, every stated number replaced by a value no dev or test query states.",
+    "_examples_source": [
+      {
+        "form": "vertebrate / is_a",
+        "dev_id": 1,
+        "values": {}
+      },
+      {
+        "form": "vertebrate / what_is",
+        "dev_id": 22,
+        "values": {}
+      },
+      {
+        "form": "felid / is_a",
+        "dev_id": 31,
+        "values": {
+          "43": "32.25"
+        }
+      },
+      {
+        "form": "felid / what_is",
+        "dev_id": 42,
+        "values": {
+          "69": "54.27"
+        }
+      },
+      {
+        "form": "join / is_a",
+        "dev_id": 81,
+        "values": {
+          "59": "36.25"
+        }
+      },
+      {
+        "form": "out_of_scope",
+        "dev_id": 84,
+        "values": {}
+      }
+    ]
+  },
+  "baseline_prompts": {
+    "_note": "System prompts for the two baselines (tools/eval/baseline_rag.py). raw_system null means the raw baseline sends no system message.",
+    "rag_system": "You are a biology assistant. Use ONLY the provided context to answer the question. If the answer cannot be determined from the context, reply exactly: I cannot answer this.\n\nBe concise. If asked whether something belongs to a group, begin your answer with yes or no. Otherwise give the name of the group.",
+    "raw_system": null
+  },
+  "kb_supplied_inputs": [
+    {
+      "predicate": "body_max_L10",
+      "unit": "cm",
+      "description": "Largest head-body length of the level-10 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "body_max_L7",
+      "unit": "cm",
+      "description": "Largest head-body length of the level-7 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "body_max_L8",
+      "unit": "cm",
+      "description": "Largest head-body length of the level-8 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "body_max_L9",
+      "unit": "cm",
+      "description": "Largest head-body length of the level-9 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "body_min_L10",
+      "unit": "cm",
+      "description": "Smallest head-body length of the level-10 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "body_min_L7",
+      "unit": "cm",
+      "description": "Smallest head-body length of the level-7 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "body_min_L8",
+      "unit": "cm",
+      "description": "Smallest head-body length of the level-8 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "body_min_L9",
+      "unit": "cm",
+      "description": "Smallest head-body length of the level-9 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L1",
+      "unit": "label",
+      "description": "Taxon tested at level 1.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L10",
+      "unit": "label",
+      "description": "Taxon tested at level 10.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L2",
+      "unit": "label",
+      "description": "Taxon tested at level 2.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L3",
+      "unit": "label",
+      "description": "Taxon tested at level 3.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L4",
+      "unit": "label",
+      "description": "Taxon tested at level 4.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L5",
+      "unit": "label",
+      "description": "Taxon tested at level 5.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L6",
+      "unit": "label",
+      "description": "Taxon tested at level 6.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L7",
+      "unit": "label",
+      "description": "Taxon tested at level 7.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L8",
+      "unit": "label",
+      "description": "Taxon tested at level 8.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "candidate_L9",
+      "unit": "label",
+      "description": "Taxon tested at level 9.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "habitats_L10",
+      "unit": "habitatset",
+      "description": "Habitats of the level-10 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "habitats_L7",
+      "unit": "habitatset",
+      "description": "Habitats of the level-7 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "habitats_L8",
+      "unit": "habitatset",
+      "description": "Habitats of the level-8 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "habitats_L9",
+      "unit": "habitatset",
+      "description": "Habitats of the level-9 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "regions_L10",
+      "unit": "regionset",
+      "description": "Regions of the level-10 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "regions_L7",
+      "unit": "regionset",
+      "description": "Regions of the level-7 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "regions_L8",
+      "unit": "regionset",
+      "description": "Regions of the level-8 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "regions_L9",
+      "unit": "regionset",
+      "description": "Regions of the level-9 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_1_L1",
+      "unit": "trait",
+      "description": "First required trait of the level-1 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_1_L2",
+      "unit": "trait",
+      "description": "First required trait of the level-2 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_1_L3",
+      "unit": "trait",
+      "description": "First required trait of the level-3 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_1_L4",
+      "unit": "trait",
+      "description": "First required trait of the level-4 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_1_L5",
+      "unit": "trait",
+      "description": "First required trait of the level-5 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_2_L1",
+      "unit": "trait",
+      "description": "Second required trait of the level-1 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_2_L2",
+      "unit": "trait",
+      "description": "Second required trait of the level-2 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_2_L3",
+      "unit": "trait",
+      "description": "Second required trait of the level-3 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_2_L4",
+      "unit": "trait",
+      "description": "Second required trait of the level-4 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    },
+    {
+      "predicate": "trait_2_L5",
+      "unit": "trait",
+      "description": "Second required trait of the level-5 taxon.",
+      "supplied_by": "KB1 taxa (traits / sourced envelopes), supplied by the resolver"
+    }
+  ]
+}

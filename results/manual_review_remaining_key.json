@@ -1,0 +1,37 @@
+{
+  "_note": "Unblinding key for results\\manual_review_remaining.jsonl. Rows are the locked scorer's manual_review cases in results/scores.json (test run 2026-11-24). Do not open while reviewing.",
+  "old_scored_rows": 0,
+  "carried_over": 0,
+  "key": {
+    "b44a75613155": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 45
+    },
+    "ce6d8f94e01a": {
+      "domain": "physics",
+      "system": "baseline",
+      "query_id": 98
+    },
+    "67b65eb7d2cd": {
+      "domain": "physics",
+      "system": "rag",
+      "query_id": 145
+    },
+    "70b922e557ed": {
+      "domain": "chemistry",
+      "system": "baseline",
+      "query_id": 175
+    },
+    "80e3a87e1adf": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 180
+    },
+    "718fef84ab7a": {
+      "domain": "chemistry",
+      "system": "rag",
+      "query_id": 192
+    }
+  }
+}

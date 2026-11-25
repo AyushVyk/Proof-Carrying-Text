@@ -1,0 +1,3736 @@
+[
+  {
+    "category": "shallow",
+    "query": "yo an object starts from rest and accelerates at 13.0 m/s squared for 0.9 seconds. what is its velocity",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 11.700000000000001,
+    "rule_id": "kinematic_velocity_from_rest",
+    "params": {
+      "a": 13.0,
+      "t": 0.9
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Starting at rest, an object accelerates at 5.3 m/s^2. what speed has it reached after 2.5 seconds.",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 13.25,
+    "rule_id": "kinematic_velocity_from_rest",
+    "params": {
+      "a": 5.3,
+      "t": 2.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Find the velocity of an object that has been accelerating from rest at 13.7 m/s squared for 13.4 seconds.",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 183.57999999999998,
+    "rule_id": "kinematic_velocity_from_rest",
+    "params": {
+      "a": 13.7,
+      "t": 13.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "hey, an object moving at 12.2 m/s accelerates at 0.8 m/s squared for 1.4 seconds. what is its final velocity?",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 13.319999999999999,
+    "rule_id": "kinematic_velocity_with_initial",
+    "params": {
+      "v0": 12.2,
+      "a": 0.8,
+      "t": 1.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: what is the final velocity of an object with initial velocity 10.6 m/s after accelerating at 0.8 m/s^2 for 2.4 seconds. show your work.",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 12.52,
+    "rule_id": "kinematic_velocity_with_initial",
+    "params": {
+      "v0": 10.6,
+      "a": 0.8,
+      "t": 2.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo starting at 14.3 m/s, an object undergoes acceleration of 4.5 m/s squared for 4.8 seconds. find the final velocity",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 35.9,
+    "rule_id": "kinematic_velocity_with_initial",
+    "params": {
+      "v0": 14.3,
+      "a": 4.5,
+      "t": 4.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "in plain numbers, an object starts from rest and accelerates at 12.2 m/s squared for 1.1 seconds. what is its displacement",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 7.381000000000001,
+    "rule_id": "kinematic_displacement_from_rest",
+    "params": {
+      "a": 12.2,
+      "t": 1.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo find the displacement of an object that has been accelerating from rest at 2.8 m/s^2 for 5.6 seconds",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 43.90399999999999,
+    "rule_id": "kinematic_displacement_from_rest",
+    "params": {
+      "a": 2.8,
+      "t": 5.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "for my homework: starting at rest, an object accelerates at 2.8 m/s squared. how far has it traveled after 11.5 seconds",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 185.14999999999998,
+    "rule_id": "kinematic_displacement_from_rest",
+    "params": {
+      "a": 2.8,
+      "t": 11.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "for my homework: an object moving at 2.4 m/s accelerates at 3.3 m/s squared for 4.2 seconds. what is its displacement",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 39.186,
+    "rule_id": "kinematic_displacement_with_initial",
+    "params": {
+      "v0": 2.4,
+      "a": 3.3,
+      "t": 4.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you starting at 9.5 m/s with acceleration 6.6 m/s^2, what distance has the object covered after 7.6 seconds, please",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 262.808,
+    "rule_id": "kinematic_displacement_with_initial",
+    "params": {
+      "v0": 9.5,
+      "a": 6.6,
+      "t": 7.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo find the displacement of an object with initial velocity 2.7 m/s, accelerating at 7.4 m/s squared for 1.7 seconds",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 15.283,
+    "rule_id": "kinematic_displacement_with_initial",
+    "params": {
+      "v0": 2.7,
+      "a": 7.4,
+      "t": 1.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "An object with initial velocity 8.3 m/s undergoes acceleration 6.6 m/s squared over a displacement of 43.4 metres. compute its final velocity.",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 25.3331798240963,
+    "rule_id": "kinematic_velocity_from_displacement",
+    "params": {
+      "v0": 8.3,
+      "a": 6.6,
+      "x": 43.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "in plain numbers, find the final velocity given initial velocity 1.9 m/s, acceleration 1.6 m/s^2, and displacement 33.7 m",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 10.556988206870367,
+    "rule_id": "kinematic_velocity_from_displacement",
+    "params": {
+      "v0": 1.9,
+      "a": 1.6,
+      "x": 33.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "What is the velocity of an object after falling for 3.8 seconds.",
+    "expected_predicate": "velocity",
+    "expected_context": "free_fall",
+    "expected_unit": "m/s",
+    "expected_value": 37.24,
+    "rule_id": "free_fall_velocity",
+    "params": {
+      "t": 3.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "I've got a question \u2014 an object is dropped from rest. what speed does it reach after 10.3 seconds of free fall",
+    "expected_predicate": "velocity",
+    "expected_context": "free_fall",
+    "expected_unit": "m/s",
+    "expected_value": 100.94000000000001,
+    "rule_id": "free_fall_velocity",
+    "params": {
+      "t": 10.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo find the velocity of a freely falling object 1.7 seconds after release",
+    "expected_predicate": "velocity",
+    "expected_context": "free_fall",
+    "expected_unit": "m/s",
+    "expected_value": 16.66,
+    "rule_id": "free_fall_velocity",
+    "params": {
+      "t": 1.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "I've got a question \u2014 how far does a freely falling object descend in 3.9 seconds",
+    "expected_predicate": "displacement",
+    "expected_context": "free_fall",
+    "expected_unit": "m",
+    "expected_value": 74.529,
+    "rule_id": "free_fall_displacement",
+    "params": {
+      "t": 3.9
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "for my homework: what is the displacement of an object after 3.2 seconds of free fall",
+    "expected_predicate": "displacement",
+    "expected_context": "free_fall",
+    "expected_unit": "m",
+    "expected_value": 50.176000000000016,
+    "rule_id": "free_fall_displacement",
+    "params": {
+      "t": 3.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: an object is dropped from rest. how far has it fallen after 3.2 seconds. show your work.",
+    "expected_predicate": "displacement",
+    "expected_context": "free_fall",
+    "expected_unit": "m",
+    "expected_value": 50.176000000000016,
+    "rule_id": "free_fall_displacement",
+    "params": {
+      "t": 3.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: what is the force on a 21.7 kg object accelerating at 23.4 m/s squared. show your work.",
+    "expected_predicate": "force",
+    "expected_context": "dynamics",
+    "expected_unit": "N",
+    "expected_value": 507.78,
+    "rule_id": "newton_second_law",
+    "params": {
+      "m": 21.7,
+      "a": 23.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you work out the net force required to give a 6.2 kg mass an acceleration of 16.1 m/s^2, please",
+    "expected_predicate": "force",
+    "expected_context": "dynamics",
+    "expected_unit": "N",
+    "expected_value": 99.82000000000001,
+    "rule_id": "newton_second_law",
+    "params": {
+      "m": 6.2,
+      "a": 16.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 a 58.5 kg mass has acceleration 4.5 m/s squared. what force acts on it",
+    "expected_predicate": "force",
+    "expected_context": "dynamics",
+    "expected_unit": "N",
+    "expected_value": 263.25,
+    "rule_id": "newton_second_law",
+    "params": {
+      "m": 58.5,
+      "a": 4.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "let's say we want the acceleration of a 46.3 kg object under a 138.6 N force",
+    "expected_predicate": "acceleration",
+    "expected_context": "dynamics",
+    "expected_unit": "m/s2",
+    "expected_value": 2.9935205183585314,
+    "rule_id": "acceleration_from_force",
+    "params": {
+      "F": 138.6,
+      "m": 46.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "I've got a question \u2014 find the acceleration produced when a 280.7 N force acts on a 34.4 kg mass",
+    "expected_predicate": "acceleration",
+    "expected_context": "dynamics",
+    "expected_unit": "m/s2",
+    "expected_value": 8.159883720930232,
+    "rule_id": "acceleration_from_force",
+    "params": {
+      "F": 280.7,
+      "m": 34.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "I've got a question \u2014 a force of 385.3 N is applied to a 3.3 kg object. what is its acceleration",
+    "expected_predicate": "acceleration",
+    "expected_context": "dynamics",
+    "expected_unit": "m/s2",
+    "expected_value": 116.75757575757576,
+    "rule_id": "acceleration_from_force",
+    "params": {
+      "F": 385.3,
+      "m": 3.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "for my homework: what is the weight of a 3.7 kg object on Earth",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 36.260000000000005,
+    "rule_id": "weight_from_mass",
+    "params": {
+      "m": 3.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Find the weight of an object with mass 40.4 kg under standard gravity.",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 395.92,
+    "rule_id": "weight_from_mass",
+    "params": {
+      "m": 40.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "How much does a 21.5 kg mass weigh on earth.",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 210.70000000000002,
+    "rule_id": "weight_from_mass",
+    "params": {
+      "m": 21.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: what is the momentum of a 87.7 kg object moving at 9.8 m/s. show your work.",
+    "expected_predicate": "momentum",
+    "expected_context": "dynamics",
+    "expected_unit": "kg*m/s",
+    "expected_value": 859.46,
+    "rule_id": "momentum",
+    "params": {
+      "m": 87.7,
+      "v": 9.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: find the momentum of a 50.2 kg mass with velocity 26.6 m/s. show your work.",
+    "expected_predicate": "momentum",
+    "expected_context": "dynamics",
+    "expected_unit": "kg*m/s",
+    "expected_value": 1335.3200000000002,
+    "rule_id": "momentum",
+    "params": {
+      "m": 50.2,
+      "v": 26.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "hey, a 46.2 kg object travels at 8.3 m/s. compute its momentum?",
+    "expected_predicate": "momentum",
+    "expected_context": "dynamics",
+    "expected_unit": "kg*m/s",
+    "expected_value": 383.46000000000004,
+    "rule_id": "momentum",
+    "params": {
+      "m": 46.2,
+      "v": 8.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "let's say we want the impulse delivered by a 150.3 N force acting for 2.7 seconds",
+    "expected_predicate": "impulse",
+    "expected_context": "dynamics",
+    "expected_unit": "N*s",
+    "expected_value": 405.81000000000006,
+    "rule_id": "impulse",
+    "params": {
+      "F": 150.3,
+      "t": 2.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 find the impulse on an object subject to a 119.0 N force for 4.5 seconds",
+    "expected_predicate": "impulse",
+    "expected_context": "dynamics",
+    "expected_unit": "N*s",
+    "expected_value": 535.5,
+    "rule_id": "impulse",
+    "params": {
+      "F": 119.0,
+      "t": 4.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Compute the impulse of a 75.6 N force applied over 5.0 seconds?",
+    "expected_predicate": "impulse",
+    "expected_context": "dynamics",
+    "expected_unit": "N*s",
+    "expected_value": 378.0,
+    "rule_id": "impulse",
+    "params": {
+      "F": 75.6,
+      "t": 5.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "What is the gravitational force between a 510017.0 kg mass and a 91819.0 kg mass separated by 57.0 metres.",
+    "expected_predicate": "force",
+    "expected_context": "gravitation",
+    "expected_unit": "N",
+    "expected_value": 0.0009619526643893566,
+    "rule_id": "gravitational_force",
+    "params": {
+      "m1": 510017.0,
+      "m2": 91819.0,
+      "r": 57.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Calculate the gravitational attraction between objects of mass 153688.0 kg and 160822.0 kg at distance 684.0 m.",
+    "expected_predicate": "force",
+    "expected_context": "gravitation",
+    "expected_unit": "N",
+    "expected_value": 3.525814152031052e-06,
+    "rule_id": "gravitational_force",
+    "params": {
+      "m1": 153688.0,
+      "m2": 160822.0,
+      "r": 684.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you compute Newton's gravitational force between 64464.0 kg and 382238.0 kg masses 996.0 metres apart, please",
+    "expected_predicate": "force",
+    "expected_context": "gravitation",
+    "expected_unit": "N",
+    "expected_value": 1.6577484692098513e-06,
+    "rule_id": "gravitational_force",
+    "params": {
+      "m1": 64464.0,
+      "m2": 382238.0,
+      "r": 996.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "what is the kinetic energy of a 12.9 kg object moving at 16.8 m/s",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 1820.448,
+    "rule_id": "kinetic_energy",
+    "params": {
+      "m": 12.9,
+      "v": 16.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "give me the KE of a 34.2 kg mass with velocity 3.9 m/s",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 260.091,
+    "rule_id": "kinetic_energy",
+    "params": {
+      "m": 34.2,
+      "v": 3.9
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: compute the kinetic energy of a 27.1 kg object travelling at 8.4 m/s. show your work.",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 956.0880000000001,
+    "rule_id": "kinetic_energy",
+    "params": {
+      "m": 27.1,
+      "v": 8.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "What is the gravitational potential energy of a 17.3 kg object at height 9.2 metres?",
+    "expected_predicate": "potential_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 1559.768,
+    "rule_id": "gravitational_potential_energy",
+    "params": {
+      "m": 17.3,
+      "h": 9.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "give me the gravitational PE of a 23.0 kg mass elevated by 28.6 m",
+    "expected_predicate": "potential_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 6446.4400000000005,
+    "rule_id": "gravitational_potential_energy",
+    "params": {
+      "m": 23.0,
+      "h": 28.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "in plain numbers, a 36.1 kg object is at height 29.2 metres. what is its gravitational potential energy",
+    "expected_predicate": "potential_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 10330.376,
+    "rule_id": "gravitational_potential_energy",
+    "params": {
+      "m": 36.1,
+      "h": 29.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "I've got a question \u2014 what is the total mechanical energy if the kinetic energy is 97.5 J and the potential energy is 457.2 J",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 554.7,
+    "rule_id": "mechanical_energy",
+    "params": {
+      "KE": 97.5,
+      "PE": 457.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you work out the mechanical energy of a system with KE 316.4 J and PE 422.4 J, please",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 738.8,
+    "rule_id": "mechanical_energy",
+    "params": {
+      "KE": 316.4,
+      "PE": 422.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "in plain numbers, given kinetic energy 308.4 J and potential energy 84.9 J, what is the total mechanical energy",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 393.29999999999995,
+    "rule_id": "mechanical_energy",
+    "params": {
+      "KE": 308.4,
+      "PE": 84.9
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "give me the work done by a 36.5 N force over 19.1 metres at an angle of 90 degrees",
+    "expected_predicate": "work",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 4.268812580127887e-14,
+    "rule_id": "work_from_force_displacement",
+    "params": {
+      "F": 36.5,
+      "d": 19.1,
+      "theta": 90
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Find the work done when a 5.1 N force acts over 6.8 m at 0 degrees to the displacement.",
+    "expected_predicate": "work",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 34.68,
+    "rule_id": "work_from_force_displacement",
+    "params": {
+      "F": 5.1,
+      "d": 6.8,
+      "theta": 0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "hey, compute the work for a 186.2 N force, displacement 17.6 m, and angle 45 degrees?",
+    "expected_predicate": "work",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 2317.2737747620586,
+    "rule_id": "work_from_force_displacement",
+    "params": {
+      "F": 186.2,
+      "d": 17.6,
+      "theta": 45
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "What is the power if 336.7 J of work is done in 52.8 seconds.",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 6.3768939393939394,
+    "rule_id": "power_from_work",
+    "params": {
+      "W": 336.7,
+      "t": 52.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Find the power output when 474.0 J of work is performed over 29.7 s.",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 15.95959595959596,
+    "rule_id": "power_from_work",
+    "params": {
+      "W": 474.0,
+      "t": 29.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "4891.0 joules of work is delivered in 32.4 seconds. compute the power?",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 150.95679012345678,
+    "rule_id": "power_from_work",
+    "params": {
+      "W": 4891.0,
+      "t": 32.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you tell me the magnitude of the spring force when a spring of constant 172.0 N/m is compressed by 0.24 metres, please",
+    "expected_predicate": "force",
+    "expected_context": "elasticity",
+    "expected_unit": "N",
+    "expected_value": 41.28,
+    "rule_id": "spring_force",
+    "params": {
+      "k": 172.0,
+      "x": 0.24
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Calculate the spring force for a spring with constant 207.0 n/m stretched 0.27 m.",
+    "expected_predicate": "force",
+    "expected_context": "elasticity",
+    "expected_unit": "N",
+    "expected_value": 55.89,
+    "rule_id": "spring_force",
+    "params": {
+      "k": 207.0,
+      "x": 0.27
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you a spring with stiffness 452.0 N/m is displaced 0.11 metres. tell me the restoring force magnitude, please",
+    "expected_predicate": "force",
+    "expected_context": "elasticity",
+    "expected_unit": "N",
+    "expected_value": 49.72,
+    "rule_id": "spring_force",
+    "params": {
+      "k": 452.0,
+      "x": 0.11
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "let's say we want the elastic potential energy stored in a spring of constant 768.0 N/m compressed by 0.36 metres",
+    "expected_predicate": "potential_energy",
+    "expected_context": "elasticity",
+    "expected_unit": "J",
+    "expected_value": 49.7664,
+    "rule_id": "spring_potential_energy",
+    "params": {
+      "k": 768.0,
+      "x": 0.36
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: find the spring potential energy for k = 346.0 N/m and displacement 0.5 m. show your work.",
+    "expected_predicate": "potential_energy",
+    "expected_context": "elasticity",
+    "expected_unit": "J",
+    "expected_value": 43.25,
+    "rule_id": "spring_potential_energy",
+    "params": {
+      "k": 346.0,
+      "x": 0.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "quick question: compute the energy stored in a spring with stiffness 405.0 N/m stretched 0.45 metres?",
+    "expected_predicate": "potential_energy",
+    "expected_context": "elasticity",
+    "expected_unit": "J",
+    "expected_value": 41.00625,
+    "rule_id": "spring_potential_energy",
+    "params": {
+      "k": 405.0,
+      "x": 0.45
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "for my homework: what is the density of an object with mass 13.0 kg and volume 1.16 cubic metres",
+    "expected_predicate": "density",
+    "expected_context": "mechanics",
+    "expected_unit": "kg/m3",
+    "expected_value": 11.206896551724139,
+    "rule_id": "density",
+    "params": {
+      "m": 13.0,
+      "V": 1.16
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Calculate the density given a mass of 3.1 kg and a volume of 2.79 m^3.",
+    "expected_predicate": "density",
+    "expected_context": "mechanics",
+    "expected_unit": "kg/m3",
+    "expected_value": 1.1111111111111112,
+    "rule_id": "density",
+    "params": {
+      "m": 3.1,
+      "V": 2.79
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: an object weighs 22.8 kg and occupies 0.4 cubic metres. what is its density. show your work.",
+    "expected_predicate": "density",
+    "expected_context": "mechanics",
+    "expected_unit": "kg/m3",
+    "expected_value": 57.0,
+    "rule_id": "density",
+    "params": {
+      "m": 22.8,
+      "V": 0.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "what is the pressure when a 38.8 N force acts on an area of 0.38 square metres",
+    "expected_predicate": "pressure",
+    "expected_context": "mechanics",
+    "expected_unit": "Pa",
+    "expected_value": 102.10526315789473,
+    "rule_id": "pressure_from_force",
+    "params": {
+      "F": 38.8,
+      "A": 0.38
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "hey, find the pressure exerted by a 431.2 N force over 0.4 m^2?",
+    "expected_predicate": "pressure",
+    "expected_context": "mechanics",
+    "expected_unit": "Pa",
+    "expected_value": 1078.0,
+    "rule_id": "pressure_from_force",
+    "params": {
+      "F": 431.2,
+      "A": 0.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you a force of 146.5 N is distributed over 2.45 square metres. compute the pressure, please",
+    "expected_predicate": "pressure",
+    "expected_context": "mechanics",
+    "expected_unit": "Pa",
+    "expected_value": 59.795918367346935,
+    "rule_id": "pressure_from_force",
+    "params": {
+      "F": 146.5,
+      "A": 2.45
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "give me the normal force on a 11.0 kg object resting on a flat horizontal surface",
+    "expected_predicate": "normal_force",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 107.80000000000001,
+    "rule_id": "normal_force_flat",
+    "params": {
+      "m": 11.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Calculate the normal force supporting a 70.6 kg mass on a level floor.",
+    "expected_predicate": "normal_force",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 691.88,
+    "rule_id": "normal_force_flat",
+    "params": {
+      "m": 70.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "in plain numbers, a 38.1 kg object sits on a horizontal surface. what is the normal force on it",
+    "expected_predicate": "normal_force",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 373.38000000000005,
+    "rule_id": "normal_force_flat",
+    "params": {
+      "m": 38.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "hey, what is the normal force on a 24.2 kg object resting on an incline at 30 degrees?",
+    "expected_predicate": "normal_force",
+    "expected_context": "inclined_plane",
+    "expected_unit": "N",
+    "expected_value": 205.38658476151747,
+    "rule_id": "normal_force_incline",
+    "params": {
+      "m": 24.2,
+      "theta": 30
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 find the normal force on a 5.6 kg block on a 60 degree slope",
+    "expected_predicate": "normal_force",
+    "expected_context": "inclined_plane",
+    "expected_unit": "N",
+    "expected_value": 27.44000000000001,
+    "rule_id": "normal_force_incline",
+    "params": {
+      "m": 5.6,
+      "theta": 60
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "quick question: a 18.4 kg mass rests on a ramp inclined at 30 degrees. what is the normal force?",
+    "expected_predicate": "normal_force",
+    "expected_context": "inclined_plane",
+    "expected_unit": "N",
+    "expected_value": 156.16170081040997,
+    "rule_id": "normal_force_incline",
+    "params": {
+      "m": 18.4,
+      "theta": 30
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: what is the kinetic friction force given coefficient 0.53 and normal force 62.3 N. show your work.",
+    "expected_predicate": "friction_force",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 33.019,
+    "rule_id": "kinetic_friction_force",
+    "params": {
+      "mu_k": 0.53,
+      "N": 62.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 find the friction force on a sliding object with kinetic friction coefficient 0.59 and normal force 96.8 N",
+    "expected_predicate": "friction_force",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 57.111999999999995,
+    "rule_id": "kinetic_friction_force",
+    "params": {
+      "mu_k": 0.59,
+      "N": 96.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Compute the kinetic friction force when mu_k = 0.45 and N = 644.5 N.",
+    "expected_predicate": "friction_force",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 290.02500000000003,
+    "rule_id": "kinetic_friction_force",
+    "params": {
+      "mu_k": 0.45,
+      "N": 644.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "quick question: what is the maximum static friction force with static coefficient 0.27 and normal force 168.4 N?",
+    "expected_predicate": "friction_force",
+    "expected_context": "static",
+    "expected_unit": "N",
+    "expected_value": 45.468,
+    "rule_id": "static_friction_max",
+    "params": {
+      "mu_s": 0.27,
+      "N": 168.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "quick question: find the maximum static friction for mu_s = 0.2 and N = 163.1 N?",
+    "expected_predicate": "friction_force",
+    "expected_context": "static",
+    "expected_unit": "N",
+    "expected_value": 32.62,
+    "rule_id": "static_friction_max",
+    "params": {
+      "mu_s": 0.2,
+      "N": 163.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "quick question: what is the net force on an object pushed by an applied force of 162.4 N against friction of 92.7 N?",
+    "expected_predicate": "net_force",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 69.7,
+    "rule_id": "net_force_with_friction_flat",
+    "params": {
+      "F_applied": 162.4,
+      "f": 92.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Find the net force given applied force 413.6 N and friction force 86.3 N opposing motion.",
+    "expected_predicate": "net_force",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 327.3,
+    "rule_id": "net_force_with_friction_flat",
+    "params": {
+      "F_applied": 413.6,
+      "f": 86.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "I've got a question \u2014 what is the net force on a 3.5 kg object on a frictionless 45 degree incline",
+    "expected_predicate": "net_force",
+    "expected_context": "inclined_plane",
+    "expected_unit": "N",
+    "expected_value": 24.253762594698586,
+    "rule_id": "net_force_incline_no_friction",
+    "params": {
+      "m": 3.5,
+      "theta": 45
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "give me the net force component along a 15 degree frictionless slope for a 1.7 kg mass",
+    "expected_predicate": "net_force",
+    "expected_context": "inclined_plane",
+    "expected_unit": "N",
+    "expected_value": 4.311925291407996,
+    "rule_id": "net_force_incline_no_friction",
+    "params": {
+      "m": 1.7,
+      "theta": 15
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "A 37.9 kg block slides on a frictionless ramp at 20 degrees. what is the net force?",
+    "expected_predicate": "net_force",
+    "expected_context": "inclined_plane",
+    "expected_unit": "N",
+    "expected_value": 127.03312163401988,
+    "rule_id": "net_force_incline_no_friction",
+    "params": {
+      "m": 37.9,
+      "theta": 20
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 what is the net force on a 13.4 kg block on a 30 degree incline with friction force 8.0 N opposing motion",
+    "expected_predicate": "net_force",
+    "expected_context": "inclined_plane_friction",
+    "expected_unit": "N",
+    "expected_value": 57.66,
+    "rule_id": "net_force_incline_with_friction",
+    "params": {
+      "m": 13.4,
+      "theta": 30,
+      "f": 8.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 find the net force along the slope for a 27.3 kg mass on a 20 degree incline with 12.6 N of friction",
+    "expected_predicate": "net_force",
+    "expected_context": "inclined_plane_friction",
+    "expected_unit": "N",
+    "expected_value": 78.90406914534942,
+    "rule_id": "net_force_incline_with_friction",
+    "params": {
+      "m": 27.3,
+      "theta": 20,
+      "f": 12.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "quick question: what is the acceleration of a 39.3 kg object under a net force of 83.2 N?",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 2.11704834605598,
+    "rule_id": "acceleration_from_net_force",
+    "params": {
+      "F_net": 83.2,
+      "m": 39.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "let's say we want the acceleration produced by a net force 89.1 N on a 35.0 kg mass",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 2.5457142857142854,
+    "rule_id": "acceleration_from_net_force",
+    "params": {
+      "F_net": 89.1,
+      "m": 35.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you tell me the tension in a string supporting a stationary 49.8 kg mass, please",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 488.04,
+    "rule_id": "tension_hanging_mass",
+    "params": {
+      "m": 49.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "quick question: find the tension in a rope holding a 33.3 kg object at rest?",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 326.34,
+    "rule_id": "tension_hanging_mass",
+    "params": {
+      "m": 33.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo a 8.2 kg mass hangs motionless from a string. what is the tension",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "N",
+    "expected_value": 80.36,
+    "rule_id": "tension_hanging_mass",
+    "params": {
+      "m": 8.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "let's say we want the tension in a string accelerating a 7.3 kg mass upward at 0.9 m/s squared",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 78.11,
+    "rule_id": "tension_accelerating_mass",
+    "params": {
+      "m": 7.3,
+      "a": 0.9
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "find the tension in a rope pulling a 16.7 kg mass upward with acceleration 6.1 m/s^2",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 265.53,
+    "rule_id": "tension_accelerating_mass",
+    "params": {
+      "m": 16.7,
+      "a": 6.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "a 2.5 kg mass is being pulled upward by a string at 4.1 m/s squared. give me the tension",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 34.75,
+    "rule_id": "tension_accelerating_mass",
+    "params": {
+      "m": 2.5,
+      "a": 4.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you tell me the centripetal acceleration of an object moving at 34.4 m/s in a circle of radius 8.3 metres, please",
+    "expected_predicate": "centripetal_acceleration",
+    "expected_context": "circular_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 142.5734939759036,
+    "rule_id": "centripetal_acceleration",
+    "params": {
+      "v": 34.4,
+      "r": 8.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Calculate the centripetal acceleration for v = 5.0 m/s and r = 9.7 m.",
+    "expected_predicate": "centripetal_acceleration",
+    "expected_context": "circular_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 2.577319587628866,
+    "rule_id": "centripetal_acceleration",
+    "params": {
+      "v": 5.0,
+      "r": 9.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "give me the centripetal force on a 7.3 kg object moving at 26.1 m/s in a circle of radius 20.5 metres",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 242.57721951219514,
+    "rule_id": "centripetal_force",
+    "params": {
+      "m": 7.3,
+      "v": 26.1,
+      "r": 20.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Find the centripetal force for a 57.2 kg mass on a circular path with v = 18.2 m/s and r = 2.5 m.",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 7578.7712,
+    "rule_id": "centripetal_force",
+    "params": {
+      "m": 57.2,
+      "v": 18.2,
+      "r": 2.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "a 42.2 kg object travels in a circle of radius 26.4 m at 18.3 m/s. compute the centripetal force",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 535.316590909091,
+    "rule_id": "centripetal_force",
+    "params": {
+      "m": 42.2,
+      "v": 18.3,
+      "r": 26.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "for my homework: what is the period of an object moving at 13.6 m/s on a circular path of radius 5.6 m",
+    "expected_predicate": "period",
+    "expected_context": "circular_motion",
+    "expected_unit": "s",
+    "expected_value": 2.587193950015124,
+    "rule_id": "period_circular_motion",
+    "params": {
+      "r": 5.6,
+      "v": 13.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: find the orbital period given radius 5.2 m and speed 8.2 m/s. show your work.",
+    "expected_predicate": "period",
+    "expected_context": "circular_motion",
+    "expected_unit": "s",
+    "expected_value": 3.984458975284616,
+    "rule_id": "period_circular_motion",
+    "params": {
+      "r": 5.2,
+      "v": 8.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "quick question: what is the angular velocity of an object with period 6.6 seconds?",
+    "expected_predicate": "angular_velocity",
+    "expected_context": "circular_motion",
+    "expected_unit": "rad/s",
+    "expected_value": 0.9519977738150889,
+    "rule_id": "angular_velocity_from_period",
+    "params": {
+      "T": 6.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "in plain numbers, find the angular velocity given a rotation period of 3.5 s",
+    "expected_predicate": "angular_velocity",
+    "expected_context": "circular_motion",
+    "expected_unit": "rad/s",
+    "expected_value": 1.7951958020513104,
+    "rule_id": "angular_velocity_from_period",
+    "params": {
+      "T": 3.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Compute the tangential velocity at radius 0.2 m for angular velocity 18.7 rad/s.",
+    "expected_predicate": "velocity",
+    "expected_context": "circular_motion",
+    "expected_unit": "m/s",
+    "expected_value": 3.74,
+    "rule_id": "velocity_from_angular",
+    "params": {
+      "omega": 18.7,
+      "r": 0.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Find the linear velocity given angular velocity 20.0 rad/s and radius 10.0 m.",
+    "expected_predicate": "velocity",
+    "expected_context": "circular_motion",
+    "expected_unit": "m/s",
+    "expected_value": 200.0,
+    "rule_id": "velocity_from_angular",
+    "params": {
+      "omega": 20.0,
+      "r": 10.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "What is the torque produced by a 109.8 N force applied perpendicular to a lever arm of 2.58 metres?",
+    "expected_predicate": "torque",
+    "expected_context": "rotational_motion",
+    "expected_unit": "N*m",
+    "expected_value": 283.284,
+    "rule_id": "torque_from_force",
+    "params": {
+      "F": 109.8,
+      "r": 2.58
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "give me the torque for a force 187.0 N at perpendicular distance 4.42 m",
+    "expected_predicate": "torque",
+    "expected_context": "rotational_motion",
+    "expected_unit": "N*m",
+    "expected_value": 826.54,
+    "rule_id": "torque_from_force",
+    "params": {
+      "F": 187.0,
+      "r": 4.42
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "I've got a question \u2014 what is the torque produced by a 56.4 N force at radius 1.57 m at an angle of 90 degrees",
+    "expected_predicate": "torque",
+    "expected_context": "rotational_motion",
+    "expected_unit": "N*m",
+    "expected_value": 88.548,
+    "rule_id": "torque_with_angle",
+    "params": {
+      "F": 56.4,
+      "r": 1.57,
+      "theta": 90
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: find the torque for force 113.2 N, lever arm 1.65 m, and angle 30 degrees. show your work.",
+    "expected_predicate": "torque",
+    "expected_context": "rotational_motion",
+    "expected_unit": "N*m",
+    "expected_value": 93.38999999999999,
+    "rule_id": "torque_with_angle",
+    "params": {
+      "F": 113.2,
+      "r": 1.65,
+      "theta": 30
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: what is the rotational kinetic energy of an object with moment of inertia 16.43 kg m squared rotating at 4.8 rad/s. show your work.",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "rotational_motion",
+    "expected_unit": "J",
+    "expected_value": 189.2736,
+    "rule_id": "rotational_kinetic_energy",
+    "params": {
+      "I": 16.43,
+      "omega": 4.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo find the rotational KE for I = 2.52 kg*m^2 and angular velocity 13.2 rad/s",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "rotational_motion",
+    "expected_unit": "J",
+    "expected_value": 219.5424,
+    "rule_id": "rotational_kinetic_energy",
+    "params": {
+      "I": 2.52,
+      "omega": 13.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you tell me the angular momentum of a body with moment of inertia 2.17 kg m squared rotating at 1.7 rad/s, please",
+    "expected_predicate": "angular_momentum",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2/s",
+    "expected_value": 3.6889999999999996,
+    "rule_id": "angular_momentum",
+    "params": {
+      "I": 2.17,
+      "omega": 1.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "hey, find the angular momentum given I = 2.75 kg*m^2 and omega = 3.7 rad/s?",
+    "expected_predicate": "angular_momentum",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2/s",
+    "expected_value": 10.175,
+    "rule_id": "angular_momentum",
+    "params": {
+      "I": 2.75,
+      "omega": 3.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: what is the moment of inertia of a 14.4 kg point mass at radius 1.1 metres. show your work.",
+    "expected_predicate": "moment_of_inertia",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2",
+    "expected_value": 17.424000000000003,
+    "rule_id": "moment_of_inertia_point_mass",
+    "params": {
+      "m": 14.4,
+      "r": 1.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo find the moment of inertia of a point mass 17.1 kg located 2.58 m from the rotation axis",
+    "expected_predicate": "moment_of_inertia",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2",
+    "expected_value": 113.82444000000002,
+    "rule_id": "moment_of_inertia_point_mass",
+    "params": {
+      "m": 17.1,
+      "r": 2.58
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "What is the period of a spring-mass oscillator with mass 4.54 kg and spring constant 426.0 N/m.",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 0.6486389070553576,
+    "rule_id": "period_spring_mass",
+    "params": {
+      "m": 4.54,
+      "k": 426.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "find the period of a 3.21 kg mass on a spring with stiffness 418.0 N/m",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 0.5506101889426256,
+    "rule_id": "period_spring_mass",
+    "params": {
+      "m": 3.21,
+      "k": 418.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "in plain numbers, what is the period of a simple pendulum of length 0.12 metres",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 0.6952763444526192,
+    "rule_id": "period_pendulum",
+    "params": {
+      "L": 0.12
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo find the period of a pendulum with length 0.74 m for small oscillations",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 1.726564035917854,
+    "rule_id": "period_pendulum",
+    "params": {
+      "L": 0.74
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "let's say we want the maximum velocity of an oscillator with amplitude 0.2 metres and angular frequency 9.4 rad/s",
+    "expected_predicate": "velocity",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "m/s",
+    "expected_value": 1.8800000000000001,
+    "rule_id": "shm_max_velocity",
+    "params": {
+      "A": 0.2,
+      "omega": 9.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Find the peak velocity in simple harmonic motion with A = 0.46 m and omega = 1.2 rad/s.",
+    "expected_predicate": "velocity",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "m/s",
+    "expected_value": 0.552,
+    "rule_id": "shm_max_velocity",
+    "params": {
+      "A": 0.46,
+      "omega": 1.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "What is the final kinetic energy if an object starts with KE 189.0 J and 351.7 J of net work is done on it?",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "J",
+    "expected_value": 540.7,
+    "rule_id": "work_energy_theorem",
+    "params": {
+      "KE_i": 189.0,
+      "W": 351.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Calculate the final ke after 420.6 j of work is performed on an object with initial ke 109.1 j.",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "J",
+    "expected_value": 529.7,
+    "rule_id": "work_energy_theorem",
+    "params": {
+      "KE_i": 109.1,
+      "W": 420.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "for my homework: an object starts at height 15.7 m with velocity 5.5 m/s. what is its velocity at height 0.2 m by energy conservation",
+    "expected_predicate": "velocity",
+    "expected_context": "energy_conservation",
+    "expected_unit": "m/s",
+    "expected_value": 18.277034770443482,
+    "rule_id": "conservation_mechanical_energy",
+    "params": {
+      "v0": 5.5,
+      "h0": 15.7,
+      "h": 0.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "using conservation of mechanical energy, give me the velocity at height 3.4 m given initial velocity 9.0 m/s and initial height 24.9 m",
+    "expected_predicate": "velocity",
+    "expected_context": "energy_conservation",
+    "expected_unit": "m/s",
+    "expected_value": 22.414281161795042,
+    "rule_id": "conservation_mechanical_energy",
+    "params": {
+      "v0": 9.0,
+      "h0": 24.9,
+      "h": 3.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you in a 1D elastic collision, a 3.9 kg object at 10.3 m/s hits a 7.0 kg object at -4.7 m/s. tell me the final velocity of the first object, please",
+    "expected_predicate": "velocity",
+    "expected_context": "elastic_collision",
+    "expected_unit": "m/s",
+    "expected_value": -8.96605504587156,
+    "rule_id": "elastic_collision_v1",
+    "params": {
+      "m1": 3.9,
+      "m2": 7.0,
+      "v1i": 10.3,
+      "v2i": -4.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "give me the final velocity of object 1 after an elastic collision: m1 = 8.9 kg, m2 = 4.4 kg, v1i = 9.7 m/s, v2i = -7.7 m/s",
+    "expected_predicate": "velocity",
+    "expected_context": "elastic_collision",
+    "expected_unit": "m/s",
+    "expected_value": -1.8127819548872184,
+    "rule_id": "elastic_collision_v1",
+    "params": {
+      "m1": 8.9,
+      "m2": 4.4,
+      "v1i": 9.7,
+      "v2i": -7.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 in a 1D elastic collision, a 2.7 kg object at 12.2 m/s hits a 2.0 kg object at -7.3 m/s. what is the final velocity of the second object",
+    "expected_predicate": "velocity",
+    "expected_context": "elastic_collision_object2",
+    "expected_unit": "m/s",
+    "expected_value": 15.104255319148935,
+    "rule_id": "elastic_collision_v2",
+    "params": {
+      "m1": 2.7,
+      "m2": 2.0,
+      "v1i": 12.2,
+      "v2i": -7.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "in plain numbers, find the final velocity of object 2 after an elastic collision: m1 = 0.7 kg, m2 = 7.5 kg, v1i = 5.7 m/s, v2i = 4.0 m/s",
+    "expected_predicate": "velocity",
+    "expected_context": "elastic_collision_object2",
+    "expected_unit": "m/s",
+    "expected_value": 4.290243902439025,
+    "rule_id": "elastic_collision_v2",
+    "params": {
+      "m1": 0.7,
+      "m2": 7.5,
+      "v1i": 5.7,
+      "v2i": 4.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "let's say two objects collide and stick together: m1 = 6.9 kg at 4.5 m/s, m2 = 7.5 kg at -2.6 m/s. we want the common final velocity",
+    "expected_predicate": "velocity",
+    "expected_context": "inelastic_collision",
+    "expected_unit": "m/s",
+    "expected_value": 0.8020833333333334,
+    "rule_id": "perfectly_inelastic_collision",
+    "params": {
+      "m1": 6.9,
+      "m2": 7.5,
+      "v1i": 4.5,
+      "v2i": -2.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "I've got a question \u2014 find the final velocity after a perfectly inelastic collision between a 1.5 kg mass at 13.0 m/s and a 8.8 kg mass at -1.7 m/s",
+    "expected_predicate": "velocity",
+    "expected_context": "inelastic_collision",
+    "expected_unit": "m/s",
+    "expected_value": 0.4407766990291261,
+    "rule_id": "perfectly_inelastic_collision",
+    "params": {
+      "m1": 1.5,
+      "m2": 8.8,
+      "v1i": 13.0,
+      "v2i": -1.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "I've got a question \u2014 an object starts from rest and accelerates at 18.4 m/s squared for 5.6 seconds. what is its velocity",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 103.03999999999999,
+    "rule_id": "kinematic_velocity_from_rest",
+    "params": {
+      "a": 18.4,
+      "t": 5.6
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "hey, what is the final velocity of an object with initial velocity 16.1 m/s after accelerating at 2.7 m/s^2 for 0.7 seconds?",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 17.990000000000002,
+    "rule_id": "kinematic_velocity_with_initial",
+    "params": {
+      "v0": 16.1,
+      "a": 2.7,
+      "t": 0.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "Starting at rest, an object accelerates at 6.3 m/s squared. how far has it traveled after 4.1 seconds.",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 52.951499999999996,
+    "rule_id": "kinematic_displacement_from_rest",
+    "params": {
+      "a": 6.3,
+      "t": 4.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 an object moving at 14.5 m/s accelerates at 2.6 m/s squared for 6.8 seconds. what is its displacement",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 158.712,
+    "rule_id": "kinematic_displacement_with_initial",
+    "params": {
+      "v0": 14.5,
+      "a": 2.6,
+      "t": 6.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "an object with initial velocity 6.8 m/s undergoes acceleration 8.6 m/s squared over a displacement of 17.9 metres. what is its final velocity",
+    "expected_predicate": "velocity",
+    "expected_context": "kinematics",
+    "expected_unit": "m/s",
+    "expected_value": 18.8180764160421,
+    "rule_id": "kinematic_velocity_from_displacement",
+    "params": {
+      "v0": 6.8,
+      "a": 8.6,
+      "x": 17.9
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo find the velocity of a freely falling object 1.8 seconds after release",
+    "expected_predicate": "velocity",
+    "expected_context": "free_fall",
+    "expected_unit": "m/s",
+    "expected_value": 17.64,
+    "rule_id": "free_fall_velocity",
+    "params": {
+      "t": 1.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo how far does a freely falling object descend in 1.8 seconds",
+    "expected_predicate": "displacement",
+    "expected_context": "free_fall",
+    "expected_unit": "m",
+    "expected_value": 15.876000000000003,
+    "rule_id": "free_fall_displacement",
+    "params": {
+      "t": 1.8
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "for my homework: find the net force required to give a 3.5 kg mass an acceleration of 15.1 m/s^2",
+    "expected_predicate": "force",
+    "expected_context": "dynamics",
+    "expected_unit": "N",
+    "expected_value": 52.85,
+    "rule_id": "newton_second_law",
+    "params": {
+      "m": 3.5,
+      "a": 15.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "A force of 365.6 n is applied to a 16.0 kg object. compute its acceleration.",
+    "expected_predicate": "acceleration",
+    "expected_context": "dynamics",
+    "expected_unit": "m/s2",
+    "expected_value": 22.85,
+    "rule_id": "acceleration_from_force",
+    "params": {
+      "F": 365.6,
+      "m": 16.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "What is the weight of a 98.4 kg object on Earth.",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 964.3200000000002,
+    "rule_id": "weight_from_mass",
+    "params": {
+      "m": 98.4
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo find the momentum of a 38.8 kg mass with velocity 17.5 m/s",
+    "expected_predicate": "momentum",
+    "expected_context": "dynamics",
+    "expected_unit": "kg*m/s",
+    "expected_value": 679.0,
+    "rule_id": "momentum",
+    "params": {
+      "m": 38.8,
+      "v": 17.5
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "could you compute the impulse of a 13.7 N force applied over 2.2 seconds, please",
+    "expected_predicate": "impulse",
+    "expected_context": "dynamics",
+    "expected_unit": "N*s",
+    "expected_value": 30.14,
+    "rule_id": "impulse",
+    "params": {
+      "F": 13.7,
+      "t": 2.2
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "let's say we want the gravitational force between a 925650.0 kg mass and a 538914.0 kg mass separated by 722.0 metres",
+    "expected_predicate": "force",
+    "expected_context": "gravitation",
+    "expected_unit": "N",
+    "expected_value": 6.386722968906393e-05,
+    "rule_id": "gravitational_force",
+    "params": {
+      "m1": 925650.0,
+      "m2": 538914.0,
+      "r": 722.0
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 find the KE of a 37.0 kg mass with velocity 6.3 m/s",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 734.265,
+    "rule_id": "kinetic_energy",
+    "params": {
+      "m": 37.0,
+      "v": 6.3
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "for my homework: a 4.0 kg object is at height 20.1 metres. what is its gravitational potential energy",
+    "expected_predicate": "potential_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 787.9200000000001,
+    "rule_id": "gravitational_potential_energy",
+    "params": {
+      "m": 4.0,
+      "h": 20.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "What is the total mechanical energy if the kinetic energy is 315.3 J and the potential energy is 335.1 J.",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 650.4000000000001,
+    "rule_id": "mechanical_energy",
+    "params": {
+      "KE": 315.3,
+      "PE": 335.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: find the work done when a 145.4 N force acts over 6.4 m at 45 degrees to the displacement. show your work.",
+    "expected_predicate": "work",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 658.0052863009538,
+    "rule_id": "work_from_force_displacement",
+    "params": {
+      "F": 145.4,
+      "d": 6.4,
+      "theta": 45
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo 2071.5 joules of work is delivered in 24.7 seconds. compute the power",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 83.8663967611336,
+    "rule_id": "power_from_work",
+    "params": {
+      "W": 2071.5,
+      "t": 24.7
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "problem: what is the magnitude of the spring force when a spring of constant 577.0 N/m is compressed by 0.1 metres. show your work.",
+    "expected_predicate": "force",
+    "expected_context": "elasticity",
+    "expected_unit": "N",
+    "expected_value": 57.7,
+    "rule_id": "spring_force",
+    "params": {
+      "k": 577.0,
+      "x": 0.1
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "give me the spring potential energy for k = 943.0 N/m and displacement 0.35 m",
+    "expected_predicate": "potential_energy",
+    "expected_context": "elasticity",
+    "expected_unit": "J",
+    "expected_value": 57.75874999999999,
+    "rule_id": "spring_potential_energy",
+    "params": {
+      "k": 943.0,
+      "x": 0.35
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "i need to know \u2014 an object weighs 18.2 kg and occupies 2.87 cubic metres. what is its density",
+    "expected_predicate": "density",
+    "expected_context": "mechanics",
+    "expected_unit": "kg/m3",
+    "expected_value": 6.341463414634146,
+    "rule_id": "density",
+    "params": {
+      "m": 18.2,
+      "V": 2.87
+    }
+  },
+  {
+    "category": "shallow",
+    "query": "yo what is the pressure when a 278.5 N force acts on an area of 0.05 square metres",
+    "expected_predicate": "pressure",
+    "expected_context": "mechanics",
+    "expected_unit": "Pa",
+    "expected_value": 5570.0,
+    "rule_id": "pressure_from_force",
+    "params": {
+      "F": 278.5,
+      "A": 0.05
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Compute the kinetic energy of a 6.7 kg object after falling for 4.8 seconds.",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 7412.751359999999,
+    "expected_depth": 2,
+    "params": {
+      "m": 6.7,
+      "t": 4.8
+    }
+  },
+  {
+    "category": "medium",
+    "query": "quick question: an object of mass 19.8 kg falls from rest. find its kinetic energy 3.1 seconds later?",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 9137.149560000002,
+    "expected_depth": 2,
+    "params": {
+      "m": 19.8,
+      "t": 3.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "in plain numbers, a 20.4 kg mass is dropped. how much kinetic energy does it have after 3.3 seconds of free fall",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 10667.931120000003,
+    "expected_depth": 2,
+    "params": {
+      "m": 20.4,
+      "t": 3.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "An object of mass 24.3 kg starts from rest under a net force of 182.2 N. how far has it travelled after 2.2 seconds.",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 18.14502057613169,
+    "expected_depth": 2,
+    "params": {
+      "F": 182.2,
+      "m": 24.3,
+      "t": 2.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "What is the displacement after 5.3 seconds of a 20.6 kg object accelerated from rest by a 71.1 N net force.",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 48.475703883495136,
+    "expected_depth": 2,
+    "params": {
+      "F": 71.1,
+      "m": 20.6,
+      "t": 5.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "hey, an object of mass 16.6 kg with initial velocity 6.7 m/s receives an impulse of 76.4 N*s. what is its final velocity?",
+    "expected_predicate": "velocity",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s",
+    "expected_value": 11.302409638554217,
+    "expected_depth": 1,
+    "params": {
+      "m": 16.6,
+      "J": 76.4,
+      "v0": 6.7
+    }
+  },
+  {
+    "category": "medium",
+    "query": "quick question: find the final velocity given mass 16.3 kg, initial velocity 0.5 m/s, and impulse 19.0 N s?",
+    "expected_predicate": "velocity",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s",
+    "expected_value": 1.665644171779141,
+    "expected_depth": 1,
+    "params": {
+      "m": 16.3,
+      "J": 19.0,
+      "v0": 0.5
+    }
+  },
+  {
+    "category": "medium",
+    "query": "give me the rotational kinetic energy of a 6.3 kg point mass at radius 2.35 m rotating at 5.1 rad/s",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "rotational_motion",
+    "expected_unit": "J",
+    "expected_value": 452.46670875000007,
+    "expected_depth": 2,
+    "params": {
+      "m": 6.3,
+      "r": 2.35,
+      "omega": 5.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "quick question: find the rotational KE of a point mass 6.5 kg located 0.74 m from the axis spinning at 7.3 rad/s?",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "rotational_motion",
+    "expected_unit": "J",
+    "expected_value": 94.84021299999999,
+    "expected_depth": 2,
+    "params": {
+      "m": 6.5,
+      "r": 0.74,
+      "omega": 7.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "give me the angular momentum of a 4.3 kg point mass at radius 0.61 m rotating at 8.6 rad/s",
+    "expected_predicate": "angular_momentum",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2/s",
+    "expected_value": 13.760257999999999,
+    "expected_depth": 2,
+    "params": {
+      "m": 4.3,
+      "r": 0.61,
+      "omega": 8.6
+    }
+  },
+  {
+    "category": "medium",
+    "query": "i need to know \u2014 find the angular momentum of a point particle of mass 7.6 kg, distance 2.36 m from axis, with angular velocity 2.2 rad/s",
+    "expected_predicate": "angular_momentum",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2/s",
+    "expected_value": 93.123712,
+    "expected_depth": 2,
+    "params": {
+      "m": 7.6,
+      "r": 2.36,
+      "omega": 2.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "what is the acceleration of a 8.1 kg object sliding down a frictionless 45 degree incline",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 6.929646455628166,
+    "expected_depth": 2,
+    "params": {
+      "m": 8.1,
+      "theta": 45
+    }
+  },
+  {
+    "category": "medium",
+    "query": "quick question: find the acceleration of a 17.6 kg block on a frictionless ramp at 15 degrees?",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 2.5364266420047032,
+    "expected_depth": 2,
+    "params": {
+      "m": 17.6,
+      "theta": 15
+    }
+  },
+  {
+    "category": "medium",
+    "query": "could you tell me the centripetal force on a 3.1 kg object on a circular path of radius 2.48 m rotating at angular velocity 5.8 rad/s, please",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 258.62432,
+    "expected_depth": 2,
+    "params": {
+      "m": 3.1,
+      "r": 2.48,
+      "omega": 5.8
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Calculate the centripetal force on a 12.1 kg mass with angular velocity 9.0 rad/s at radius 4.77 m.",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 4675.076999999999,
+    "expected_depth": 2,
+    "params": {
+      "m": 12.1,
+      "r": 4.77,
+      "omega": 9.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "i need to know \u2014 what is the tension in a string accelerating a 24.6 kg load upward at 7.2 m/s squared",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 418.20000000000005,
+    "expected_depth": 1,
+    "params": {
+      "m": 24.6,
+      "a": 7.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "give me the rope tension required to lift a 25.1 kg mass with upward acceleration 4.6 m/s^2",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 361.44000000000005,
+    "expected_depth": 1,
+    "params": {
+      "m": 25.1,
+      "a": 4.6
+    }
+  },
+  {
+    "category": "medium",
+    "query": "in plain numbers, what is the total mechanical energy of a 4.0 kg object moving at 13.0 m/s at height 9.3 metres",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 702.5600000000001,
+    "expected_depth": 3,
+    "params": {
+      "m": 4.0,
+      "v": 13.0,
+      "h": 9.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "could you work out the mechanical energy of a 5.7 kg mass at 15.4 m height with velocity 9.7 m/s, please",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 1128.4005000000002,
+    "expected_depth": 3,
+    "params": {
+      "m": 5.7,
+      "v": 9.7,
+      "h": 15.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "quick question: what is the period of a pendulum of length 2.04 metres where gravity is 7.1 m/s squared?",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 3.36795110350762,
+    "expected_depth": 1,
+    "params": {
+      "L": 2.04,
+      "g": 7.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "yo find the period of a 0.49 m pendulum on a body where g = 8.2 m/s^2",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 1.5359284403639772,
+    "expected_depth": 1,
+    "params": {
+      "L": 0.49,
+      "g": 8.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "What is the weight of a 34.2 kg object where gravity is 22.5 m/s squared.",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 769.5000000000001,
+    "expected_depth": 1,
+    "params": {
+      "m": 34.2,
+      "g": 22.5
+    }
+  },
+  {
+    "category": "medium",
+    "query": "let's say we want the weight of a 14.7 kg mass on a planet with g = 7.0 m/s^2",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 102.89999999999999,
+    "expected_depth": 1,
+    "params": {
+      "m": 14.7,
+      "g": 7.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "for my homework: an object at height 10.3 m with velocity 0.8 m/s descends to height 1.2 m. what is its velocity",
+    "expected_predicate": "velocity",
+    "expected_context": "energy_conservation",
+    "expected_unit": "m/s",
+    "expected_value": 13.379088160259654,
+    "expected_depth": 1,
+    "params": {
+      "v0": 0.8,
+      "h0": 10.3,
+      "h": 1.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "i need to know \u2014 using energy conservation, find the speed at height 0.6 m given initial height 15.4 m and initial velocity 2.7 m/s",
+    "expected_predicate": "velocity",
+    "expected_context": "energy_conservation",
+    "expected_unit": "m/s",
+    "expected_value": 17.244419387152472,
+    "expected_depth": 1,
+    "params": {
+      "v0": 2.7,
+      "h0": 15.4,
+      "h": 0.6
+    }
+  },
+  {
+    "category": "medium",
+    "query": "the kinetic energy of a 15.5 kg object is 168.0 J and it sits at height 28.4 metres. what is the total mechanical energy",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 4481.96,
+    "expected_depth": 2,
+    "params": {
+      "KE": 168.0,
+      "m": 15.5,
+      "h": 28.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "find the mechanical energy of a 15.4 kg mass at 11.7 m elevation with kinetic energy 345.6 J",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 2111.364,
+    "expected_depth": 2,
+    "params": {
+      "KE": 345.6,
+      "m": 15.4,
+      "h": 11.7
+    }
+  },
+  {
+    "category": "medium",
+    "query": "a 2.07 kg mass attached to a spring of constant 474.0 N/m is displaced 0.18 metres. what is its acceleration at that point",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 41.21739130434783,
+    "expected_depth": 2,
+    "params": {
+      "k": 474.0,
+      "x": 0.18,
+      "m": 2.07
+    }
+  },
+  {
+    "category": "medium",
+    "query": "could you work out the acceleration of a 3.79 kg object on a 479.0 N/m spring at displacement 0.24 m, please",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 30.332453825857517,
+    "expected_depth": 2,
+    "params": {
+      "k": 479.0,
+      "x": 0.24,
+      "m": 3.79
+    }
+  },
+  {
+    "category": "medium",
+    "query": "yo an object is pushed with a 162.0 N force over 18.0 metres in 14.9 seconds. what is the power output",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 195.70469798657717,
+    "expected_depth": 2,
+    "params": {
+      "F": 162.0,
+      "d": 18.0,
+      "t": 14.9
+    }
+  },
+  {
+    "category": "medium",
+    "query": "problem: find the power required when a 92.8 N force moves a body 1.1 m in 10.4 seconds. show your work.",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 9.815384615384614,
+    "expected_depth": 2,
+    "params": {
+      "F": 92.8,
+      "d": 1.1,
+      "t": 10.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "I've got a question \u2014 what is the kinetic energy of a 24.0 kg object after falling for 4.5 seconds",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 23337.72,
+    "expected_depth": 2,
+    "params": {
+      "m": 24.0,
+      "t": 4.5
+    }
+  },
+  {
+    "category": "medium",
+    "query": "what is the displacement after 5.4 seconds of a 5.6 kg object accelerated from rest by a 104.1 N net force",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 271.0317857142858,
+    "expected_depth": 2,
+    "params": {
+      "F": 104.1,
+      "m": 5.6,
+      "t": 5.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "An object of mass 18.2 kg with initial velocity 6.6 m/s receives an impulse of 61.2 N*s. what is its final velocity.",
+    "expected_predicate": "velocity",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s",
+    "expected_value": 9.962637362637363,
+    "expected_depth": 1,
+    "params": {
+      "m": 18.2,
+      "J": 61.2,
+      "v0": 6.6
+    }
+  },
+  {
+    "category": "medium",
+    "query": "find the rotational KE of a point mass 6.6 kg located 0.58 m from the axis spinning at 5.2 rad/s",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "rotational_motion",
+    "expected_unit": "J",
+    "expected_value": 30.017644799999996,
+    "expected_depth": 2,
+    "params": {
+      "m": 6.6,
+      "r": 0.58,
+      "omega": 5.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "for my homework: what is the angular momentum of a 3.0 kg point mass at radius 1.12 m rotating at 6.0 rad/s",
+    "expected_predicate": "angular_momentum",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2/s",
+    "expected_value": 22.5792,
+    "expected_depth": 2,
+    "params": {
+      "m": 3.0,
+      "r": 1.12,
+      "omega": 6.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "yo find the acceleration of a 23.3 kg block on a frictionless ramp at 45 degrees",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 6.929646455628166,
+    "expected_depth": 2,
+    "params": {
+      "m": 23.3,
+      "theta": 45
+    }
+  },
+  {
+    "category": "medium",
+    "query": "What is the centripetal force on a 15.2 kg object on a circular path of radius 4.21 m rotating at angular velocity 3.3 rad/s.",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 696.8728799999999,
+    "expected_depth": 2,
+    "params": {
+      "m": 15.2,
+      "r": 4.21,
+      "omega": 3.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "find the rope tension required to lift a 14.6 kg mass with upward acceleration 6.1 m/s^2",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 232.14,
+    "expected_depth": 1,
+    "params": {
+      "m": 14.6,
+      "a": 6.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "in plain numbers, what is the total mechanical energy of a 20.0 kg object moving at 5.6 m/s at height 13.2 metres",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 2900.7999999999997,
+    "expected_depth": 3,
+    "params": {
+      "m": 20.0,
+      "v": 5.6,
+      "h": 13.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "find the period of a 3.84 m pendulum on a body where g = 2.4 m/s^2",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 7.947670612636881,
+    "expected_depth": 1,
+    "params": {
+      "L": 3.84,
+      "g": 2.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "what is the weight of a 95.0 kg object where gravity is 6.3 m/s squared",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 598.5,
+    "expected_depth": 1,
+    "params": {
+      "m": 95.0,
+      "g": 6.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Using energy conservation, find the speed at height 1.4 m given initial height 11.0 m and initial velocity 3.1 m/s.",
+    "expected_predicate": "velocity",
+    "expected_context": "energy_conservation",
+    "expected_unit": "m/s",
+    "expected_value": 14.063072210580447,
+    "expected_depth": 1,
+    "params": {
+      "v0": 3.1,
+      "h0": 11.0,
+      "h": 1.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "in plain numbers, the kinetic energy of a 4.8 kg object is 234.3 J and it sits at height 21.1 metres. what is the total mechanical energy",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 1226.844,
+    "expected_depth": 2,
+    "params": {
+      "KE": 234.3,
+      "m": 4.8,
+      "h": 21.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "let's say we want the acceleration of a 4.83 kg object on a 216.0 N/m spring at displacement 0.32 m",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 14.31055900621118,
+    "expected_depth": 2,
+    "params": {
+      "k": 216.0,
+      "x": 0.32,
+      "m": 4.83
+    }
+  },
+  {
+    "category": "medium",
+    "query": "An object is pushed with a 31.8 N force over 16.5 metres in 29.0 seconds. what is the power output.",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 18.093103448275862,
+    "expected_depth": 2,
+    "params": {
+      "F": 31.8,
+      "d": 16.5,
+      "t": 29.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Compute the kinetic energy of a 17.6 kg object after falling for 5.6 seconds.",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 26503.966720000004,
+    "expected_depth": 2,
+    "params": {
+      "m": 17.6,
+      "t": 5.6
+    }
+  },
+  {
+    "category": "medium",
+    "query": "let's say an object of mass 28.8 kg starts from rest under a net force of 141.9 N. how far has it travelled after 3.8 seconds",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 35.573541666666664,
+    "expected_depth": 2,
+    "params": {
+      "F": 141.9,
+      "m": 28.8,
+      "t": 3.8
+    }
+  },
+  {
+    "category": "medium",
+    "query": "hey, find the final velocity given mass 4.8 kg, initial velocity 8.3 m/s, and impulse 61.2 N s?",
+    "expected_predicate": "velocity",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s",
+    "expected_value": 21.050000000000004,
+    "expected_depth": 1,
+    "params": {
+      "m": 4.8,
+      "J": 61.2,
+      "v0": 8.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Compute the rotational kinetic energy of a 1.5 kg point mass at radius 2.36 m rotating at 8.7 rad/s.",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "rotational_motion",
+    "expected_unit": "J",
+    "expected_value": 316.17226799999986,
+    "expected_depth": 2,
+    "params": {
+      "m": 1.5,
+      "r": 2.36,
+      "omega": 8.7
+    }
+  },
+  {
+    "category": "medium",
+    "query": "find the angular momentum of a point particle of mass 8.2 kg, distance 2.43 m from axis, with angular velocity 7.2 rad/s",
+    "expected_predicate": "angular_momentum",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2/s",
+    "expected_value": 348.62529600000005,
+    "expected_depth": 2,
+    "params": {
+      "m": 8.2,
+      "r": 2.43,
+      "omega": 7.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "problem: what is the acceleration of a 11.7 kg object sliding down a frictionless 45 degree incline. show your work.",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 6.929646455628166,
+    "expected_depth": 2,
+    "params": {
+      "m": 11.7,
+      "theta": 45
+    }
+  },
+  {
+    "category": "medium",
+    "query": "I've got a question \u2014 find the centripetal force on a 7.7 kg mass with angular velocity 4.1 rad/s at radius 2.68 m",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 346.89115999999996,
+    "expected_depth": 2,
+    "params": {
+      "m": 7.7,
+      "r": 2.68,
+      "omega": 4.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "i need to know \u2014 what is the tension in a string accelerating a 13.2 kg load upward at 4.2 m/s squared",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 184.79999999999998,
+    "expected_depth": 1,
+    "params": {
+      "m": 13.2,
+      "a": 4.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "let's say we want the mechanical energy of a 19.3 kg mass at 16.7 m height with velocity 9.7 m/s",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 4066.6065,
+    "expected_depth": 3,
+    "params": {
+      "m": 19.3,
+      "v": 9.7,
+      "h": 16.7
+    }
+  },
+  {
+    "category": "medium",
+    "query": "could you tell me the period of a pendulum of length 0.78 metres where gravity is 5.6 m/s squared, please",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 2.3449476742334023,
+    "expected_depth": 1,
+    "params": {
+      "L": 0.78,
+      "g": 5.6
+    }
+  },
+  {
+    "category": "medium",
+    "query": "in plain numbers, find the weight of a 96.6 kg mass on a planet with g = 7.9 m/s^2",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 763.14,
+    "expected_depth": 1,
+    "params": {
+      "m": 96.6,
+      "g": 7.9
+    }
+  },
+  {
+    "category": "medium",
+    "query": "I've got a question \u2014 an object at height 24.4 m with velocity 4.6 m/s descends to height 1.4 m. what is its velocity",
+    "expected_predicate": "velocity",
+    "expected_context": "energy_conservation",
+    "expected_unit": "m/s",
+    "expected_value": 21.724640388278008,
+    "expected_depth": 1,
+    "params": {
+      "v0": 4.6,
+      "h0": 24.4,
+      "h": 1.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "I've got a question \u2014 find the mechanical energy of a 5.7 kg mass at 25.6 m elevation with kinetic energy 297.8 J",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 1727.8160000000003,
+    "expected_depth": 2,
+    "params": {
+      "KE": 297.8,
+      "m": 5.7,
+      "h": 25.6
+    }
+  },
+  {
+    "category": "medium",
+    "query": "in plain numbers, a 2.36 kg mass attached to a spring of constant 471.0 N/m is displaced 0.18 metres. what is its acceleration at that point",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 35.92372881355932,
+    "expected_depth": 2,
+    "params": {
+      "k": 471.0,
+      "x": 0.18,
+      "m": 2.36
+    }
+  },
+  {
+    "category": "medium",
+    "query": "find the power required when a 98.3 N force moves a body 12.4 m in 11.7 seconds",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 104.18119658119659,
+    "expected_depth": 2,
+    "params": {
+      "F": 98.3,
+      "d": 12.4,
+      "t": 11.7
+    }
+  },
+  {
+    "category": "medium",
+    "query": "quick question: what is the kinetic energy of a 15.1 kg object after falling for 2.3 seconds?",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 3835.7895799999997,
+    "expected_depth": 2,
+    "params": {
+      "m": 15.1,
+      "t": 2.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "give me the displacement after 3.4 seconds of a 24.3 kg object accelerated from rest by a 58.2 N net force",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 13.843456790123454,
+    "expected_depth": 2,
+    "params": {
+      "F": 58.2,
+      "m": 24.3,
+      "t": 3.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "could you an object of mass 12.3 kg with initial velocity 5.6 m/s receives an impulse of 88.6 N*s. tell me its final velocity, please",
+    "expected_predicate": "velocity",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s",
+    "expected_value": 12.803252032520323,
+    "expected_depth": 1,
+    "params": {
+      "m": 12.3,
+      "J": 88.6,
+      "v0": 5.6
+    }
+  },
+  {
+    "category": "medium",
+    "query": "quick question: find the rotational KE of a point mass 9.5 kg located 0.44 m from the axis spinning at 7.5 rad/s?",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "rotational_motion",
+    "expected_unit": "J",
+    "expected_value": 51.7275,
+    "expected_depth": 2,
+    "params": {
+      "m": 9.5,
+      "r": 0.44,
+      "omega": 7.5
+    }
+  },
+  {
+    "category": "medium",
+    "query": "let's say we want the angular momentum of a 5.8 kg point mass at radius 0.87 m rotating at 6.2 rad/s",
+    "expected_predicate": "angular_momentum",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2/s",
+    "expected_value": 27.218124,
+    "expected_depth": 2,
+    "params": {
+      "m": 5.8,
+      "r": 0.87,
+      "omega": 6.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Find the acceleration of a 15.7 kg block on a frictionless ramp at 15 degrees.",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 2.5364266420047032,
+    "expected_depth": 2,
+    "params": {
+      "m": 15.7,
+      "theta": 15
+    }
+  },
+  {
+    "category": "medium",
+    "query": "problem: what is the centripetal force on a 6.2 kg object on a circular path of radius 2.2 m rotating at angular velocity 3.2 rad/s. show your work.",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 139.67360000000002,
+    "expected_depth": 2,
+    "params": {
+      "m": 6.2,
+      "r": 2.2,
+      "omega": 3.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "could you work out the rope tension required to lift a 17.9 kg mass with upward acceleration 4.0 m/s^2, please",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 247.01999999999998,
+    "expected_depth": 1,
+    "params": {
+      "m": 17.9,
+      "a": 4.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "for my homework: what is the total mechanical energy of a 7.5 kg object moving at 15.0 m/s at height 11.2 metres",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 1666.9499999999998,
+    "expected_depth": 3,
+    "params": {
+      "m": 7.5,
+      "v": 15.0,
+      "h": 11.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "yo find the period of a 2.87 m pendulum on a body where g = 7.9 m/s^2",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 3.787104343281219,
+    "expected_depth": 1,
+    "params": {
+      "L": 2.87,
+      "g": 7.9
+    }
+  },
+  {
+    "category": "medium",
+    "query": "for my homework: what is the weight of a 23.8 kg object where gravity is 18.5 m/s squared",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 440.3,
+    "expected_depth": 1,
+    "params": {
+      "m": 23.8,
+      "g": 18.5
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Using energy conservation, find the speed at height 2.3 m given initial height 18.4 m and initial velocity 0.6 m/s?",
+    "expected_predicate": "velocity",
+    "expected_context": "energy_conservation",
+    "expected_unit": "m/s",
+    "expected_value": 17.774138516395105,
+    "expected_depth": 1,
+    "params": {
+      "v0": 0.6,
+      "h0": 18.4,
+      "h": 2.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "The kinetic energy of a 14.9 kg object is 92.8 j and it sits at height 8.7 metres. compute the total mechanical energy.",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 1363.174,
+    "expected_depth": 2,
+    "params": {
+      "KE": 92.8,
+      "m": 14.9,
+      "h": 8.7
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Find the acceleration of a 1.56 kg object on a 489.0 N/m spring at displacement 0.29 m.",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 90.90384615384615,
+    "expected_depth": 2,
+    "params": {
+      "k": 489.0,
+      "x": 0.29,
+      "m": 1.56
+    }
+  },
+  {
+    "category": "medium",
+    "query": "yo an object is pushed with a 168.2 N force over 6.3 metres in 11.1 seconds. what is the power output",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 95.46486486486485,
+    "expected_depth": 2,
+    "params": {
+      "F": 168.2,
+      "d": 6.3,
+      "t": 11.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "yo what is the kinetic energy of a 0.9 kg object after falling for 3.4 seconds",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 499.60008000000005,
+    "expected_depth": 2,
+    "params": {
+      "m": 0.9,
+      "t": 3.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "An object of mass 3.5 kg starts from rest under a net force of 28.2 N. how far has it travelled after 3.0 seconds?",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 36.25714285714285,
+    "expected_depth": 2,
+    "params": {
+      "F": 28.2,
+      "m": 3.5,
+      "t": 3.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "find the final velocity given mass 13.1 kg, initial velocity 1.0 m/s, and impulse 76.5 N s",
+    "expected_predicate": "velocity",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s",
+    "expected_value": 6.8396946564885495,
+    "expected_depth": 1,
+    "params": {
+      "m": 13.1,
+      "J": 76.5,
+      "v0": 1.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "What is the rotational kinetic energy of a 6.0 kg point mass at radius 1.51 m rotating at 5.0 rad/s?",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "rotational_motion",
+    "expected_unit": "J",
+    "expected_value": 171.0075,
+    "expected_depth": 2,
+    "params": {
+      "m": 6.0,
+      "r": 1.51,
+      "omega": 5.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Find the angular momentum of a point particle of mass 9.7 kg, distance 0.91 m from axis, with angular velocity 10.5 rad/s.",
+    "expected_predicate": "angular_momentum",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2/s",
+    "expected_value": 84.341985,
+    "expected_depth": 2,
+    "params": {
+      "m": 9.7,
+      "r": 0.91,
+      "omega": 10.5
+    }
+  },
+  {
+    "category": "medium",
+    "query": "quick question: what is the acceleration of a 25.0 kg object sliding down a frictionless 45 degree incline?",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 6.929646455628166,
+    "expected_depth": 2,
+    "params": {
+      "m": 25.0,
+      "theta": 45
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Find the centripetal force on a 1.9 kg mass with angular velocity 1.5 rad/s at radius 3.26 m?",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 13.936499999999997,
+    "expected_depth": 2,
+    "params": {
+      "m": 1.9,
+      "r": 3.26,
+      "omega": 1.5
+    }
+  },
+  {
+    "category": "medium",
+    "query": "What is the tension in a string accelerating a 24.5 kg load upward at 7.6 m/s squared.",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 426.29999999999995,
+    "expected_depth": 1,
+    "params": {
+      "m": 24.5,
+      "a": 7.6
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Calculate the mechanical energy of a 19.9 kg mass at 15.4 m height with velocity 2.2 m/s.",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 3051.4660000000003,
+    "expected_depth": 3,
+    "params": {
+      "m": 19.9,
+      "v": 2.2,
+      "h": 15.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "in plain numbers, what is the period of a pendulum of length 2.47 metres where gravity is 16.0 m/s squared",
+    "expected_predicate": "period",
+    "expected_context": "simple_harmonic_motion",
+    "expected_unit": "s",
+    "expected_value": 2.4687002081404454,
+    "expected_depth": 1,
+    "params": {
+      "L": 2.47,
+      "g": 16.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "quick question: find the weight of a 52.7 kg mass on a planet with g = 12.1 m/s^2?",
+    "expected_predicate": "force",
+    "expected_context": "gravity",
+    "expected_unit": "N",
+    "expected_value": 637.67,
+    "expected_depth": 1,
+    "params": {
+      "m": 52.7,
+      "g": 12.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "An object at height 19.7 m with velocity 1.5 m/s descends to height 1.3 m. compute its velocity.",
+    "expected_predicate": "velocity",
+    "expected_context": "energy_conservation",
+    "expected_unit": "m/s",
+    "expected_value": 19.049671913185275,
+    "expected_depth": 1,
+    "params": {
+      "v0": 1.5,
+      "h0": 19.7,
+      "h": 1.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "in plain numbers, find the mechanical energy of a 12.4 kg mass at 22.3 m elevation with kinetic energy 256.0 J",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 2965.896,
+    "expected_depth": 2,
+    "params": {
+      "KE": 256.0,
+      "m": 12.4,
+      "h": 22.3
+    }
+  },
+  {
+    "category": "medium",
+    "query": "A 3.37 kg mass attached to a spring of constant 144.0 N/m is displaced 0.14 metres. what is its acceleration at that point?",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 5.98219584569733,
+    "expected_depth": 2,
+    "params": {
+      "k": 144.0,
+      "x": 0.14,
+      "m": 3.37
+    }
+  },
+  {
+    "category": "medium",
+    "query": "i need to know \u2014 find the power required when a 55.6 N force moves a body 11.3 m in 5.1 seconds",
+    "expected_predicate": "power",
+    "expected_context": "energy",
+    "expected_unit": "W",
+    "expected_value": 123.19215686274512,
+    "expected_depth": 2,
+    "params": {
+      "F": 55.6,
+      "d": 11.3,
+      "t": 5.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "yo what is the kinetic energy of a 13.8 kg object after falling for 3.8 seconds",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 9569.04144,
+    "expected_depth": 2,
+    "params": {
+      "m": 13.8,
+      "t": 3.8
+    }
+  },
+  {
+    "category": "medium",
+    "query": "I've got a question \u2014 what is the displacement after 3.0 seconds of a 10.1 kg object accelerated from rest by a 25.9 N net force",
+    "expected_predicate": "displacement",
+    "expected_context": "kinematics",
+    "expected_unit": "m",
+    "expected_value": 11.53960396039604,
+    "expected_depth": 2,
+    "params": {
+      "F": 25.9,
+      "m": 10.1,
+      "t": 3.0
+    }
+  },
+  {
+    "category": "medium",
+    "query": "in plain numbers, an object of mass 9.6 kg with initial velocity 9.2 m/s receives an impulse of 70.3 N*s. what is its final velocity",
+    "expected_predicate": "velocity",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s",
+    "expected_value": 16.522916666666667,
+    "expected_depth": 1,
+    "params": {
+      "m": 9.6,
+      "J": 70.3,
+      "v0": 9.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "hey, find the rotational KE of a point mass 8.0 kg located 1.85 m from the axis spinning at 8.2 rad/s?",
+    "expected_predicate": "kinetic_energy",
+    "expected_context": "rotational_motion",
+    "expected_unit": "J",
+    "expected_value": 920.5156000000001,
+    "expected_depth": 2,
+    "params": {
+      "m": 8.0,
+      "r": 1.85,
+      "omega": 8.2
+    }
+  },
+  {
+    "category": "medium",
+    "query": "give me the angular momentum of a 4.5 kg point mass at radius 1.72 m rotating at 8.1 rad/s",
+    "expected_predicate": "angular_momentum",
+    "expected_context": "rotational_motion",
+    "expected_unit": "kg*m2/s",
+    "expected_value": 107.83367999999999,
+    "expected_depth": 2,
+    "params": {
+      "m": 4.5,
+      "r": 1.72,
+      "omega": 8.1
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Find the acceleration of a 9.4 kg block on a frictionless ramp at 20 degrees.",
+    "expected_predicate": "acceleration",
+    "expected_context": "newtonian_motion",
+    "expected_unit": "m/s2",
+    "expected_value": 3.3517974045915535,
+    "expected_depth": 2,
+    "params": {
+      "m": 9.4,
+      "theta": 20
+    }
+  },
+  {
+    "category": "medium",
+    "query": "I've got a question \u2014 what is the centripetal force on a 1.7 kg object on a circular path of radius 4.03 m rotating at angular velocity 6.4 rad/s",
+    "expected_predicate": "centripetal_force",
+    "expected_context": "circular_motion",
+    "expected_unit": "N",
+    "expected_value": 280.61696,
+    "expected_depth": 2,
+    "params": {
+      "m": 1.7,
+      "r": 4.03,
+      "omega": 6.4
+    }
+  },
+  {
+    "category": "medium",
+    "query": "Find the rope tension required to lift a 17.5 kg mass with upward acceleration 2.7 m/s^2.",
+    "expected_predicate": "tension",
+    "expected_context": "newtonian_motion_accelerating",
+    "expected_unit": "N",
+    "expected_value": 218.75,
+    "expected_depth": 1,
+    "params": {
+      "m": 17.5,
+      "a": 2.7
+    }
+  },
+  {
+    "category": "medium",
+    "query": "yo what is the total mechanical energy of a 9.9 kg object moving at 4.9 m/s at height 8.3 metres",
+    "expected_predicate": "mechanical_energy",
+    "expected_context": "energy",
+    "expected_unit": "J",
+    "expected_value": 924.1155000000002,
+    "expected_depth": 3,
+    "params": {
+      "m": 9.9,
+      "v": 4.9,
+      "h": 8.3
+    }
+  },
+  {
+    "category": "oos",
+    "query": "could you tell me the magnetic flux through a coil of area 0.5 square metres in a 2 T field, please",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "could you tell me the electric field at a distance of 2 metres from a 5 microcoulomb charge, please",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "quick question: find the resistance of a wire with voltage 12 V and current 3 A?",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "quick question: what is the capacitance of a parallel plate capacitor with area 0.01 square metres and separation 1 mm?",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "What is the electric flux through a Gaussian surface enclosing 8 microcoulombs.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "Calculate the magnetic force on a 2 metre wire carrying 5 a in a 0.3 t field.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "what is the inductance of a solenoid with 200 turns and length 0.2 m",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "give me the impedance of an RL circuit with R = 50 ohms and L = 0.1 H at 60 Hz",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "i need to know \u2014 what is the heat capacity of 2 kg of water heated by 500 J",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "let's say we want the entropy change in a reversible isothermal expansion at 300 K",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "for my homework: find the efficiency of a Carnot engine operating between 500 K and 300 K",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "Compute the internal energy change in an isobaric process at 1 atm with volume change 0.1 m^3.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "yo find the work done in an adiabatic compression of an ideal gas",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "what is the rms speed of nitrogen molecules at 300 K",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "Find the change in Gibbs free energy at standard temperature.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "hey, what is the wavelength of light with frequency 5 times 10 to the 14 Hz?",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "problem: what is the index of refraction of a medium where light slows from c to 2 times 10 to the 8 m/s. show your work.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "I've got a question \u2014 find the focal length of a converging lens with object distance 30 cm and image distance 60 cm",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "I've got a question \u2014 what is the diffraction angle for a single slit of width 0.001 m at wavelength 600 nm",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "Calculate the polarization angle for light reflecting off glass with n = 1.5.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "Compute the radius of curvature of a concave mirror with focal length 20 cm.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "what is the nuclear binding energy of helium-4",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "in plain numbers, find the half-life of carbon-14 given a decay constant of 1.21 times 10 to the -4 per year",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "problem: what is the activity of a 5 microgram sample of radium-226. show your work.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "I've got a question \u2014 find the energy released in the fission of one uranium-235 nucleus",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "yo what is the mass-energy equivalent of 1 gram",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "Compute the de broglie wavelength of an electron moving at 10 to the 6 m/s.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "find the energy of a photon with wavelength 500 nm",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "in plain numbers, what is the ground state energy of a hydrogen atom",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "in plain numbers, find the uncertainty in position given an uncertainty in momentum of 10 to the -25 kg m/s",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "What is the probability of finding a particle in the second excited state of a 1D box?",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "quick question: what is the pH of a 0.01 molar HCl solution?",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "could you work out the equilibrium constant for the reaction A + B = C at 298 K with delta G = -10 kJ, please",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "problem: what is the molarity of a solution containing 5.85 g of NaCl in 0.5 L of water. show your work.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "quick question: what is the rate constant of a first-order reaction with half-life 10 s?",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "give me the boiling point elevation of water with 0.5 mol/kg NaCl",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "yo what is the relativistic momentum of an electron moving at 0.9c",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "Find the time dilation factor for a clock moving at 0.8c?",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "Compute the rest energy of a proton.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "i need to know \u2014 find the relativistic kinetic energy of a particle with rest mass 1 kg moving at 0.6c",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "problem: what is the resting metabolic rate of a 70 kg human. show your work.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "I've got a question \u2014 find the osmotic pressure of a 0.5 M sucrose solution at 298 K",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "quick question: what is the Reynolds number for water flowing at 1 m/s in a 0.1 m diameter pipe?",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "What is the membrane potential of a neuron at rest.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "quick question: what is the standard deviation of a normal distribution with variance 16?",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "for my homework: find the half-life of a population growing at rate 0.1 per year",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "i need to know \u2014 what is the Schwarzschild radius of a 1 solar mass black hole",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "for my homework: find the orbital period of a satellite at 400 km altitude using Kepler's third law",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "for my homework: what is the cross-section of a benzene molecule",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  },
+  {
+    "category": "oos",
+    "query": "problem: what is the rotational temperature of nitrogen at 300 K. show your work.",
+    "expected_value": null,
+    "expected_unit": null,
+    "expected_predicate": null,
+    "expected_context": null
+  }
+]

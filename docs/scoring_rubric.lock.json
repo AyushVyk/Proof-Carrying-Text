@@ -1,0 +1,12 @@
+{
+  "locked_at": "2026-10-01T19:55:28",
+  "files": {
+    "docs/scoring_rubric.md": "85c6d729408fe1e689abbcdd26c602ef89d6211aac8c1deba7322ccd54e46320",
+    "tools/analysis/score.py": "43fe64ef88565953d3c500048980e6b8b8c9f562ab1daed8d980bf168eba2de2"
+  },
+  "baseline_outputs_existing_at_lock": {
+    "chemistry": false,
+    "biology": false
+  },
+  "statement": "Locked before any RAG or raw-baseline run on chemistry or biology. Physics baseline outputs predate the rubric; the rubric was not tested against them before locking. Any later edit to either file breaks these hashes and must be reported."
+}

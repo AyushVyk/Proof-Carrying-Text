@@ -1,0 +1,10 @@
+# virtualenv
+.venv/
+# bytecode
+__pycache__/
+*.py[cod]
+# editor / OS
+.DS_Store
+Thumbs.db
+# local archive: earlier code, runs and logs (never pushed)
+archive/

@@ -1,0 +1,21 @@
+{
+  "_note": "Phrase lists used ONLY by the underspecified scoring layer (tools/analysis/underspecified.py), never by the parser. Added to the layer's conditions beside KB2 condition_phrases (2026-11-24 item 2b; moved out of kb2_physics.json 2026-11-25 so the launch KB2 is restored). Same format as KB2: binding -> [{value, phrases: [regex]}], case-insensitive.",
+  "condition_phrases": {
+    "physics": {
+      "force_displacement_angle": [
+        {
+          "value": 0,
+          "phrases": [
+            "in the direction of (?:the )?motion|along the displacement|parallel to the displacement"
+          ]
+        },
+        {
+          "value": "explicit",
+          "phrases": [
+            "\\b\\d+(?:\\.\\d+)?\\s*(?:°|deg\\b|degrees?\\b)|\\bangle (?:of )?\\d"
+          ]
+        }
+      ]
+    }
+  }
+}

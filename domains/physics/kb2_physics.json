@@ -1,0 +1,1294 @@
+{
+  "predicates": [
+    {
+      "predicate": "acceleration",
+      "unit": "m/s2",
+      "contexts": [
+        "dynamics",
+        "newtonian_motion"
+      ],
+      "description": "The rate of change of velocity with respect to time",
+      "example_queries": [
+        "what is the acceleration",
+        "find the acceleration of the object",
+        "how fast is it speeding up",
+        "compute the acceleration",
+        "what acceleration does the body experience"
+      ]
+    },
+    {
+      "predicate": "angular_momentum",
+      "unit": "kg*m2/s",
+      "contexts": [
+        "rotational_motion"
+      ],
+      "description": "The rotational analogue of linear momentum: moment of inertia times angular velocity",
+      "example_queries": [
+        "what is the angular momentum",
+        "find the rotational momentum",
+        "compute L of the spinning object",
+        "what is the angular momentum of the disk",
+        "find the angular momentum of the rotating wheel"
+      ]
+    },
+    {
+      "predicate": "angular_velocity",
+      "unit": "rad/s",
+      "contexts": [
+        "circular_motion"
+      ],
+      "description": "Rate of rotation, measured in radians per second",
+      "example_queries": [
+        "what is the angular velocity",
+        "how fast is it rotating",
+        "find omega",
+        "what is the rotational speed",
+        "compute the angular velocity"
+      ]
+    },
+    {
+      "predicate": "centripetal_acceleration",
+      "unit": "m/s2",
+      "contexts": [
+        "circular_motion"
+      ],
+      "description": "Acceleration directed toward the center of a circular path",
+      "example_queries": [
+        "what is the centripetal acceleration",
+        "find the inward acceleration",
+        "compute the centripetal acceleration in circular motion",
+        "what is a_c",
+        "find the radial acceleration"
+      ]
+    },
+    {
+      "predicate": "centripetal_force",
+      "unit": "N",
+      "contexts": [
+        "circular_motion"
+      ],
+      "description": "The net inward force required to keep an object in uniform circular motion",
+      "example_queries": [
+        "what is the centripetal force",
+        "find the inward force on the object",
+        "what force keeps it in circular motion",
+        "compute the centripetal force",
+        "find F_c"
+      ]
+    },
+    {
+      "predicate": "density",
+      "unit": "kg/m3",
+      "contexts": [
+        "mechanics"
+      ],
+      "description": "Mass per unit volume",
+      "example_queries": [
+        "what is the density",
+        "find the density of the substance",
+        "compute the mass per unit volume",
+        "how dense is the material",
+        "what is rho"
+      ]
+    },
+    {
+      "predicate": "displacement",
+      "unit": "m",
+      "contexts": [
+        "free_fall",
+        "kinematics"
+      ],
+      "description": "The change in position of an object",
+      "example_queries": [
+        "how far does it travel",
+        "find the displacement",
+        "what is the distance covered",
+        "how far does the object move",
+        "find x after t seconds"
+      ]
+    },
+    {
+      "predicate": "elastic_potential_energy",
+      "unit": "J",
+      "contexts": [
+        "elasticity"
+      ],
+      "description": "Energy stored in a stretched or compressed spring, (1/2) k x^2",
+      "example_queries": [
+        "what is the elastic potential energy",
+        "how much energy is stored in the spring"
+      ]
+    },
+    {
+      "predicate": "force",
+      "unit": "N",
+      "contexts": [
+        "elasticity",
+        "gravitation",
+        "gravity"
+      ],
+      "description": "A specific force acting on an object (weight, spring force, gravitational attraction), measured in Newtons",
+      "example_queries": [
+        "what is the force",
+        "find the force on the object",
+        "compute the gravitational force",
+        "what spring force acts on the body",
+        "find F"
+      ]
+    },
+    {
+      "predicate": "friction_force",
+      "unit": "N",
+      "contexts": [
+        "newtonian_motion"
+      ],
+      "description": "Opposing force resisting relative motion between two surfaces in contact",
+      "example_queries": [
+        "what is the friction force",
+        "find the frictional force",
+        "how much friction acts on the object",
+        "compute the kinetic friction"
+      ]
+    },
+    {
+      "predicate": "gravitational_potential_energy",
+      "unit": "J",
+      "contexts": [
+        "energy"
+      ],
+      "description": "Gravitational potential energy m g h",
+      "example_queries": [
+        "what is the gravitational potential energy",
+        "find the PE of the raised object"
+      ]
+    },
+    {
+      "predicate": "impulse",
+      "unit": "N*s",
+      "contexts": [
+        "dynamics"
+      ],
+      "description": "Change in momentum produced by a force acting over a time interval",
+      "example_queries": [
+        "what is the impulse",
+        "find the impulse on the object",
+        "compute the impulse delivered",
+        "how much impulse acts on the body",
+        "find J"
+      ]
+    },
+    {
+      "predicate": "kinetic_energy",
+      "unit": "J",
+      "contexts": [
+        "energy",
+        "newtonian_motion"
+      ],
+      "description": "The energy possessed by an object due to its motion",
+      "example_queries": [
+        "what is the kinetic energy",
+        "find the KE",
+        "how much energy does the moving object have",
+        "compute the kinetic energy"
+      ]
+    },
+    {
+      "predicate": "max_static_friction",
+      "unit": "N",
+      "contexts": [
+        "static"
+      ],
+      "description": "The largest static friction force the surface can supply, mu_s N",
+      "example_queries": [
+        "what is the maximum static friction",
+        "find the maximum static friction force"
+      ]
+    },
+    {
+      "predicate": "max_velocity",
+      "unit": "m/s",
+      "contexts": [
+        "simple_harmonic_motion"
+      ],
+      "description": "Peak speed of a simple harmonic oscillator, A omega",
+      "example_queries": [
+        "what is the maximum velocity of the oscillator",
+        "find the peak speed in simple harmonic motion"
+      ]
+    },
+    {
+      "predicate": "mechanical_energy",
+      "unit": "J",
+      "contexts": [
+        "energy"
+      ],
+      "description": "Total of kinetic and potential energy of a system",
+      "example_queries": [
+        "what is the total mechanical energy",
+        "find the mechanical energy",
+        "compute the total energy of the system",
+        "what is E_mech",
+        "find KE plus PE"
+      ]
+    },
+    {
+      "predicate": "moment_of_inertia",
+      "unit": "kg*m2",
+      "contexts": [
+        "rotational_motion"
+      ],
+      "description": "Rotational analogue of mass, quantifying resistance to angular acceleration",
+      "example_queries": [
+        "what is the moment of inertia",
+        "find the rotational inertia",
+        "compute I for the point mass",
+        "what is the moment of inertia of the disk",
+        "find I"
+      ]
+    },
+    {
+      "predicate": "momentum",
+      "unit": "kg*m/s",
+      "contexts": [
+        "dynamics"
+      ],
+      "description": "The product of an object's mass and velocity",
+      "example_queries": [
+        "what is the momentum",
+        "find the momentum of the object",
+        "compute p of the body",
+        "what is the linear momentum",
+        "find the momentum"
+      ]
+    },
+    {
+      "predicate": "net_force",
+      "unit": "N",
+      "contexts": [
+        "dynamics",
+        "inclined_plane",
+        "inclined_plane_friction",
+        "newtonian_motion"
+      ],
+      "description": "The vector sum of all forces acting on an object",
+      "example_queries": [
+        "what is the net force",
+        "find the resultant force",
+        "compute the net force on the object",
+        "what is the total force on the incline",
+        "find F_net"
+      ]
+    },
+    {
+      "predicate": "net_impulse",
+      "unit": "N*s",
+      "contexts": [
+        "newtonian_motion"
+      ],
+      "description": "Impulse of the net force; equals the change in momentum",
+      "example_queries": [
+        "what is the net impulse",
+        "find the impulse of the net force"
+      ]
+    },
+    {
+      "predicate": "normal_force",
+      "unit": "N",
+      "contexts": [
+        "inclined_plane",
+        "newtonian_motion"
+      ],
+      "description": "Contact force perpendicular to the surface supporting an object",
+      "example_queries": [
+        "what is the normal force",
+        "find N",
+        "compute the perpendicular force from the surface",
+        "what is the normal force on the inclined plane",
+        "find the support force"
+      ]
+    },
+    {
+      "predicate": "period",
+      "unit": "s",
+      "contexts": [
+        "circular_motion",
+        "simple_harmonic_motion"
+      ],
+      "description": "Time required for one complete cycle of periodic motion",
+      "example_queries": [
+        "what is the period",
+        "how long is one cycle",
+        "find the period of oscillation",
+        "compute the period of the pendulum",
+        "find T"
+      ]
+    },
+    {
+      "predicate": "power",
+      "unit": "W",
+      "contexts": [
+        "energy"
+      ],
+      "description": "The rate at which work is done or energy is transferred",
+      "example_queries": [
+        "what is the power",
+        "find the power output",
+        "compute the power delivered",
+        "how fast is energy being transferred",
+        "find P"
+      ]
+    },
+    {
+      "predicate": "pressure",
+      "unit": "Pa",
+      "contexts": [
+        "mechanics"
+      ],
+      "description": "Force per unit area applied perpendicular to a surface",
+      "example_queries": [
+        "what is the pressure",
+        "find the pressure on the surface",
+        "compute the force per unit area",
+        "what is P",
+        "find the pressure exerted"
+      ]
+    },
+    {
+      "predicate": "rotational_kinetic_energy",
+      "unit": "J",
+      "contexts": [
+        "rotational_motion"
+      ],
+      "description": "Kinetic energy of rotation, (1/2) I omega^2",
+      "example_queries": [
+        "what is the rotational kinetic energy",
+        "find the rotational KE",
+        "kinetic energy of the spinning wheel"
+      ]
+    },
+    {
+      "predicate": "tension",
+      "unit": "N",
+      "contexts": [
+        "newtonian_motion",
+        "newtonian_motion_accelerating"
+      ],
+      "description": "Pulling force transmitted through a rope, string, or cable",
+      "example_queries": [
+        "what is the tension",
+        "find the tension in the string",
+        "compute T in the rope",
+        "how much tension is in the cable",
+        "find the tension force"
+      ]
+    },
+    {
+      "predicate": "torque",
+      "unit": "N*m",
+      "contexts": [
+        "rotational_motion"
+      ],
+      "description": "Rotational equivalent of force; causes angular acceleration",
+      "example_queries": [
+        "what is the torque",
+        "find the torque on the lever",
+        "compute tau",
+        "what is the rotational force",
+        "find the moment of force"
+      ]
+    },
+    {
+      "predicate": "velocity",
+      "unit": "m/s",
+      "contexts": [
+        "circular_motion",
+        "elastic_collision",
+        "elastic_collision_object2",
+        "energy_conservation",
+        "free_fall",
+        "inelastic_collision",
+        "kinematics",
+        "newtonian_motion"
+      ],
+      "description": "The speed of an object in a given direction",
+      "example_queries": [
+        "how fast is the object moving",
+        "what is the velocity after t seconds",
+        "find the speed of the ball",
+        "what is the final velocity",
+        "how fast does it travel after falling"
+      ]
+    },
+    {
+      "predicate": "work",
+      "unit": "J",
+      "contexts": [
+        "energy"
+      ],
+      "description": "Energy transferred to an object by a force acting over a distance",
+      "example_queries": [
+        "what is the work done",
+        "find the work",
+        "compute the work done by the force",
+        "how much work is performed",
+        "find W"
+      ]
+    }
+  ],
+  "bindings_schema": [
+    {
+      "predicate": "acceleration",
+      "unit": "m/s2",
+      "aliases": [
+        "accelerating at",
+        "with acceleration",
+        "speeds up at",
+        "acceleration of",
+        "at an acceleration of"
+      ],
+      "value_type": "number",
+      "description": "Rate of change of velocity of the object."
+    },
+    {
+      "predicate": "amplitude",
+      "unit": "m",
+      "aliases": [
+        "amplitude of",
+        "with amplitude",
+        "max displacement of",
+        "oscillation amplitude",
+        "peak displacement"
+      ],
+      "value_type": "number",
+      "description": "Maximum displacement of an oscillator from equilibrium."
+    },
+    {
+      "predicate": "angular_velocity",
+      "unit": "rad/s",
+      "aliases": [
+        "angular velocity of",
+        "rotating at",
+        "spinning at",
+        "with angular velocity",
+        "omega of"
+      ],
+      "value_type": "number",
+      "description": "Rate of rotation, in radians per second."
+    },
+    {
+      "predicate": "applied_force",
+      "unit": "N",
+      "aliases": [
+        "applied force of",
+        "with applied force",
+        "pushed with",
+        "force applied of",
+        "external force of"
+      ],
+      "value_type": "number",
+      "description": "Magnitude of a push or pull applied to the object by an outside agent."
+    },
+    {
+      "predicate": "applied_force_angle",
+      "unit": "deg",
+      "aliases": [
+        "angle of the applied force to the surface",
+        "horizontal / parallel push (= 0)"
+      ],
+      "value_type": "number",
+      "description": "Angle between the applied force and the surface; 0 for a horizontal (parallel) push."
+    },
+    {
+      "predicate": "area",
+      "unit": "m2",
+      "aliases": [
+        "area of",
+        "with area",
+        "cross-section of",
+        "surface area of",
+        "covering an area of"
+      ],
+      "value_type": "number",
+      "description": "Area over which a force acts, or a cross-sectional area."
+    },
+    {
+      "predicate": "collision_type",
+      "unit": "condition",
+      "aliases": [
+        "elastic collision",
+        "perfectly inelastic",
+        "stick together",
+        "move together after",
+        "coalesce"
+      ],
+      "value_type": "token",
+      "permitted_values": [
+        "elastic",
+        "perfectly_inelastic"
+      ],
+      "description": "Kind of collision the query states: elastic, or perfectly inelastic (the objects stick together)."
+    },
+    {
+      "predicate": "displacement",
+      "unit": "m",
+      "aliases": [
+        "displacement of",
+        "moves a distance of",
+        "displaced by",
+        "covers a distance of",
+        "travels"
+      ],
+      "value_type": "number",
+      "description": "Change in position of the object (distance moved along a line)."
+    },
+    {
+      "predicate": "force",
+      "unit": "N",
+      "aliases": [
+        "force of",
+        "with force",
+        "pushed by",
+        "pulled with",
+        "experiencing a force of"
+      ],
+      "value_type": "number",
+      "description": "Magnitude of a force acting on the object, not necessarily the net force."
+    },
+    {
+      "predicate": "force_displacement_angle",
+      "unit": "deg",
+      "aliases": [
+        "at an angle of ... to the displacement",
+        "angle between force and displacement"
+      ],
+      "value_type": "number",
+      "description": "Angle between a force and the displacement it acts along."
+    },
+    {
+      "predicate": "friction_force",
+      "unit": "N",
+      "aliases": [
+        "friction force of",
+        "with friction of",
+        "frictional force of",
+        "resistance of",
+        "drag force of"
+      ],
+      "value_type": "number",
+      "description": "Magnitude of the friction force on the object."
+    },
+    {
+      "predicate": "gravitational_acceleration",
+      "unit": "m/s2",
+      "aliases": [
+        "where gravity is",
+        "with gravity of",
+        "g equal to",
+        "gravitational acceleration of",
+        "where g ="
+      ],
+      "value_type": "number",
+      "description": "Acceleration due to gravity at the location (g)."
+    },
+    {
+      "predicate": "gravitational_constant",
+      "unit": "N*m2/kg2",
+      "aliases": [
+        "gravitational constant",
+        "G equals",
+        "value of G",
+        "Newton's G",
+        "universal gravitational constant"
+      ],
+      "value_type": "number",
+      "description": "Newton's gravitational constant G."
+    },
+    {
+      "predicate": "gravitational_potential_energy",
+      "unit": "J",
+      "aliases": [
+        "potential energy of",
+        "gravitational PE of"
+      ],
+      "value_type": "number",
+      "description": "Gravitational potential energy m g h of the object."
+    },
+    {
+      "predicate": "height",
+      "unit": "m",
+      "aliases": [
+        "at a height of",
+        "height of",
+        "elevated by",
+        "raised to",
+        "lifted to"
+      ],
+      "value_type": "number",
+      "description": "Height of the object above the reference level."
+    },
+    {
+      "predicate": "incline_angle",
+      "unit": "deg",
+      "aliases": [
+        "incline at",
+        "slope of",
+        "ramp inclined at",
+        "flat / level / horizontal surface (= 0)"
+      ],
+      "value_type": "number",
+      "description": "Angle of an inclined surface above the horizontal; 0 for a flat surface."
+    },
+    {
+      "predicate": "initial_height",
+      "unit": "m",
+      "aliases": [
+        "initial height of",
+        "starting height of",
+        "begins at height",
+        "released from height",
+        "starts at elevation"
+      ],
+      "value_type": "number",
+      "description": "Height of the object at the start of the motion."
+    },
+    {
+      "predicate": "initial_kinetic_energy",
+      "unit": "J",
+      "aliases": [
+        "initial kinetic energy of",
+        "starting KE of",
+        "initial energy of",
+        "begins with kinetic energy",
+        "initial KE equals"
+      ],
+      "value_type": "number",
+      "description": "Kinetic energy of the object at the start."
+    },
+    {
+      "predicate": "initial_velocity",
+      "unit": "m/s",
+      "aliases": [
+        "initial velocity of",
+        "starting velocity of",
+        "starts at",
+        "initial speed of",
+        "begins moving at"
+      ],
+      "value_type": "number",
+      "description": "Velocity of the object at the start of the motion; 0 when it starts from rest."
+    },
+    {
+      "predicate": "initial_velocity_1",
+      "unit": "m/s",
+      "aliases": [
+        "initial velocity of the first object",
+        "v1i"
+      ],
+      "value_type": "number",
+      "description": "Initial velocity of the first of two objects."
+    },
+    {
+      "predicate": "initial_velocity_2",
+      "unit": "m/s",
+      "aliases": [
+        "initial velocity of the second object",
+        "v2i"
+      ],
+      "value_type": "number",
+      "description": "Initial velocity of the second of two objects."
+    },
+    {
+      "predicate": "kinetic_energy",
+      "unit": "J",
+      "aliases": [
+        "kinetic energy of",
+        "with KE of",
+        "energy of motion of",
+        "moving energy of",
+        "KE equals"
+      ],
+      "value_type": "number",
+      "description": "Kinetic energy (1/2) m v^2 of the object."
+    },
+    {
+      "predicate": "kinetic_friction_coefficient",
+      "unit": "dimensionless",
+      "aliases": [
+        "kinetic friction coefficient of",
+        "mu_k of",
+        "sliding friction coefficient of",
+        "kinetic mu of",
+        "coefficient of kinetic friction"
+      ],
+      "value_type": "number",
+      "description": "Coefficient of kinetic friction between the surfaces."
+    },
+    {
+      "predicate": "length",
+      "unit": "m",
+      "aliases": [
+        "length of",
+        "with length",
+        "long string of length",
+        "rope of length",
+        "rod of length"
+      ],
+      "value_type": "number",
+      "description": "Length, e.g. of a pendulum string or a lever."
+    },
+    {
+      "predicate": "mass",
+      "unit": "kg",
+      "aliases": [
+        "mass of",
+        "a body of",
+        "object of mass",
+        "weighing",
+        "with mass"
+      ],
+      "value_type": "number",
+      "description": "Mass of the (single) object."
+    },
+    {
+      "predicate": "mass_1",
+      "unit": "kg",
+      "aliases": [
+        "mass of the first object",
+        "m1"
+      ],
+      "value_type": "number",
+      "description": "Mass of the first of two objects."
+    },
+    {
+      "predicate": "mass_2",
+      "unit": "kg",
+      "aliases": [
+        "mass of the second object",
+        "m2"
+      ],
+      "value_type": "number",
+      "description": "Mass of the second of two objects."
+    },
+    {
+      "predicate": "moment_of_inertia",
+      "unit": "kg*m2",
+      "aliases": [
+        "moment of inertia of",
+        "rotational inertia of",
+        "I equals",
+        "with moment of inertia",
+        "inertia of"
+      ],
+      "value_type": "number",
+      "description": "Rotational inertia of the body about the axis."
+    },
+    {
+      "predicate": "net_force",
+      "unit": "N",
+      "aliases": [
+        "net force of",
+        "with net force",
+        "resultant force of",
+        "total force of",
+        "F_net equals"
+      ],
+      "value_type": "number",
+      "description": "Vector sum of all forces on the object (net, resultant, unbalanced or total force, or the only force acting)."
+    },
+    {
+      "predicate": "net_impulse",
+      "unit": "N*s",
+      "aliases": [
+        "receives an impulse of",
+        "net impulse of",
+        "total impulse of"
+      ],
+      "value_type": "number",
+      "description": "Impulse of the net force on the object; equals its change in momentum."
+    },
+    {
+      "predicate": "net_work",
+      "unit": "J",
+      "aliases": [
+        "net work of",
+        "total work of",
+        "work done by the net force"
+      ],
+      "value_type": "number",
+      "description": "Total work done on the object by all forces (net work)."
+    },
+    {
+      "predicate": "nonconservative_work",
+      "unit": "condition",
+      "aliases": [
+        "frictionless",
+        "smooth",
+        "ignore friction",
+        "ignore air resistance",
+        "conservation of mechanical energy"
+      ],
+      "value_type": "token",
+      "permitted_values": [
+        "none"
+      ],
+      "description": "Stated absence of non-conservative work: frictionless, or friction / air resistance ignored."
+    },
+    {
+      "predicate": "normal_force",
+      "unit": "N",
+      "aliases": [
+        "normal force of",
+        "with normal force",
+        "support force of",
+        "perpendicular contact force of",
+        "surface force of"
+      ],
+      "value_type": "number",
+      "description": "Force a surface exerts perpendicular to itself on the object."
+    },
+    {
+      "predicate": "pendulum_amplitude",
+      "unit": "condition",
+      "aliases": [
+        "small angle",
+        "small amplitude",
+        "small oscillations"
+      ],
+      "value_type": "token",
+      "permitted_values": [
+        "small"
+      ],
+      "description": "Stated small-angle (small-amplitude) condition for a pendulum."
+    },
+    {
+      "predicate": "period",
+      "unit": "s",
+      "aliases": [
+        "period of",
+        "with period",
+        "cycle time of",
+        "T equals",
+        "oscillation period of"
+      ],
+      "value_type": "number",
+      "description": "Time for one complete cycle of a periodic motion."
+    },
+    {
+      "predicate": "radius",
+      "unit": "m",
+      "aliases": [
+        "radius of",
+        "of radius",
+        "with radius",
+        "circle of radius",
+        "r equals"
+      ],
+      "value_type": "number",
+      "description": "Radius of a circular path or of a rotating body."
+    },
+    {
+      "predicate": "separation",
+      "unit": "m",
+      "aliases": [
+        "separated by",
+        "apart",
+        "at distance",
+        "centre-to-centre distance"
+      ],
+      "value_type": "number",
+      "description": "Distance between the centres of two attracting bodies."
+    },
+    {
+      "predicate": "spring_constant",
+      "unit": "N/m",
+      "aliases": [
+        "spring constant of",
+        "stiffness of",
+        "k equals",
+        "with spring constant",
+        "spring stiffness of"
+      ],
+      "value_type": "number",
+      "description": "Stiffness k of a spring."
+    },
+    {
+      "predicate": "spring_extension",
+      "unit": "m",
+      "aliases": [
+        "stretched by",
+        "compressed by",
+        "displaced from its natural length by",
+        "spring displacement"
+      ],
+      "value_type": "number",
+      "description": "Distance a spring is stretched or compressed from its natural length."
+    },
+    {
+      "predicate": "static_friction_coefficient",
+      "unit": "dimensionless",
+      "aliases": [
+        "static friction coefficient of",
+        "mu_s of",
+        "static mu of",
+        "coefficient of static friction",
+        "sticking friction coefficient"
+      ],
+      "value_type": "number",
+      "description": "Coefficient of static friction between the surfaces."
+    },
+    {
+      "predicate": "time",
+      "unit": "s",
+      "aliases": [
+        "after t seconds",
+        "for time",
+        "in time",
+        "elapsed time of",
+        "duration of"
+      ],
+      "value_type": "number",
+      "description": "Elapsed time."
+    },
+    {
+      "predicate": "torque_angle",
+      "unit": "deg",
+      "aliases": [
+        "angle between force and lever arm",
+        "perpendicular to the lever arm (= 90)"
+      ],
+      "value_type": "number",
+      "description": "Angle between the force and the lever arm; 90 when perpendicular."
+    },
+    {
+      "predicate": "velocity",
+      "unit": "m/s",
+      "aliases": [
+        "moving at",
+        "with velocity",
+        "speed of",
+        "traveling at",
+        "velocity of"
+      ],
+      "value_type": "number",
+      "description": "Speed or velocity of the object."
+    },
+    {
+      "predicate": "volume",
+      "unit": "m3",
+      "aliases": [
+        "volume of",
+        "with volume",
+        "occupying volume",
+        "V equals",
+        "of volume"
+      ],
+      "value_type": "number",
+      "description": "Volume of a body or fluid."
+    },
+    {
+      "predicate": "work",
+      "unit": "J",
+      "aliases": [
+        "work of",
+        "work done equals",
+        "W equals",
+        "with work done",
+        "work performed of"
+      ],
+      "value_type": "number",
+      "description": "Work done by a single force (not necessarily the net work)."
+    }
+  ],
+  "predicate_aliases": {
+    "force": [
+      "net_force"
+    ]
+  },
+  "_predicate_aliases_note": "Copied from kb1_physics.json by tools/build/build_kb2_physics.py. Used only by the parser's non-triviality check: a goal state whose bindings contain the goal predicate, or an alias the engine would accept for it, is rejected as a parse-stage F4.",
+  "stated_condition_values": {
+    "initial_velocity": 0,
+    "incline_angle": 0,
+    "acceleration": 0,
+    "friction_force": 0,
+    "applied_force_angle": 0,
+    "torque_angle": 90
+  },
+  "_stated_condition_values_note": "Numeric values the wording rules (prompt rule 12) bind from words, not digits. The parser's numeric-provenance check exempts a binding only when its value equals the one listed here.",
+  "parser_prompt": {
+    "_note": "Domain-specific parser prompt text. The parser assembles its system prompt as header + the KB2-generated ALLOWED PREDICATES / ALLOWED BINDINGS tables + footer, so every domain word, selection hint and few-shot example lives here in the KB rather than in parser.py.",
+    "header": "You translate natural-language physics queries into a single JSON object.\n\nRULE #1 (HIGHEST PRIORITY): The `predicate` is determined ONLY by what quantity the user is asking about, identified from the question phrase:\n  - 'what is the velocity', 'velocity of', 'how fast'  -> predicate: velocity\n  - 'what is the displacement', 'how far', 'distance traveled' -> predicate: displacement\n  - 'what force', 'how much force' on an accelerating mass -> predicate: net_force, context: dynamics\n  - 'kinetic energy', 'KE' -> predicate: kinetic_energy ('rotational kinetic energy' -> rotational_kinetic_energy)\n  - 'momentum' -> predicate: momentum\n  - 'weight of X', 'how heavy is X', 'weight on Earth/Mars/etc' -> predicate: force, context: gravity\n  - 'period of', 'how long for one cycle' -> predicate: period\n  - 'acceleration' -> predicate: acceleration\n  Scenario words like 'falling', 'on a ramp', 'in orbit' DO NOT change the predicate. They only affect `context`.\n  Example: 'what is the velocity of an object after falling for 3 seconds' -> predicate: velocity (NOT displacement), context: free_fall.\n\nJSON SCHEMA (the entire output, with no extra fields):\n{\"predicate\": <string>, \"unit\": <string>, \"context\": <string>, \"bindings\": {<binding_name>: {\"value\": <number or token>, \"unit\": <string>}}}\n\n",
+    "footer": "\n\nSTRICT RULES:\n1. Output exactly ONE JSON object. No commentary, no markdown fences, no extra text.\n2. The output must contain only these four top-level keys: predicate, unit, context, bindings.\n3. Never include the keys \"aliases\", \"description\", \"example_queries\", \"value\", or \"answer\" at the top level.\n4. The chosen `predicate` must be one of the names listed in ALLOWED PREDICATES (and must follow RULE #1).\n5. The `unit` must be the unit listed for that predicate.\n6. The `context` must be one of the context names listed for that predicate (verbatim, no spaces or pluralizations).\n7. Each entry of `bindings` MUST be the structured object {\"value\": <JSON number, or the exact token for a binding listed with \"one of: ...\">, \"unit\": <string>}, NEVER a bare string like \"5 kg\".\n8. Each binding name must be one of the names listed in ALLOWED BINDINGS, with the unit listed for it.\n9. FOLLOW-UP RULE: If the input begins with `PREVIOUS GOAL: {json}`, your output MUST keep the SAME `predicate`, `unit`, and `context` as the previous goal. You MUST also keep every binding from the previous goal. The ONLY change you may make is to overwrite the value(s) of binding(s) the new query explicitly references (e.g., 'what if the mass was 5kg' -> overwrite the `mass` binding's value, leave everything else identical).\n10. EXTRACT-ONLY RULE: Bindings must contain ONLY numbers the user explicitly wrote in the query, plus the conditions the query states in words (rule 12). NEVER compute intermediate values yourself. Do NOT compute velocity from acceleration*time. Do NOT compute force from mass*acceleration. The proof engine derives intermediate quantities; you only extract what is stated.\n11. OUT-OF-SCOPE RULE: If the query asks about a quantity not in ALLOWED PREDICATES (e.g., magnetic flux, electric field, wavelength, resistance, entropy, refraction), set `predicate` to the literal string \"OUT_OF_SCOPE\" and leave bindings empty. Do NOT pick an unrelated predicate just to produce output.\n12. STATED-CONDITION RULE: some quantities are stated in WORDS, not digits. Bind them ONLY\n   when the query ASSERTS the condition; never when it is merely compatible with it.\n   - initial_velocity = 0 ONLY for: \"from rest\", \"at rest\", \"starts at rest\", \"dropped\",\n     \"released from rest\", \"starts motionless\". NOT for \"falling\", \"free fall\",\n     \"freely falling\", \"released\", \"after release\" -- those do not state the start.\n   - acceleration = 0 for a lasting state of no change in motion: \"at rest\", \"stationary\",\n     \"motionless\", \"still\", \"in equilibrium\", \"constant velocity\".\n   - incline_angle = 0 for a \"flat\", \"level\" or \"horizontal\" surface.\n   - friction_force = 0 AND nonconservative_work = \"none\" for \"frictionless\" or \"smooth\".\n   - nonconservative_work = \"none\" also for \"ignore/neglect friction\", \"ignore air\n     resistance\", \"conservation of MECHANICAL energy\". NOT for plain \"energy conservation\".\n   - applied_force_angle = 0 when the applied force is \"horizontal\" or \"parallel\" to the\n     surface.\n   - torque_angle = 90 when the force is \"perpendicular\" to the lever arm.\n   - pendulum_amplitude = \"small\" ONLY for \"small angle\", \"small amplitude\", \"small\n     oscillations\". A numeric amplitude does not bind it.\n   - collision_type = \"elastic\" for \"elastic\"; \"perfectly_inelastic\" for \"perfectly\n     inelastic\", \"stick together\", \"move together after\", \"coalesce\". \"Inelastic\" alone\n     binds nothing.\n   Angles: incline_angle (slope of a surface), force_displacement_angle (work),\n   torque_angle (torque), applied_force_angle (push on a flat surface). Never use a bare\n   \"angle\".\n13. TWO-OBJECT RULE: when two objects are described (collisions, gravitation), use mass_1 /\n   mass_2 and initial_velocity_1 / initial_velocity_2, numbered in the order the objects\n   appear in the query. Never put two different values under one name.\n14. NEVER bind the quantity the query asks for. The asked-for quantity is the predicate.\n15. NET-QUANTITY RULE: net_force, net_work and net_impulse mean the NET (total) quantity.\n   - net_force ONLY for \"net force\", \"resultant force\", \"unbalanced force\", \"total force\"\n     or \"the only force acting\". \"A force of F acts on / is applied to\" binds force.\n   - net_work ONLY for \"net work\", \"total work\", \"work done by the net force\". Plain\n     \"work done\" binds work.\n   - net_impulse for \"receives an impulse of\", \"net impulse\", \"total impulse\".\n   - The force that gives a mass an acceleration (F = m a) is the predicate net_force,\n     context dynamics. Weight, spring force and gravitational attraction are force.\n16. SPECIFIC QUANTITIES: spring_extension = how far a spring is stretched, compressed or\n   displaced from its natural length. separation = centre-to-centre distance between two\n   attracting masses. gravitational_potential_energy for \"gravitational PE\" or plain\n   \"potential energy\"; elastic_potential_energy for energy stored in a spring.\n   max_static_friction = \"maximum static friction\". max_velocity = \"maximum\" or \"peak\"\n   velocity of an oscillator. rotational_kinetic_energy = \"rotational kinetic energy\".\n\nCONTEXT SELECTION HINTS (choose the context whose physical regime matches the query; each context is listed with the quantities its KB rules conclude):\n- 'falling', 'dropped', 'free fall', 'falls' -> free_fall: velocity; displacement\n- 'kinetic energy', 'KE', 'energy of motion', 'work', 'PE' -> energy: kinetic_energy; gravitational_potential_energy; mechanical_energy; work; power\n- 'collides', 'bounces off', 'sticks to' -> elastic_collision: velocity [Final velocity of object 1 in 1D elastic collision] | elastic_collision_object2: velocity [Final velocity of object 2 in 1D elastic collision] | inelastic_collision: velocity [Final velocity of combined mass after perfectly inelastic collision]\n- 'incline', 'ramp', 'slope at angle theta' -> inclined_plane: normal_force [On inclined plane at angle theta, normal force is perpendicular component of weight]; net_force [On frictionless inclined plane, net force along incline is parallel component of weight] | inclined_plane_friction: net_force [Net force along incline with friction opposing motion]\n- 'pendulum', 'spring oscillates', 'simple harmonic' -> simple_harmonic_motion: period; max_velocity\n- 'rotates', 'spins about an axis' -> rotational_motion: torque; rotational_kinetic_energy; angular_momentum; moment_of_inertia\n- 'circular motion', 'orbits', 'goes around in a circle' -> circular_motion: centripetal_acceleration; centripetal_force; period; angular_velocity; velocity\n- 'pushes', 'F=ma', plain 'force on a mass' -> dynamics: net_force; acceleration [Rearrangement of Newton's Second Law F=ma]; momentum; impulse\n- 'displacement / velocity / position' with kinematic data -> kinematics: velocity; displacement\n- friction or normal-force on flat surface -> newtonian_motion: net_impulse; normal_force [On a flat horizontal surface with no vertical acceleration, normal force equals weight by Newton's third law]; friction_force; net_force; acceleration [Direct application of Newton's second law where net force is already computed]; tension [Tension in string supporting stationary hanging mass equals weight of mass]; kinetic_energy; velocity\n- gravity: force\n- elasticity: force; elastic_potential_energy\n- mechanics: density; pressure\n- gravitation: force\n- static: max_static_friction\n- newtonian_motion_accelerating: tension [Tension in string pulling mass upward with acceleration a]\n- energy_conservation: velocity\n\nPREDICATE SELECTION HINTS:\n- 'velocity', 'speed', 'how fast' -> velocity\n- 'displacement', 'how far', 'distance traveled' -> displacement\n- 'force', 'how much force' -> net_force when it accelerates a mass (F = m a); force for weight, spring or gravitational force; friction_force / tension when named\n- 'kinetic energy', 'KE' -> kinetic_energy\n- 'after falling for t seconds, what's the velocity' -> velocity (free_fall), NOT displacement\n\nEXAMPLES:\n\nInput: Query: Given kinetic energy 909.1 j and potential energy 362.1 j, compute the total mechanical energy.\nOutput: {\"predicate\": \"mechanical_energy\", \"unit\": \"J\", \"context\": \"energy\", \"bindings\": {\"kinetic_energy\": {\"value\": 909.1, \"unit\": \"J\"}, \"gravitational_potential_energy\": {\"value\": 362.1, \"unit\": \"J\"}}}\n\nInput: Query: An object moving at 3.841 m/s accelerates at 9.837 m/s squared for 7.183 seconds. what is its displacement.\nOutput: {\"predicate\": \"displacement\", \"unit\": \"m\", \"context\": \"kinematics\", \"bindings\": {\"initial_velocity\": {\"value\": 3.841, \"unit\": \"m/s\"}, \"acceleration\": {\"value\": 9.837, \"unit\": \"m/s2\"}, \"time\": {\"value\": 7.183, \"unit\": \"s\"}}}\n\nInput: Query: hey, what is the acceleration of a 7.955 kg object under a net force of 220.9 N?\nOutput: {\"predicate\": \"acceleration\", \"unit\": \"m/s2\", \"context\": \"newtonian_motion\", \"bindings\": {\"net_force\": {\"value\": 220.9, \"unit\": \"N\"}, \"mass\": {\"value\": 7.955, \"unit\": \"kg\"}}}\n\nInput: Query: problem: find the tension in a rope pulling a 54.51 kg mass upward with acceleration 2.815 m/s^2. show your work.\nOutput: {\"predicate\": \"tension\", \"unit\": \"N\", \"context\": \"newtonian_motion_accelerating\", \"bindings\": {\"mass\": {\"value\": 54.51, \"unit\": \"kg\"}, \"acceleration\": {\"value\": 2.815, \"unit\": \"m/s2\"}}}\n\nInput: Query: yo what is the period of a simple pendulum of length 1.869 metres\nOutput: {\"predicate\": \"period\", \"unit\": \"s\", \"context\": \"simple_harmonic_motion\", \"bindings\": {\"length\": {\"value\": 1.869, \"unit\": \"m\"}}}\n\nInput: Query: hey, what is the angular momentum of a body with moment of inertia 56.19 kg m squared rotating at 0.6605 rad/s?\nOutput: {\"predicate\": \"angular_momentum\", \"unit\": \"kg*m2/s\", \"context\": \"rotational_motion\", \"bindings\": {\"moment_of_inertia\": {\"value\": 56.19, \"unit\": \"kg*m2\"}, \"angular_velocity\": {\"value\": 0.6605, \"unit\": \"rad/s\"}}}\n\nInput: Query: hey, an object moving at 8.645 m/s accelerates at 0.1737 m/s squared for 5.459 seconds. what is its final velocity?\nOutput: {\"predicate\": \"velocity\", \"unit\": \"m/s\", \"context\": \"kinematics\", \"bindings\": {\"initial_velocity\": {\"value\": 8.645, \"unit\": \"m/s\"}, \"acceleration\": {\"value\": 0.1737, \"unit\": \"m/s2\"}, \"time\": {\"value\": 5.459, \"unit\": \"s\"}}}\n\nInput: Query: could you work out the power output when 1827 J of work is performed over 87.19 s, please\nOutput: {\"predicate\": \"power\", \"unit\": \"W\", \"context\": \"energy\", \"bindings\": {\"work\": {\"value\": 1827.0, \"unit\": \"J\"}, \"time\": {\"value\": 87.19, \"unit\": \"s\"}}}\n\nInput: Query: give me the weight of an object with mass 48.55 kg under standard gravity\nOutput: {\"predicate\": \"force\", \"unit\": \"N\", \"context\": \"gravity\", \"bindings\": {\"mass\": {\"value\": 48.55, \"unit\": \"kg\"}}}\n\nInput: Query: i need to know — find the rotational KE for I = 0.4209 kg*m^2 and angular velocity 8.819 rad/s\nOutput: {\"predicate\": \"rotational_kinetic_energy\", \"unit\": \"J\", \"context\": \"rotational_motion\", \"bindings\": {\"moment_of_inertia\": {\"value\": 0.4209, \"unit\": \"kg*m2\"}, \"angular_velocity\": {\"value\": 8.819, \"unit\": \"rad/s\"}}}\n\nInput: Query: hey, compute the kinetic energy of a 28.69 kg object travelling at 62.71 m/s?\nOutput: {\"predicate\": \"kinetic_energy\", \"unit\": \"J\", \"context\": \"energy\", \"bindings\": {\"mass\": {\"value\": 28.69, \"unit\": \"kg\"}, \"velocity\": {\"value\": 62.71, \"unit\": \"m/s\"}}}\n\nInput: Query: i need to know — find the centripetal force for a 77.13 kg mass on a circular path with v = 76.25 m/s and r = 94.97 m\nOutput: {\"predicate\": \"centripetal_force\", \"unit\": \"N\", \"context\": \"circular_motion\", \"bindings\": {\"mass\": {\"value\": 77.13, \"unit\": \"kg\"}, \"velocity\": {\"value\": 76.25, \"unit\": \"m/s\"}, \"radius\": {\"value\": 94.97, \"unit\": \"m\"}}}\n\nInput: Query: Calculate the torque for a force 705.9 n at perpendicular distance 7.867 m.\nOutput: {\"predicate\": \"torque\", \"unit\": \"N*m\", \"context\": \"rotational_motion\", \"bindings\": {\"force\": {\"value\": 705.9, \"unit\": \"N\"}, \"radius\": {\"value\": 7.867, \"unit\": \"m\"}, \"torque_angle\": {\"value\": 90, \"unit\": \"deg\"}}}\n\nInput: Query: let's say we want the moment of inertia of a point mass 74.47 kg located 1.779 m from the rotation axis\nOutput: {\"predicate\": \"moment_of_inertia\", \"unit\": \"kg*m2\", \"context\": \"rotational_motion\", \"bindings\": {\"mass\": {\"value\": 74.47, \"unit\": \"kg\"}, \"radius\": {\"value\": 1.779, \"unit\": \"m\"}}}\n\nInput: Query: what is the momentum of a 98.05 kg object moving at 93.93 m/s\nOutput: {\"predicate\": \"momentum\", \"unit\": \"kg*m/s\", \"context\": \"dynamics\", \"bindings\": {\"mass\": {\"value\": 98.05, \"unit\": \"kg\"}, \"velocity\": {\"value\": 93.93, \"unit\": \"m/s\"}}}\n\nInput: Query: let's say we want the impulse delivered by a 948.9 N force acting for 6.063 seconds\nOutput: {\"predicate\": \"impulse\", \"unit\": \"N*s\", \"context\": \"dynamics\", \"bindings\": {\"force\": {\"value\": 948.9, \"unit\": \"N\"}, \"time\": {\"value\": 6.063, \"unit\": \"s\"}}}\n\nInput: Query: for my homework: find the angular velocity given a rotation period of 5.899 s\nOutput: {\"predicate\": \"angular_velocity\", \"unit\": \"rad/s\", \"context\": \"circular_motion\", \"bindings\": {\"period\": {\"value\": 5.899, \"unit\": \"s\"}}}\n\nInput: Query: yo find the friction force on a sliding object with kinetic friction coefficient 0.1911 and normal force 640.7 N\nOutput: {\"predicate\": \"friction_force\", \"unit\": \"N\", \"context\": \"newtonian_motion\", \"bindings\": {\"kinetic_friction_coefficient\": {\"value\": 0.1911, \"unit\": \"dimensionless\"}, \"normal_force\": {\"value\": 640.7, \"unit\": \"N\"}}}\n\nInput: Query: hey, what is the maximum velocity of an oscillator with amplitude 0.7471 metres and angular frequency 91.03 rad/s?\nOutput: {\"predicate\": \"max_velocity\", \"unit\": \"m/s\", \"context\": \"simple_harmonic_motion\", \"bindings\": {\"amplitude\": {\"value\": 0.7471, \"unit\": \"m\"}, \"angular_velocity\": {\"value\": 91.03, \"unit\": \"rad/s\"}}}\n\nInput: Query: i need to know — what is the induced emf in a coil whose flux changes by 0.3 Wb in 0.1 s\nOutput: {\"predicate\": \"OUT_OF_SCOPE\", \"unit\": \"n/a\", \"context\": \"n/a\", \"bindings\": {}}\n",
+    "followup": "You update a structured physics goal based on a follow-up query.\n\nYou will receive:\n  PREVIOUS GOAL: <JSON object>\n  NEW QUERY: <natural language>\n\nOutput exactly ONE JSON object: the updated goal. Rules:\n1. The output schema MUST equal the previous goal's schema (keys: predicate, unit, context, bindings; each binding: {\"value\": <number>, \"unit\": <string>}).\n2. The output's `predicate`, `unit`, and `context` MUST be IDENTICAL to the previous goal.\n3. The output's `bindings` MUST contain every binding key from the previous goal.\n4. The ONLY change is: overwrite the value(s) of binding(s) that the new query explicitly references (for example: 'what if the mass was 5 kg' -> change the `mass` binding's value to 5; leave other bindings untouched).\n5. Output JSON only. No commentary, no markdown fences.\n\nEXAMPLE:\nPREVIOUS GOAL: {\"predicate\": \"momentum\", \"unit\": \"kg*m/s\", \"context\": \"dynamics\", \"bindings\": {\"mass\": {\"value\": 3, \"unit\": \"kg\"}, \"velocity\": {\"value\": 8, \"unit\": \"m/s\"}}}\nNEW QUERY: what if the velocity were 12 m/s instead\nOUTPUT: {\"predicate\": \"momentum\", \"unit\": \"kg*m/s\", \"context\": \"dynamics\", \"bindings\": {\"mass\": {\"value\": 3, \"unit\": \"kg\"}, \"velocity\": {\"value\": 12, \"unit\": \"m/s\"}}}\n\nPREVIOUS GOAL: {\"predicate\": \"net_force\", \"unit\": \"N\", \"context\": \"dynamics\", \"bindings\": {\"mass\": {\"value\": 10, \"unit\": \"kg\"}, \"acceleration\": {\"value\": 3, \"unit\": \"m/s2\"}}}\nNEW QUERY: what if the acceleration were 7 m/s squared instead\nOUTPUT: {\"predicate\": \"net_force\", \"unit\": \"N\", \"context\": \"dynamics\", \"bindings\": {\"mass\": {\"value\": 10, \"unit\": \"kg\"}, \"acceleration\": {\"value\": 7, \"unit\": \"m/s2\"}}}\n",
+    "_examples_note": "EXAMPLES drawn from the development set only (tools/build/build_dev_prompt_examples.py, 2026-11-23): at most one per query form, the dev gold goal state as output, every stated number replaced by a value no dev or test query states.",
+    "_examples_source": [
+      {
+        "form": "mechanical_energy / energy",
+        "dev_id": 29,
+        "values": {
+          "288.7": "909.1",
+          "101": "362.1"
+        }
+      },
+      {
+        "form": "displacement / kinematics",
+        "dev_id": 19,
+        "values": {
+          "2.3": "3.841",
+          "3.6": "9.837",
+          "5.5": "7.183"
+        }
+      },
+      {
+        "form": "acceleration / newtonian_motion",
+        "dev_id": 24,
+        "values": {
+          "204.5": "220.9",
+          "5": "7.955"
+        }
+      },
+      {
+        "form": "tension / newtonian_motion_accelerating",
+        "dev_id": 4,
+        "values": {
+          "14": "54.51",
+          "5.7": "2.815"
+        }
+      },
+      {
+        "form": "period / simple_harmonic_motion",
+        "dev_id": 32,
+        "values": {
+          "3.76": "1.869"
+        }
+      },
+      {
+        "form": "angular_momentum / rotational_motion",
+        "dev_id": 11,
+        "values": {
+          "10.36": "56.19",
+          "0.7": "0.6605"
+        }
+      },
+      {
+        "form": "velocity / kinematics",
+        "dev_id": 13,
+        "values": {
+          "2.1": "8.645",
+          "0.8": "0.1737",
+          "4.9": "5.459"
+        }
+      },
+      {
+        "form": "power / energy",
+        "dev_id": 17,
+        "values": {
+          "2309": "1827",
+          "36.2": "87.19"
+        }
+      },
+      {
+        "form": "force / gravity",
+        "dev_id": 20,
+        "values": {
+          "13.2": "48.55"
+        }
+      },
+      {
+        "form": "rotational_kinetic_energy / rotational_motion",
+        "dev_id": 28,
+        "values": {
+          "0.93": "0.4209",
+          "4.7": "8.819"
+        }
+      },
+      {
+        "form": "kinetic_energy / energy",
+        "dev_id": 38,
+        "values": {
+          "10.3": "28.69",
+          "24.8": "62.71"
+        }
+      },
+      {
+        "form": "centripetal_force / circular_motion",
+        "dev_id": 44,
+        "values": {
+          "97.5": "77.13",
+          "13.8": "76.25",
+          "13.4": "94.97"
+        }
+      },
+      {
+        "form": "torque / rotational_motion",
+        "dev_id": 25,
+        "values": {
+          "124.1": "705.9",
+          "4.92": "7.867"
+        }
+      },
+      {
+        "form": "moment_of_inertia / rotational_motion",
+        "dev_id": 3,
+        "values": {
+          "14.6": "74.47",
+          "1.03": "1.779"
+        }
+      },
+      {
+        "form": "momentum / dynamics",
+        "dev_id": 5,
+        "values": {
+          "82.3": "98.05",
+          "28.3": "93.93"
+        }
+      },
+      {
+        "form": "impulse / dynamics",
+        "dev_id": 6,
+        "values": {
+          "163.5": "948.9",
+          "3.4": "6.063"
+        }
+      },
+      {
+        "form": "angular_velocity / circular_motion",
+        "dev_id": 7,
+        "values": {
+          "5.5": "5.899"
+        }
+      },
+      {
+        "form": "friction_force / newtonian_motion",
+        "dev_id": 10,
+        "values": {
+          "0.15": "0.1911",
+          "441.3": "640.7"
+        }
+      },
+      {
+        "form": "max_velocity / simple_harmonic_motion",
+        "dev_id": 12,
+        "values": {
+          "0.9": "0.7471",
+          "10.4": "91.03"
+        }
+      },
+      {
+        "form": "out_of_scope",
+        "dev_id": 84,
+        "values": {}
+      }
+    ],
+    "_context_hints_note": "CONTEXT SELECTION HINTS generated from KB1 by tools/build/build_physics_context_hints.py (2026-11-24)."
+  },
+  "baseline_prompts": {
+    "_note": "System prompts for the two baselines (tools/eval/baseline_rag.py). raw_system null means the raw baseline sends no system message.",
+    "rag_system": "You are a physics assistant. Use ONLY the provided context to answer the question. If the answer cannot be determined from the context, reply exactly: I cannot answer this.\n\nBe concise. Give the numeric value with its unit.",
+    "raw_system": null
+  },
+  "condition_phrases": {
+    "initial_velocity": [
+      {
+        "value": 0,
+        "phrases": [
+          "from rest|at rest|\\bdropped\\b|released from rest|starts? motionless"
+        ]
+      }
+    ],
+    "torque_angle": [
+      {
+        "value": 90,
+        "phrases": [
+          "perpendicular"
+        ]
+      }
+    ],
+    "incline_angle": [
+      {
+        "value": 0,
+        "phrases": [
+          "\\bflat\\b|\\blevel\\b|horizontal"
+        ]
+      }
+    ],
+    "acceleration": [
+      {
+        "value": 0,
+        "phrases": [
+          "at rest|stationary|motionless|\\bstill\\b|equilibrium|constant velocity|steady speed"
+        ]
+      }
+    ],
+    "friction_force": [
+      {
+        "value": 0,
+        "phrases": [
+          "frictionless|smooth"
+        ]
+      }
+    ],
+    "applied_force_angle": [
+      {
+        "value": 0,
+        "phrases": [
+          "horizontal|parallel"
+        ]
+      }
+    ],
+    "nonconservative_work": [
+      {
+        "value": "none",
+        "phrases": [
+          "frictionless|smooth|(ignor|neglect)\\w* (friction|air resistance)|conservation of mechanical energy|mechanical energy is conserved"
+        ]
+      }
+    ],
+    "pendulum_amplitude": [
+      {
+        "value": "small",
+        "phrases": [
+          "small (angle|amplitude|oscillation)"
+        ]
+      }
+    ],
+    "collision_type": [
+      {
+        "value": "perfectly_inelastic",
+        "phrases": [
+          "perfectly inelastic|stick together|move together after|coalesce"
+        ]
+      },
+      {
+        "value": "elastic",
+        "phrases": [
+          "(?<!in)elastic"
+        ]
+      }
+    ],
+    "net_force": [
+      {
+        "value": "any",
+        "phrases": [
+          "net force|resultant force|unbalanced force|total force|the only force acting"
+        ]
+      }
+    ],
+    "net_work": [
+      {
+        "value": "any",
+        "phrases": [
+          "net work|total work|work done by the net force"
+        ]
+      }
+    ],
+    "net_impulse": [
+      {
+        "value": "any",
+        "phrases": [
+          "receives? an impulse|net impulse|total impulse"
+        ]
+      }
+    ]
+  },
+  "_condition_phrases_note": "A binding listed here is a condition: the parser keeps it only if the query states it -- a phrase below matches (case-insensitive regex), or, for a numeric value, the number itself appears in the query. Value 'any' means every value of the binding needs the phrase. Otherwise the parse is refused (F4, condition not stated in the query)."
+}

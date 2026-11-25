@@ -1,0 +1,1357 @@
+{
+  "_note": "Merged biology query set: the former bio_queries.json (vertebrate classification on trait presence) and felidae_queries.json (felid classification on numeric+categorical envelopes), both against the single kb1_biology.json. Every expected answer is unchanged from the source sets.",
+  "organisms": {
+    "platypus": [
+      "has_backbone",
+      "amniotic_egg",
+      "produces_milk",
+      "has_hair",
+      "lays_eggs"
+    ],
+    "kangaroo": [
+      "has_backbone",
+      "amniotic_egg",
+      "produces_milk",
+      "has_hair",
+      "has_pouch",
+      "live_birth"
+    ],
+    "dolphin": [
+      "has_backbone",
+      "amniotic_egg",
+      "produces_milk",
+      "has_hair",
+      "live_birth",
+      "has_placenta",
+      "has_flippers",
+      "has_blowhole"
+    ],
+    "lion": [
+      "has_backbone",
+      "amniotic_egg",
+      "produces_milk",
+      "has_hair",
+      "live_birth",
+      "has_placenta",
+      "has_carnassial_teeth"
+    ],
+    "human": [
+      "has_backbone",
+      "amniotic_egg",
+      "produces_milk",
+      "has_hair",
+      "live_birth",
+      "has_placenta",
+      "opposable_thumb",
+      "forward_facing_eyes"
+    ],
+    "mouse": [
+      "has_backbone",
+      "amniotic_egg",
+      "produces_milk",
+      "has_hair",
+      "live_birth",
+      "has_placenta",
+      "ever_growing_incisors"
+    ],
+    "eagle": [
+      "has_backbone",
+      "amniotic_egg",
+      "has_feathers",
+      "lays_eggs"
+    ],
+    "crocodile": [
+      "has_backbone",
+      "amniotic_egg",
+      "has_keratin_scales",
+      "ectothermic",
+      "lays_eggs"
+    ],
+    "salmon": [
+      "has_backbone",
+      "has_gills",
+      "has_fins",
+      "lays_eggs"
+    ],
+    "frog": [
+      "has_backbone",
+      "moist_permeable_skin",
+      "aquatic_larval_stage",
+      "lays_eggs"
+    ],
+    "chimera_specimen": [
+      "has_backbone",
+      "amniotic_egg",
+      "has_feathers",
+      "live_birth",
+      "has_placenta"
+    ],
+    "invertebrate_specimen": [
+      "has_gills",
+      "has_fins"
+    ]
+  },
+  "vertebrate_queries": [
+    {
+      "id": 1,
+      "form": "is_a",
+      "organism": "platypus",
+      "target": "vertebrate",
+      "question": "Is a platypus a vertebrate?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "monotreme"
+    },
+    {
+      "id": 2,
+      "form": "is_a",
+      "organism": "salmon",
+      "target": "vertebrate",
+      "question": "Is a salmon a vertebrate?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "fish"
+    },
+    {
+      "id": 3,
+      "form": "is_a",
+      "organism": "frog",
+      "target": "vertebrate",
+      "question": "Is a frog a vertebrate?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "amphibian"
+    },
+    {
+      "id": 4,
+      "form": "is_a",
+      "organism": "eagle",
+      "target": "vertebrate",
+      "question": "Is an eagle a vertebrate?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "bird"
+    },
+    {
+      "id": 5,
+      "form": "is_a",
+      "organism": "invertebrate_specimen",
+      "target": "vertebrate",
+      "question": "Is the unidentified specimen a vertebrate?",
+      "expected": "refuse",
+      "truth": "no",
+      "expected_classification": null
+    },
+    {
+      "id": 6,
+      "form": "is_a",
+      "organism": "dolphin",
+      "target": "mammal",
+      "question": "Is a dolphin a mammal?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "cetacean"
+    },
+    {
+      "id": 7,
+      "form": "is_a",
+      "organism": "eagle",
+      "target": "mammal",
+      "question": "Is an eagle a mammal?",
+      "expected": "derived: bird",
+      "truth": "no",
+      "expected_classification": "bird"
+    },
+    {
+      "id": 8,
+      "form": "is_a",
+      "organism": "crocodile",
+      "target": "mammal",
+      "question": "Is a crocodile a mammal?",
+      "expected": "derived: reptile",
+      "truth": "no",
+      "expected_classification": "reptile"
+    },
+    {
+      "id": 9,
+      "form": "is_a",
+      "organism": "platypus",
+      "target": "mammal",
+      "question": "Is a platypus a mammal?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "monotreme"
+    },
+    {
+      "id": 10,
+      "form": "is_a",
+      "organism": "kangaroo",
+      "target": "mammal",
+      "question": "Is a kangaroo a mammal?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "marsupial"
+    },
+    {
+      "id": 11,
+      "form": "is_a",
+      "organism": "crocodile",
+      "target": "amniote",
+      "question": "Is a crocodile an amniote?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "reptile"
+    },
+    {
+      "id": 12,
+      "form": "is_a",
+      "organism": "salmon",
+      "target": "amniote",
+      "question": "Is a salmon an amniote?",
+      "expected": "derived: fish",
+      "truth": "no",
+      "expected_classification": "fish"
+    },
+    {
+      "id": 13,
+      "form": "is_a",
+      "organism": "frog",
+      "target": "amniote",
+      "question": "Is a frog an amniote?",
+      "expected": "derived: amphibian",
+      "truth": "no",
+      "expected_classification": "amphibian"
+    },
+    {
+      "id": 14,
+      "form": "is_a",
+      "organism": "dolphin",
+      "target": "placental",
+      "question": "Is a dolphin a placental mammal?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "cetacean"
+    },
+    {
+      "id": 15,
+      "form": "is_a",
+      "organism": "kangaroo",
+      "target": "placental",
+      "question": "Is a kangaroo a placental mammal?",
+      "expected": "derived: marsupial",
+      "truth": "no",
+      "expected_classification": "marsupial"
+    },
+    {
+      "id": 16,
+      "form": "is_a",
+      "organism": "platypus",
+      "target": "placental",
+      "question": "Is a platypus a placental mammal?",
+      "expected": "derived: monotreme",
+      "truth": "no",
+      "expected_classification": "monotreme"
+    },
+    {
+      "id": 17,
+      "form": "is_a",
+      "organism": "human",
+      "target": "placental",
+      "question": "Is a human a placental mammal?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "primate"
+    },
+    {
+      "id": 18,
+      "form": "is_a",
+      "organism": "mouse",
+      "target": "placental",
+      "question": "Is a mouse a placental mammal?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "rodent"
+    },
+    {
+      "id": 19,
+      "form": "is_a",
+      "organism": "lion",
+      "target": "placental",
+      "question": "Is a lion a placental mammal?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "carnivore"
+    },
+    {
+      "id": 20,
+      "form": "is_a",
+      "organism": "platypus",
+      "target": "monotreme",
+      "question": "Is a platypus a monotreme?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "monotreme"
+    },
+    {
+      "id": 21,
+      "form": "is_a",
+      "organism": "kangaroo",
+      "target": "monotreme",
+      "question": "Is a kangaroo a monotreme?",
+      "expected": "derived: marsupial",
+      "truth": "no",
+      "expected_classification": "marsupial"
+    },
+    {
+      "id": 22,
+      "form": "is_a",
+      "organism": "kangaroo",
+      "target": "marsupial",
+      "question": "Is a kangaroo a marsupial?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "marsupial"
+    },
+    {
+      "id": 23,
+      "form": "is_a",
+      "organism": "dolphin",
+      "target": "marsupial",
+      "question": "Is a dolphin a marsupial?",
+      "expected": "derived: cetacean",
+      "truth": "no",
+      "expected_classification": "cetacean"
+    },
+    {
+      "id": 24,
+      "form": "is_a",
+      "organism": "platypus",
+      "target": "marsupial",
+      "question": "Is a platypus a marsupial?",
+      "expected": "derived: monotreme",
+      "truth": "no",
+      "expected_classification": "monotreme"
+    },
+    {
+      "id": 25,
+      "form": "is_a",
+      "organism": "lion",
+      "target": "carnivore",
+      "question": "Is a lion a carnivore?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "carnivore"
+    },
+    {
+      "id": 26,
+      "form": "is_a",
+      "organism": "human",
+      "target": "primate",
+      "question": "Is a human a primate?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "primate"
+    },
+    {
+      "id": 27,
+      "form": "is_a",
+      "organism": "mouse",
+      "target": "rodent",
+      "question": "Is a mouse a rodent?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "rodent"
+    },
+    {
+      "id": 28,
+      "form": "is_a",
+      "organism": "dolphin",
+      "target": "cetacean",
+      "question": "Is a dolphin a cetacean?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "cetacean"
+    },
+    {
+      "id": 29,
+      "form": "is_a",
+      "organism": "lion",
+      "target": "primate",
+      "question": "Is a lion a primate?",
+      "expected": "derived: carnivore",
+      "truth": "no",
+      "expected_classification": "carnivore"
+    },
+    {
+      "id": 30,
+      "form": "is_a",
+      "organism": "dolphin",
+      "target": "carnivore",
+      "question": "Is a dolphin a carnivore?",
+      "expected": "derived: cetacean",
+      "truth": "no",
+      "expected_classification": "cetacean"
+    },
+    {
+      "id": 31,
+      "form": "is_a",
+      "organism": "human",
+      "target": "rodent",
+      "question": "Is a human a rodent?",
+      "expected": "derived: primate",
+      "truth": "no",
+      "expected_classification": "primate"
+    },
+    {
+      "id": 32,
+      "form": "is_a",
+      "organism": "eagle",
+      "target": "bird",
+      "question": "Is an eagle a bird?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "bird"
+    },
+    {
+      "id": 33,
+      "form": "is_a",
+      "organism": "crocodile",
+      "target": "reptile",
+      "question": "Is a crocodile a reptile?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "reptile"
+    },
+    {
+      "id": 34,
+      "form": "is_a",
+      "organism": "salmon",
+      "target": "fish",
+      "question": "Is a salmon a fish?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "fish"
+    },
+    {
+      "id": 35,
+      "form": "is_a",
+      "organism": "frog",
+      "target": "amphibian",
+      "question": "Is a frog an amphibian?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "amphibian"
+    },
+    {
+      "id": 36,
+      "form": "is_a",
+      "organism": "eagle",
+      "target": "reptile",
+      "question": "Is an eagle a reptile?",
+      "expected": "derived: bird",
+      "truth": "no",
+      "expected_classification": "bird"
+    },
+    {
+      "id": 37,
+      "form": "is_a",
+      "organism": "dolphin",
+      "target": "fish",
+      "question": "Is a dolphin a fish?",
+      "expected": "derived: cetacean",
+      "truth": "no",
+      "expected_classification": "cetacean"
+    },
+    {
+      "id": 38,
+      "form": "is_a",
+      "organism": "frog",
+      "target": "reptile",
+      "question": "Is a frog a reptile?",
+      "expected": "derived: amphibian",
+      "truth": "no",
+      "expected_classification": "amphibian"
+    },
+    {
+      "id": 39,
+      "form": "what_is",
+      "organism": "platypus",
+      "question": "What is a platypus?",
+      "expected": "monotreme"
+    },
+    {
+      "id": 40,
+      "form": "what_is",
+      "organism": "dolphin",
+      "question": "What is a dolphin?",
+      "expected": "cetacean"
+    },
+    {
+      "id": 41,
+      "form": "what_is",
+      "organism": "kangaroo",
+      "question": "What is a kangaroo?",
+      "expected": "marsupial"
+    },
+    {
+      "id": 42,
+      "form": "what_is",
+      "organism": "lion",
+      "question": "What is a lion?",
+      "expected": "carnivore"
+    },
+    {
+      "id": 43,
+      "form": "what_is",
+      "organism": "human",
+      "question": "What is a human?",
+      "expected": "primate"
+    },
+    {
+      "id": 44,
+      "form": "what_is",
+      "organism": "mouse",
+      "question": "What is a mouse?",
+      "expected": "rodent"
+    },
+    {
+      "id": 45,
+      "form": "what_is",
+      "organism": "eagle",
+      "question": "What is an eagle?",
+      "expected": "bird"
+    },
+    {
+      "id": 46,
+      "form": "what_is",
+      "organism": "crocodile",
+      "question": "What is a crocodile?",
+      "expected": "reptile"
+    },
+    {
+      "id": 47,
+      "form": "what_is",
+      "organism": "salmon",
+      "question": "What is a salmon?",
+      "expected": "fish"
+    },
+    {
+      "id": 48,
+      "form": "what_is",
+      "organism": "frog",
+      "question": "What is a frog?",
+      "expected": "amphibian"
+    },
+    {
+      "id": 49,
+      "form": "what_is",
+      "organism": "invertebrate_specimen",
+      "question": "What is the unidentified specimen?",
+      "expected": "refuse"
+    },
+    {
+      "id": 50,
+      "form": "what_is",
+      "organism": "chimera_specimen",
+      "question": "What is the chimeric specimen?",
+      "expected": "amniote"
+    },
+    {
+      "id": 51,
+      "form": "why_is",
+      "organism": "dolphin",
+      "target": "mammal",
+      "question": "Why is a dolphin a mammal?",
+      "expected": "mammal"
+    },
+    {
+      "id": 52,
+      "form": "why_is",
+      "organism": "platypus",
+      "target": "mammal",
+      "question": "Why is a platypus a mammal?",
+      "expected": "mammal"
+    },
+    {
+      "id": 53,
+      "form": "why_is",
+      "organism": "dolphin",
+      "target": "placental",
+      "question": "Why is a dolphin a placental mammal?",
+      "expected": "placental"
+    },
+    {
+      "id": 54,
+      "form": "why_is",
+      "organism": "eagle",
+      "target": "bird",
+      "question": "Why is an eagle a bird?",
+      "expected": "bird"
+    },
+    {
+      "id": 55,
+      "form": "why_isnt",
+      "organism": "dolphin",
+      "target": "fish",
+      "question": "Why isn't a dolphin a fish?",
+      "expected": "cetacean"
+    },
+    {
+      "id": 56,
+      "form": "why_isnt",
+      "organism": "kangaroo",
+      "target": "placental",
+      "question": "Why isn't a kangaroo a placental mammal?",
+      "expected": "marsupial"
+    },
+    {
+      "id": 57,
+      "form": "why_isnt",
+      "organism": "platypus",
+      "target": "placental",
+      "question": "Why isn't a platypus a placental mammal?",
+      "expected": "monotreme"
+    },
+    {
+      "id": 58,
+      "form": "why_isnt",
+      "organism": "eagle",
+      "target": "mammal",
+      "question": "Why isn't an eagle a mammal?",
+      "expected": "bird"
+    },
+    {
+      "id": 59,
+      "form": "is_a",
+      "organism": "chimera_specimen",
+      "target": "bird",
+      "question": "Is the chimeric specimen a bird?",
+      "expected": "derived: amniote",
+      "truth": "no",
+      "expected_classification": "amniote"
+    },
+    {
+      "id": 60,
+      "form": "is_a",
+      "organism": "chimera_specimen",
+      "target": "mammal",
+      "question": "Is the chimeric specimen a mammal?",
+      "expected": "derived: amniote",
+      "truth": "no",
+      "expected_classification": "amniote"
+    },
+    {
+      "id": 61,
+      "form": "is_a",
+      "organism": "invertebrate_specimen",
+      "target": "fish",
+      "question": "Is the unidentified specimen a fish?",
+      "expected": "refuse",
+      "truth": "no",
+      "expected_classification": null
+    },
+    {
+      "id": 62,
+      "form": "why_isnt",
+      "organism": "invertebrate_specimen",
+      "target": "fish",
+      "question": "Why isn't the unidentified specimen a fish?",
+      "expected": "refuse"
+    }
+  ],
+  "felid_queries": [
+    {
+      "id": 1,
+      "form": "what_is",
+      "body_length": 230,
+      "geographic_range": "southeast_asia",
+      "habitat": "shrubland",
+      "question": "A 230 cm cat from Southeast Asian shrubland. What is it?",
+      "expected": "tiger",
+      "expected_level": "species"
+    },
+    {
+      "id": 2,
+      "form": "what_is",
+      "body_length": 193,
+      "geographic_range": "sub_saharan_africa",
+      "habitat": "forest",
+      "question": "A 193 cm cat in sub-Saharan African forest. What is it?",
+      "expected": "lion",
+      "expected_level": "species"
+    },
+    {
+      "id": 3,
+      "form": "what_is",
+      "body_length": 110,
+      "geographic_range": "south_america",
+      "habitat": "inland_wetlands",
+      "question": "A 110 cm cat in South American wetlands. What is it?",
+      "expected": "jaguar",
+      "expected_level": "species"
+    },
+    {
+      "id": 4,
+      "form": "what_is",
+      "body_length": 91,
+      "geographic_range": "sub_saharan_africa",
+      "habitat": "forest",
+      "question": "A 91 cm cat in sub-Saharan African forest. What is it?",
+      "expected": "leopard",
+      "expected_level": "species"
+    },
+    {
+      "id": 5,
+      "form": "what_is",
+      "body_length": 90,
+      "geographic_range": "himalayas",
+      "habitat": "shrubland",
+      "question": "A 90 cm cat in Himalayan shrubland. What is it?",
+      "expected": "snow_leopard",
+      "expected_level": "species"
+    },
+    {
+      "id": 6,
+      "form": "what_is",
+      "body_length": 69,
+      "geographic_range": "southern_china",
+      "habitat": "forest",
+      "question": "A 69 cm cat in southern Chinese forest. What is it?",
+      "expected": "clouded_leopard",
+      "expected_level": "species"
+    },
+    {
+      "id": 7,
+      "form": "what_is",
+      "body_length": 69,
+      "geographic_range": "sumatra",
+      "habitat": "forest",
+      "question": "A 69 cm cat in Sumatran forest. What is it?",
+      "expected": "sunda_clouded_leopard",
+      "expected_level": "species"
+    },
+    {
+      "id": 8,
+      "form": "what_is",
+      "body_length": 50,
+      "geographic_range": "north_america",
+      "habitat": "desert",
+      "question": "A 50 cm cat in North American desert. What is it?",
+      "expected": "bobcat",
+      "expected_level": "species"
+    },
+    {
+      "id": 9,
+      "form": "what_is",
+      "body_length": 90,
+      "geographic_range": "eastern_europe",
+      "habitat": "forest",
+      "question": "A 90 cm cat in Eastern European forest. What is it?",
+      "expected": "eurasian_lynx",
+      "expected_level": "species"
+    },
+    {
+      "id": 10,
+      "form": "what_is",
+      "body_length": 65,
+      "geographic_range": "iberia",
+      "habitat": "shrubland",
+      "question": "A 65 cm cat in Iberian shrubland. What is it?",
+      "expected": "iberian_lynx",
+      "expected_level": "species"
+    },
+    {
+      "id": 11,
+      "form": "what_is",
+      "body_length": 113,
+      "geographic_range": "southern_africa",
+      "habitat": "desert",
+      "question": "A 113 cm cat in southern African desert. What is it?",
+      "expected": "cheetah",
+      "expected_level": "species"
+    },
+    {
+      "id": 12,
+      "form": "what_is",
+      "body_length": 100,
+      "geographic_range": "south_america",
+      "habitat": "desert",
+      "question": "A 100 cm cat in South American desert. What is it?",
+      "expected": "cougar",
+      "expected_level": "species"
+    },
+    {
+      "id": 13,
+      "form": "what_is",
+      "body_length": 49,
+      "geographic_range": "central_america",
+      "habitat": "grassland",
+      "question": "A 49 cm cat in Central American grassland. What is it?",
+      "expected": "jaguarundi",
+      "expected_level": "species"
+    },
+    {
+      "id": 14,
+      "form": "what_is",
+      "body_length": 102,
+      "geographic_range": "central_america",
+      "habitat": "forest",
+      "question": "A 102 cm cat in Central American forest. What is it?",
+      "expected": "ocelot",
+      "expected_level": "species"
+    },
+    {
+      "id": 15,
+      "form": "what_is",
+      "body_length": 46,
+      "geographic_range": "north_america",
+      "habitat": "forest",
+      "question": "A 46 cm cat in North American forest. What is it?",
+      "expected": "margay",
+      "expected_level": "species"
+    },
+    {
+      "id": 16,
+      "form": "what_is",
+      "body_length": 43,
+      "geographic_range": "south_america",
+      "habitat": "savanna",
+      "question": "A 43 cm cat in South American savanna. What is it?",
+      "expected": "geoffroys_cat",
+      "expected_level": "species"
+    },
+    {
+      "id": 17,
+      "form": "what_is",
+      "body_length": 38,
+      "geographic_range": "south_america",
+      "habitat": "forest",
+      "question": "A 38 cm cat in South American forest. What is it?",
+      "expected": "oncilla",
+      "expected_level": "species"
+    },
+    {
+      "id": 18,
+      "form": "what_is",
+      "body_length": 46,
+      "geographic_range": "worldwide",
+      "habitat": "domesticated",
+      "question": "A 46 cm domesticated cat, found worldwide. What is it?",
+      "expected": "domestic_cat",
+      "expected_level": "species"
+    },
+    {
+      "id": 19,
+      "form": "what_is",
+      "body_length": 39,
+      "geographic_range": "western_africa",
+      "habitat": "desert",
+      "question": "A 39 cm cat in West African desert. What is it?",
+      "expected": "sand_cat",
+      "expected_level": "species"
+    },
+    {
+      "id": 20,
+      "form": "what_is",
+      "body_length": 37,
+      "geographic_range": "southern_africa",
+      "habitat": "savanna",
+      "question": "A 37 cm cat in southern African savanna. What is it?",
+      "expected": "black_footed_cat",
+      "expected_level": "species"
+    },
+    {
+      "id": 21,
+      "form": "what_is",
+      "body_length": 58,
+      "geographic_range": "indian_subcontinent",
+      "habitat": "forest",
+      "question": "A 58 cm cat in Indian forest. What is it?",
+      "expected": "jungle_cat",
+      "expected_level": "species"
+    },
+    {
+      "id": 22,
+      "form": "what_is",
+      "body_length": 73,
+      "geographic_range": "north_america",
+      "habitat": "grassland",
+      "question": "A 73 cm cat in North American grassland. What is it?",
+      "expected": "genus_lynx",
+      "expected_level": "genus",
+      "consistent": [
+        "bobcat",
+        "canada_lynx"
+      ]
+    },
+    {
+      "id": 23,
+      "form": "what_is",
+      "body_length": 137,
+      "geographic_range": "indian_subcontinent",
+      "habitat": "desert",
+      "question": "A 137 cm cat in Indian desert. What is it?",
+      "expected": "genus_panthera",
+      "expected_level": "genus",
+      "consistent": [
+        "leopard",
+        "lion"
+      ]
+    },
+    {
+      "id": 24,
+      "form": "what_is",
+      "body_length": 46,
+      "geographic_range": "south_america",
+      "habitat": "savanna",
+      "question": "A 46 cm cat in South American savanna. What is it?",
+      "expected": "genus_leopardus",
+      "expected_level": "genus",
+      "consistent": [
+        "geoffroys_cat",
+        "margay"
+      ]
+    },
+    {
+      "id": 25,
+      "form": "what_is",
+      "body_length": 79,
+      "geographic_range": "south_america",
+      "habitat": "forest",
+      "question": "A 79 cm cat in South American forest. What is it?",
+      "expected": "genus_leopardus",
+      "expected_level": "genus",
+      "consistent": [
+        "geoffroys_cat",
+        "ocelot"
+      ]
+    },
+    {
+      "id": 26,
+      "form": "what_is",
+      "body_length": 91,
+      "geographic_range": "southeast_asia",
+      "habitat": "forest",
+      "question": "A 91 cm cat in Southeast Asian forest. What is it?",
+      "expected": "panthera_lineage",
+      "expected_level": "lineage",
+      "consistent": [
+        "clouded_leopard",
+        "leopard"
+      ]
+    },
+    {
+      "id": 27,
+      "form": "what_is",
+      "body_length": 49,
+      "geographic_range": "south_america",
+      "habitat": "grassland",
+      "question": "A 49 cm cat in South American grassland. What is it?",
+      "expected": "felinae",
+      "expected_level": "subfamily",
+      "consistent": [
+        "geoffroys_cat",
+        "jaguarundi"
+      ]
+    },
+    {
+      "id": 28,
+      "form": "what_is",
+      "body_length": 50,
+      "geographic_range": "central_america",
+      "habitat": "forest",
+      "question": "A 50 cm cat in Central American forest. What is it?",
+      "expected": "felinae",
+      "expected_level": "subfamily",
+      "consistent": [
+        "jaguarundi",
+        "margay",
+        "ocelot"
+      ]
+    },
+    {
+      "id": 29,
+      "form": "what_is",
+      "body_length": 110,
+      "geographic_range": "south_america",
+      "habitat": "forest",
+      "question": "A 110 cm cat in South American forest. What is it?",
+      "expected": "felidae",
+      "expected_level": "family",
+      "consistent": [
+        "cougar",
+        "jaguar"
+      ]
+    },
+    {
+      "id": 30,
+      "form": "what_is",
+      "body_length": 90,
+      "geographic_range": "southern_china",
+      "habitat": "forest",
+      "question": "A 90 cm cat in southern Chinese forest. What is it?",
+      "expected": "felidae",
+      "expected_level": "family",
+      "consistent": [
+        "clouded_leopard",
+        "eurasian_lynx"
+      ]
+    },
+    {
+      "id": 31,
+      "form": "what_is",
+      "body_length": 300,
+      "geographic_range": "sub_saharan_africa",
+      "habitat": "forest",
+      "question": "A 300 cm cat in sub-Saharan African forest. What is it?",
+      "expected": "refuse",
+      "expected_level": "refuse"
+    },
+    {
+      "id": 32,
+      "form": "what_is",
+      "body_length": 20,
+      "geographic_range": "south_america",
+      "habitat": "forest",
+      "question": "A 20 cm cat in South American forest. What is it?",
+      "expected": "refuse",
+      "expected_level": "refuse"
+    },
+    {
+      "id": 33,
+      "form": "what_is",
+      "body_length": 150,
+      "geographic_range": "iberia",
+      "habitat": "shrubland",
+      "question": "A 150 cm cat in Iberian shrubland. What is it?",
+      "expected": "refuse",
+      "expected_level": "refuse"
+    },
+    {
+      "id": 34,
+      "form": "what_is",
+      "body_length": 46,
+      "geographic_range": "himalayas",
+      "habitat": "domesticated",
+      "question": "A 46 cm domesticated cat in the Himalayas. What is it?",
+      "expected": "refuse",
+      "expected_level": "refuse"
+    },
+    {
+      "id": 35,
+      "form": "what_is",
+      "body_length": 113,
+      "geographic_range": "worldwide",
+      "habitat": "desert",
+      "question": "A 113 cm cat found worldwide, in desert. What is it?",
+      "expected": "refuse",
+      "expected_level": "refuse"
+    },
+    {
+      "id": 36,
+      "form": "is_a",
+      "target": "tiger",
+      "body_length": 230,
+      "geographic_range": "southeast_asia",
+      "habitat": "shrubland",
+      "question": "Is the 230 cm Southeast Asian shrubland cat a tiger?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "tiger"
+    },
+    {
+      "id": 37,
+      "form": "is_a",
+      "target": "lion",
+      "body_length": 230,
+      "geographic_range": "southeast_asia",
+      "habitat": "shrubland",
+      "question": "Is the 230 cm Southeast Asian shrubland cat a lion?",
+      "expected": "derived: tiger",
+      "truth": "no",
+      "expected_classification": "tiger"
+    },
+    {
+      "id": 38,
+      "form": "is_a",
+      "target": "genus_panthera",
+      "body_length": 230,
+      "geographic_range": "southeast_asia",
+      "habitat": "shrubland",
+      "question": "Is it a Panthera?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "tiger"
+    },
+    {
+      "id": 39,
+      "form": "is_a",
+      "target": "pantherinae",
+      "body_length": 230,
+      "geographic_range": "southeast_asia",
+      "habitat": "shrubland",
+      "question": "Is it a pantherine?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "tiger"
+    },
+    {
+      "id": 40,
+      "form": "is_a",
+      "target": "felinae",
+      "body_length": 230,
+      "geographic_range": "southeast_asia",
+      "habitat": "shrubland",
+      "question": "Is it a feline?",
+      "expected": "derived: tiger",
+      "truth": "no",
+      "expected_classification": "tiger"
+    },
+    {
+      "id": 41,
+      "form": "is_a",
+      "target": "margay",
+      "body_length": 46,
+      "geographic_range": "north_america",
+      "habitat": "forest",
+      "question": "Is the 46 cm North American forest cat a margay?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "margay"
+    },
+    {
+      "id": 42,
+      "form": "is_a",
+      "target": "felidae",
+      "body_length": 46,
+      "geographic_range": "north_america",
+      "habitat": "forest",
+      "question": "Is it a felid at all?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "margay"
+    },
+    {
+      "id": 43,
+      "form": "is_a",
+      "target": "bobcat",
+      "body_length": 50,
+      "geographic_range": "north_america",
+      "habitat": "desert",
+      "question": "Is the 50 cm North American desert cat a bobcat?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "bobcat"
+    },
+    {
+      "id": 44,
+      "form": "is_a",
+      "target": "genus_lynx",
+      "body_length": 50,
+      "geographic_range": "north_america",
+      "habitat": "desert",
+      "question": "Is it a Lynx?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "bobcat"
+    },
+    {
+      "id": 45,
+      "form": "is_a",
+      "target": "oncilla",
+      "body_length": 38,
+      "geographic_range": "south_america",
+      "habitat": "forest",
+      "question": "Is the 38 cm South American forest cat an oncilla?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "oncilla"
+    },
+    {
+      "id": 46,
+      "form": "is_a",
+      "target": "genus_panthera",
+      "body_length": 38,
+      "geographic_range": "south_america",
+      "habitat": "forest",
+      "question": "Is the 38 cm cat a Panthera?",
+      "expected": "derived: oncilla",
+      "truth": "no",
+      "expected_classification": "oncilla"
+    },
+    {
+      "id": 47,
+      "form": "is_a",
+      "target": "cougar",
+      "body_length": 100,
+      "geographic_range": "south_america",
+      "habitat": "desert",
+      "question": "Is the 100 cm South American desert cat a cougar?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "cougar"
+    },
+    {
+      "id": 48,
+      "form": "is_a",
+      "target": "puma_lineage",
+      "body_length": 100,
+      "geographic_range": "south_america",
+      "habitat": "desert",
+      "question": "Is it in the Puma lineage?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "cougar"
+    },
+    {
+      "id": 49,
+      "form": "is_a",
+      "target": "cheetah",
+      "body_length": 113,
+      "geographic_range": "southern_africa",
+      "habitat": "desert",
+      "question": "Is the 113 cm southern African desert cat a cheetah?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "cheetah"
+    },
+    {
+      "id": 50,
+      "form": "is_a",
+      "target": "genus_puma",
+      "body_length": 113,
+      "geographic_range": "southern_africa",
+      "habitat": "desert",
+      "question": "Is the cheetah-profile cat in genus Puma?",
+      "expected": "derived: cheetah",
+      "truth": "no",
+      "expected_classification": "cheetah"
+    },
+    {
+      "id": 51,
+      "form": "is_a",
+      "target": "canada_lynx",
+      "body_length": 73,
+      "geographic_range": "north_america",
+      "habitat": "grassland",
+      "question": "Could the 73 cm North American grassland cat be a Canada lynx?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "genus_lynx"
+    },
+    {
+      "id": 52,
+      "form": "is_a",
+      "target": "bobcat",
+      "body_length": 73,
+      "geographic_range": "north_america",
+      "habitat": "grassland",
+      "question": "Could the same cat be a bobcat?",
+      "expected": "yes",
+      "truth": "yes",
+      "expected_classification": "genus_lynx"
+    },
+    {
+      "id": 53,
+      "form": "is_a",
+      "target": "lion",
+      "body_length": 300,
+      "geographic_range": "sub_saharan_africa",
+      "habitat": "forest",
+      "question": "Is the 300 cm African forest cat a lion?",
+      "expected": "refuse",
+      "truth": "no",
+      "expected_classification": null
+    },
+    {
+      "id": 54,
+      "form": "why_is",
+      "target": "tiger",
+      "body_length": 230,
+      "geographic_range": "southeast_asia",
+      "habitat": "shrubland",
+      "question": "Why is the 230 cm Southeast Asian shrubland cat a tiger?",
+      "expected": "tiger"
+    },
+    {
+      "id": 55,
+      "form": "why_is",
+      "target": "snow_leopard",
+      "body_length": 90,
+      "geographic_range": "himalayas",
+      "habitat": "shrubland",
+      "question": "Why is the 90 cm Himalayan cat a snow leopard?",
+      "expected": "snow_leopard"
+    },
+    {
+      "id": 56,
+      "form": "why_is",
+      "target": "cheetah",
+      "body_length": 113,
+      "geographic_range": "southern_africa",
+      "habitat": "desert",
+      "question": "Why is the 113 cm southern African desert cat a cheetah?",
+      "expected": "cheetah"
+    },
+    {
+      "id": 57,
+      "form": "why_is",
+      "target": "domestic_cat",
+      "body_length": 46,
+      "geographic_range": "worldwide",
+      "habitat": "domesticated",
+      "question": "Why is the 46 cm domesticated cat a domestic cat?",
+      "expected": "domestic_cat"
+    },
+    {
+      "id": 58,
+      "form": "why_isnt",
+      "target": "lion",
+      "body_length": 230,
+      "geographic_range": "southeast_asia",
+      "habitat": "shrubland",
+      "question": "Why isn't the 230 cm Southeast Asian shrubland cat a lion?",
+      "expected": "tiger"
+    },
+    {
+      "id": 59,
+      "form": "why_isnt",
+      "target": "jaguar",
+      "body_length": 38,
+      "geographic_range": "south_america",
+      "habitat": "forest",
+      "question": "Why isn't the 38 cm South American forest cat a jaguar?",
+      "expected": "oncilla"
+    },
+    {
+      "id": 60,
+      "form": "why_isnt",
+      "target": "lion",
+      "body_length": 113,
+      "geographic_range": "southern_africa",
+      "habitat": "desert",
+      "question": "Why isn't the 113 cm southern African desert cat a lion?",
+      "expected": "cheetah"
+    },
+    {
+      "id": 61,
+      "form": "why_isnt",
+      "target": "cougar",
+      "body_length": 73,
+      "geographic_range": "north_america",
+      "habitat": "grassland",
+      "question": "Why isn't the 73 cm North American grassland cat a cougar?",
+      "expected": "genus_lynx"
+    },
+    {
+      "id": 62,
+      "form": "why_isnt",
+      "target": "lion",
+      "body_length": 300,
+      "geographic_range": "sub_saharan_africa",
+      "habitat": "forest",
+      "question": "Why isn't the 300 cm African forest cat a lion?",
+      "expected": "refuse"
+    }
+  ]
+}

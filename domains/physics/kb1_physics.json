@@ -1,0 +1,1385 @@
+{
+  "_context_transitions_note": "Cross-context transitions this KB permits during backward chaining. A subgoal inherits the context of the rule that raised it, and by default only rules in that same context may satisfy it. Each entry is [parent context, subgoal predicate, context of the rule allowed to satisfy it]. This set is exactly the set of transitions that occur in the currently-passing derivations of the 300-query replay and the 250-query oracle run; nothing was added speculatively, and anything not listed is refused. Counts are those measurements. Deliberately absent: [\"energy\", \"force\", \"dynamics\"] - it appears in no correct derivation (its only occurrence is an out-of-scope query whose bindings the parser invented), so it is a pure leak and stays closed.",
+  "_predicate_aliases_note": "Binding names that may stand in for a sub-goal's predicate when it is not bound directly (predicate -> names that satisfy it). Aliases run only from specific to general: force: [net_force] lets a net force fill an input that accepts any force; no alias lets a general quantity fill a specific input. 2026-11-22: displacement<->distance removed (tools/build/migrate_physics_prefreeze.py).",
+  "domain_scope": [
+    "Classical (non-relativistic) Newtonian mechanics.",
+    "Bodies are point masses or rigid bodies; strings are massless and inextensible; springs are ideal (Hooke's law, within the elastic limit).",
+    "Motion is one-dimensional along a single axis; velocities are signed scalars.",
+    "Accelerations and forces are constant over the stated interval (kinematics, impulse, work, power are interval averages under this idealization).",
+    "Near-surface gravity is uniform (g, primitive or stated); gravitational_force uses Newton's law of gravitation instead.",
+    "Free fall means motion under gravity alone: air resistance is neglected."
+  ],
+  "_rule_audit_note": "2026-11-21 rule audit (tools/build/migrate_physics_rule_audit.py): every condition a rule's formula depends on is an input or a guard. Removed kinematic_velocity_from_rest, kinematic_displacement_from_rest, torque_from_force; see that script for the guarded and renamed rules. domain_scope lists idealizations that hold for every rule and are therefore not predicates.",
+  "_predicate_audit_note": "2026-11-22 pre-freeze predicate audit (tools/build/migrate_physics_prefreeze.py): one predicate, one quantity. Split: force / net_force, work / net_work, impulse / net_impulse, kinetic_energy / rotational_kinetic_energy, friction_force / max_static_friction, displacement / spring_extension, distance -> separation, potential_energy -> gravitational_potential_energy / elastic_potential_energy, velocity / max_velocity. Added net_impulse. Remaining assumptions are stated as SCOPE in each rule's proof.",
+  "predicate_aliases": {
+    "force": [
+      "net_force"
+    ]
+  },
+  "context_transitions": [
+    [
+      "kinematics",
+      "acceleration",
+      "dynamics"
+    ],
+    [
+      "dynamics",
+      "force",
+      "gravity"
+    ],
+    [
+      "energy",
+      "velocity",
+      "kinematics"
+    ],
+    [
+      "newtonian_motion",
+      "net_force",
+      "inclined_plane"
+    ],
+    [
+      "dynamics",
+      "acceleration",
+      "newtonian_motion"
+    ]
+  ],
+  "primitives": [
+    {
+      "id": "grav_accel",
+      "predicate": "gravitational_acceleration",
+      "context": "free_fall",
+      "value": 9.8,
+      "unit": "m/s2",
+      "source": "OpenStax University Physics Vol 1, Ch 3.5; Halliday Ch 2.9"
+    },
+    {
+      "id": "speed_of_light",
+      "predicate": "speed",
+      "context": "light",
+      "value": 299792458,
+      "unit": "m/s",
+      "source": "OpenStax University Physics Vol 1, Ch 1.1; Halliday Ch 38.1"
+    },
+    {
+      "id": "grav_constant",
+      "predicate": "gravitational_constant",
+      "context": "gravitation",
+      "value": 6.674e-11,
+      "unit": "N*m2/kg2",
+      "source": "OpenStax University Physics Vol 1, Ch 13.1; Halliday Ch 13.1; CODATA 2018"
+    },
+    {
+      "id": "standard_atm_pressure",
+      "predicate": "pressure",
+      "context": "atmosphere",
+      "value": 101325,
+      "unit": "Pa",
+      "source": "OpenStax University Physics Vol 1, Ch 14.1"
+    }
+  ],
+  "rules": [
+    {
+      "id": "kinematic_velocity_with_initial",
+      "predicate": "velocity",
+      "context": "kinematics",
+      "inputs": [
+        {
+          "name": "v0",
+          "predicate": "initial_velocity",
+          "unit": "m/s"
+        },
+        {
+          "name": "a",
+          "predicate": "acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "t",
+          "predicate": "time",
+          "unit": "s"
+        }
+      ],
+      "output": {
+        "predicate": "velocity",
+        "unit": "m/s"
+      },
+      "formula": "v0 + a * t",
+      "proof": "v = v0 + at. First kinematic equation for constant acceleration. OpenStax Vol 1 Eq 3.12; Halliday Eq 2-11."
+    },
+    {
+      "id": "kinematic_displacement_with_initial",
+      "predicate": "displacement",
+      "context": "kinematics",
+      "inputs": [
+        {
+          "name": "v0",
+          "predicate": "initial_velocity",
+          "unit": "m/s"
+        },
+        {
+          "name": "a",
+          "predicate": "acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "t",
+          "predicate": "time",
+          "unit": "s"
+        }
+      ],
+      "output": {
+        "predicate": "displacement",
+        "unit": "m"
+      },
+      "formula": "v0 * t + 0.5 * a * t**2",
+      "proof": "x = v0*t + (1/2)at^2. Second kinematic equation. OpenStax Vol 1 Eq 3.13; Halliday Eq 2-15."
+    },
+    {
+      "id": "kinematic_velocity_from_displacement",
+      "predicate": "velocity",
+      "context": "kinematics",
+      "inputs": [
+        {
+          "name": "v0",
+          "predicate": "initial_velocity",
+          "unit": "m/s"
+        },
+        {
+          "name": "a",
+          "predicate": "acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "x",
+          "predicate": "displacement",
+          "unit": "m"
+        }
+      ],
+      "output": {
+        "predicate": "velocity",
+        "unit": "m/s"
+      },
+      "formula": "(v0**2 + 2 * a * x) ** 0.5",
+      "proof": "v = sqrt(v0^2 + 2ax). Third kinematic equation: v^2 = v0^2 + 2ax. OpenStax Vol 1 Eq 3.14; Halliday Eq 2-16. SCOPE: Takes the positive root of v^2 = v0^2 + 2 a x, so the output is a speed (the magnitude of the velocity), not a signed velocity."
+    },
+    {
+      "id": "newton_second_law",
+      "predicate": "net_force",
+      "context": "dynamics",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "a",
+          "predicate": "acceleration",
+          "unit": "m/s2"
+        }
+      ],
+      "output": {
+        "predicate": "net_force",
+        "unit": "N"
+      },
+      "formula": "m * a",
+      "proof": "F = ma. Newton's Second Law of Motion. Net force equals mass times acceleration. OpenStax Vol 1 Eq 5.3; Halliday Eq 5-1. PREDICATE: Outputs net_force: m a is the NET force on the body, not any single force acting on it."
+    },
+    {
+      "id": "acceleration_from_force",
+      "predicate": "acceleration",
+      "context": "dynamics",
+      "inputs": [
+        {
+          "name": "F",
+          "predicate": "net_force",
+          "unit": "N"
+        },
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        }
+      ],
+      "output": {
+        "predicate": "acceleration",
+        "unit": "m/s2"
+      },
+      "formula": "F / m",
+      "proof": "a = F/m. Rearrangement of Newton's Second Law F=ma. OpenStax Vol 1 Eq 5.3; Halliday Eq 5-1. PREDICATE: Input net_force: a = F/m holds for the NET force only."
+    },
+    {
+      "id": "weight_from_mass",
+      "predicate": "force",
+      "context": "gravity",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        }
+      ],
+      "output": {
+        "predicate": "force",
+        "unit": "N"
+      },
+      "formula": "m * g",
+      "proof": "W = mg. Weight is the gravitational force on a body. Special case of F=ma where a=g. OpenStax Vol 1 Eq 5.4; Halliday Eq 5-8."
+    },
+    {
+      "id": "kinetic_energy",
+      "predicate": "kinetic_energy",
+      "context": "energy",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "v",
+          "predicate": "velocity",
+          "unit": "m/s"
+        }
+      ],
+      "output": {
+        "predicate": "kinetic_energy",
+        "unit": "J"
+      },
+      "formula": "0.5 * m * v**2",
+      "proof": "KE = (1/2)mv^2. From work-energy theorem: work done to accelerate mass m from rest to velocity v equals (1/2)mv^2. OpenStax Vol 1 Eq 7.6; Halliday Eq 7-1."
+    },
+    {
+      "id": "gravitational_potential_energy",
+      "predicate": "gravitational_potential_energy",
+      "context": "energy",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "h",
+          "predicate": "height",
+          "unit": "m"
+        }
+      ],
+      "output": {
+        "predicate": "gravitational_potential_energy",
+        "unit": "J"
+      },
+      "formula": "m * g * h",
+      "proof": "PE = mgh. Gravitational potential energy in uniform gravitational field. Work done against gravity lifting mass m to height h. OpenStax Vol 1 Eq 8.4; Halliday Eq 8-1. PREDICATE: Outputs gravitational_potential_energy (m g h)."
+    },
+    {
+      "id": "mechanical_energy",
+      "predicate": "mechanical_energy",
+      "context": "energy",
+      "inputs": [
+        {
+          "name": "KE",
+          "predicate": "kinetic_energy",
+          "unit": "J"
+        },
+        {
+          "name": "PE",
+          "predicate": "gravitational_potential_energy",
+          "unit": "J"
+        }
+      ],
+      "output": {
+        "predicate": "mechanical_energy",
+        "unit": "J"
+      },
+      "formula": "KE + PE",
+      "proof": "E = KE + PE. Total mechanical energy is sum of kinetic and potential energy. OpenStax Vol 1 Eq 8.12; Halliday Eq 8-11. PREDICATE: Input gravitational_potential_energy. SCOPE: No elastic element in the system: the potential energy is gravitational only."
+    },
+    {
+      "id": "work_from_force_displacement",
+      "predicate": "work",
+      "context": "energy",
+      "inputs": [
+        {
+          "name": "F",
+          "predicate": "force",
+          "unit": "N"
+        },
+        {
+          "name": "d",
+          "predicate": "displacement",
+          "unit": "m"
+        },
+        {
+          "name": "theta",
+          "predicate": "force_displacement_angle",
+          "unit": "deg"
+        }
+      ],
+      "output": {
+        "predicate": "work",
+        "unit": "J"
+      },
+      "formula": "F * d * __import__('math').cos(theta * __import__('math').pi / 180)",
+      "proof": "W = F*d*cos(theta). Work is dot product of force and displacement vectors. Theta is angle between force vector and displacement vector. When theta=0, W=Fd. When theta=90, W=0. OpenStax Vol 1 Eq 7.1; Halliday Eq 7-7."
+    },
+    {
+      "id": "power_from_work",
+      "predicate": "power",
+      "context": "energy",
+      "inputs": [
+        {
+          "name": "W",
+          "predicate": "work",
+          "unit": "J"
+        },
+        {
+          "name": "t",
+          "predicate": "time",
+          "unit": "s"
+        }
+      ],
+      "output": {
+        "predicate": "power",
+        "unit": "W"
+      },
+      "formula": "W / t",
+      "proof": "P = W/t. Average power is work done per unit time. OpenStax Vol 1 Eq 7.10; Halliday Eq 7-42."
+    },
+    {
+      "id": "momentum",
+      "predicate": "momentum",
+      "context": "dynamics",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "v",
+          "predicate": "velocity",
+          "unit": "m/s"
+        }
+      ],
+      "output": {
+        "predicate": "momentum",
+        "unit": "kg*m/s"
+      },
+      "formula": "m * v",
+      "proof": "p = mv. Linear momentum is mass times velocity. OpenStax Vol 1 Eq 9.1; Halliday Eq 9-22."
+    },
+    {
+      "id": "impulse",
+      "predicate": "impulse",
+      "context": "dynamics",
+      "inputs": [
+        {
+          "name": "F",
+          "predicate": "force",
+          "unit": "N"
+        },
+        {
+          "name": "t",
+          "predicate": "time",
+          "unit": "s"
+        }
+      ],
+      "output": {
+        "predicate": "impulse",
+        "unit": "N*s"
+      },
+      "formula": "F * t",
+      "proof": "J = Ft. Impulse equals force times time interval for constant force. OpenStax Vol 1 Eq 9.5; Halliday Eq 9-30."
+    },
+    {
+      "id": "net_impulse",
+      "predicate": "net_impulse",
+      "context": "newtonian_motion",
+      "inputs": [
+        {
+          "name": "F_net",
+          "predicate": "net_force",
+          "unit": "N"
+        },
+        {
+          "name": "t",
+          "predicate": "time",
+          "unit": "s"
+        }
+      ],
+      "output": {
+        "predicate": "net_impulse",
+        "unit": "N*s"
+      },
+      "formula": "F_net * t",
+      "proof": "J_net = F_net t. The impulse of the net force over the interval; by the impulse-momentum theorem it equals the change in momentum. Constant net force over the interval (domain_scope). OpenStax Vol 1 Eq 9.5-9.6; Halliday Eq 9-30, 9-31."
+    },
+    {
+      "id": "free_fall_velocity",
+      "predicate": "velocity",
+      "context": "free_fall",
+      "inputs": [
+        {
+          "name": "t",
+          "predicate": "time",
+          "unit": "s"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "v0",
+          "predicate": "initial_velocity",
+          "unit": "m/s"
+        }
+      ],
+      "output": {
+        "predicate": "velocity",
+        "unit": "m/s"
+      },
+      "guard": "v0 == 0",
+      "formula": "g * t",
+      "proof": "v = gt. Special case of v=at where a=g=9.8 m/s^2 for free fall from rest. OpenStax Vol 1 Eq 3.15; Halliday Eq 2-11. CONDITION: v = g t holds only for release from rest; no free_fall rule takes a nonzero v0, so v0 is an input guarded == 0."
+    },
+    {
+      "id": "free_fall_displacement",
+      "predicate": "displacement",
+      "context": "free_fall",
+      "inputs": [
+        {
+          "name": "t",
+          "predicate": "time",
+          "unit": "s"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "v0",
+          "predicate": "initial_velocity",
+          "unit": "m/s"
+        }
+      ],
+      "output": {
+        "predicate": "displacement",
+        "unit": "m"
+      },
+      "guard": "v0 == 0",
+      "formula": "0.5 * g * t**2",
+      "proof": "y = (1/2)gt^2. Special case of x=(1/2)at^2 for free fall from rest. OpenStax Vol 1 Eq 3.15; Halliday Eq 2-15. CONDITION: y = g t^2 / 2 holds only for release from rest; v0 is an input guarded == 0."
+    },
+    {
+      "id": "spring_force",
+      "predicate": "force",
+      "context": "elasticity",
+      "inputs": [
+        {
+          "name": "k",
+          "predicate": "spring_constant",
+          "unit": "N/m"
+        },
+        {
+          "name": "x",
+          "predicate": "spring_extension",
+          "unit": "m"
+        }
+      ],
+      "output": {
+        "predicate": "force",
+        "unit": "N"
+      },
+      "formula": "k * x",
+      "proof": "F = kx. Magnitude of Hooke's Law restoring force. Full law is F = -kx where the negative sign indicates the force opposes displacement direction. This rule returns magnitude only and is valid for scalar force calculations. OpenStax Vol 1 Eq 12.2; Halliday Eq 15-10. PREDICATE: Input spring_extension: x is the spring's extension or compression from its natural length, not a displacement of motion."
+    },
+    {
+      "id": "spring_potential_energy",
+      "predicate": "elastic_potential_energy",
+      "context": "elasticity",
+      "inputs": [
+        {
+          "name": "k",
+          "predicate": "spring_constant",
+          "unit": "N/m"
+        },
+        {
+          "name": "x",
+          "predicate": "spring_extension",
+          "unit": "m"
+        }
+      ],
+      "output": {
+        "predicate": "elastic_potential_energy",
+        "unit": "J"
+      },
+      "formula": "0.5 * k * x**2",
+      "proof": "PE = (1/2)kx^2. Elastic potential energy stored in spring compressed or stretched by x. OpenStax Vol 1 Eq 8.6; Halliday Eq 8-4. PREDICATE: Outputs elastic_potential_energy ((1/2) k x^2). Input spring_extension (extension or compression from natural length)."
+    },
+    {
+      "id": "density",
+      "predicate": "density",
+      "context": "mechanics",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "V",
+          "predicate": "volume",
+          "unit": "m3"
+        }
+      ],
+      "output": {
+        "predicate": "density",
+        "unit": "kg/m3"
+      },
+      "formula": "m / V",
+      "proof": "rho = m/V. Density is mass per unit volume. OpenStax Vol 1 Eq 14.1; Halliday Eq 14-1."
+    },
+    {
+      "id": "pressure_from_force",
+      "predicate": "pressure",
+      "context": "mechanics",
+      "inputs": [
+        {
+          "name": "F",
+          "predicate": "force",
+          "unit": "N"
+        },
+        {
+          "name": "A",
+          "predicate": "area",
+          "unit": "m2"
+        }
+      ],
+      "output": {
+        "predicate": "pressure",
+        "unit": "Pa"
+      },
+      "formula": "F / A",
+      "proof": "P = F/A. Pressure is force per unit area. OpenStax Vol 1 Eq 14.2; Halliday Eq 14-4. SCOPE: The force is the normal (perpendicular) force on the area, spread uniformly."
+    },
+    {
+      "id": "gravitational_force",
+      "predicate": "force",
+      "context": "gravitation",
+      "inputs": [
+        {
+          "name": "G",
+          "predicate": "gravitational_constant",
+          "unit": "N*m2/kg2"
+        },
+        {
+          "name": "m1",
+          "predicate": "mass_1",
+          "unit": "kg"
+        },
+        {
+          "name": "m2",
+          "predicate": "mass_2",
+          "unit": "kg"
+        },
+        {
+          "name": "r",
+          "predicate": "separation",
+          "unit": "m"
+        }
+      ],
+      "output": {
+        "predicate": "force",
+        "unit": "N"
+      },
+      "formula": "G * m1 * m2 / r**2",
+      "proof": "F = Gm1m2/r^2. Newton's Law of Universal Gravitation. OpenStax Vol 1 Eq 13.2; Halliday Eq 13-1. PREDICATE: Input separation: r is the centre-to-centre separation of the two masses, not a distance travelled."
+    },
+    {
+      "id": "normal_force_flat",
+      "predicate": "normal_force",
+      "context": "newtonian_motion",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "theta",
+          "predicate": "incline_angle",
+          "unit": "deg"
+        }
+      ],
+      "output": {
+        "predicate": "normal_force",
+        "unit": "N"
+      },
+      "guard": "theta == 0",
+      "formula": "m * g",
+      "proof": "N = mg. On a flat horizontal surface with no vertical acceleration, normal force equals weight by Newton's third law. OpenStax Vol 1 Eq 5.11; Halliday Eq 5-13. CONDITION: N = m g holds only on a horizontal surface; the incline angle is an input guarded == 0. Still assumes no other force has a component perpendicular to the surface. SCOPE: No other vertical forces act on the body (only its weight and the normal force)."
+    },
+    {
+      "id": "normal_force_incline",
+      "predicate": "normal_force",
+      "context": "inclined_plane",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "theta",
+          "predicate": "incline_angle",
+          "unit": "deg"
+        }
+      ],
+      "output": {
+        "predicate": "normal_force",
+        "unit": "N"
+      },
+      "formula": "m * g * __import__('math').cos(theta * __import__('math').pi / 180)",
+      "proof": "N = mg*cos(theta). On inclined plane at angle theta, normal force is perpendicular component of weight. Resolving weight vector: N = mg cos(theta). OpenStax Vol 1 Eq 5.12; Halliday Eq 5-18. SCOPE: No forces other than weight, normal force and forces parallel to the incline act on the body."
+    },
+    {
+      "id": "kinetic_friction_force",
+      "predicate": "friction_force",
+      "context": "newtonian_motion",
+      "inputs": [
+        {
+          "name": "mu_k",
+          "predicate": "kinetic_friction_coefficient",
+          "unit": "dimensionless"
+        },
+        {
+          "name": "N",
+          "predicate": "normal_force",
+          "unit": "N"
+        }
+      ],
+      "output": {
+        "predicate": "friction_force",
+        "unit": "N"
+      },
+      "formula": "mu_k * N",
+      "proof": "f_k = mu_k * N. Kinetic friction force equals kinetic friction coefficient times normal force. Empirical law valid for sliding contact. OpenStax Vol 1 Eq 5.16; Halliday Eq 6-2."
+    },
+    {
+      "id": "static_friction_max",
+      "predicate": "max_static_friction",
+      "context": "static",
+      "inputs": [
+        {
+          "name": "mu_s",
+          "predicate": "static_friction_coefficient",
+          "unit": "dimensionless"
+        },
+        {
+          "name": "N",
+          "predicate": "normal_force",
+          "unit": "N"
+        }
+      ],
+      "output": {
+        "predicate": "max_static_friction",
+        "unit": "N"
+      },
+      "formula": "mu_s * N",
+      "proof": "f_s_max = mu_s * N. Maximum static friction force. Object remains stationary while applied force is less than this value. OpenStax Vol 1 Eq 5.15; Halliday Eq 6-1. PREDICATE: Outputs max_static_friction: mu_s N is the largest static friction the surface can supply, not the friction force actually acting."
+    },
+    {
+      "id": "net_force_with_friction_flat",
+      "predicate": "net_force",
+      "context": "newtonian_motion",
+      "inputs": [
+        {
+          "name": "F_applied",
+          "predicate": "applied_force",
+          "unit": "N"
+        },
+        {
+          "name": "f",
+          "predicate": "friction_force",
+          "unit": "N"
+        },
+        {
+          "name": "phi",
+          "predicate": "applied_force_angle",
+          "unit": "deg"
+        }
+      ],
+      "output": {
+        "predicate": "net_force",
+        "unit": "N"
+      },
+      "guard": "phi == 0",
+      "formula": "F_applied - f",
+      "proof": "F_net = F_applied - f. Net force on horizontal surface is applied force minus opposing friction force. Newton's second law: sum of forces. OpenStax Vol 1 Eq 5.3; Halliday Eq 5-1. CONDITION: F_net = F_applied - f holds only when the applied force is parallel to the surface; its angle is an input guarded == 0. Friction stays an input (friction_force), never m u g computed here."
+    },
+    {
+      "id": "net_force_incline_no_friction",
+      "predicate": "net_force",
+      "context": "inclined_plane",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "theta",
+          "predicate": "incline_angle",
+          "unit": "deg"
+        },
+        {
+          "name": "f",
+          "predicate": "friction_force",
+          "unit": "N"
+        }
+      ],
+      "output": {
+        "predicate": "net_force",
+        "unit": "N"
+      },
+      "guard": "f == 0",
+      "formula": "m * g * __import__('math').sin(theta * __import__('math').pi / 180)",
+      "proof": "F_net = mg*sin(theta). On frictionless inclined plane, net force along incline is parallel component of weight. OpenStax Vol 1 Eq 5.12; Halliday Eq 5-19. CONDITION: F = m g sin(theta) holds only with no friction; friction_force is an input guarded == 0."
+    },
+    {
+      "id": "net_force_incline_with_friction",
+      "predicate": "net_force",
+      "context": "inclined_plane_friction",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "theta",
+          "predicate": "incline_angle",
+          "unit": "deg"
+        },
+        {
+          "name": "f",
+          "predicate": "friction_force",
+          "unit": "N"
+        }
+      ],
+      "output": {
+        "predicate": "net_force",
+        "unit": "N"
+      },
+      "formula": "m * g * __import__('math').sin(theta * __import__('math').pi / 180) - f",
+      "proof": "F_net = mg*sin(theta) - f. Net force along incline with friction opposing motion. Parallel weight component minus friction. OpenStax Vol 1 Eq 5.17; Halliday Eq 6-4."
+    },
+    {
+      "id": "acceleration_from_net_force",
+      "predicate": "acceleration",
+      "context": "newtonian_motion",
+      "inputs": [
+        {
+          "name": "F_net",
+          "predicate": "net_force",
+          "unit": "N"
+        },
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        }
+      ],
+      "output": {
+        "predicate": "acceleration",
+        "unit": "m/s2"
+      },
+      "formula": "F_net / m",
+      "proof": "a = F_net/m. Direct application of Newton's second law where net force is already computed. OpenStax Vol 1 Eq 5.3; Halliday Eq 5-1."
+    },
+    {
+      "id": "tension_hanging_mass",
+      "predicate": "tension",
+      "context": "newtonian_motion",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "a",
+          "predicate": "acceleration",
+          "unit": "m/s2"
+        }
+      ],
+      "output": {
+        "predicate": "tension",
+        "unit": "N"
+      },
+      "guard": "a == 0",
+      "formula": "m * g",
+      "proof": "T = mg. Tension in string supporting stationary hanging mass equals weight of mass. Newton's first law: T - mg = 0. OpenStax Vol 1 Eq 5.11; Halliday Eq 5-13. CONDITION: T = m g holds only when the mass does not accelerate; acceleration is an input guarded == 0. SCOPE: No other vertical forces act on the mass (only its weight and the tension)."
+    },
+    {
+      "id": "tension_accelerating_mass",
+      "predicate": "tension",
+      "context": "newtonian_motion_accelerating",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "a",
+          "predicate": "acceleration",
+          "unit": "m/s2"
+        }
+      ],
+      "output": {
+        "predicate": "tension",
+        "unit": "N"
+      },
+      "formula": "m * (g + a)",
+      "proof": "T = m(g+a). Tension in string pulling mass upward with acceleration a. Newton's second law: T - mg = ma, so T = m(g+a). OpenStax Vol 1 Eq 5.14; Halliday Eq 5-15. SCOPE: No other vertical forces act on the mass (only its weight and the tension); a is upward."
+    },
+    {
+      "id": "centripetal_acceleration",
+      "predicate": "centripetal_acceleration",
+      "context": "circular_motion",
+      "inputs": [
+        {
+          "name": "v",
+          "predicate": "velocity",
+          "unit": "m/s"
+        },
+        {
+          "name": "r",
+          "predicate": "radius",
+          "unit": "m"
+        }
+      ],
+      "output": {
+        "predicate": "centripetal_acceleration",
+        "unit": "m/s2"
+      },
+      "formula": "v**2 / r",
+      "proof": "a_c = v^2/r. Centripetal acceleration for uniform circular motion. Directed toward center of circle. OpenStax Vol 1 Eq 4.18; Halliday Eq 6-17. SCOPE: Uniform circular motion (constant speed)."
+    },
+    {
+      "id": "centripetal_force",
+      "predicate": "centripetal_force",
+      "context": "circular_motion",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "v",
+          "predicate": "velocity",
+          "unit": "m/s"
+        },
+        {
+          "name": "r",
+          "predicate": "radius",
+          "unit": "m"
+        }
+      ],
+      "output": {
+        "predicate": "centripetal_force",
+        "unit": "N"
+      },
+      "formula": "m * v**2 / r",
+      "proof": "F_c = mv^2/r. Centripetal force required for uniform circular motion. F=ma_c where a_c=v^2/r. OpenStax Vol 1 Eq 6.3; Halliday Eq 6-18. SCOPE: Uniform circular motion (constant speed); the output is the net inward force."
+    },
+    {
+      "id": "period_circular_motion",
+      "predicate": "period",
+      "context": "circular_motion",
+      "inputs": [
+        {
+          "name": "r",
+          "predicate": "radius",
+          "unit": "m"
+        },
+        {
+          "name": "v",
+          "predicate": "velocity",
+          "unit": "m/s"
+        }
+      ],
+      "output": {
+        "predicate": "period",
+        "unit": "s"
+      },
+      "formula": "2 * __import__('math').pi * r / v",
+      "proof": "T = 2*pi*r/v. Period of circular motion is circumference divided by speed. OpenStax Vol 1 Eq 4.17; Halliday Eq 4-34. SCOPE: Uniform circular motion (constant speed)."
+    },
+    {
+      "id": "angular_velocity_from_period",
+      "predicate": "angular_velocity",
+      "context": "circular_motion",
+      "inputs": [
+        {
+          "name": "T",
+          "predicate": "period",
+          "unit": "s"
+        }
+      ],
+      "output": {
+        "predicate": "angular_velocity",
+        "unit": "rad/s"
+      },
+      "formula": "2 * __import__('math').pi / T",
+      "proof": "omega = 2*pi/T. Angular velocity is full angle divided by period. OpenStax Vol 1 Eq 4.16; Halliday Eq 10-5. SCOPE: Uniform circular motion (constant angular velocity)."
+    },
+    {
+      "id": "velocity_from_angular",
+      "predicate": "velocity",
+      "context": "circular_motion",
+      "inputs": [
+        {
+          "name": "omega",
+          "predicate": "angular_velocity",
+          "unit": "rad/s"
+        },
+        {
+          "name": "r",
+          "predicate": "radius",
+          "unit": "m"
+        }
+      ],
+      "output": {
+        "predicate": "velocity",
+        "unit": "m/s"
+      },
+      "formula": "omega * r",
+      "proof": "v = omega*r. Tangential velocity relates to angular velocity and radius. OpenStax Vol 1 Eq 4.14; Halliday Eq 10-18. SCOPE: Uniform circular motion; the output is the tangential speed."
+    },
+    {
+      "id": "torque_with_angle",
+      "predicate": "torque",
+      "context": "rotational_motion",
+      "inputs": [
+        {
+          "name": "F",
+          "predicate": "force",
+          "unit": "N"
+        },
+        {
+          "name": "r",
+          "predicate": "radius",
+          "unit": "m"
+        },
+        {
+          "name": "theta",
+          "predicate": "torque_angle",
+          "unit": "deg"
+        }
+      ],
+      "output": {
+        "predicate": "torque",
+        "unit": "N*m"
+      },
+      "formula": "F * r * __import__('math').sin(theta * __import__('math').pi / 180)",
+      "proof": "tau = F*r*sin(theta). Torque magnitude for force at angle theta to radius vector. OpenStax Vol 1 Eq 10.6; Halliday Eq 10-39."
+    },
+    {
+      "id": "rotational_kinetic_energy",
+      "predicate": "rotational_kinetic_energy",
+      "context": "rotational_motion",
+      "inputs": [
+        {
+          "name": "I",
+          "predicate": "moment_of_inertia",
+          "unit": "kg*m2"
+        },
+        {
+          "name": "omega",
+          "predicate": "angular_velocity",
+          "unit": "rad/s"
+        }
+      ],
+      "output": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J"
+      },
+      "formula": "0.5 * I * omega**2",
+      "proof": "KE_rot = (1/2)*I*omega^2. Rotational kinetic energy analogous to (1/2)mv^2 with I replacing m and omega replacing v. OpenStax Vol 1 Eq 10.17; Halliday Eq 10-34. PREDICATE: Outputs rotational_kinetic_energy: (1/2) I w^2 is the kinetic energy of rotation, not (1/2) m v^2."
+    },
+    {
+      "id": "angular_momentum",
+      "predicate": "angular_momentum",
+      "context": "rotational_motion",
+      "inputs": [
+        {
+          "name": "I",
+          "predicate": "moment_of_inertia",
+          "unit": "kg*m2"
+        },
+        {
+          "name": "omega",
+          "predicate": "angular_velocity",
+          "unit": "rad/s"
+        }
+      ],
+      "output": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s"
+      },
+      "formula": "I * omega",
+      "proof": "L = I*omega. Angular momentum is moment of inertia times angular velocity. Rotational analogue of p=mv. OpenStax Vol 1 Eq 11.5; Halliday Eq 11-26."
+    },
+    {
+      "id": "moment_of_inertia_point_mass",
+      "predicate": "moment_of_inertia",
+      "context": "rotational_motion",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "r",
+          "predicate": "radius",
+          "unit": "m"
+        }
+      ],
+      "output": {
+        "predicate": "moment_of_inertia",
+        "unit": "kg*m2"
+      },
+      "formula": "m * r**2",
+      "proof": "I = mr^2. Moment of inertia of point mass at distance r from rotation axis. Definition of moment of inertia for discrete mass. OpenStax Vol 1 Eq 10.14; Halliday Eq 10-33."
+    },
+    {
+      "id": "period_spring_mass",
+      "predicate": "period",
+      "context": "simple_harmonic_motion",
+      "inputs": [
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        },
+        {
+          "name": "k",
+          "predicate": "spring_constant",
+          "unit": "N/m"
+        }
+      ],
+      "output": {
+        "predicate": "period",
+        "unit": "s"
+      },
+      "formula": "2 * __import__('math').pi * (m / k) ** 0.5",
+      "proof": "T = 2*pi*sqrt(m/k). Period of spring-mass simple harmonic oscillator. From solving equation of motion mx'' = -kx. OpenStax Vol 1 Eq 15.13; Halliday Eq 15-13."
+    },
+    {
+      "id": "period_pendulum",
+      "predicate": "period",
+      "context": "simple_harmonic_motion",
+      "inputs": [
+        {
+          "name": "L",
+          "predicate": "length",
+          "unit": "m"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "amp",
+          "predicate": "pendulum_amplitude",
+          "unit": "condition"
+        }
+      ],
+      "output": {
+        "predicate": "period",
+        "unit": "s"
+      },
+      "guard": "amp == 'small'",
+      "formula": "2 * __import__('math').pi * (L / g) ** 0.5",
+      "proof": "T = 2*pi*sqrt(L/g). Period of simple pendulum for small angle oscillations. Derived from torque equation tau = -mgL*sin(theta) approximated as tau = -mgL*theta. OpenStax Vol 1 Eq 15.17; Halliday Eq 15-29. CONDITION: T = 2 pi sqrt(L/g) is the small-amplitude approximation; categorical input guarded == 'small'. A numeric amplitude does not satisfy it."
+    },
+    {
+      "id": "shm_max_velocity",
+      "predicate": "max_velocity",
+      "context": "simple_harmonic_motion",
+      "inputs": [
+        {
+          "name": "A",
+          "predicate": "amplitude",
+          "unit": "m"
+        },
+        {
+          "name": "omega",
+          "predicate": "angular_velocity",
+          "unit": "rad/s"
+        }
+      ],
+      "output": {
+        "predicate": "max_velocity",
+        "unit": "m/s"
+      },
+      "formula": "A * omega",
+      "proof": "v_max = A*omega. Maximum velocity in simple harmonic motion occurs at equilibrium position. From x=A*cos(omega*t), v=dx/dt=-A*omega*sin(omega*t), max when sin=1. OpenStax Vol 1 Eq 15.9; Halliday Eq 15-6. PREDICATE: Outputs max_velocity: A w is the peak speed of the oscillation, not the velocity at an arbitrary instant."
+    },
+    {
+      "id": "work_energy_theorem",
+      "predicate": "kinetic_energy",
+      "context": "newtonian_motion",
+      "inputs": [
+        {
+          "name": "KE_i",
+          "predicate": "initial_kinetic_energy",
+          "unit": "J"
+        },
+        {
+          "name": "W",
+          "predicate": "net_work",
+          "unit": "J"
+        }
+      ],
+      "output": {
+        "predicate": "kinetic_energy",
+        "unit": "J"
+      },
+      "formula": "KE_i + W",
+      "proof": "KE_f = KE_i + W. Work-energy theorem: net work done on object equals change in kinetic energy. OpenStax Vol 1 Eq 7.8; Halliday Eq 7-15. PREDICATE: Input net_work: the theorem equates the change in kinetic energy to the NET work (work of all forces)."
+    },
+    {
+      "id": "conservation_mechanical_energy",
+      "predicate": "velocity",
+      "context": "energy_conservation",
+      "inputs": [
+        {
+          "name": "v0",
+          "predicate": "initial_velocity",
+          "unit": "m/s"
+        },
+        {
+          "name": "h0",
+          "predicate": "initial_height",
+          "unit": "m"
+        },
+        {
+          "name": "h",
+          "predicate": "height",
+          "unit": "m"
+        },
+        {
+          "name": "g",
+          "predicate": "gravitational_acceleration",
+          "unit": "m/s2"
+        },
+        {
+          "name": "W_nc",
+          "predicate": "nonconservative_work",
+          "unit": "condition"
+        }
+      ],
+      "output": {
+        "predicate": "velocity",
+        "unit": "m/s"
+      },
+      "guard": "W_nc == 'none'",
+      "formula": "(v0**2 + 2 * g * (h0 - h)) ** 0.5",
+      "proof": "v = sqrt(v0^2 + 2g(h0-h)). From conservation of mechanical energy: (1/2)mv^2 + mgh = (1/2)mv0^2 + mgh0. Rearranged for final velocity. OpenStax Vol 1 Eq 8.13; Halliday Eq 8-17. CONDITION: Mechanical energy is conserved only when no nonconservative force does work; categorical input guarded == 'none'. SCOPE: Takes the positive root, so the output is a speed (the magnitude of the velocity), not a signed velocity."
+    },
+    {
+      "id": "impulse_momentum_theorem",
+      "predicate": "velocity",
+      "context": "newtonian_motion",
+      "inputs": [
+        {
+          "name": "v0",
+          "predicate": "initial_velocity",
+          "unit": "m/s"
+        },
+        {
+          "name": "J",
+          "predicate": "net_impulse",
+          "unit": "N*s"
+        },
+        {
+          "name": "m",
+          "predicate": "mass",
+          "unit": "kg"
+        }
+      ],
+      "output": {
+        "predicate": "velocity",
+        "unit": "m/s"
+      },
+      "formula": "v0 + J / m",
+      "proof": "v = v0 + J/m. Impulse-momentum theorem: impulse equals change in momentum. J = delta_p = m*delta_v, so delta_v = J/m. OpenStax Vol 1 Eq 9.6; Halliday Eq 9-31. PREDICATE: Input net_impulse: the change in momentum equals the impulse of the NET force."
+    },
+    {
+      "id": "elastic_collision_v1",
+      "predicate": "velocity",
+      "context": "elastic_collision",
+      "inputs": [
+        {
+          "name": "m1",
+          "predicate": "mass_1",
+          "unit": "kg"
+        },
+        {
+          "name": "m2",
+          "predicate": "mass_2",
+          "unit": "kg"
+        },
+        {
+          "name": "v1i",
+          "predicate": "initial_velocity_1",
+          "unit": "m/s"
+        },
+        {
+          "name": "v2i",
+          "predicate": "initial_velocity_2",
+          "unit": "m/s"
+        },
+        {
+          "name": "ctype",
+          "predicate": "collision_type",
+          "unit": "condition"
+        }
+      ],
+      "output": {
+        "predicate": "velocity",
+        "unit": "m/s"
+      },
+      "guard": "ctype == 'elastic'",
+      "formula": "((m1 - m2) * v1i + 2 * m2 * v2i) / (m1 + m2)",
+      "proof": "v1f = ((m1-m2)*v1i + 2*m2*v2i)/(m1+m2). Final velocity of object 1 in 1D elastic collision. Derived by solving conservation of momentum and conservation of kinetic energy simultaneously. OpenStax Vol 1 Eq 9.20; Halliday Eq 9-67. CONDITION: valid only for a elastic collision; categorical input collision_type guarded == 'elastic'."
+    },
+    {
+      "id": "elastic_collision_v2",
+      "predicate": "velocity",
+      "context": "elastic_collision_object2",
+      "inputs": [
+        {
+          "name": "m1",
+          "predicate": "mass_1",
+          "unit": "kg"
+        },
+        {
+          "name": "m2",
+          "predicate": "mass_2",
+          "unit": "kg"
+        },
+        {
+          "name": "v1i",
+          "predicate": "initial_velocity_1",
+          "unit": "m/s"
+        },
+        {
+          "name": "v2i",
+          "predicate": "initial_velocity_2",
+          "unit": "m/s"
+        },
+        {
+          "name": "ctype",
+          "predicate": "collision_type",
+          "unit": "condition"
+        }
+      ],
+      "output": {
+        "predicate": "velocity",
+        "unit": "m/s"
+      },
+      "guard": "ctype == 'elastic'",
+      "formula": "((m2 - m1) * v2i + 2 * m1 * v1i) / (m1 + m2)",
+      "proof": "v2f = ((m2-m1)*v2i + 2*m1*v1i)/(m1+m2). Final velocity of object 2 in 1D elastic collision. Derived simultaneously with v1f from conservation laws. OpenStax Vol 1 Eq 9.21; Halliday Eq 9-68. CONDITION: valid only for a elastic collision; categorical input collision_type guarded == 'elastic'."
+    },
+    {
+      "id": "perfectly_inelastic_collision",
+      "predicate": "velocity",
+      "context": "inelastic_collision",
+      "inputs": [
+        {
+          "name": "m1",
+          "predicate": "mass_1",
+          "unit": "kg"
+        },
+        {
+          "name": "m2",
+          "predicate": "mass_2",
+          "unit": "kg"
+        },
+        {
+          "name": "v1i",
+          "predicate": "initial_velocity_1",
+          "unit": "m/s"
+        },
+        {
+          "name": "v2i",
+          "predicate": "initial_velocity_2",
+          "unit": "m/s"
+        },
+        {
+          "name": "ctype",
+          "predicate": "collision_type",
+          "unit": "condition"
+        }
+      ],
+      "output": {
+        "predicate": "velocity",
+        "unit": "m/s"
+      },
+      "guard": "ctype == 'perfectly_inelastic'",
+      "formula": "(m1 * v1i + m2 * v2i) / (m1 + m2)",
+      "proof": "vf = (m1*v1i + m2*v2i)/(m1+m2). Final velocity of combined mass after perfectly inelastic collision. From conservation of momentum with objects sticking together. OpenStax Vol 1 Eq 9.17; Halliday Eq 9-52. CONDITION: valid only for a perfectly inelastic collision; categorical input collision_type guarded == 'perfectly_inelastic'."
+    }
+  ]
+}

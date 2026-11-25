@@ -1,0 +1,732 @@
+{
+  "_note": "Condition bindings added to physics gold goal states by the 2026-11-21 rule audit, only where the query text asserts the condition. Written by tools/build/build_physics_gold_conditions.py; read by tools/eval/eval_oracle_physics.build_gold_bindings (matched on query text). `unstated` lists queries whose gold rule needs a condition the text does not state: their correct engine output is a typed failure. Gold labels and expected values are unchanged.",
+  "rows": [
+    {
+      "id": 1,
+      "query": "yo an object starts from rest and accelerates at 13.0 m/s squared for 0.9 seconds. what is its velocity",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 2,
+      "query": "Starting at rest, an object accelerates at 5.3 m/s^2. what speed has it reached after 2.5 seconds.",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "at rest"
+      }
+    },
+    {
+      "id": 3,
+      "query": "Find the velocity of an object that has been accelerating from rest at 13.7 m/s squared for 13.4 seconds.",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 7,
+      "query": "in plain numbers, an object starts from rest and accelerates at 12.2 m/s squared for 1.1 seconds. what is its displacement",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 8,
+      "query": "yo find the displacement of an object that has been accelerating from rest at 2.8 m/s^2 for 5.6 seconds",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 9,
+      "query": "for my homework: starting at rest, an object accelerates at 2.8 m/s squared. how far has it traveled after 11.5 seconds",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "at rest"
+      }
+    },
+    {
+      "id": 16,
+      "query": "I've got a question — an object is dropped from rest. what speed does it reach after 10.3 seconds of free fall",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "dropped"
+      }
+    },
+    {
+      "id": 20,
+      "query": "problem: an object is dropped from rest. how far has it fallen after 3.2 seconds. show your work.",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "dropped"
+      }
+    },
+    {
+      "id": 66,
+      "query": "give me the normal force on a 11.0 kg object resting on a flat horizontal surface",
+      "bindings": {
+        "incline_angle": {
+          "value": 0,
+          "unit": "deg"
+        }
+      },
+      "stated_by": {
+        "incline_angle": "flat"
+      }
+    },
+    {
+      "id": 67,
+      "query": "Calculate the normal force supporting a 70.6 kg mass on a level floor.",
+      "bindings": {
+        "incline_angle": {
+          "value": 0,
+          "unit": "deg"
+        }
+      },
+      "stated_by": {
+        "incline_angle": "level"
+      }
+    },
+    {
+      "id": 68,
+      "query": "in plain numbers, a 38.1 kg object sits on a horizontal surface. what is the normal force on it",
+      "bindings": {
+        "incline_angle": {
+          "value": 0,
+          "unit": "deg"
+        }
+      },
+      "stated_by": {
+        "incline_angle": "horizontal"
+      }
+    },
+    {
+      "id": 79,
+      "query": "I've got a question — what is the net force on a 3.5 kg object on a frictionless 45 degree incline",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    },
+    {
+      "id": 80,
+      "query": "give me the net force component along a 15 degree frictionless slope for a 1.7 kg mass",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    },
+    {
+      "id": 81,
+      "query": "A 37.9 kg block slides on a frictionless ramp at 20 degrees. what is the net force?",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    },
+    {
+      "id": 86,
+      "query": "could you tell me the tension in a string supporting a stationary 49.8 kg mass, please",
+      "bindings": {
+        "acceleration": {
+          "value": 0,
+          "unit": "m/s2"
+        }
+      },
+      "stated_by": {
+        "acceleration": "stationary"
+      }
+    },
+    {
+      "id": 87,
+      "query": "quick question: find the tension in a rope holding a 33.3 kg object at rest?",
+      "bindings": {
+        "acceleration": {
+          "value": 0,
+          "unit": "m/s2"
+        }
+      },
+      "stated_by": {
+        "acceleration": "at rest"
+      }
+    },
+    {
+      "id": 88,
+      "query": "yo a 8.2 kg mass hangs motionless from a string. what is the tension",
+      "bindings": {
+        "acceleration": {
+          "value": 0,
+          "unit": "m/s2"
+        }
+      },
+      "stated_by": {
+        "acceleration": "motionless"
+      }
+    },
+    {
+      "id": 103,
+      "query": "What is the torque produced by a 109.8 N force applied perpendicular to a lever arm of 2.58 metres?",
+      "bindings": {
+        "torque_angle": {
+          "value": 90,
+          "unit": "deg"
+        }
+      },
+      "stated_by": {
+        "torque_angle": "perpendicular"
+      }
+    },
+    {
+      "id": 104,
+      "query": "give me the torque for a force 187.0 N at perpendicular distance 4.42 m",
+      "bindings": {
+        "torque_angle": {
+          "value": 90,
+          "unit": "deg"
+        }
+      },
+      "stated_by": {
+        "torque_angle": "perpendicular"
+      }
+    },
+    {
+      "id": 116,
+      "query": "yo find the period of a pendulum with length 0.74 m for small oscillations",
+      "bindings": {
+        "pendulum_amplitude": {
+          "value": "small",
+          "unit": "condition"
+        }
+      },
+      "stated_by": {
+        "pendulum_amplitude": "small oscillation"
+      }
+    },
+    {
+      "id": 122,
+      "query": "using conservation of mechanical energy, give me the velocity at height 3.4 m given initial velocity 9.0 m/s and initial height 24.9 m",
+      "bindings": {
+        "nonconservative_work": {
+          "value": "none",
+          "unit": "condition"
+        }
+      },
+      "stated_by": {
+        "nonconservative_work": "conservation of mechanical energy"
+      }
+    },
+    {
+      "id": 123,
+      "query": "could you in a 1D elastic collision, a 3.9 kg object at 10.3 m/s hits a 7.0 kg object at -4.7 m/s. tell me the final velocity of the first object, please",
+      "bindings": {
+        "collision_type": {
+          "value": "elastic",
+          "unit": "condition"
+        }
+      },
+      "stated_by": {
+        "collision_type": "elastic"
+      }
+    },
+    {
+      "id": 124,
+      "query": "give me the final velocity of object 1 after an elastic collision: m1 = 8.9 kg, m2 = 4.4 kg, v1i = 9.7 m/s, v2i = -7.7 m/s",
+      "bindings": {
+        "collision_type": {
+          "value": "elastic",
+          "unit": "condition"
+        }
+      },
+      "stated_by": {
+        "collision_type": "elastic"
+      }
+    },
+    {
+      "id": 125,
+      "query": "i need to know — in a 1D elastic collision, a 2.7 kg object at 12.2 m/s hits a 2.0 kg object at -7.3 m/s. what is the final velocity of the second object",
+      "bindings": {
+        "collision_type": {
+          "value": "elastic",
+          "unit": "condition"
+        }
+      },
+      "stated_by": {
+        "collision_type": "elastic"
+      }
+    },
+    {
+      "id": 126,
+      "query": "in plain numbers, find the final velocity of object 2 after an elastic collision: m1 = 0.7 kg, m2 = 7.5 kg, v1i = 5.7 m/s, v2i = 4.0 m/s",
+      "bindings": {
+        "collision_type": {
+          "value": "elastic",
+          "unit": "condition"
+        }
+      },
+      "stated_by": {
+        "collision_type": "elastic"
+      }
+    },
+    {
+      "id": 127,
+      "query": "let's say two objects collide and stick together: m1 = 6.9 kg at 4.5 m/s, m2 = 7.5 kg at -2.6 m/s. we want the common final velocity",
+      "bindings": {
+        "collision_type": {
+          "value": "perfectly_inelastic",
+          "unit": "condition"
+        }
+      },
+      "stated_by": {
+        "collision_type": "stick together"
+      }
+    },
+    {
+      "id": 128,
+      "query": "I've got a question — find the final velocity after a perfectly inelastic collision between a 1.5 kg mass at 13.0 m/s and a 8.8 kg mass at -1.7 m/s",
+      "bindings": {
+        "collision_type": {
+          "value": "perfectly_inelastic",
+          "unit": "condition"
+        }
+      },
+      "stated_by": {
+        "collision_type": "perfectly inelastic"
+      }
+    },
+    {
+      "id": 129,
+      "query": "I've got a question — an object starts from rest and accelerates at 18.4 m/s squared for 5.6 seconds. what is its velocity",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 131,
+      "query": "Starting at rest, an object accelerates at 6.3 m/s squared. how far has it traveled after 4.1 seconds.",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "at rest"
+      }
+    },
+    {
+      "id": 152,
+      "query": "quick question: an object of mass 19.8 kg falls from rest. find its kinetic energy 3.1 seconds later?",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 153,
+      "query": "in plain numbers, a 20.4 kg mass is dropped. how much kinetic energy does it have after 3.3 seconds of free fall",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "dropped"
+      }
+    },
+    {
+      "id": 154,
+      "query": "An object of mass 24.3 kg starts from rest under a net force of 182.2 N. how far has it travelled after 2.2 seconds.",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 155,
+      "query": "What is the displacement after 5.3 seconds of a 20.6 kg object accelerated from rest by a 71.1 N net force.",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 162,
+      "query": "what is the acceleration of a 8.1 kg object sliding down a frictionless 45 degree incline",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    },
+    {
+      "id": 163,
+      "query": "quick question: find the acceleration of a 17.6 kg block on a frictionless ramp at 15 degrees?",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    },
+    {
+      "id": 183,
+      "query": "what is the displacement after 5.4 seconds of a 5.6 kg object accelerated from rest by a 104.1 N net force",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 187,
+      "query": "yo find the acceleration of a 23.3 kg block on a frictionless ramp at 45 degrees",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    },
+    {
+      "id": 198,
+      "query": "let's say an object of mass 28.8 kg starts from rest under a net force of 141.9 N. how far has it travelled after 3.8 seconds",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 202,
+      "query": "problem: what is the acceleration of a 11.7 kg object sliding down a frictionless 45 degree incline. show your work.",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    },
+    {
+      "id": 213,
+      "query": "give me the displacement after 3.4 seconds of a 24.3 kg object accelerated from rest by a 58.2 N net force",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 217,
+      "query": "Find the acceleration of a 15.7 kg block on a frictionless ramp at 15 degrees.",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    },
+    {
+      "id": 228,
+      "query": "An object of mass 3.5 kg starts from rest under a net force of 28.2 N. how far has it travelled after 3.0 seconds?",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 232,
+      "query": "quick question: what is the acceleration of a 25.0 kg object sliding down a frictionless 45 degree incline?",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    },
+    {
+      "id": 243,
+      "query": "I've got a question — what is the displacement after 3.0 seconds of a 10.1 kg object accelerated from rest by a 25.9 N net force",
+      "bindings": {
+        "initial_velocity": {
+          "value": 0,
+          "unit": "m/s"
+        }
+      },
+      "stated_by": {
+        "initial_velocity": "from rest"
+      }
+    },
+    {
+      "id": 247,
+      "query": "Find the acceleration of a 9.4 kg block on a frictionless ramp at 20 degrees.",
+      "bindings": {
+        "friction_force": {
+          "value": 0,
+          "unit": "N"
+        }
+      },
+      "stated_by": {
+        "friction_force": "frictionless"
+      }
+    }
+  ],
+  "unstated": [
+    {
+      "id": 15,
+      "query": "What is the velocity of an object after falling for 3.8 seconds.",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 17,
+      "query": "yo find the velocity of a freely falling object 1.7 seconds after release",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 18,
+      "query": "I've got a question — how far does a freely falling object descend in 3.9 seconds",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 19,
+      "query": "for my homework: what is the displacement of an object after 3.2 seconds of free fall",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 77,
+      "query": "quick question: what is the net force on an object pushed by an applied force of 162.4 N against friction of 92.7 N?",
+      "needs": "applied_force_angle"
+    },
+    {
+      "id": 78,
+      "query": "Find the net force given applied force 413.6 N and friction force 86.3 N opposing motion.",
+      "needs": "applied_force_angle"
+    },
+    {
+      "id": 115,
+      "query": "in plain numbers, what is the period of a simple pendulum of length 0.12 metres",
+      "needs": "pendulum_amplitude"
+    },
+    {
+      "id": 121,
+      "query": "for my homework: an object starts at height 15.7 m with velocity 5.5 m/s. what is its velocity at height 0.2 m by energy conservation",
+      "needs": "nonconservative_work"
+    },
+    {
+      "id": 134,
+      "query": "yo find the velocity of a freely falling object 1.8 seconds after release",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 135,
+      "query": "yo how far does a freely falling object descend in 1.8 seconds",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 151,
+      "query": "Compute the kinetic energy of a 6.7 kg object after falling for 4.8 seconds.",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 170,
+      "query": "quick question: what is the period of a pendulum of length 2.04 metres where gravity is 7.1 m/s squared?",
+      "needs": "pendulum_amplitude"
+    },
+    {
+      "id": 171,
+      "query": "yo find the period of a 0.49 m pendulum on a body where g = 8.2 m/s^2",
+      "needs": "pendulum_amplitude"
+    },
+    {
+      "id": 174,
+      "query": "for my homework: an object at height 10.3 m with velocity 0.8 m/s descends to height 1.2 m. what is its velocity",
+      "needs": "nonconservative_work"
+    },
+    {
+      "id": 175,
+      "query": "i need to know — using energy conservation, find the speed at height 0.6 m given initial height 15.4 m and initial velocity 2.7 m/s",
+      "needs": "nonconservative_work"
+    },
+    {
+      "id": 182,
+      "query": "I've got a question — what is the kinetic energy of a 24.0 kg object after falling for 4.5 seconds",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 191,
+      "query": "find the period of a 3.84 m pendulum on a body where g = 2.4 m/s^2",
+      "needs": "pendulum_amplitude"
+    },
+    {
+      "id": 193,
+      "query": "Using energy conservation, find the speed at height 1.4 m given initial height 11.0 m and initial velocity 3.1 m/s.",
+      "needs": "nonconservative_work"
+    },
+    {
+      "id": 197,
+      "query": "Compute the kinetic energy of a 17.6 kg object after falling for 5.6 seconds.",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 206,
+      "query": "could you tell me the period of a pendulum of length 0.78 metres where gravity is 5.6 m/s squared, please",
+      "needs": "pendulum_amplitude"
+    },
+    {
+      "id": 208,
+      "query": "I've got a question — an object at height 24.4 m with velocity 4.6 m/s descends to height 1.4 m. what is its velocity",
+      "needs": "nonconservative_work"
+    },
+    {
+      "id": 212,
+      "query": "quick question: what is the kinetic energy of a 15.1 kg object after falling for 2.3 seconds?",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 221,
+      "query": "yo find the period of a 2.87 m pendulum on a body where g = 7.9 m/s^2",
+      "needs": "pendulum_amplitude"
+    },
+    {
+      "id": 223,
+      "query": "Using energy conservation, find the speed at height 2.3 m given initial height 18.4 m and initial velocity 0.6 m/s?",
+      "needs": "nonconservative_work"
+    },
+    {
+      "id": 227,
+      "query": "yo what is the kinetic energy of a 0.9 kg object after falling for 3.4 seconds",
+      "needs": "initial_velocity"
+    },
+    {
+      "id": 236,
+      "query": "in plain numbers, what is the period of a pendulum of length 2.47 metres where gravity is 16.0 m/s squared",
+      "needs": "pendulum_amplitude"
+    },
+    {
+      "id": 238,
+      "query": "An object at height 19.7 m with velocity 1.5 m/s descends to height 1.3 m. compute its velocity.",
+      "needs": "nonconservative_work"
+    },
+    {
+      "id": 242,
+      "query": "yo what is the kinetic energy of a 13.8 kg object after falling for 3.8 seconds",
+      "needs": "initial_velocity"
+    }
+  ]
+}

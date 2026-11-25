@@ -1,0 +1,877 @@
+{
+  "_note": "Expected values were computed by make_stoich_queries.py from the sourced molar masses and verified coefficients in kb1_stoich.json, by plain arithmetic -- never from engine output. `expected_rules` is the exact rule chain the query should take, read off the universal rule set. `refusal_stage` distinguishes a resolution failure (the reaction/species is not in the KB, so no goal state can be formed -- the parser-stage analogue) from an engine refusal (the goal state is well formed but a required value was never supplied).",
+  "queries": [
+    {
+      "form": "moles_from_mass",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant": "CH4"
+      },
+      "given": {
+        "mass_reactant": 16.043
+      },
+      "goal": "moles_reactant",
+      "question": "How many moles are in 16.043 g of CH4?",
+      "expected": 1.0,
+      "expected_rules": [
+        "moles_from_mass"
+      ],
+      "id": 1
+    },
+    {
+      "form": "moles_from_mass",
+      "reaction": "ammonia_synthesis",
+      "roles": {
+        "reactant": "N2"
+      },
+      "given": {
+        "mass_reactant": 28.014
+      },
+      "goal": "moles_reactant",
+      "question": "How many moles are in 28.014 g of N2?",
+      "expected": 1.0,
+      "expected_rules": [
+        "moles_from_mass"
+      ],
+      "id": 2
+    },
+    {
+      "form": "moles_from_mass",
+      "reaction": "ethane_combustion",
+      "roles": {
+        "reactant": "C2H6"
+      },
+      "given": {
+        "mass_reactant": 60.0
+      },
+      "goal": "moles_reactant",
+      "question": "How many moles are in 60.0 g of C2H6?",
+      "expected": 1.9953441968739607,
+      "expected_rules": [
+        "moles_from_mass"
+      ],
+      "id": 3
+    },
+    {
+      "form": "moles_from_mass",
+      "reaction": "calcium_carbonate_decomposition",
+      "roles": {
+        "reactant": "CaCO3"
+      },
+      "given": {
+        "mass_reactant": 25.0
+      },
+      "goal": "moles_reactant",
+      "question": "How many moles are in 25.0 g of CaCO3?",
+      "expected": 0.24978518474112263,
+      "expected_rules": [
+        "moles_from_mass"
+      ],
+      "id": 4
+    },
+    {
+      "form": "moles_from_mass",
+      "reaction": "sodium_water",
+      "roles": {
+        "reactant": "Na"
+      },
+      "given": {
+        "mass_reactant": 4.6
+      },
+      "goal": "moles_reactant",
+      "question": "How many moles are in 4.6 g of Na?",
+      "expected": 0.20008699434536756,
+      "expected_rules": [
+        "moles_from_mass"
+      ],
+      "id": 5
+    },
+    {
+      "form": "moles_of_product",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant": "CH4",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant": 10.0
+      },
+      "goal": "moles_product",
+      "question": "From 10.0 g of CH4, how many moles of CO2 form?",
+      "expected": 0.6233248145608677,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio"
+      ],
+      "id": 6
+    },
+    {
+      "form": "moles_of_product",
+      "reaction": "ammonia_synthesis",
+      "roles": {
+        "reactant": "N2",
+        "product": "NH3"
+      },
+      "given": {
+        "mass_reactant": 14.0
+      },
+      "goal": "moles_product",
+      "question": "From 14.0 g of N2, how many moles of NH3 form?",
+      "expected": 0.9995002498750625,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio"
+      ],
+      "id": 7
+    },
+    {
+      "form": "moles_of_product",
+      "reaction": "water_decomposition",
+      "roles": {
+        "reactant": "H2O",
+        "product": "O2"
+      },
+      "given": {
+        "mass_reactant": 36.0
+      },
+      "goal": "moles_product",
+      "question": "From 36.0 g of H2O, how many moles of O2 form?",
+      "expected": 0.9991673605328892,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio"
+      ],
+      "id": 8
+    },
+    {
+      "form": "moles_of_product",
+      "reaction": "ethane_combustion",
+      "roles": {
+        "reactant": "C2H6",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant": 30.0
+      },
+      "goal": "moles_product",
+      "question": "From 30.0 g of C2H6, how many moles of CO2 form?",
+      "expected": 1.9953441968739607,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio"
+      ],
+      "id": 9
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant": "CH4",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant": 10.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of CO2 forms from 10.0 g of CH4?",
+      "expected": 27.43190176400923,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 10
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant": "CH4",
+        "product": "H2O"
+      },
+      "given": {
+        "mass_reactant": 10.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of H2O forms from 10.0 g of CH4?",
+      "expected": 22.458393068628066,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 11
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "ammonia_synthesis",
+      "roles": {
+        "reactant": "N2",
+        "product": "NH3"
+      },
+      "given": {
+        "mass_reactant": 28.014
+      },
+      "goal": "mass_product",
+      "question": "What mass of NH3 forms from 28.014 g of N2?",
+      "expected": 34.062,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 12
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "ethane_combustion",
+      "roles": {
+        "reactant": "C2H6",
+        "product": "H2O"
+      },
+      "given": {
+        "mass_reactant": 45.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of H2O forms from 45.0 g of C2H6?",
+      "expected": 80.8787828400399,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 13
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "calcium_carbonate_decomposition",
+      "roles": {
+        "reactant": "CaCO3",
+        "product": "CaO"
+      },
+      "given": {
+        "mass_reactant": 50.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of CaO forms from 50.0 g of CaCO3?",
+      "expected": 28.014407609455866,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 14
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "calcium_carbonate_decomposition",
+      "roles": {
+        "reactant": "CaCO3",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant": 100.086
+      },
+      "goal": "mass_product",
+      "question": "What mass of CO2 forms from 100.086 g of CaCO3?",
+      "expected": 44.009,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 15
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "dinitrogen_pentoxide_formation",
+      "roles": {
+        "reactant": "N2",
+        "product": "N2O5"
+      },
+      "given": {
+        "mass_reactant": 56.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of N2O5 forms from 56.0 g of N2?",
+      "expected": 215.91004497751123,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 16
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "ammonium_nitrate_decomposition",
+      "roles": {
+        "reactant": "NH4NO3",
+        "product": "H2O"
+      },
+      "given": {
+        "mass_reactant": 80.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of H2O forms from 80.0 g of NH4NO3?",
+      "expected": 36.0106442787002,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 17
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "sodium_water",
+      "roles": {
+        "reactant": "Na",
+        "product": "NaOH"
+      },
+      "given": {
+        "mass_reactant": 4.6
+      },
+      "goal": "mass_product",
+      "question": "What mass of NaOH forms from 4.6 g of Na?",
+      "expected": 8.002879512831667,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 18
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "carbon_dioxide_hydroxide",
+      "roles": {
+        "reactant": "CO2",
+        "product": "Na2CO3"
+      },
+      "given": {
+        "mass_reactant": 22.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of Na2CO3 forms from 22.0 g of CO2?",
+      "expected": 52.983162534936035,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 19
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "silver_chloride_precipitation",
+      "roles": {
+        "reactant": "CaCl2",
+        "product": "AgCl"
+      },
+      "given": {
+        "mass_reactant": 11.1
+      },
+      "goal": "mass_product",
+      "question": "What mass of AgCl forms from 11.1 g of CaCl2?",
+      "expected": 28.669682279370686,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 20
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "brine_electrolysis",
+      "roles": {
+        "reactant": "NaCl",
+        "product": "Cl2"
+      },
+      "given": {
+        "mass_reactant": 58.44
+      },
+      "goal": "mass_product",
+      "question": "What mass of Cl2 forms from 58.44 g of NaCl?",
+      "expected": 35.45,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 21
+    },
+    {
+      "form": "mass_of_product",
+      "reaction": "water_decomposition",
+      "roles": {
+        "reactant": "H2O",
+        "product": "H2"
+      },
+      "given": {
+        "mass_reactant": 18.015
+      },
+      "goal": "mass_product",
+      "question": "What mass of H2 forms from 18.015 g of H2O?",
+      "expected": 2.016,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 22
+    },
+    {
+      "form": "from_solution",
+      "reaction": "carbon_dioxide_hydroxide",
+      "roles": {
+        "reactant": "NaOH",
+        "product": "Na2CO3"
+      },
+      "given": {
+        "concentration": 0.5,
+        "volume_solution": 0.2
+      },
+      "goal": "mass_product",
+      "question": "What mass of Na2CO3 forms from 0.2 L of 0.5 M NaOH?",
+      "expected": 5.2994,
+      "expected_rules": [
+        "moles_from_concentration_volume",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 23
+    },
+    {
+      "form": "from_solution",
+      "reaction": "silver_chloride_precipitation",
+      "roles": {
+        "reactant": "AgNO3",
+        "product": "AgCl"
+      },
+      "given": {
+        "concentration": 0.1,
+        "volume_solution": 0.25
+      },
+      "goal": "mass_product",
+      "question": "What mass of AgCl forms from 0.25 L of 0.1 M AgNO3?",
+      "expected": 3.583,
+      "expected_rules": [
+        "moles_from_concentration_volume",
+        "mole_ratio",
+        "mass_from_moles"
+      ],
+      "id": 24
+    },
+    {
+      "form": "gas_volume",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant": "CH4",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant": 5.0,
+        "gas_conditions": "stp"
+      },
+      "goal": "volume_gas_product",
+      "question": "What volume of CO2 at STP forms from 5.0 g of CH4?",
+      "expected": 7.078150795201958,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "gas_volume_from_moles_stp"
+      ],
+      "id": 25
+    },
+    {
+      "form": "gas_volume",
+      "reaction": "calcium_carbonate_decomposition",
+      "roles": {
+        "reactant": "CaCO3",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant": 20.0,
+        "gas_conditions": "stp"
+      },
+      "goal": "volume_gas_product",
+      "question": "What volume of CO2 at STP forms from 20.0 g of CaCO3?",
+      "expected": 4.53828800061647,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "gas_volume_from_moles_stp"
+      ],
+      "id": 26
+    },
+    {
+      "form": "gas_volume",
+      "reaction": "water_decomposition",
+      "roles": {
+        "reactant": "H2O",
+        "product": "H2"
+      },
+      "given": {
+        "mass_reactant": 9.0,
+        "gas_conditions": "stp"
+      },
+      "goal": "volume_gas_product",
+      "question": "What volume of H2 at STP forms from 9.0 g of H2O?",
+      "expected": 11.346022302157369,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "gas_volume_from_moles_stp"
+      ],
+      "id": 27
+    },
+    {
+      "form": "particles",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant": "CH4",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant": 2.0
+      },
+      "goal": "particles_product",
+      "question": "How many molecules of CO2 form from 2.0 g of CH4?",
+      "expected": 7.507499544972886e+22,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "particles_from_moles"
+      ],
+      "id": 28
+    },
+    {
+      "form": "particles",
+      "reaction": "ammonia_synthesis",
+      "roles": {
+        "reactant": "N2",
+        "product": "NH3"
+      },
+      "given": {
+        "mass_reactant": 5.0
+      },
+      "goal": "particles_product",
+      "question": "How many molecules of NH3 form from 5.0 g of N2?",
+      "expected": 2.149689712286714e+23,
+      "expected_rules": [
+        "moles_from_mass",
+        "mole_ratio",
+        "particles_from_moles"
+      ],
+      "id": 29
+    },
+    {
+      "form": "limiting_theoretical",
+      "reaction": "ammonia_synthesis",
+      "roles": {
+        "reactant_a": "N2",
+        "reactant_b": "H2",
+        "product": "NH3"
+      },
+      "given": {
+        "mass_reactant_a": 28.0,
+        "mass_reactant_b": 3.0
+      },
+      "goal": "theoretical_mass_product",
+      "question": "28.0 g N2 + 3.0 g H2: theoretical yield of NH3?",
+      "expected": 16.895833333333332,
+      "limiting": "H2",
+      "expected_rules": [
+        "moles_a_from_mass",
+        "moles_b_from_mass",
+        "limiting_product_from_reactant_b",
+        "theoretical_mass_from_limited_moles"
+      ],
+      "id": 30
+    },
+    {
+      "form": "limiting_theoretical",
+      "reaction": "ammonia_synthesis",
+      "roles": {
+        "reactant_a": "N2",
+        "reactant_b": "H2",
+        "product": "NH3"
+      },
+      "given": {
+        "mass_reactant_a": 28.0,
+        "mass_reactant_b": 30.0
+      },
+      "goal": "theoretical_mass_product",
+      "question": "28.0 g N2 + 30.0 g H2: theoretical yield of NH3?",
+      "expected": 34.044977511244376,
+      "limiting": "N2",
+      "expected_rules": [
+        "moles_a_from_mass",
+        "moles_b_from_mass",
+        "limiting_product_from_reactant_a",
+        "theoretical_mass_from_limited_moles"
+      ],
+      "id": 31
+    },
+    {
+      "form": "limiting_theoretical",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant_a": "CH4",
+        "reactant_b": "O2",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant_a": 16.0,
+        "mass_reactant_b": 16.0
+      },
+      "goal": "theoretical_mass_product",
+      "question": "16.0 g CH4 + 16.0 g O2: theoretical yield of CO2?",
+      "expected": 11.002937683605225,
+      "limiting": "O2",
+      "expected_rules": [
+        "moles_a_from_mass",
+        "moles_b_from_mass",
+        "limiting_product_from_reactant_b",
+        "theoretical_mass_from_limited_moles"
+      ],
+      "id": 32
+    },
+    {
+      "form": "limiting_theoretical",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant_a": "CH4",
+        "reactant_b": "O2",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant_a": 16.0,
+        "mass_reactant_b": 128.0
+      },
+      "goal": "theoretical_mass_product",
+      "question": "16.0 g CH4 + 128.0 g O2: theoretical yield of CO2?",
+      "expected": 43.89104282241476,
+      "limiting": "CH4",
+      "expected_rules": [
+        "moles_a_from_mass",
+        "moles_b_from_mass",
+        "limiting_product_from_reactant_a",
+        "theoretical_mass_from_limited_moles"
+      ],
+      "id": 33
+    },
+    {
+      "form": "limiting_theoretical",
+      "reaction": "carbon_dioxide_hydroxide",
+      "roles": {
+        "reactant_a": "CO2",
+        "reactant_b": "NaOH",
+        "product": "Na2CO3"
+      },
+      "given": {
+        "mass_reactant_a": 44.0,
+        "mass_reactant_b": 40.0
+      },
+      "goal": "theoretical_mass_product",
+      "question": "44.0 g CO2 + 40.0 g NaOH: theoretical yield of Na2CO3?",
+      "expected": 52.997974848113614,
+      "limiting": "NaOH",
+      "expected_rules": [
+        "moles_a_from_mass",
+        "moles_b_from_mass",
+        "limiting_product_from_reactant_b",
+        "theoretical_mass_from_limited_moles"
+      ],
+      "id": 34
+    },
+    {
+      "form": "limiting_theoretical",
+      "reaction": "silver_chloride_precipitation",
+      "roles": {
+        "reactant_a": "CaCl2",
+        "reactant_b": "AgNO3",
+        "product": "AgCl"
+      },
+      "given": {
+        "mass_reactant_a": 11.1,
+        "mass_reactant_b": 34.0
+      },
+      "goal": "theoretical_mass_product",
+      "question": "11.1 g CaCl2 + 34.0 g AgNO3: theoretical yield of AgCl?",
+      "expected": 28.669682279370686,
+      "limiting": "CaCl2",
+      "expected_rules": [
+        "moles_a_from_mass",
+        "moles_b_from_mass",
+        "limiting_product_from_reactant_a",
+        "theoretical_mass_from_limited_moles"
+      ],
+      "id": 35
+    },
+    {
+      "form": "percent_yield",
+      "reaction": "ammonia_synthesis",
+      "roles": {
+        "reactant_a": "N2",
+        "reactant_b": "H2",
+        "product": "NH3"
+      },
+      "given": {
+        "mass_reactant_a": 28.0,
+        "mass_reactant_b": 3.0,
+        "actual_mass_product": 15.0
+      },
+      "goal": "percent_yield",
+      "question": "28.0 g N2 + 3.0 g H2 gave 15.0 g NH3. Percent yield?",
+      "expected": 88.77928483353885,
+      "limiting": "H2",
+      "expected_rules": [
+        "moles_a_from_mass",
+        "moles_b_from_mass",
+        "limiting_product_from_reactant_b",
+        "theoretical_mass_from_limited_moles",
+        "percent_yield_from_masses"
+      ],
+      "id": 36
+    },
+    {
+      "form": "percent_yield",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant_a": "CH4",
+        "reactant_b": "O2",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant_a": 16.0,
+        "mass_reactant_b": 128.0,
+        "actual_mass_product": 40.0
+      },
+      "goal": "percent_yield",
+      "question": "16.0 g CH4 + 128.0 g O2 gave 40.0 g CO2. Percent yield?",
+      "expected": 91.13476788838646,
+      "limiting": "CH4",
+      "expected_rules": [
+        "moles_a_from_mass",
+        "moles_b_from_mass",
+        "limiting_product_from_reactant_a",
+        "theoretical_mass_from_limited_moles",
+        "percent_yield_from_masses"
+      ],
+      "id": 37
+    },
+    {
+      "form": "percent_yield",
+      "reaction": "silver_chloride_precipitation",
+      "roles": {
+        "reactant_a": "CaCl2",
+        "reactant_b": "AgNO3",
+        "product": "AgCl"
+      },
+      "given": {
+        "mass_reactant_a": 11.1,
+        "mass_reactant_b": 34.0,
+        "actual_mass_product": 25.0
+      },
+      "goal": "percent_yield",
+      "question": "11.1 g CaCl2 + 34.0 g AgNO3 gave 25.0 g AgCl. Percent yield?",
+      "expected": 87.20012923892354,
+      "limiting": "CaCl2",
+      "expected_rules": [
+        "moles_a_from_mass",
+        "moles_b_from_mass",
+        "limiting_product_from_reactant_a",
+        "theoretical_mass_from_limited_moles",
+        "percent_yield_from_masses"
+      ],
+      "id": 38
+    },
+    {
+      "form": "refusal_missing_value",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant": "CH4",
+        "product": "CO2"
+      },
+      "given": {},
+      "goal": "mass_product",
+      "question": "What mass of CO2 forms from CH4? (no amount given)",
+      "expected": "refuse",
+      "refusal_stage": "engine",
+      "note": "mass_reactant is not supplied and no rule produces it",
+      "id": 39
+    },
+    {
+      "form": "refusal_missing_value",
+      "reaction": "ammonia_synthesis",
+      "roles": {
+        "reactant_a": "N2",
+        "reactant_b": "H2",
+        "product": "NH3"
+      },
+      "given": {
+        "mass_reactant_a": 28.0
+      },
+      "goal": "theoretical_mass_product",
+      "question": "28 g N2 plus an unstated amount of H2: theoretical yield of NH3?",
+      "expected": "refuse",
+      "refusal_stage": "engine",
+      "note": "mass_reactant_b unsupplied, so neither limiting guard can be evaluated",
+      "id": 40
+    },
+    {
+      "form": "refusal_unknown_reaction",
+      "reaction": "photosynthesis",
+      "roles": {
+        "reactant": "CO2",
+        "product": "O2"
+      },
+      "given": {
+        "mass_reactant": 10.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of O2 forms from 10 g CO2 by photosynthesis?",
+      "expected": "refuse",
+      "refusal_stage": "resolution",
+      "note": "no reaction with that id in the KB's reaction data",
+      "id": 41
+    },
+    {
+      "form": "refusal_species_not_in_reaction",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant": "CH4",
+        "product": "NH3"
+      },
+      "given": {
+        "mass_reactant": 10.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of NH3 forms from 10 g CH4 by methane combustion?",
+      "expected": "refuse",
+      "refusal_stage": "resolution",
+      "note": "NH3 is not a species of methane_combustion",
+      "id": 42
+    },
+    {
+      "form": "refusal_species_not_in_kb",
+      "reaction": "methane_combustion",
+      "roles": {
+        "reactant": "C8H18",
+        "product": "CO2"
+      },
+      "given": {
+        "mass_reactant": 10.0
+      },
+      "goal": "mass_product",
+      "question": "What mass of CO2 forms from 10 g of C8H18 by methane combustion?",
+      "expected": "refuse",
+      "refusal_stage": "resolution",
+      "note": "C8H18 has no composition or molar mass in the KB",
+      "id": 43
+    }
+  ]
+}

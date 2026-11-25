@@ -1,0 +1,634 @@
+{
+  "predicates": [
+    {
+      "predicate": "mass_product",
+      "unit": "g",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Mass of product formed.",
+      "example_queries": [
+        "what is the mass product"
+      ]
+    },
+    {
+      "predicate": "moles_product",
+      "unit": "mol",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Amount of the product, in moles.",
+      "example_queries": [
+        "what is the moles product"
+      ]
+    },
+    {
+      "predicate": "moles_product_limited",
+      "unit": "mol",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Product amount set by whichever reactant limits.",
+      "example_queries": [
+        "what is the moles product limited"
+      ]
+    },
+    {
+      "predicate": "moles_reactant",
+      "unit": "mol",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Amount of the reactant, in moles.",
+      "example_queries": [
+        "what is the moles reactant"
+      ]
+    },
+    {
+      "predicate": "moles_reactant_a",
+      "unit": "mol",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Amount of the first candidate limiting reactant.",
+      "example_queries": [
+        "what is the moles reactant a"
+      ]
+    },
+    {
+      "predicate": "moles_reactant_b",
+      "unit": "mol",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Amount of the second candidate limiting reactant.",
+      "example_queries": [
+        "what is the moles reactant b"
+      ]
+    },
+    {
+      "predicate": "particles_product",
+      "unit": "particles",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Number of product particles.",
+      "example_queries": [
+        "what is the particles product"
+      ]
+    },
+    {
+      "predicate": "percent_yield",
+      "unit": "percent",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Actual yield as a percentage of theoretical yield.",
+      "example_queries": [
+        "what is the percent yield"
+      ]
+    },
+    {
+      "predicate": "theoretical_mass_product",
+      "unit": "g",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Mass of product if the limiting reactant is consumed completely.",
+      "example_queries": [
+        "what is the theoretical mass product"
+      ]
+    },
+    {
+      "predicate": "volume_gas_product",
+      "unit": "L",
+      "contexts": [
+        "stoichiometry"
+      ],
+      "description": "Volume of gaseous product at STP.",
+      "example_queries": [
+        "what is the volume gas product"
+      ]
+    }
+  ],
+  "bindings_schema": [
+    {
+      "predicate": "reaction",
+      "unit": "label",
+      "value_type": "token",
+      "permitted_values": [
+        "ammonia_synthesis",
+        "ammonium_nitrate_decomposition",
+        "brine_electrolysis",
+        "calcium_carbonate_decomposition",
+        "carbon_dioxide_hydroxide",
+        "dinitrogen_pentoxide_formation",
+        "ethane_combustion",
+        "methane_combustion",
+        "silver_chloride_precipitation",
+        "sodium_water",
+        "water_decomposition"
+      ],
+      "aliases": [
+        "the reaction"
+      ],
+      "note": "Must be one of the KB's verified balanced reactions. Optional: omitted for a one-substance conversion (mass/solution -> moles, moles -> mass, particles or gas volume), which names no reaction; the resolver then supplies molar masses only (2026-11-23, dev task 2B). Role convention there: a substance given by mass or solution is `reactant`; a substance given in moles whose mass, particles or volume is asked is `product`.",
+      "description": "The reaction the query describes, as a KB reaction id (the query may give its equation or a description). Omit it only when the query names no reaction.",
+      "value_names": {
+        "ammonia_synthesis": [
+          "N2 + 3 H2 -> 2 NH3"
+        ],
+        "ammonium_nitrate_decomposition": [
+          "2 NH4NO3 -> 2 N2 + O2 + 4 H2O"
+        ],
+        "brine_electrolysis": [
+          "2 NaCl + 2 H2O -> 2 NaOH + H2 + Cl2"
+        ],
+        "calcium_carbonate_decomposition": [
+          "CaCO3 -> CaO + CO2"
+        ],
+        "carbon_dioxide_hydroxide": [
+          "CO2 + 2 NaOH -> Na2CO3 + H2O"
+        ],
+        "dinitrogen_pentoxide_formation": [
+          "2 N2 + 5 O2 -> 2 N2O5"
+        ],
+        "ethane_combustion": [
+          "2 C2H6 + 7 O2 -> 6 H2O + 4 CO2"
+        ],
+        "methane_combustion": [
+          "CH4 + 2 O2 -> CO2 + 2 H2O"
+        ],
+        "silver_chloride_precipitation": [
+          "CaCl2 + 2 AgNO3 -> Ca(NO3)2 + 2 AgCl"
+        ],
+        "sodium_water": [
+          "2 Na + 2 H2O -> 2 NaOH + H2"
+        ],
+        "water_decomposition": [
+          "2 H2O -> 2 H2 + O2"
+        ]
+      }
+    },
+    {
+      "predicate": "reactant",
+      "unit": "label",
+      "value_type": "token",
+      "permitted_values": [
+        "AgCl",
+        "AgNO3",
+        "C2H6",
+        "CH4",
+        "CO2",
+        "Ca(NO3)2",
+        "CaCO3",
+        "CaCl2",
+        "CaO",
+        "Cl2",
+        "H2",
+        "H2O",
+        "N2",
+        "N2O5",
+        "NH3",
+        "NH4NO3",
+        "Na",
+        "Na2CO3",
+        "NaCl",
+        "NaOH",
+        "O2"
+      ],
+      "aliases": [
+        "the reactant whose amount is given"
+      ],
+      "description": "Species whose amount is given (by mass, moles or solution)."
+    },
+    {
+      "predicate": "product",
+      "unit": "label",
+      "value_type": "token",
+      "permitted_values": [
+        "AgCl",
+        "AgNO3",
+        "C2H6",
+        "CH4",
+        "CO2",
+        "Ca(NO3)2",
+        "CaCO3",
+        "CaCl2",
+        "CaO",
+        "Cl2",
+        "H2",
+        "H2O",
+        "N2",
+        "N2O5",
+        "NH3",
+        "NH4NO3",
+        "Na",
+        "Na2CO3",
+        "NaCl",
+        "NaOH",
+        "O2"
+      ],
+      "aliases": [
+        "the product asked about"
+      ],
+      "description": "Species whose amount is asked for."
+    },
+    {
+      "predicate": "reactant_a",
+      "unit": "label",
+      "value_type": "token",
+      "permitted_values": [
+        "AgCl",
+        "AgNO3",
+        "C2H6",
+        "CH4",
+        "CO2",
+        "Ca(NO3)2",
+        "CaCO3",
+        "CaCl2",
+        "CaO",
+        "Cl2",
+        "H2",
+        "H2O",
+        "N2",
+        "N2O5",
+        "NH3",
+        "NH4NO3",
+        "Na",
+        "Na2CO3",
+        "NaCl",
+        "NaOH",
+        "O2"
+      ],
+      "aliases": [
+        "first reactant, limiting-reagent case"
+      ],
+      "description": "First reactant in a limiting-reagent problem."
+    },
+    {
+      "predicate": "reactant_b",
+      "unit": "label",
+      "value_type": "token",
+      "permitted_values": [
+        "AgCl",
+        "AgNO3",
+        "C2H6",
+        "CH4",
+        "CO2",
+        "Ca(NO3)2",
+        "CaCO3",
+        "CaCl2",
+        "CaO",
+        "Cl2",
+        "H2",
+        "H2O",
+        "N2",
+        "N2O5",
+        "NH3",
+        "NH4NO3",
+        "Na",
+        "Na2CO3",
+        "NaCl",
+        "NaOH",
+        "O2"
+      ],
+      "aliases": [
+        "second reactant, limiting-reagent case"
+      ],
+      "description": "Second reactant in a limiting-reagent problem."
+    },
+    {
+      "predicate": "actual_mass_product",
+      "unit": "g",
+      "aliases": [
+        "Mass of product actually obtained."
+      ],
+      "value_type": "number",
+      "description": "Mass of product actually obtained (actual yield)."
+    },
+    {
+      "predicate": "concentration",
+      "unit": "mol/L",
+      "aliases": [
+        "Molarity of the solution."
+      ],
+      "value_type": "number",
+      "description": "Molar concentration (molarity) of a solution."
+    },
+    {
+      "predicate": "gas_conditions",
+      "unit": "condition",
+      "aliases": [
+        "Stated gas conditions; 'stp' when the query says STP."
+      ],
+      "value_type": "token",
+      "permitted_values": [
+        "stp"
+      ],
+      "description": "Stated gas conditions: 'stp' when the query says STP or standard temperature and pressure."
+    },
+    {
+      "predicate": "mass_reactant",
+      "unit": "g",
+      "aliases": [
+        "Mass of reactant supplied by the question."
+      ],
+      "value_type": "number",
+      "description": "Mass of the reactant species, in grams."
+    },
+    {
+      "predicate": "mass_reactant_a",
+      "unit": "g",
+      "aliases": [
+        "Mass of the first candidate limiting reactant."
+      ],
+      "value_type": "number",
+      "description": "Mass of the first reactant in a limiting-reagent problem."
+    },
+    {
+      "predicate": "mass_reactant_b",
+      "unit": "g",
+      "aliases": [
+        "Mass of the second candidate limiting reactant."
+      ],
+      "value_type": "number",
+      "description": "Mass of the second reactant in a limiting-reagent problem."
+    },
+    {
+      "predicate": "other_reactants",
+      "unit": "condition",
+      "aliases": [
+        "Stated condition that every reactant other than the given one is in excess; 'excess'."
+      ],
+      "value_type": "token",
+      "permitted_values": [
+        "excess"
+      ],
+      "description": "Stated condition that every reactant other than the given one is in excess (excess X, reacts completely, is completely consumed, is used up)."
+    },
+    {
+      "predicate": "volume_solution",
+      "unit": "L",
+      "aliases": [
+        "Volume of solution."
+      ],
+      "value_type": "number",
+      "description": "Volume of a solution, in litres."
+    },
+    {
+      "predicate": "moles_reactant",
+      "unit": "mol",
+      "aliases": [
+        "stated amount in moles of the reacting species"
+      ],
+      "value_type": "number",
+      "description": "Amount of the reactant species, in moles, as stated."
+    },
+    {
+      "predicate": "moles_product",
+      "unit": "mol",
+      "aliases": [
+        "stated amount in moles of the species asked about"
+      ],
+      "value_type": "number",
+      "description": "Amount of the species asked about, in moles, as stated."
+    },
+    {
+      "predicate": "theoretical_mass_product",
+      "unit": "g",
+      "aliases": [
+        "stated theoretical yield"
+      ],
+      "value_type": "number",
+      "description": "Theoretical yield of the product, in grams, as stated."
+    }
+  ],
+  "_parser_note": "molar_mass_* and coeff_* are deliberately ABSENT from bindings_schema: the parser cannot emit them, so no LLM output can ever reach a molar mass or a stoichiometric coefficient. tools/eval/eval_chemistry.py resolves those from kb1_chemistry.json data.",
+  "parser_prompt": {
+    "_note": "Domain text for pct/parser.py; see make_parser_prompts.py.",
+    "header": "You translate natural-language stoichiometry queries into a single JSON object.\n\nRULE #1 (HIGHEST PRIORITY): `predicate` is the quantity the question ASKS FOR, identified\nfrom the question phrase:\n  - 'how many moles of <reactant>', 'moles of the <reactant>' -> moles_reactant\n  - 'how many moles of <product>'                             -> moles_product\n  - 'what mass of <product>', 'how many grams of <product>'   -> mass_product\n  - 'how many molecules/atoms/particles'                      -> particles_product\n  - 'what volume of gas', 'how many litres at STP'            -> volume_gas_product\n  - 'theoretical yield'                                       -> theoretical_mass_product\n  - 'percent yield', 'percentage yield'                       -> percent_yield\n\nRULE #2: name the reaction in the binding `reaction`, and each species in its ROLE binding:\n`reactant` (the one whose amount is given), `product` (the one asked about), or\n`reactant_a` / `reactant_b` when TWO reactant amounts are given (a limiting-reagent\nquestion).\nONE-SUBSTANCE CONVERSIONS: when the question only converts an amount of ONE substance\n(grams to moles, a solution to moles, moles to grams, moles to particles, moles to gas\nvolume) and names no reaction, OMIT `reaction`. A substance given in grams or as a\nsolution is the `reactant` (predicate moles_reactant); a substance given in moles whose\nmass, particle count or gas volume is asked is the `product` (predicate mass_product,\nparticles_product or volume_gas_product, with the stated moles as moles_product).\n\nRULE #3: an amount stated IN MOLES binds moles_reactant when that species reacts to form\nthe asked species, and moles_product when the question asks for the mass, particle count\nor gas volume of that same species (then that species is the `product` role). A stated\ntheoretical yield binds theoretical_mass_product.\n\nJSON SCHEMA (the entire output, with no extra fields):\n{\"predicate\": <string>, \"unit\": <string>, \"context\": \"stoichiometry\",\n \"bindings\": {<binding_name>: {\"value\": <number|string>, \"unit\": <string>}}}\n\n",
+    "footer": "\n\nSTRICT RULES:\n1. Output exactly ONE JSON object. No commentary, no markdown fences, no extra text.\n2. Only these four top-level keys: predicate, unit, context, bindings.\n3. `predicate` must be one of ALLOWED PREDICATES and `unit` its listed unit.\n4. `context` is always \"stoichiometry\".\n5. Every binding name must appear in ALLOWED BINDINGS, with the unit listed for it.\n6. For a binding listed with \"one of: ...\", the value MUST be one of those exact tokens.\n   Never invent a reaction id or a species formula.\n7. EXTRACT-ONLY RULE (CRITICAL): bindings may contain ONLY numbers the query explicitly\n   states. You must NEVER supply a molar mass, a molecular weight, or a stoichiometric\n   coefficient -- not even if you know it. Those are looked up from the knowledge base.\n   Never compute moles from grams yourself; the engine does that.\n   STATED CONDITION: bind gas_conditions = \"stp\" ONLY when the query says \"at STP\" or\n   \"standard temperature and pressure\". Never assume STP for a gas volume question.\n   STATED CONDITION: bind other_reactants = \"excess\" ONLY when the query says the OTHER\n   reactant is in excess (\"excess oxygen\", \"an excess of H2\"), or that the given reactant\n   \"reacts completely\", \"is completely consumed\" or \"is used up\". \"Burned in oxygen\",\n   \"in air\", \"reacts\" or \"burns\" alone does NOT bind it.\n8. OUT-OF-SCOPE RULE: if the question names a reaction that is not in the `reaction`\n   list, or is not a stoichiometry question, set `predicate` to the literal string \"OUT_OF_SCOPE\",\n   unit \"n/a\", context \"n/a\", and leave bindings empty.\n\nEXAMPLES:\n\nInput: Query: A chemist weighs out 64.77 g of sodium chloride. How many moles is this?\nOutput: {\"predicate\": \"moles_reactant\", \"unit\": \"mol\", \"context\": \"stoichiometry\", \"bindings\": {\"reactant\": {\"value\": \"NaCl\", \"unit\": \"label\"}, \"mass_reactant\": {\"value\": 64.77, \"unit\": \"g\"}}}\n\nInput: Query: How many moles of sodium hydroxide are in 0.6325 L of a 0.4079 M solution?\nOutput: {\"predicate\": \"moles_reactant\", \"unit\": \"mol\", \"context\": \"stoichiometry\", \"bindings\": {\"reactant\": {\"value\": \"NaOH\", \"unit\": \"label\"}, \"concentration\": {\"value\": 0.4079, \"unit\": \"mol/L\"}, \"volume_solution\": {\"value\": 0.6325, \"unit\": \"L\"}}}\n\nInput: Query: A sample contains 0.9283 mol of Na. What does it weigh in grams?\nOutput: {\"predicate\": \"mass_product\", \"unit\": \"g\", \"context\": \"stoichiometry\", \"bindings\": {\"product\": {\"value\": \"Na\", \"unit\": \"label\"}, \"moles_product\": {\"value\": 0.9283, \"unit\": \"mol\"}}}\n\nInput: Query: Calculate the number of formula units in 0.7859 moles of NaOH.\nOutput: {\"predicate\": \"particles_product\", \"unit\": \"particles\", \"context\": \"stoichiometry\", \"bindings\": {\"product\": {\"value\": \"NaOH\", \"unit\": \"label\"}, \"moles_product\": {\"value\": 0.7859, \"unit\": \"mol\"}}}\n\nInput: Query: How many litres of O2 is 6.205 mol?\nOutput: {\"predicate\": \"volume_gas_product\", \"unit\": \"L\", \"context\": \"stoichiometry\", \"bindings\": {\"product\": {\"value\": \"O2\", \"unit\": \"label\"}, \"moles_product\": {\"value\": 6.205, \"unit\": \"mol\"}}}\n\nInput: Query: Calculate the moles of carbon dioxide formed from 0.2523 mol of O2 in the presence of excess CH4 in the reaction CH4 + 2 O2 -> CO2 + 2 H2O.\nOutput: {\"predicate\": \"moles_product\", \"unit\": \"mol\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"methane_combustion\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"O2\", \"unit\": \"label\"}, \"product\": {\"value\": \"CO2\", \"unit\": \"label\"}, \"moles_reactant\": {\"value\": 0.2523, \"unit\": \"mol\"}, \"other_reactants\": {\"value\": \"excess\", \"unit\": \"condition\"}}}\n\nInput: Query: In the thermal decomposition of calcium carbonate, 50.19 g of calcium oxide (CaO) was isolated from a theoretical 41.57 g. What was the percent yield?\nOutput: {\"predicate\": \"percent_yield\", \"unit\": \"percent\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"calcium_carbonate_decomposition\", \"unit\": \"label\"}, \"product\": {\"value\": \"CaO\", \"unit\": \"label\"}, \"actual_mass_product\": {\"value\": 50.19, \"unit\": \"g\"}, \"theoretical_mass_product\": {\"value\": 41.57, \"unit\": \"g\"}}}\n\nInput: Query: How many moles of calcium oxide (CaO) form when 5.711 g of CaCO3 reacts in the reaction CaCO3 -> CaO + CO2?\nOutput: {\"predicate\": \"moles_product\", \"unit\": \"mol\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"calcium_carbonate_decomposition\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"CaCO3\", \"unit\": \"label\"}, \"product\": {\"value\": \"CaO\", \"unit\": \"label\"}, \"mass_reactant\": {\"value\": 5.711, \"unit\": \"g\"}}}\n\nInput: Query: How many grams of N2O5 can be made from 9.659 g of nitrogen with O2 in the reaction 2 N2 + 5 O2 -> 2 N2O5?\nOutput: {\"predicate\": \"mass_product\", \"unit\": \"g\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"dinitrogen_pentoxide_formation\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"N2\", \"unit\": \"label\"}, \"product\": {\"value\": \"N2O5\", \"unit\": \"label\"}, \"mass_reactant\": {\"value\": 9.659, \"unit\": \"g\"}}}\n\nInput: Query: How many molecules of NH3 are produced from 249.5 g of nitrogen according to N2 + 3 H2 -> 2 NH3? All of the nitrogen is used up.\nOutput: {\"predicate\": \"particles_product\", \"unit\": \"particles\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"ammonia_synthesis\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"N2\", \"unit\": \"label\"}, \"product\": {\"value\": \"NH3\", \"unit\": \"label\"}, \"mass_reactant\": {\"value\": 249.5, \"unit\": \"g\"}, \"other_reactants\": {\"value\": \"excess\", \"unit\": \"condition\"}}}\n\nInput: Query: 543.5 g of O2 reacts according to CH4 + 2 O2 -> CO2 + 2 H2O. What volume of carbon dioxide (CO2) forms at standard temperature and pressure? All of the O2 is used up.\nOutput: {\"predicate\": \"volume_gas_product\", \"unit\": \"L\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"methane_combustion\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"O2\", \"unit\": \"label\"}, \"product\": {\"value\": \"CO2\", \"unit\": \"label\"}, \"mass_reactant\": {\"value\": 543.5, \"unit\": \"g\"}, \"other_reactants\": {\"value\": \"excess\", \"unit\": \"condition\"}, \"gas_conditions\": {\"value\": \"stp\", \"unit\": \"condition\"}}}\n\nInput: Query: 808.7 mL of 0.4525 M NaOH solution reacts in the presence of excess CO2. How many moles of Na2CO3 form?\nOutput: {\"predicate\": \"moles_product\", \"unit\": \"mol\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"carbon_dioxide_hydroxide\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"NaOH\", \"unit\": \"label\"}, \"product\": {\"value\": \"Na2CO3\", \"unit\": \"label\"}, \"concentration\": {\"value\": 0.4525, \"unit\": \"mol/L\"}, \"volume_solution\": {\"value\": 0.8087, \"unit\": \"L\"}, \"other_reactants\": {\"value\": \"excess\", \"unit\": \"condition\"}}}\n\nInput: Query: What mass of H2O is produced when 281.1 mL of 9.261 M sodium hydroxide reacts in the reaction of carbon dioxide with sodium hydroxide?\nOutput: {\"predicate\": \"mass_product\", \"unit\": \"g\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"carbon_dioxide_hydroxide\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"NaOH\", \"unit\": \"label\"}, \"product\": {\"value\": \"H2O\", \"unit\": \"label\"}, \"concentration\": {\"value\": 9.261, \"unit\": \"mol/L\"}, \"volume_solution\": {\"value\": 0.2811, \"unit\": \"L\"}}}\n\nInput: Query: What mass of H2O forms when 0.2959 mol of CO2 reacts in the reaction CO2 + 2 NaOH -> Na2CO3 + H2O?\nOutput: {\"predicate\": \"mass_product\", \"unit\": \"g\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"carbon_dioxide_hydroxide\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"CO2\", \"unit\": \"label\"}, \"product\": {\"value\": \"H2O\", \"unit\": \"label\"}, \"moles_reactant\": {\"value\": 0.2959, \"unit\": \"mol\"}}}\n\nInput: Query: What volume of carbon dioxide at standard temperature and pressure is produced when 0.07353 mol of oxygen (O2) reacts with excess C2H6 in the reaction 2 C2H6 + 7 O2 -> 6 H2O + 4 CO2?\nOutput: {\"predicate\": \"volume_gas_product\", \"unit\": \"L\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"ethane_combustion\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"O2\", \"unit\": \"label\"}, \"product\": {\"value\": \"CO2\", \"unit\": \"label\"}, \"moles_reactant\": {\"value\": 0.07353, \"unit\": \"mol\"}, \"other_reactants\": {\"value\": \"excess\", \"unit\": \"condition\"}, \"gas_conditions\": {\"value\": \"stp\", \"unit\": \"condition\"}}}\n\nInput: Query: A mixture of 80.97 g calcium chloride and 44.39 g AgNO3 reacts in the precipitation reaction between calcium chloride and silver nitrate. What maximum mass of Ca(NO3)2 can form?\nOutput: {\"predicate\": \"theoretical_mass_product\", \"unit\": \"g\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"silver_chloride_precipitation\", \"unit\": \"label\"}, \"reactant_a\": {\"value\": \"CaCl2\", \"unit\": \"label\"}, \"reactant_b\": {\"value\": \"AgNO3\", \"unit\": \"label\"}, \"product\": {\"value\": \"Ca(NO3)2\", \"unit\": \"label\"}, \"mass_reactant_a\": {\"value\": 80.97, \"unit\": \"g\"}, \"mass_reactant_b\": {\"value\": 44.39, \"unit\": \"g\"}}}\n\nInput: Query: 5.613 g of N2 and 5.759 g of oxygen react in the reaction 2 N2 + 5 O2 -> 2 N2O5, giving 7.787 g of N2O5. What is the percent yield?\nOutput: {\"predicate\": \"percent_yield\", \"unit\": \"percent\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"dinitrogen_pentoxide_formation\", \"unit\": \"label\"}, \"reactant_a\": {\"value\": \"N2\", \"unit\": \"label\"}, \"reactant_b\": {\"value\": \"O2\", \"unit\": \"label\"}, \"product\": {\"value\": \"N2O5\", \"unit\": \"label\"}, \"mass_reactant_a\": {\"value\": 5.613, \"unit\": \"g\"}, \"mass_reactant_b\": {\"value\": 5.759, \"unit\": \"g\"}, \"actual_mass_product\": {\"value\": 7.787, \"unit\": \"g\"}}}\n\nInput: Query: What mass of calcium hydroxide forms when 5.60 g of calcium oxide reacts with water?\nOutput: {\"predicate\": \"OUT_OF_SCOPE\", \"unit\": \"n/a\", \"context\": \"n/a\", \"bindings\": {}}\n",
+    "followup": "You update a structured stoichiometry goal based on a follow-up query.\n\nYou will receive:\n  PREVIOUS GOAL: <JSON object>\n  NEW QUERY: <natural language>\n\nOutput exactly ONE JSON object: the updated goal. Rules:\n1. Keys and shape must equal the previous goal (predicate, unit, context, bindings).\n2. `predicate`, `unit` and `context` MUST be identical to the previous goal.\n3. Keep every binding from the previous goal; change only the ones the new query\n   explicitly references.\n4. Never add a fact the new query does not state.\n5. Output JSON only, no commentary.\n\nEXAMPLE:\nPREVIOUS GOAL: {\"predicate\": \"mass_product\", \"unit\": \"g\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"methane_combustion\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"CH4\", \"unit\": \"label\"}, \"product\": {\"value\": \"CO2\", \"unit\": \"label\"}, \"mass_reactant\": {\"value\": 10.0, \"unit\": \"g\"}}}\nNEW QUERY: what if we started with 20 g instead\nOUTPUT: {\"predicate\": \"mass_product\", \"unit\": \"g\", \"context\": \"stoichiometry\", \"bindings\": {\"reaction\": {\"value\": \"methane_combustion\", \"unit\": \"label\"}, \"reactant\": {\"value\": \"CH4\", \"unit\": \"label\"}, \"product\": {\"value\": \"CO2\", \"unit\": \"label\"}, \"mass_reactant\": {\"value\": 20.0, \"unit\": \"g\"}}}\n",
+    "_examples_note": "EXAMPLES drawn from the development set only (tools/build/build_dev_prompt_examples.py, 2026-11-23): at most one per query form, the dev gold goal state as output, every stated number replaced by a value no dev or test query states.",
+    "_examples_source": [
+      {
+        "form": "moles_from_mass",
+        "dev_id": 1,
+        "values": {
+          "10.3": "64.77"
+        }
+      },
+      {
+        "form": "moles_from_solution",
+        "dev_id": 9,
+        "values": {
+          "0.866": "0.4079",
+          "0.528": "0.6325"
+        }
+      },
+      {
+        "form": "mass_from_moles",
+        "dev_id": 16,
+        "values": {
+          "0.127": "0.9283"
+        }
+      },
+      {
+        "form": "particles_from_moles",
+        "dev_id": 23,
+        "values": {
+          "0.321": "0.7859"
+        }
+      },
+      {
+        "form": "gas_volume_from_moles",
+        "dev_id": 30,
+        "values": {
+          "1.08": "6.205"
+        }
+      },
+      {
+        "form": "mole_ratio",
+        "dev_id": 37,
+        "values": {
+          "0.115": "0.2523"
+        }
+      },
+      {
+        "form": "percent_yield_given_theoretical",
+        "dev_id": 45,
+        "values": {
+          "35.3": "50.19",
+          "61.4": "41.57"
+        }
+      },
+      {
+        "form": "moles_of_product",
+        "dev_id": 51,
+        "values": {
+          "3.61": "5.711"
+        }
+      },
+      {
+        "form": "mass_of_product",
+        "dev_id": 54,
+        "values": {
+          "1.98": "9.659"
+        }
+      },
+      {
+        "form": "particles_of_product",
+        "dev_id": 59,
+        "values": {
+          "241": "249.5"
+        }
+      },
+      {
+        "form": "gas_volume_of_product",
+        "dev_id": 62,
+        "values": {
+          "108": "543.5"
+        }
+      },
+      {
+        "form": "solution_to_moles_of_product",
+        "dev_id": 65,
+        "values": {
+          "0.924": "0.4525",
+          "682": "808.7"
+        }
+      },
+      {
+        "form": "solution_to_mass_of_product",
+        "dev_id": 67,
+        "values": {
+          "1.34": "9.261",
+          "213": "281.1"
+        }
+      },
+      {
+        "form": "moles_to_mass_of_product",
+        "dev_id": 69,
+        "values": {
+          "0.919": "0.2959"
+        }
+      },
+      {
+        "form": "moles_to_gas_volume",
+        "dev_id": 72,
+        "values": {
+          "0.0739": "0.07353"
+        }
+      },
+      {
+        "form": "limiting_theoretical",
+        "dev_id": 74,
+        "values": {
+          "15.3": "80.97",
+          "35.2": "44.39"
+        }
+      },
+      {
+        "form": "percent_yield",
+        "dev_id": 80,
+        "values": {
+          "1.55": "5.613",
+          "7.31": "5.759",
+          "3.01": "7.787"
+        }
+      },
+      {
+        "form": "out_of_scope",
+        "dev_id": 84,
+        "values": {}
+      }
+    ]
+  },
+  "baseline_prompts": {
+    "_note": "System prompts for the two baselines (tools/eval/baseline_rag.py). raw_system null means the raw baseline sends no system message.",
+    "rag_system": "You are a chemistry assistant. Use ONLY the provided context to answer the question. If the answer cannot be determined from the context, reply exactly: I cannot answer this.\n\nBe concise. Give the numeric value with its unit.",
+    "raw_system": null
+  },
+  "kb_supplied_inputs": [
+    {
+      "predicate": "avogadro",
+      "unit": "1/mol",
+      "description": "Constant avogadro_constant.",
+      "supplied_by": "KB1 primitives"
+    },
+    {
+      "predicate": "coeff_product",
+      "unit": "dimensionless",
+      "description": "Stoichiometric coefficient of the species in role product.",
+      "supplied_by": "the reaction's balanced equation in KB1"
+    },
+    {
+      "predicate": "coeff_reactant",
+      "unit": "dimensionless",
+      "description": "Stoichiometric coefficient of the species in role reactant.",
+      "supplied_by": "the reaction's balanced equation in KB1"
+    },
+    {
+      "predicate": "coeff_reactant_a",
+      "unit": "dimensionless",
+      "description": "Stoichiometric coefficient of the species in role reactant_a.",
+      "supplied_by": "the reaction's balanced equation in KB1"
+    },
+    {
+      "predicate": "coeff_reactant_b",
+      "unit": "dimensionless",
+      "description": "Stoichiometric coefficient of the species in role reactant_b.",
+      "supplied_by": "the reaction's balanced equation in KB1"
+    },
+    {
+      "predicate": "molar_mass_product",
+      "unit": "g/mol",
+      "description": "Molar mass of the species in role product.",
+      "supplied_by": "species composition and atomic weights in KB1"
+    },
+    {
+      "predicate": "molar_mass_reactant",
+      "unit": "g/mol",
+      "description": "Molar mass of the species in role reactant.",
+      "supplied_by": "species composition and atomic weights in KB1"
+    },
+    {
+      "predicate": "molar_mass_reactant_a",
+      "unit": "g/mol",
+      "description": "Molar mass of the species in role reactant_a.",
+      "supplied_by": "species composition and atomic weights in KB1"
+    },
+    {
+      "predicate": "molar_mass_reactant_b",
+      "unit": "g/mol",
+      "description": "Molar mass of the species in role reactant_b.",
+      "supplied_by": "species composition and atomic weights in KB1"
+    },
+    {
+      "predicate": "molar_volume_stp",
+      "unit": "L/mol",
+      "description": "Constant molar_volume_stp.",
+      "supplied_by": "KB1 primitives"
+    }
+  ],
+  "condition_phrases": {
+    "other_reactants": [
+      {
+        "value": "excess",
+        "phrases": [
+          "\\bexcess\\b|reacts? completely|(?:is|are) completely consumed|(?:is|are) used up"
+        ]
+      }
+    ],
+    "gas_conditions": [
+      {
+        "value": "stp",
+        "phrases": [
+          "\\bSTP\\b|standard temperature and pressure"
+        ]
+      }
+    ]
+  },
+  "_condition_phrases_note": "A binding listed here is a condition: the parser keeps it only if the query states it -- a phrase below matches (case-insensitive regex), or, for a numeric value, the number itself appears in the query. Value 'any' means every value of the binding needs the phrase. Otherwise the parse is refused (F4, condition not stated in the query)."
+}

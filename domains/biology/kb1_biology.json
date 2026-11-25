@@ -1,0 +1,1508 @@
+{
+  "_domain": "biology",
+  "_design_note": "ONE biology domain: trait-based vertebrate classification and envelope-based felid (deep/cat) classification in a single taxonomy. 11 UNIVERSAL rules; all 52 taxa are DATA. No rule names a taxon. Levels 1..10 are what the rules chain on; each taxon's level equals its rule-count from the root, so derivation depths match both source KBs exactly.",
+  "_discriminator_note": "Two discriminator kinds, deliberately kept as two universal rule families. TRAITS: required traits are rule INPUTS, so an absent trait is an unsatisfiable subgoal -> F5. ENVELOPE: characters are inputs and the range/membership test is in the GUARD, so a non-match with everything bound -> F6. One rule cannot serve both: an unconditional body_length input would make every trait-only query fail on an unbound body_length. Both families are universal and name no taxon.",
+  "_join_note": "Felidae sits under Carnivora and the data records that parent, but the felid character set (is_felid, body_length, geographic_range, habitat) evidences no mammalian trait, so requiring the carnivore chain would break every felid decision. Two universal L6 rules therefore exist: taxon_L6_from_L5_join crosses from the trait tree into the felid sub-tree when both kinds of evidence are supplied, and taxon_L6_from_specimen is the felid-only entry.",
+  "_taxon_access_note": "engine._find_primitive ignores context, so a primitive cannot vary per taxon; bindings are the only per-call channel. tools/eval/eval_biology.py resolves a candidate taxon and its ancestor chain out of `taxa` and binds candidate_L<n>, trait_<k>_L<n> and the envelope values per level. That resolution is the parser's role; the engine only backward-chains over the 11 universal rules.",
+  "context_transitions": [],
+  "_context_transitions_note": "Every rule lives in the single 'biology_taxonomy' context -- both former KBs were single-context too -- so no subgoal crosses a context boundary.",
+  "predicate_aliases": {},
+  "_predicate_aliases_note": "No synonyms; each level and character is one predicate.",
+  "domain_scope": [
+    "The taxonomy is closed: only the taxa recorded here exist for the engine.",
+    "Vertebrate taxa are identified by their defining traits; felid taxa by the adult body-length, geographic-range and habitat envelopes recorded per taxon.",
+    "No disjointness between sibling taxa is declared, so non-membership is never derivable."
+  ],
+  "primitives": [],
+  "_primitives_note": "Empty, as in both source KBs: all evidence arrives per query as bindings and neither source contains a universal biological constant.",
+  "taxa": {
+    "vertebrate": {
+      "level": 1,
+      "rank": "subphylum",
+      "parent": null,
+      "discriminator": "traits",
+      "required_traits": [
+        "has_backbone"
+      ],
+      "source": "Vertebrates are chordates possessing a vertebral column (backbone) that replaces the notochord in the adult. The vertebral column is the defining synapomorphy of subphylum Vertebrata. OpenStax Biology 2e, Ch 29.1 (Chordates); Campbell Biology, Urry et al., Ch 34.2."
+    },
+    "amniote": {
+      "level": 2,
+      "rank": "clade_or_class",
+      "parent": "vertebrate",
+      "discriminator": "traits",
+      "required_traits": [
+        "amniotic_egg"
+      ],
+      "source": "Amniotes are the vertebrates whose embryo develops within an amniotic egg, whose extraembryonic membranes (amnion, chorion, allantois, yolk sac) permit reproduction on land without a watery environment. The amniotic egg is the defining characteristic of clade Amniota, which comprises reptiles (including birds) and mammals. OpenStax Biology 2e, Ch 29.4 (Reptiles); Campbell Biology, Urry et al., Ch 34.6."
+    },
+    "fish": {
+      "level": 2,
+      "rank": "clade_or_class",
+      "parent": "vertebrate",
+      "discriminator": "traits",
+      "required_traits": [
+        "has_gills",
+        "has_fins"
+      ],
+      "source": "Fishes are aquatic vertebrates that respire with gills throughout life and bear fins for locomotion. Gills and fins are the diagnostic characters separating fishes from the tetrapod vertebrates. OpenStax Biology 2e, Ch 29.2 (Fishes); Campbell Biology, Urry et al., Ch 34.3-34.4."
+    },
+    "amphibian": {
+      "level": 2,
+      "rank": "clade_or_class",
+      "parent": "vertebrate",
+      "discriminator": "traits",
+      "required_traits": [
+        "moist_permeable_skin",
+        "aquatic_larval_stage"
+      ],
+      "source": "Amphibians are tetrapod vertebrates with moist, permeable skin used in cutaneous gas exchange, and a life cycle that characteristically passes through an aquatic larval stage before metamorphosis to the terrestrial adult. They are anamniotes: reproduction remains tied to water. OpenStax Biology 2e, Ch 29.3 (Amphibians); Campbell Biology, Urry et al., Ch 34.5."
+    },
+    "reptile": {
+      "level": 3,
+      "rank": "class",
+      "parent": "amniote",
+      "discriminator": "traits",
+      "required_traits": [
+        "has_keratin_scales",
+        "ectothermic"
+      ],
+      "source": "Reptiles (in the traditional, non-avian sense) are amniotes with dry skin bearing keratinized scales that limit water loss, and are ectothermic, regulating body temperature behaviourally through external heat sources. OpenStax Biology 2e, Ch 29.4 (Reptiles); Campbell Biology, Urry et al., Ch 34.6."
+    },
+    "bird": {
+      "level": 3,
+      "rank": "class",
+      "parent": "amniote",
+      "discriminator": "traits",
+      "required_traits": [
+        "has_feathers",
+        "lays_eggs"
+      ],
+      "source": "Birds are amniotes bearing feathers, keratinous appendages unique to the group and derived from reptilian scales, and all birds are oviparous, reproducing exclusively by laying amniotic eggs. Feathers are the defining synapomorphy of Aves. OpenStax Biology 2e, Ch 29.5 (Birds); Campbell Biology, Urry et al., Ch 34.7."
+    },
+    "mammal": {
+      "level": 3,
+      "rank": "class",
+      "parent": "amniote",
+      "discriminator": "traits",
+      "required_traits": [
+        "produces_milk",
+        "has_hair"
+      ],
+      "source": "Mammals are amniotes that nourish their young with milk secreted by mammary glands, and that bear hair composed of keratin. Mammary glands and hair are the two defining characteristics of class Mammalia and are present in every member, including the egg-laying monotremes. OpenStax Biology 2e, Ch 29.6 (Mammals); Campbell Biology, Urry et al., Ch 34.8."
+    },
+    "monotreme": {
+      "level": 4,
+      "rank": "infraclass",
+      "parent": "mammal",
+      "discriminator": "traits",
+      "required_traits": [
+        "lays_eggs"
+      ],
+      "source": "Monotremes are the egg-laying mammals: they retain the ancestral amniote condition of oviparity while possessing mammary glands and hair. The group contains only the platypus and the echidnas. OpenStax Biology 2e, Ch 29.6 (Mammals); Campbell Biology, Urry et al., Ch 34.8."
+    },
+    "marsupial": {
+      "level": 4,
+      "rank": "infraclass",
+      "parent": "mammal",
+      "discriminator": "traits",
+      "required_traits": [
+        "has_pouch"
+      ],
+      "source": "Marsupials are mammals that give birth to highly altricial young which complete development attached to a teat, characteristically within a maternal pouch (marsupium). Development is not sustained by a long-lived placenta. OpenStax Biology 2e, Ch 29.6 (Mammals); Campbell Biology, Urry et al., Ch 34.8."
+    },
+    "placental": {
+      "level": 4,
+      "rank": "infraclass",
+      "parent": "mammal",
+      "discriminator": "traits",
+      "required_traits": [
+        "live_birth",
+        "has_placenta"
+      ],
+      "source": "Placental mammals (Eutheria) complete embryonic development inside the uterus, sustained by a complex placenta that exchanges nutrients and wastes between maternal and fetal circulations, and give birth to relatively well-developed live young. OpenStax Biology 2e, Ch 29.6 (Mammals); Campbell Biology, Urry et al., Ch 34.8."
+    },
+    "carnivore": {
+      "level": 5,
+      "rank": "order",
+      "parent": "placental",
+      "discriminator": "traits",
+      "required_traits": [
+        "has_carnassial_teeth"
+      ],
+      "source": "Order Carnivora comprises placental mammals bearing carnassial teeth, the paired shearing blade formed by the upper fourth premolar and lower first molar, which is the diagnostic dental character of the order. OpenStax Biology 2e, Ch 29.6 (Mammals); Campbell Biology, Urry et al., Ch 34.8."
+    },
+    "primate": {
+      "level": 5,
+      "rank": "order",
+      "parent": "placental",
+      "discriminator": "traits",
+      "required_traits": [
+        "opposable_thumb",
+        "forward_facing_eyes"
+      ],
+      "source": "Order Primates comprises placental mammals characterized by grasping hands with an opposable thumb (or hallux) and forward-facing eyes giving overlapping visual fields and stereoscopic depth perception, both adaptations associated with arboreal life. OpenStax Biology 2e, Ch 29.6 (Mammals); Campbell Biology, Urry et al., Ch 34.8."
+    },
+    "rodent": {
+      "level": 5,
+      "rank": "order",
+      "parent": "placental",
+      "discriminator": "traits",
+      "required_traits": [
+        "ever_growing_incisors"
+      ],
+      "source": "Order Rodentia comprises placental mammals with a single pair of continuously growing, chisel-like incisors in each jaw, kept worn down by gnawing. The ever-growing incisor is the diagnostic character of the order. OpenStax Biology 2e, Ch 29.6 (Mammals); Campbell Biology, Urry et al., Ch 34.8."
+    },
+    "cetacean": {
+      "level": 5,
+      "rank": "order",
+      "parent": "placental",
+      "discriminator": "traits",
+      "required_traits": [
+        "has_flippers",
+        "has_blowhole"
+      ],
+      "source": "Cetacea comprises the fully aquatic placental mammals, whose forelimbs are modified into flippers and whose nostrils have migrated to the top of the skull as a blowhole for surface breathing. They retain the mammalian characters of milk and hair despite the fishlike body form. OpenStax Biology 2e, Ch 29.6 (Mammals); Campbell Biology, Urry et al., Ch 34.8."
+    },
+    "felidae": {
+      "level": 6,
+      "rank": "family",
+      "parent": "carnivore",
+      "discriminator": "entry",
+      "source": "Family Felidae, the extant cats, placed in order Carnivora within Mammalia. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. The parent recorded here is the taxonomic placement; a specimen known to be a felid may also enter the sub-tree directly via the is_felid premise."
+    },
+    "felinae": {
+      "level": 7,
+      "rank": "subfamily",
+      "parent": "felidae",
+      "discriminator": "envelope",
+      "body_min": 37,
+      "body_max": 150,
+      "regions": [
+        "caspian",
+        "central_africa",
+        "central_america",
+        "eastern_africa",
+        "eastern_europe",
+        "iberia",
+        "indian_subcontinent",
+        "iran",
+        "middle_east",
+        "north_america",
+        "russia",
+        "south_america",
+        "southeast_asia",
+        "southern_africa",
+        "southern_china",
+        "western_africa",
+        "worldwide"
+      ],
+      "habitats": [
+        "desert",
+        "domesticated",
+        "forest",
+        "grassland",
+        "inland_wetlands",
+        "rocky_areas",
+        "savanna",
+        "shrubland"
+      ],
+      "source": "Subfamily Felinae. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of the sourced envelopes of its 15 species."
+    },
+    "pantherinae": {
+      "level": 7,
+      "rank": "subfamily",
+      "parent": "felidae",
+      "discriminator": "envelope",
+      "body_min": 69,
+      "body_max": 250,
+      "regions": [
+        "borneo",
+        "caucasus",
+        "central_america",
+        "himalayas",
+        "indian_subcontinent",
+        "middle_east",
+        "mongolia",
+        "north_america",
+        "siberia",
+        "south_america",
+        "southeast_asia",
+        "southern_china",
+        "sub_saharan_africa",
+        "sumatra"
+      ],
+      "habitats": [
+        "desert",
+        "forest",
+        "grassland",
+        "inland_wetlands",
+        "rocky_areas",
+        "savanna",
+        "shrubland"
+      ],
+      "source": "Subfamily Pantherinae. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of the sourced envelopes of its 7 species."
+    },
+    "domestic_cat_lineage": {
+      "level": 8,
+      "rank": "lineage",
+      "parent": "felinae",
+      "discriminator": "envelope",
+      "body_min": 37,
+      "body_max": 76,
+      "regions": [
+        "caspian",
+        "indian_subcontinent",
+        "middle_east",
+        "southeast_asia",
+        "southern_africa",
+        "western_africa",
+        "worldwide"
+      ],
+      "habitats": [
+        "desert",
+        "domesticated",
+        "forest",
+        "grassland",
+        "inland_wetlands",
+        "savanna",
+        "shrubland"
+      ],
+      "source": "The Domestic cat lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of the sourced envelopes of its 4 species."
+    },
+    "lynx_lineage": {
+      "level": 8,
+      "rank": "lineage",
+      "parent": "felinae",
+      "discriminator": "envelope",
+      "body_min": 50,
+      "body_max": 120,
+      "regions": [
+        "eastern_europe",
+        "iberia",
+        "north_america",
+        "russia",
+        "southern_china"
+      ],
+      "habitats": [
+        "desert",
+        "forest",
+        "grassland",
+        "rocky_areas",
+        "savanna",
+        "shrubland"
+      ],
+      "source": "The Lynx lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of the sourced envelopes of its 4 species."
+    },
+    "ocelot_lineage": {
+      "level": 8,
+      "rank": "lineage",
+      "parent": "felinae",
+      "discriminator": "envelope",
+      "body_min": 38,
+      "body_max": 102,
+      "regions": [
+        "central_america",
+        "north_america",
+        "south_america"
+      ],
+      "habitats": [
+        "forest",
+        "grassland",
+        "savanna",
+        "shrubland"
+      ],
+      "source": "The Ocelot lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of the sourced envelopes of its 4 species."
+    },
+    "panthera_lineage": {
+      "level": 8,
+      "rank": "lineage",
+      "parent": "pantherinae",
+      "discriminator": "envelope",
+      "body_min": 69,
+      "body_max": 250,
+      "regions": [
+        "borneo",
+        "caucasus",
+        "central_america",
+        "himalayas",
+        "indian_subcontinent",
+        "middle_east",
+        "mongolia",
+        "north_america",
+        "siberia",
+        "south_america",
+        "southeast_asia",
+        "southern_china",
+        "sub_saharan_africa",
+        "sumatra"
+      ],
+      "habitats": [
+        "desert",
+        "forest",
+        "grassland",
+        "inland_wetlands",
+        "rocky_areas",
+        "savanna",
+        "shrubland"
+      ],
+      "source": "The Panthera lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of the sourced envelopes of its 7 species."
+    },
+    "puma_lineage": {
+      "level": 8,
+      "rank": "lineage",
+      "parent": "felinae",
+      "discriminator": "envelope",
+      "body_min": 49,
+      "body_max": 150,
+      "regions": [
+        "central_africa",
+        "central_america",
+        "eastern_africa",
+        "iran",
+        "north_america",
+        "south_america",
+        "southern_africa"
+      ],
+      "habitats": [
+        "desert",
+        "forest",
+        "grassland",
+        "savanna",
+        "shrubland"
+      ],
+      "source": "The Puma lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of the sourced envelopes of its 3 species."
+    },
+    "genus_acinonyx": {
+      "level": 9,
+      "rank": "genus",
+      "parent": "puma_lineage",
+      "discriminator": "envelope",
+      "body_min": 113,
+      "body_max": 140,
+      "regions": [
+        "central_africa",
+        "eastern_africa",
+        "iran",
+        "southern_africa"
+      ],
+      "habitats": [
+        "desert",
+        "grassland",
+        "savanna",
+        "shrubland"
+      ],
+      "member_species": [
+        "cheetah"
+      ],
+      "source": "Genus Acinonyx, in the Puma lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of Acinonyx jubatus."
+    },
+    "genus_felis": {
+      "level": 9,
+      "rank": "genus",
+      "parent": "domestic_cat_lineage",
+      "discriminator": "envelope",
+      "body_min": 37,
+      "body_max": 76,
+      "regions": [
+        "caspian",
+        "indian_subcontinent",
+        "middle_east",
+        "southeast_asia",
+        "southern_africa",
+        "western_africa",
+        "worldwide"
+      ],
+      "habitats": [
+        "desert",
+        "domesticated",
+        "forest",
+        "grassland",
+        "inland_wetlands",
+        "savanna",
+        "shrubland"
+      ],
+      "member_species": [
+        "domestic_cat",
+        "sand_cat",
+        "black_footed_cat",
+        "jungle_cat"
+      ],
+      "source": "Genus Felis, in the Domestic cat lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of Felis catus, Felis margarita, Felis nigripes, Felis chaus."
+    },
+    "genus_herpailurus": {
+      "level": 9,
+      "rank": "genus",
+      "parent": "puma_lineage",
+      "discriminator": "envelope",
+      "body_min": 49,
+      "body_max": 78,
+      "regions": [
+        "central_america",
+        "south_america"
+      ],
+      "habitats": [
+        "forest",
+        "grassland",
+        "savanna",
+        "shrubland"
+      ],
+      "member_species": [
+        "jaguarundi"
+      ],
+      "source": "Genus Herpailurus, in the Puma lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of Herpailurus yagouaroundi."
+    },
+    "genus_leopardus": {
+      "level": 9,
+      "rank": "genus",
+      "parent": "ocelot_lineage",
+      "discriminator": "envelope",
+      "body_min": 38,
+      "body_max": 102,
+      "regions": [
+        "central_america",
+        "north_america",
+        "south_america"
+      ],
+      "habitats": [
+        "forest",
+        "grassland",
+        "savanna",
+        "shrubland"
+      ],
+      "member_species": [
+        "ocelot",
+        "margay",
+        "geoffroys_cat",
+        "oncilla"
+      ],
+      "source": "Genus Leopardus, in the Ocelot lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of Leopardus pardalis, Leopardus wiedii, Leopardus geoffroyi, Leopardus tigrinus."
+    },
+    "genus_lynx": {
+      "level": 9,
+      "rank": "genus",
+      "parent": "lynx_lineage",
+      "discriminator": "envelope",
+      "body_min": 50,
+      "body_max": 120,
+      "regions": [
+        "eastern_europe",
+        "iberia",
+        "north_america",
+        "russia",
+        "southern_china"
+      ],
+      "habitats": [
+        "desert",
+        "forest",
+        "grassland",
+        "rocky_areas",
+        "savanna",
+        "shrubland"
+      ],
+      "member_species": [
+        "bobcat",
+        "canada_lynx",
+        "eurasian_lynx",
+        "iberian_lynx"
+      ],
+      "source": "Genus Lynx, in the Lynx lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of Lynx rufus, Lynx canadensis, Lynx lynx, Lynx pardinus."
+    },
+    "genus_neofelis": {
+      "level": 9,
+      "rank": "genus",
+      "parent": "panthera_lineage",
+      "discriminator": "envelope",
+      "body_min": 69,
+      "body_max": 108,
+      "regions": [
+        "borneo",
+        "southeast_asia",
+        "southern_china",
+        "sumatra"
+      ],
+      "habitats": [
+        "forest",
+        "shrubland"
+      ],
+      "member_species": [
+        "clouded_leopard",
+        "sunda_clouded_leopard"
+      ],
+      "source": "Genus Neofelis, in the Panthera lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of Neofelis nebulosa, Neofelis diardi."
+    },
+    "genus_panthera": {
+      "level": 9,
+      "rank": "genus",
+      "parent": "panthera_lineage",
+      "discriminator": "envelope",
+      "body_min": 90,
+      "body_max": 250,
+      "regions": [
+        "caucasus",
+        "central_america",
+        "himalayas",
+        "indian_subcontinent",
+        "middle_east",
+        "mongolia",
+        "north_america",
+        "siberia",
+        "south_america",
+        "southeast_asia",
+        "sub_saharan_africa"
+      ],
+      "habitats": [
+        "desert",
+        "forest",
+        "grassland",
+        "inland_wetlands",
+        "rocky_areas",
+        "savanna",
+        "shrubland"
+      ],
+      "member_species": [
+        "lion",
+        "tiger",
+        "jaguar",
+        "leopard",
+        "snow_leopard"
+      ],
+      "source": "Genus Panthera, in the Panthera lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of Panthera leo, Panthera tigris, Panthera onca, Panthera pardus, Panthera uncia."
+    },
+    "genus_puma": {
+      "level": 9,
+      "rank": "genus",
+      "parent": "puma_lineage",
+      "discriminator": "envelope",
+      "body_min": 100,
+      "body_max": 150,
+      "regions": [
+        "north_america",
+        "south_america"
+      ],
+      "habitats": [
+        "desert",
+        "forest",
+        "grassland",
+        "savanna",
+        "shrubland"
+      ],
+      "member_species": [
+        "cougar"
+      ],
+      "source": "Genus Puma, in the Puma lineage. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Envelope = union of Puma concolor."
+    },
+    "lion": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_panthera",
+      "discriminator": "envelope",
+      "body_min": 137,
+      "body_max": 250,
+      "regions": [
+        "sub_saharan_africa",
+        "indian_subcontinent"
+      ],
+      "habitats": [
+        "forest",
+        "grassland",
+        "shrubland",
+        "savanna",
+        "desert"
+      ],
+      "scientific": "Panthera leo",
+      "common": "Lion",
+      "source": "Lion (Panthera leo), genus Panthera. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 137-250 cm, tail 60-100 cm; range \"Sub-Saharan Africa and India\"; habitat \"Forest, grassland, shrubland, savanna, and desert\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "tiger": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_panthera",
+      "discriminator": "envelope",
+      "body_min": 150,
+      "body_max": 230,
+      "regions": [
+        "southeast_asia",
+        "indian_subcontinent",
+        "siberia"
+      ],
+      "habitats": [
+        "shrubland",
+        "forest",
+        "grassland"
+      ],
+      "scientific": "Panthera tigris",
+      "common": "Tiger",
+      "source": "Tiger (Panthera tigris), genus Panthera. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 150-230 cm, tail 90-110 cm; range \"Scattered sections of Southeast Asia, Indian subcontinent, and Siberia\"; habitat \"Shrubland, forest, and grassland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "jaguar": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_panthera",
+      "discriminator": "envelope",
+      "body_min": 110,
+      "body_max": 170,
+      "regions": [
+        "south_america",
+        "central_america",
+        "north_america"
+      ],
+      "habitats": [
+        "forest",
+        "shrubland",
+        "inland_wetlands",
+        "savanna",
+        "grassland"
+      ],
+      "scientific": "Panthera onca",
+      "common": "Jaguar",
+      "source": "Jaguar (Panthera onca), genus Panthera. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 110-170 cm, tail 44-80 cm; range \"Large swathes of South and Latin America, and Arizona in the United States\"; habitat \"Forest, shrubland, inland wetlands, savanna, and grassland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "leopard": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_panthera",
+      "discriminator": "envelope",
+      "body_min": 91,
+      "body_max": 191,
+      "regions": [
+        "sub_saharan_africa",
+        "middle_east",
+        "indian_subcontinent",
+        "caucasus",
+        "southeast_asia",
+        "siberia"
+      ],
+      "habitats": [
+        "forest",
+        "desert",
+        "rocky_areas",
+        "grassland",
+        "savanna",
+        "shrubland"
+      ],
+      "scientific": "Panthera pardus",
+      "common": "Leopard",
+      "source": "Leopard (Panthera pardus), genus Panthera. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 91-191 cm, tail 51-101 cm; range \"Much of Sub-Saharan Africa, the Middle East, the Indian subcontinent, the Caucasus in Europe, Southeast Asia, and Siberia\"; habitat \"Forest, desert, rocky areas, grassland, savanna, and shrubland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "snow_leopard": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_panthera",
+      "discriminator": "envelope",
+      "body_min": 90,
+      "body_max": 120,
+      "regions": [
+        "himalayas",
+        "mongolia"
+      ],
+      "habitats": [
+        "shrubland",
+        "rocky_areas",
+        "forest",
+        "grassland"
+      ],
+      "scientific": "Panthera uncia",
+      "common": "Snow leopard",
+      "source": "Snow leopard (Panthera uncia), genus Panthera. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 90-120 cm, tail 80-100 cm; range \"Himalayas reaching north to Mongolia\"; habitat \"Shrubland, rocky areas, forest, and grassland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "clouded_leopard": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_neofelis",
+      "discriminator": "envelope",
+      "body_min": 69,
+      "body_max": 108,
+      "regions": [
+        "southeast_asia",
+        "southern_china"
+      ],
+      "habitats": [
+        "forest",
+        "shrubland"
+      ],
+      "scientific": "Neofelis nebulosa",
+      "common": "Clouded leopard",
+      "source": "Clouded leopard (Neofelis nebulosa), genus Neofelis. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 69-108 cm, tail 61-91 cm; range \"Scattered Southeast Asia and southern China\"; habitat \"Forest and shrubland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "sunda_clouded_leopard": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_neofelis",
+      "discriminator": "envelope",
+      "body_min": 69,
+      "body_max": 108,
+      "regions": [
+        "sumatra",
+        "borneo"
+      ],
+      "habitats": [
+        "forest"
+      ],
+      "scientific": "Neofelis diardi",
+      "common": "Sunda clouded leopard",
+      "source": "Sunda clouded leopard (Neofelis diardi), genus Neofelis. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 69-108 cm, tail 61-91 cm; range \"Parts of Sumatra and Borneo\"; habitat \"Forest\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "bobcat": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_lynx",
+      "discriminator": "envelope",
+      "body_min": 50,
+      "body_max": 120,
+      "regions": [
+        "north_america"
+      ],
+      "habitats": [
+        "desert",
+        "shrubland",
+        "savanna",
+        "forest",
+        "grassland"
+      ],
+      "scientific": "Lynx rufus",
+      "common": "Bobcat",
+      "source": "Bobcat (Lynx rufus), genus Lynx. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 50-120 cm, tail 9-25 cm; range \"Most of the United States and parts of Canada and Mexico\"; habitat \"Desert, shrubland, savanna, forest, and grassland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "canada_lynx": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_lynx",
+      "discriminator": "envelope",
+      "body_min": 73,
+      "body_max": 106,
+      "regions": [
+        "north_america"
+      ],
+      "habitats": [
+        "forest",
+        "shrubland",
+        "grassland"
+      ],
+      "scientific": "Lynx canadensis",
+      "common": "Canada lynx",
+      "source": "Canada lynx (Lynx canadensis), genus Lynx. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 73-106 cm, tail 10-15 cm; range \"Canada, Alaska, and parts of northern United States\"; habitat \"Forest, shrubland, and grassland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "eurasian_lynx": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_lynx",
+      "discriminator": "envelope",
+      "body_min": 90,
+      "body_max": 120,
+      "regions": [
+        "eastern_europe",
+        "russia",
+        "southern_china"
+      ],
+      "habitats": [
+        "forest",
+        "shrubland",
+        "desert",
+        "rocky_areas",
+        "grassland"
+      ],
+      "scientific": "Lynx lynx",
+      "common": "Eurasian lynx",
+      "source": "Eurasian lynx (Lynx lynx), genus Lynx. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 90-120 cm, tail 19-23 cm; range \"Eastern Europe, Russia, and parts of China\"; habitat \"Forest, shrubland, desert, rocky areas, and grassland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "iberian_lynx": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_lynx",
+      "discriminator": "envelope",
+      "body_min": 65,
+      "body_max": 92,
+      "regions": [
+        "iberia"
+      ],
+      "habitats": [
+        "shrubland"
+      ],
+      "scientific": "Lynx pardinus",
+      "common": "Iberian lynx",
+      "source": "Iberian lynx (Lynx pardinus), genus Lynx. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 65-92 cm, tail 11-16 cm; range \"Scattered pockets of southern Spain\"; habitat \"Shrubland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "cheetah": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_acinonyx",
+      "discriminator": "envelope",
+      "body_min": 113,
+      "body_max": 140,
+      "regions": [
+        "southern_africa",
+        "eastern_africa",
+        "central_africa",
+        "iran"
+      ],
+      "habitats": [
+        "desert",
+        "grassland",
+        "savanna",
+        "shrubland"
+      ],
+      "scientific": "Acinonyx jubatus",
+      "common": "Cheetah",
+      "source": "Cheetah (Acinonyx jubatus), genus Acinonyx. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 113-140 cm, tail 60-84 cm; range \"Southern, eastern, and central Africa; Iran\"; habitat \"Desert, grassland, savanna, and shrubland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "cougar": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_puma",
+      "discriminator": "envelope",
+      "body_min": 100,
+      "body_max": 150,
+      "regions": [
+        "south_america",
+        "north_america"
+      ],
+      "habitats": [
+        "forest",
+        "desert",
+        "grassland",
+        "savanna",
+        "shrubland"
+      ],
+      "scientific": "Puma concolor",
+      "common": "Cougar",
+      "source": "Cougar (Puma concolor), genus Puma. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 100-150 cm, tail 60-90 cm; range \"South America and North America\"; habitat \"Forest, desert, grassland, savanna, and shrubland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "jaguarundi": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_herpailurus",
+      "discriminator": "envelope",
+      "body_min": 49,
+      "body_max": 78,
+      "regions": [
+        "south_america",
+        "central_america"
+      ],
+      "habitats": [
+        "grassland",
+        "shrubland",
+        "savanna",
+        "forest"
+      ],
+      "scientific": "Herpailurus yagouaroundi",
+      "common": "Jaguarundi",
+      "source": "Jaguarundi (Herpailurus yagouaroundi), genus Herpailurus. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 49-78 cm, tail 28-59 cm; range \"Most of South and Central America\"; habitat \"Grassland, shrubland, savanna, and forest\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "ocelot": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_leopardus",
+      "discriminator": "envelope",
+      "body_min": 50,
+      "body_max": 102,
+      "regions": [
+        "north_america",
+        "central_america",
+        "south_america"
+      ],
+      "habitats": [
+        "forest",
+        "shrubland",
+        "savanna"
+      ],
+      "scientific": "Leopardus pardalis",
+      "common": "Ocelot",
+      "source": "Ocelot (Leopardus pardalis), genus Leopardus. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 50-102 cm, tail 30-50 cm; range \"Southern North America, Central America, and South America\"; habitat \"Forest, shrubland, and savanna\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "margay": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_leopardus",
+      "discriminator": "envelope",
+      "body_min": 46,
+      "body_max": 69,
+      "regions": [
+        "north_america",
+        "central_america",
+        "south_america"
+      ],
+      "habitats": [
+        "forest",
+        "shrubland",
+        "savanna"
+      ],
+      "scientific": "Leopardus wiedii",
+      "common": "Margay",
+      "source": "Margay (Leopardus wiedii), genus Leopardus. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 46-69 cm, tail 23-52 cm; range \"Mexico, Central America, and South America\"; habitat \"Forest, shrubland, and savanna\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "geoffroys_cat": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_leopardus",
+      "discriminator": "envelope",
+      "body_min": 43,
+      "body_max": 88,
+      "regions": [
+        "south_america"
+      ],
+      "habitats": [
+        "savanna",
+        "forest",
+        "shrubland",
+        "grassland"
+      ],
+      "scientific": "Leopardus geoffroyi",
+      "common": "Geoffroys cat",
+      "source": "Geoffroys cat (Leopardus geoffroyi), genus Leopardus. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 43-88 cm, tail 23-40 cm; range \"Southern and central South America\"; habitat \"Savanna, forest, shrubland, and grassland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "oncilla": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_leopardus",
+      "discriminator": "envelope",
+      "body_min": 38,
+      "body_max": 59,
+      "regions": [
+        "south_america"
+      ],
+      "habitats": [
+        "forest",
+        "shrubland"
+      ],
+      "scientific": "Leopardus tigrinus",
+      "common": "Oncilla",
+      "source": "Oncilla (Leopardus tigrinus), genus Leopardus. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 38-59 cm, tail 20-42 cm; range \"Most of South America\"; habitat \"Forest and shrubland\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "domestic_cat": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_felis",
+      "discriminator": "envelope",
+      "body_min": 46,
+      "body_max": 46,
+      "regions": [
+        "worldwide"
+      ],
+      "habitats": [
+        "domesticated"
+      ],
+      "scientific": "Felis catus",
+      "common": "Domestic cat",
+      "source": "Domestic cat (Felis catus), genus Felis. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 46-46 cm, tail 30-30 cm; range \"Worldwide\"; habitat \"Domesticated; feral cats have cosmopolitan distribution\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "sand_cat": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_felis",
+      "discriminator": "envelope",
+      "body_min": 39,
+      "body_max": 52,
+      "regions": [
+        "western_africa",
+        "middle_east",
+        "caspian"
+      ],
+      "habitats": [
+        "desert"
+      ],
+      "scientific": "Felis margarita",
+      "common": "Sand cat",
+      "source": "Sand cat (Felis margarita), genus Felis. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 39-52 cm, tail 22-31 cm; range \"Scattered areas in Western Africa, Saudi Arabia, and near the Caspian Sea\"; habitat \"Desert\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "black_footed_cat": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_felis",
+      "discriminator": "envelope",
+      "body_min": 37,
+      "body_max": 52,
+      "regions": [
+        "southern_africa"
+      ],
+      "habitats": [
+        "savanna",
+        "grassland",
+        "desert"
+      ],
+      "scientific": "Felis nigripes",
+      "common": "Black-footed cat",
+      "source": "Black-footed cat (Felis nigripes), genus Felis. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 37-52 cm, tail 14-20 cm; range \"Southern Africa\"; habitat \"Savanna, grassland, and desert\". 'List of felids' table, per-species IUCN Red List assessments."
+    },
+    "jungle_cat": {
+      "level": 10,
+      "rank": "species",
+      "parent": "genus_felis",
+      "discriminator": "envelope",
+      "body_min": 58,
+      "body_max": 76,
+      "regions": [
+        "indian_subcontinent",
+        "middle_east",
+        "southeast_asia"
+      ],
+      "habitats": [
+        "forest",
+        "inland_wetlands",
+        "desert",
+        "grassland",
+        "shrubland",
+        "savanna"
+      ],
+      "scientific": "Felis chaus",
+      "common": "Jungle cat",
+      "source": "Jungle cat (Felis chaus), genus Felis. Kitchener et al. 2017, 'A revised taxonomy of the Felidae', IUCN/SSC Cat Specialist Group. Sourced characters: head-body 58-76 cm, tail 21-27 cm; range \"India and parts of the Middle East and Southeast Asia\"; habitat \"Forest, inland wetlands, desert, grassland, shrubland, and savanna\". 'List of felids' table, per-species IUCN Red List assessments."
+    }
+  },
+  "rules": [
+    {
+      "id": "taxon_L1_root",
+      "predicate": "taxon_1",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "candidate",
+          "predicate": "candidate_L1",
+          "unit": "label"
+        },
+        {
+          "name": "t1",
+          "predicate": "trait_1_L1",
+          "unit": "trait"
+        },
+        {
+          "name": "t2",
+          "predicate": "trait_2_L1",
+          "unit": "trait"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_1",
+        "unit": "taxon"
+      },
+      "guard": "t1 and t2",
+      "formula": "candidate",
+      "proof": "The root of the vertebrate tree: a chordate possessing the diagnostic trait of the subphylum. A taxon at this level is the member of its parent taxon possessing the diagnostic traits the taxon's own data declares. The traits are rule INPUTS, so a trait the query never supplied is an unsatisfiable subgoal and the refusal is F5 -- something is missing -- rather than a claim that the traits were checked and failed. Universal over every taxon at this level; the trait requirements are read from the KB's `taxa` data. Definitional characters and sources are carried per taxon."
+    },
+    {
+      "id": "taxon_L2_from_L1_by_traits",
+      "predicate": "taxon_2",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "parent",
+          "predicate": "taxon_1",
+          "unit": "taxon"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L2",
+          "unit": "label"
+        },
+        {
+          "name": "t1",
+          "predicate": "trait_1_L2",
+          "unit": "trait"
+        },
+        {
+          "name": "t2",
+          "predicate": "trait_2_L2",
+          "unit": "trait"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_2",
+        "unit": "taxon"
+      },
+      "guard": "parent and t1 and t2",
+      "formula": "candidate",
+      "proof": "A taxon at this level is the member of its parent taxon possessing the diagnostic traits the taxon's own data declares. The traits are rule INPUTS, so a trait the query never supplied is an unsatisfiable subgoal and the refusal is F5 -- something is missing -- rather than a claim that the traits were checked and failed. Universal over every taxon at this level; the trait requirements are read from the KB's `taxa` data. Definitional characters and sources are carried per taxon."
+    },
+    {
+      "id": "taxon_L3_from_L2_by_traits",
+      "predicate": "taxon_3",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "parent",
+          "predicate": "taxon_2",
+          "unit": "taxon"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L3",
+          "unit": "label"
+        },
+        {
+          "name": "t1",
+          "predicate": "trait_1_L3",
+          "unit": "trait"
+        },
+        {
+          "name": "t2",
+          "predicate": "trait_2_L3",
+          "unit": "trait"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_3",
+        "unit": "taxon"
+      },
+      "guard": "parent and t1 and t2",
+      "formula": "candidate",
+      "proof": "A taxon at this level is the member of its parent taxon possessing the diagnostic traits the taxon's own data declares. The traits are rule INPUTS, so a trait the query never supplied is an unsatisfiable subgoal and the refusal is F5 -- something is missing -- rather than a claim that the traits were checked and failed. Universal over every taxon at this level; the trait requirements are read from the KB's `taxa` data. Definitional characters and sources are carried per taxon."
+    },
+    {
+      "id": "taxon_L4_from_L3_by_traits",
+      "predicate": "taxon_4",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "parent",
+          "predicate": "taxon_3",
+          "unit": "taxon"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L4",
+          "unit": "label"
+        },
+        {
+          "name": "t1",
+          "predicate": "trait_1_L4",
+          "unit": "trait"
+        },
+        {
+          "name": "t2",
+          "predicate": "trait_2_L4",
+          "unit": "trait"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_4",
+        "unit": "taxon"
+      },
+      "guard": "parent and t1 and t2",
+      "formula": "candidate",
+      "proof": "A taxon at this level is the member of its parent taxon possessing the diagnostic traits the taxon's own data declares. The traits are rule INPUTS, so a trait the query never supplied is an unsatisfiable subgoal and the refusal is F5 -- something is missing -- rather than a claim that the traits were checked and failed. Universal over every taxon at this level; the trait requirements are read from the KB's `taxa` data. Definitional characters and sources are carried per taxon."
+    },
+    {
+      "id": "taxon_L5_from_L4_by_traits",
+      "predicate": "taxon_5",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "parent",
+          "predicate": "taxon_4",
+          "unit": "taxon"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L5",
+          "unit": "label"
+        },
+        {
+          "name": "t1",
+          "predicate": "trait_1_L5",
+          "unit": "trait"
+        },
+        {
+          "name": "t2",
+          "predicate": "trait_2_L5",
+          "unit": "trait"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_5",
+        "unit": "taxon"
+      },
+      "guard": "parent and t1 and t2",
+      "formula": "candidate",
+      "proof": "A taxon at this level is the member of its parent taxon possessing the diagnostic traits the taxon's own data declares. The traits are rule INPUTS, so a trait the query never supplied is an unsatisfiable subgoal and the refusal is F5 -- something is missing -- rather than a claim that the traits were checked and failed. Universal over every taxon at this level; the trait requirements are read from the KB's `taxa` data. Definitional characters and sources are carried per taxon."
+    },
+    {
+      "id": "taxon_L6_from_L5_join",
+      "predicate": "taxon_6",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "parent",
+          "predicate": "taxon_5",
+          "unit": "taxon"
+        },
+        {
+          "name": "is_felid",
+          "predicate": "is_felid",
+          "unit": "trait"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L6",
+          "unit": "label"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_6",
+        "unit": "taxon"
+      },
+      "guard": "parent and is_felid",
+      "formula": "candidate",
+      "proof": "THE JOIN. A member of the parent order that is a felid belongs to family Felidae. This is the path a query takes when it supplies the mammalian traits AND the felid characters: the trait-based upper tree derives the order, and this rule crosses into the envelope-based felid sub-tree. Kitchener et al. 2017."
+    },
+    {
+      "id": "taxon_L6_from_specimen",
+      "predicate": "taxon_6",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "is_felid",
+          "predicate": "is_felid",
+          "unit": "trait"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L6",
+          "unit": "label"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_6",
+        "unit": "taxon"
+      },
+      "guard": "is_felid",
+      "formula": "candidate",
+      "proof": "Felid-only entry: for a specimen already known to be a felid, family rank is asserted from that premise without re-deriving the mammalian chain, which a felid character set does not evidence. The taxonomic placement Felidae c Carnivora is recorded in the taxon data. Kitchener et al. 2017."
+    },
+    {
+      "id": "taxon_L7_from_L6_by_envelope",
+      "predicate": "taxon_7",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "parent",
+          "predicate": "taxon_6",
+          "unit": "taxon"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L7",
+          "unit": "label"
+        },
+        {
+          "name": "body_min",
+          "predicate": "body_min_L7",
+          "unit": "cm"
+        },
+        {
+          "name": "body_max",
+          "predicate": "body_max_L7",
+          "unit": "cm"
+        },
+        {
+          "name": "regions",
+          "predicate": "regions_L7",
+          "unit": "regionset"
+        },
+        {
+          "name": "habitats",
+          "predicate": "habitats_L7",
+          "unit": "habitatset"
+        },
+        {
+          "name": "body_length",
+          "predicate": "body_length",
+          "unit": "cm"
+        },
+        {
+          "name": "geographic_range",
+          "predicate": "geographic_range",
+          "unit": "region"
+        },
+        {
+          "name": "habitat",
+          "predicate": "habitat",
+          "unit": "habitat"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_7",
+        "unit": "taxon"
+      },
+      "guard": "parent and body_min <= body_length <= body_max and geographic_range in regions and habitat in habitats",
+      "formula": "candidate",
+      "proof": "A taxon at this level is the member of its parent taxon whose diagnostic character envelope contains the observation: head-body length within the taxon's sourced range, and geographic range and habitat among its sourced tokens. The envelope is read from the KB's `taxa` data, so this rule is universal and names no taxon. Because every character is a bound input, a non-match means the guard was evaluated and did not hold, so the refusal is F6 -- nothing is missing, the facts do not match."
+    },
+    {
+      "id": "taxon_L8_from_L7_by_envelope",
+      "predicate": "taxon_8",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "parent",
+          "predicate": "taxon_7",
+          "unit": "taxon"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L8",
+          "unit": "label"
+        },
+        {
+          "name": "body_min",
+          "predicate": "body_min_L8",
+          "unit": "cm"
+        },
+        {
+          "name": "body_max",
+          "predicate": "body_max_L8",
+          "unit": "cm"
+        },
+        {
+          "name": "regions",
+          "predicate": "regions_L8",
+          "unit": "regionset"
+        },
+        {
+          "name": "habitats",
+          "predicate": "habitats_L8",
+          "unit": "habitatset"
+        },
+        {
+          "name": "body_length",
+          "predicate": "body_length",
+          "unit": "cm"
+        },
+        {
+          "name": "geographic_range",
+          "predicate": "geographic_range",
+          "unit": "region"
+        },
+        {
+          "name": "habitat",
+          "predicate": "habitat",
+          "unit": "habitat"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_8",
+        "unit": "taxon"
+      },
+      "guard": "parent and body_min <= body_length <= body_max and geographic_range in regions and habitat in habitats",
+      "formula": "candidate",
+      "proof": "A taxon at this level is the member of its parent taxon whose diagnostic character envelope contains the observation: head-body length within the taxon's sourced range, and geographic range and habitat among its sourced tokens. The envelope is read from the KB's `taxa` data, so this rule is universal and names no taxon. Because every character is a bound input, a non-match means the guard was evaluated and did not hold, so the refusal is F6 -- nothing is missing, the facts do not match."
+    },
+    {
+      "id": "taxon_L9_from_L8_by_envelope",
+      "predicate": "taxon_9",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "parent",
+          "predicate": "taxon_8",
+          "unit": "taxon"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L9",
+          "unit": "label"
+        },
+        {
+          "name": "body_min",
+          "predicate": "body_min_L9",
+          "unit": "cm"
+        },
+        {
+          "name": "body_max",
+          "predicate": "body_max_L9",
+          "unit": "cm"
+        },
+        {
+          "name": "regions",
+          "predicate": "regions_L9",
+          "unit": "regionset"
+        },
+        {
+          "name": "habitats",
+          "predicate": "habitats_L9",
+          "unit": "habitatset"
+        },
+        {
+          "name": "body_length",
+          "predicate": "body_length",
+          "unit": "cm"
+        },
+        {
+          "name": "geographic_range",
+          "predicate": "geographic_range",
+          "unit": "region"
+        },
+        {
+          "name": "habitat",
+          "predicate": "habitat",
+          "unit": "habitat"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_9",
+        "unit": "taxon"
+      },
+      "guard": "parent and body_min <= body_length <= body_max and geographic_range in regions and habitat in habitats",
+      "formula": "candidate",
+      "proof": "A taxon at this level is the member of its parent taxon whose diagnostic character envelope contains the observation: head-body length within the taxon's sourced range, and geographic range and habitat among its sourced tokens. The envelope is read from the KB's `taxa` data, so this rule is universal and names no taxon. Because every character is a bound input, a non-match means the guard was evaluated and did not hold, so the refusal is F6 -- nothing is missing, the facts do not match."
+    },
+    {
+      "id": "taxon_L10_from_L9_by_envelope",
+      "predicate": "taxon_10",
+      "context": "biology_taxonomy",
+      "inputs": [
+        {
+          "name": "parent",
+          "predicate": "taxon_9",
+          "unit": "taxon"
+        },
+        {
+          "name": "candidate",
+          "predicate": "candidate_L10",
+          "unit": "label"
+        },
+        {
+          "name": "body_min",
+          "predicate": "body_min_L10",
+          "unit": "cm"
+        },
+        {
+          "name": "body_max",
+          "predicate": "body_max_L10",
+          "unit": "cm"
+        },
+        {
+          "name": "regions",
+          "predicate": "regions_L10",
+          "unit": "regionset"
+        },
+        {
+          "name": "habitats",
+          "predicate": "habitats_L10",
+          "unit": "habitatset"
+        },
+        {
+          "name": "body_length",
+          "predicate": "body_length",
+          "unit": "cm"
+        },
+        {
+          "name": "geographic_range",
+          "predicate": "geographic_range",
+          "unit": "region"
+        },
+        {
+          "name": "habitat",
+          "predicate": "habitat",
+          "unit": "habitat"
+        }
+      ],
+      "output": {
+        "predicate": "taxon_10",
+        "unit": "taxon"
+      },
+      "guard": "parent and body_min <= body_length <= body_max and geographic_range in regions and habitat in habitats",
+      "formula": "candidate",
+      "proof": "A taxon at this level is the member of its parent taxon whose diagnostic character envelope contains the observation: head-body length within the taxon's sourced range, and geographic range and habitat among its sourced tokens. The envelope is read from the KB's `taxa` data, so this rule is universal and names no taxon. Because every character is a bound input, a non-match means the guard was evaluated and did not hold, so the refusal is F6 -- nothing is missing, the facts do not match."
+    }
+  ]
+}

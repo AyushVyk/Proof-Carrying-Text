@@ -1,0 +1,7288 @@
+{
+  "domain": "physics",
+  "captured_at": "2026-11-24T07:46:59",
+  "query_set": "domains\\physics\\queries\\queries_300.json",
+  "kb1_sha256": "bcfc5cf8f9e857246658f88f6d679b40d848229ed43cc5de2d7c4cf984259cf5",
+  "query_file_sha256": "be61d51bd742fa487348df60c032edd12914ec286ec9bf7d9db3318f8a6f4b2b",
+  "query_texts_sha256": "ec35def7c0f54ffb271f4b4837976dc68f4465fb9e906a21c7b9e9b889f8dd75",
+  "settings": {
+    "model": "mistral:7b-instruct-q4_K_M",
+    "endpoint": "/api/chat",
+    "options": {
+      "temperature": 0.0,
+      "num_ctx": 8192
+    },
+    "format": "json",
+    "stream": false,
+    "seed": null,
+    "other_sampling_parameters": "none set; Ollama defaults apply",
+    "truncation_guard": "parser probes the full prompt token count once and returns F4 on any call evaluating fewer tokens",
+    "parser_py_sha256": "9d90524a0af9c7b396e280b71f911c0d3de55dc6f840b5c9d95edf6395fbdecb",
+    "kb2_sha256": "186b9dc2b9762b16b4205ff9163e882ff6e08c30e7e8f1e01ecaa6673471a142",
+    "system_prompt_sha256": "1cdbe07c62574ad106cacac463f216306cc1669b71267214442260be72a192cd",
+    "system_prompt_tokens_untruncated": 6712
+  },
+  "rows": [
+    {
+      "id": 1,
+      "nl": "yo an object starts from rest and accelerates at 13.0 m/s squared for 0.9 seconds. what is its velocity",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 55.958,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 2,
+      "nl": "Starting at rest, an object accelerates at 5.3 m/s^2. what speed has it reached after 2.5 seconds.",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 5.3,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 2.5,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 28.438,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 3,
+      "nl": "Find the velocity of an object that has been accelerating from rest at 13.7 m/s squared for 13.4 seconds.",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 14.87,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 4,
+      "nl": "hey, an object moving at 12.2 m/s accelerates at 0.8 m/s squared for 1.4 seconds. what is its final velocity?",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 12.2,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 0.8,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 1.4,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 28.168,
+      "prompt_eval_count": 6750
+    },
+    {
+      "id": 5,
+      "nl": "problem: what is the final velocity of an object with initial velocity 10.6 m/s after accelerating at 0.8 m/s^2 for 2.4 seconds. show your work.",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 10.6,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 0.8,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 2.4,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 28.44,
+      "prompt_eval_count": 6756
+    },
+    {
+      "id": 6,
+      "nl": "yo starting at 14.3 m/s, an object undergoes acceleration of 4.5 m/s squared for 4.8 seconds. find the final velocity",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 14.3,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 4.5,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 4.8,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 28.208,
+      "prompt_eval_count": 6751
+    },
+    {
+      "id": 7,
+      "nl": "in plain numbers, an object starts from rest and accelerates at 12.2 m/s squared for 1.1 seconds. what is its displacement",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 12.2,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 1.1,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 27.02,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 8,
+      "nl": "yo find the displacement of an object that has been accelerating from rest at 2.8 m/s^2 for 5.6 seconds",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 2.8,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 5.6,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 27.068,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 9,
+      "nl": "for my homework: starting at rest, an object accelerates at 2.8 m/s squared. how far has it traveled after 11.5 seconds",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 2.8,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 11.5,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 23.765,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 10,
+      "nl": "for my homework: an object moving at 2.4 m/s accelerates at 3.3 m/s squared for 4.2 seconds. what is its displacement",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 2.4,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 3.3,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 4.2,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 23.863,
+      "prompt_eval_count": 6750
+    },
+    {
+      "id": 11,
+      "nl": "could you starting at 9.5 m/s with acceleration 6.6 m/s^2, what distance has the object covered after 7.6 seconds, please",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 9.5,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 6.6,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 7.6,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 23.818,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 12,
+      "nl": "yo find the displacement of an object with initial velocity 2.7 m/s, accelerating at 7.4 m/s squared for 1.7 seconds",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 2.7,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 7.4,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 1.7,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 23.894,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 13,
+      "nl": "An object with initial velocity 8.3 m/s undergoes acceleration 6.6 m/s squared over a displacement of 43.4 metres. compute its final velocity.",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 8.3,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 6.6,
+            "unit": "m/s2"
+          },
+          "displacement": {
+            "value": 43.4,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 24.845,
+      "prompt_eval_count": 6754
+    },
+    {
+      "id": 14,
+      "nl": "in plain numbers, find the final velocity given initial velocity 1.9 m/s, acceleration 1.6 m/s^2, and displacement 33.7 m",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 1.9,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 1.6,
+            "unit": "m/s2"
+          },
+          "displacement": {
+            "value": 33.7,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 28.337,
+      "prompt_eval_count": 6751
+    },
+    {
+      "id": 15,
+      "nl": "What is the velocity of an object after falling for 3.8 seconds.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'gravity_acceleration' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "free_fall",
+          "bindings": {
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "gravity_acceleration": {
+              "value": 9.81,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 3.8,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 31.408,
+      "prompt_eval_count": 6727
+    },
+    {
+      "id": 16,
+      "nl": "I've got a question — an object is dropped from rest. what speed does it reach after 10.3 seconds of free fall",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'gravity_acceleration' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "free_fall",
+          "bindings": {
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_kinetic_energy": {
+              "value": 0,
+              "unit": "J"
+            },
+            "gravity_acceleration": {
+              "value": 9.81,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 10.3,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 29.276,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 17,
+      "nl": "yo find the velocity of a freely falling object 1.7 seconds after release",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'gravity_acceleration' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "free_fall",
+          "bindings": {
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "mass": {
+              "value": 7.412,
+              "unit": "kg"
+            },
+            "gravity_acceleration": {
+              "value": 9.81,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 1.7,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 36.288,
+      "prompt_eval_count": 6727
+    },
+    {
+      "id": 18,
+      "nl": "I've got a question — how far does a freely falling object descend in 3.9 seconds",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'gravity_acceleration' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "kinematics",
+          "bindings": {
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "gravity_acceleration": {
+              "value": 9.81,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 3.9,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 31.253,
+      "prompt_eval_count": 6732
+    },
+    {
+      "id": 19,
+      "nl": "for my homework: what is the displacement of an object after 3.2 seconds of free fall",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "free_fall",
+          "bindings": {
+            "height": {
+              "value": 10,
+              "unit": "m"
+            },
+            "incline_angle": {
+              "value": 0,
+              "unit": "deg"
+            },
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "time": {
+              "value": 3.2,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 33.389,
+      "prompt_eval_count": 6732
+    },
+    {
+      "id": 20,
+      "nl": "problem: an object is dropped from rest. how far has it fallen after 3.2 seconds. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "acceleration": {
+              "value": 9.81,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 3.2,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 26.895,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 21,
+      "nl": "problem: what is the force on a 21.7 kg object accelerating at 23.4 m/s squared. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'dynamics' not in ['elasticity', 'gravitation', 'gravity'] for predicate 'force'",
+        "raw": {
+          "predicate": "force",
+          "unit": "N",
+          "context": "dynamics",
+          "bindings": {
+            "mass": {
+              "value": 21.7,
+              "unit": "kg"
+            },
+            "acceleration": {
+              "value": 23.4,
+              "unit": "m/s2"
+            }
+          }
+        }
+      },
+      "elapsed": 18.251,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 22,
+      "nl": "could you work out the net force required to give a 6.2 kg mass an acceleration of 16.1 m/s^2, please",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 6.2,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 16.1,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 18.495,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 23,
+      "nl": "i need to know — a 58.5 kg mass has acceleration 4.5 m/s squared. what force acts on it",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "goal state binds the quantity it asks for",
+        "raw": {
+          "predicate": "acceleration",
+          "unit": "m/s2",
+          "context": "dynamics",
+          "bindings": {
+            "mass": {
+              "value": 58.5,
+              "unit": "kg"
+            },
+            "acceleration": {
+              "value": 4.5,
+              "unit": "m/s2"
+            }
+          }
+        }
+      },
+      "elapsed": 19.378,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 24,
+      "nl": "let's say we want the acceleration of a 46.3 kg object under a 138.6 N force",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 46.3,
+            "unit": "kg"
+          },
+          "force": {
+            "value": 138.6,
+            "unit": "N"
+          }
+        }
+      },
+      "elapsed": 18.507,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 25,
+      "nl": "I've got a question — find the acceleration produced when a 280.7 N force acts on a 34.4 kg mass",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "dynamics",
+        "bindings": {
+          "force": {
+            "value": 280.7,
+            "unit": "N"
+          }
+        }
+      },
+      "elapsed": 15.095,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 26,
+      "nl": "I've got a question — a force of 385.3 N is applied to a 3.3 kg object. what is its acceleration",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "condition not stated in the query: net_force = 385.3",
+        "raw": {
+          "predicate": "acceleration",
+          "unit": "m/s2",
+          "context": "dynamics",
+          "bindings": {
+            "net_force": {
+              "value": 385.3,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "elapsed": 24.427,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 27,
+      "nl": "for my homework: what is the weight of a 3.7 kg object on Earth",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'weight' not in KB2",
+        "raw": {
+          "predicate": "weight",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 3.7,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 15.798,
+      "prompt_eval_count": 6729
+    },
+    {
+      "id": 28,
+      "nl": "Find the weight of an object with mass 40.4 kg under standard gravity.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'weight' not in KB2",
+        "raw": {
+          "predicate": "weight",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 40.4,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 16.316,
+      "prompt_eval_count": 6729
+    },
+    {
+      "id": 29,
+      "nl": "How much does a 21.5 kg mass weigh on earth.",
+      "parsed": {
+        "predicate": "force",
+        "unit": "N",
+        "context": "gravity",
+        "bindings": {
+          "mass": {
+            "value": 21.5,
+            "unit": "kg"
+          }
+        }
+      },
+      "elapsed": 15.995,
+      "prompt_eval_count": 6726
+    },
+    {
+      "id": 30,
+      "nl": "problem: what is the momentum of a 87.7 kg object moving at 9.8 m/s. show your work.",
+      "parsed": {
+        "predicate": "momentum",
+        "unit": "kg*m/s",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 87.7,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 9.8,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 18.489,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 31,
+      "nl": "problem: find the momentum of a 50.2 kg mass with velocity 26.6 m/s. show your work.",
+      "parsed": {
+        "predicate": "momentum",
+        "unit": "kg*m/s",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 50.2,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 26.6,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 18.832,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 32,
+      "nl": "hey, a 46.2 kg object travels at 8.3 m/s. compute its momentum?",
+      "parsed": {
+        "predicate": "momentum",
+        "unit": "kg*m/s",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 46.2,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 8.3,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 21.621,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 33,
+      "nl": "let's say we want the impulse delivered by a 150.3 N force acting for 2.7 seconds",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "free_fall",
+          "bindings": {
+            "mass": {
+              "value": 10,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 5,
+              "unit": "m"
+            },
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "time": {
+              "value": 2,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 29.616,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 34,
+      "nl": "i need to know — find the impulse on an object subject to a 119.0 N force for 4.5 seconds",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'dynamics' not in ['newtonian_motion'] for predicate 'net_impulse'",
+        "raw": {
+          "predicate": "net_impulse",
+          "unit": "N*s",
+          "context": "dynamics",
+          "bindings": {
+            "net_force": {
+              "value": 119.0,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "elapsed": 15.356,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 35,
+      "nl": "Compute the impulse of a 75.6 N force applied over 5.0 seconds?",
+      "parsed": {
+        "predicate": "impulse",
+        "unit": "N*s",
+        "context": "dynamics",
+        "bindings": {
+          "force": {
+            "value": 75.6,
+            "unit": "N"
+          },
+          "time": {
+            "value": 5.0,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 20.128,
+      "prompt_eval_count": 6733
+    },
+    {
+      "id": 36,
+      "nl": "What is the gravitational force between a 510017.0 kg mass and a 91819.0 kg mass separated by 57.0 metres.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'gravitational_force' not in KB2",
+        "raw": {
+          "predicate": "gravitational_force",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass_1": {
+              "value": 510017.0,
+              "unit": "kg"
+            },
+            "mass_2": {
+              "value": 91819.0,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 57.0,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 24.647,
+      "prompt_eval_count": 6751
+    },
+    {
+      "id": 37,
+      "nl": "Calculate the gravitational attraction between objects of mass 153688.0 kg and 160822.0 kg at distance 684.0 m.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'gravitational_force' not in KB2",
+        "raw": {
+          "predicate": "gravitational_force",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass_1": {
+              "value": 153688.0,
+              "unit": "kg"
+            },
+            "mass_2": {
+              "value": 160822.0,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 684.0,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 25.239,
+      "prompt_eval_count": 6752
+    },
+    {
+      "id": 38,
+      "nl": "could you compute Newton's gravitational force between 64464.0 kg and 382238.0 kg masses 996.0 metres apart, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'gravitational_force' not in KB2",
+        "raw": {
+          "predicate": "gravitational_force",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass_1": {
+              "value": 64464.0,
+              "unit": "kg"
+            },
+            "mass_2": {
+              "value": 382238.0,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 996.0,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 24.844,
+      "prompt_eval_count": 6752
+    },
+    {
+      "id": 39,
+      "nl": "what is the kinetic energy of a 12.9 kg object moving at 16.8 m/s",
+      "parsed": {
+        "predicate": "kinetic_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 12.9,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 16.8,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 21.166,
+      "prompt_eval_count": 6737
+    },
+    {
+      "id": 40,
+      "nl": "give me the KE of a 34.2 kg mass with velocity 3.9 m/s",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'KE' not in KB2",
+        "raw": {
+          "predicate": "KE",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "mass": {
+              "value": 34.2,
+              "unit": "kg"
+            },
+            "velocity": {
+              "value": 3.9,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 19.915,
+      "prompt_eval_count": 6734
+    },
+    {
+      "id": 41,
+      "nl": "problem: compute the kinetic energy of a 27.1 kg object travelling at 8.4 m/s. show your work.",
+      "parsed": {
+        "predicate": "kinetic_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 27.1,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 8.4,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 17.693,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 42,
+      "nl": "What is the gravitational potential energy of a 17.3 kg object at height 9.2 metres?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'gravity' not in ['energy'] for predicate 'gravitational_potential_energy'",
+        "raw": {
+          "predicate": "gravitational_potential_energy",
+          "unit": "J",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 17.3,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 9.2,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 20.978,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 43,
+      "nl": "give me the gravitational PE of a 23.0 kg mass elevated by 28.6 m",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'gravity' not in ['energy'] for predicate 'gravitational_potential_energy'",
+        "raw": {
+          "predicate": "gravitational_potential_energy",
+          "unit": "J",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 23.0,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 28.6,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 20.257,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 44,
+      "nl": "in plain numbers, a 36.1 kg object is at height 29.2 metres. what is its gravitational potential energy",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'gravity' not in ['energy'] for predicate 'gravitational_potential_energy'",
+        "raw": {
+          "predicate": "gravitational_potential_energy",
+          "unit": "J",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 36.1,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 29.2,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 19.203,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 45,
+      "nl": "I've got a question — what is the total mechanical energy if the kinetic energy is 97.5 J and the potential energy is 457.2 J",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "kinetic_energy": {
+            "value": 97.5,
+            "unit": "J"
+          },
+          "gravitational_potential_energy": {
+            "value": 457.2,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 20.595,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 46,
+      "nl": "could you work out the mechanical energy of a system with KE 316.4 J and PE 422.4 J, please",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "kinetic_energy": {
+            "value": 316.4,
+            "unit": "J"
+          },
+          "gravitational_potential_energy": {
+            "value": 422.4,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 21.009,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 47,
+      "nl": "in plain numbers, given kinetic energy 308.4 J and potential energy 84.9 J, what is the total mechanical energy",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "kinetic_energy": {
+            "value": 308.4,
+            "unit": "J"
+          },
+          "gravitational_potential_energy": {
+            "value": 84.9,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 20.724,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 48,
+      "nl": "give me the work done by a 36.5 N force over 19.1 metres at an angle of 90 degrees",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'distance' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "work",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "force": {
+              "value": 36.5,
+              "unit": "N"
+            },
+            "distance": {
+              "value": 19.1,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 17.713,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 49,
+      "nl": "Find the work done when a 5.1 N force acts over 6.8 m at 0 degrees to the displacement.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'dynamics' not in ['energy'] for predicate 'work'",
+        "raw": {
+          "predicate": "work",
+          "unit": "J",
+          "context": "dynamics",
+          "bindings": {
+            "force": {
+              "value": 5.1,
+              "unit": "N"
+            },
+            "displacement": {
+              "value": 6.8,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 17.695,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 50,
+      "nl": "hey, compute the work for a 186.2 N force, displacement 17.6 m, and angle 45 degrees?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'angle' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "work",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "force": {
+              "value": 186.2,
+              "unit": "N"
+            },
+            "displacement": {
+              "value": 17.6,
+              "unit": "m"
+            },
+            "angle": {
+              "value": 45,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 21.683,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 51,
+      "nl": "What is the power if 336.7 J of work is done in 52.8 seconds.",
+      "parsed": {
+        "predicate": "power",
+        "unit": "W",
+        "context": "energy",
+        "bindings": {
+          "work": {
+            "value": 336.7,
+            "unit": "J"
+          },
+          "time": {
+            "value": 52.8,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 22.325,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 52,
+      "nl": "Find the power output when 474.0 J of work is performed over 29.7 s.",
+      "parsed": {
+        "predicate": "power",
+        "unit": "W",
+        "context": "energy",
+        "bindings": {
+          "work": {
+            "value": 474.0,
+            "unit": "J"
+          },
+          "time": {
+            "value": 29.7,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 22.232,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 53,
+      "nl": "4891.0 joules of work is delivered in 32.4 seconds. compute the power?",
+      "parsed": {
+        "predicate": "power",
+        "unit": "W",
+        "context": "energy",
+        "bindings": {
+          "work": {
+            "value": 4891.0,
+            "unit": "J"
+          },
+          "time": {
+            "value": 32.4,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 20.245,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 54,
+      "nl": "could you tell me the magnitude of the spring force when a spring of constant 172.0 N/m is compressed by 0.24 metres, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'spring_force' not in KB2",
+        "raw": {
+          "predicate": "spring_force",
+          "unit": "N",
+          "context": "elasticity",
+          "bindings": {
+            "spring_constant": {
+              "value": 172.0,
+              "unit": "N/m"
+            },
+            "spring_extension": {
+              "value": 0.24,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 19.055,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 55,
+      "nl": "Calculate the spring force for a spring with constant 207.0 n/m stretched 0.27 m.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'spring_force' not in KB2",
+        "raw": {
+          "predicate": "spring_force",
+          "unit": "N",
+          "context": "newtonian_motion",
+          "bindings": {
+            "spring_constant": {
+              "value": 207.0,
+              "unit": "N/m"
+            },
+            "spring_extension": {
+              "value": 0.27,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 19.83,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 56,
+      "nl": "could you a spring with stiffness 452.0 N/m is displaced 0.11 metres. tell me the restoring force magnitude, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'restoring_force' not in KB2",
+        "raw": {
+          "predicate": "restoring_force",
+          "unit": "N",
+          "context": "elasticity",
+          "bindings": {
+            "spring_constant": {
+              "value": 452.0,
+              "unit": "N/m"
+            }
+          }
+        }
+      },
+      "elapsed": 15.639,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 57,
+      "nl": "let's say we want the elastic potential energy stored in a spring of constant 768.0 N/m compressed by 0.36 metres",
+      "parsed": {
+        "predicate": "elastic_potential_energy",
+        "unit": "J",
+        "context": "elasticity",
+        "bindings": {
+          "spring_constant": {
+            "value": 768.0,
+            "unit": "N/m"
+          },
+          "spring_extension": {
+            "value": 0.36,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 20.279,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 58,
+      "nl": "problem: find the spring potential energy for k = 346.0 N/m and displacement 0.5 m. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'spring_potential_energy' not in KB2",
+        "raw": {
+          "predicate": "spring_potential_energy",
+          "unit": "J",
+          "context": "elasticity",
+          "bindings": {
+            "spring_constant": {
+              "value": 346.0,
+              "unit": "N/m"
+            },
+            "displacement": {
+              "value": 0.5,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 18.491,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 59,
+      "nl": "quick question: compute the energy stored in a spring with stiffness 405.0 N/m stretched 0.45 metres?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'energy' not in KB2",
+        "raw": {
+          "predicate": "energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "spring_energy": {
+              "value": 1827.0,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 14.277,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 60,
+      "nl": "for my homework: what is the density of an object with mass 13.0 kg and volume 1.16 cubic metres",
+      "parsed": {
+        "predicate": "density",
+        "unit": "kg/m3",
+        "context": "mechanics",
+        "bindings": {
+          "mass": {
+            "value": 13.0,
+            "unit": "kg"
+          },
+          "volume": {
+            "value": 1.16,
+            "unit": "m3"
+          }
+        }
+      },
+      "elapsed": 17.077,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 61,
+      "nl": "Calculate the density given a mass of 3.1 kg and a volume of 2.79 m^3.",
+      "parsed": {
+        "predicate": "density",
+        "unit": "kg/m3",
+        "context": "mechanics",
+        "bindings": {
+          "mass": {
+            "value": 3.1,
+            "unit": "kg"
+          },
+          "volume": {
+            "value": 2.79,
+            "unit": "m3"
+          }
+        }
+      },
+      "elapsed": 20.108,
+      "prompt_eval_count": 6737
+    },
+    {
+      "id": 62,
+      "nl": "problem: an object weighs 22.8 kg and occupies 0.4 cubic metres. what is its density. show your work.",
+      "parsed": {
+        "predicate": "density",
+        "unit": "kg/m3",
+        "context": "mechanics",
+        "bindings": {
+          "mass": {
+            "value": 22.8,
+            "unit": "kg"
+          },
+          "volume": {
+            "value": 0.4,
+            "unit": "m3"
+          }
+        }
+      },
+      "elapsed": 17.723,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 63,
+      "nl": "what is the pressure when a 38.8 N force acts on an area of 0.38 square metres",
+      "parsed": {
+        "predicate": "pressure",
+        "unit": "Pa",
+        "context": "mechanics",
+        "bindings": {
+          "force": {
+            "value": 38.8,
+            "unit": "N"
+          },
+          "area": {
+            "value": 0.38,
+            "unit": "m2"
+          }
+        }
+      },
+      "elapsed": 23.383,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 64,
+      "nl": "hey, find the pressure exerted by a 431.2 N force over 0.4 m^2?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'newtonian_motion' not in ['elasticity', 'gravitation', 'gravity'] for predicate 'force'",
+        "raw": {
+          "predicate": "force",
+          "unit": "N",
+          "context": "newtonian_motion",
+          "bindings": {
+            "net_force": {
+              "value": 431.2,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "elapsed": 15.169,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 65,
+      "nl": "could you a force of 146.5 N is distributed over 2.45 square metres. compute the pressure, please",
+      "parsed": {
+        "predicate": "pressure",
+        "unit": "Pa",
+        "context": "mechanics",
+        "bindings": {
+          "force": {
+            "value": 146.5,
+            "unit": "N"
+          },
+          "area": {
+            "value": 2.45,
+            "unit": "m2"
+          }
+        }
+      },
+      "elapsed": 20.374,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 66,
+      "nl": "give me the normal force on a 11.0 kg object resting on a flat horizontal surface",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 11.0,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 0,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 20.086,
+      "prompt_eval_count": 6731
+    },
+    {
+      "id": 67,
+      "nl": "Calculate the normal force supporting a 70.6 kg mass on a level floor.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'normal_force_angle' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "force",
+          "unit": "N",
+          "context": "newtonian_motion",
+          "bindings": {
+            "mass": {
+              "value": 70.6,
+              "unit": "kg"
+            },
+            "normal_force_angle": {
+              "value": 0,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 20.538,
+      "prompt_eval_count": 6730
+    },
+    {
+      "id": 68,
+      "nl": "in plain numbers, a 38.1 kg object sits on a horizontal surface. what is the normal force on it",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'newtonian_motion' not in ['elasticity', 'gravitation', 'gravity'] for predicate 'force'",
+        "raw": {
+          "predicate": "force",
+          "unit": "N",
+          "context": "newtonian_motion",
+          "bindings": {
+            "mass": {
+              "value": 38.1,
+              "unit": "kg"
+            },
+            "incline_angle": {
+              "value": 0,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 20.863,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 69,
+      "nl": "hey, what is the normal force on a 24.2 kg object resting on an incline at 30 degrees?",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 24.2,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 30,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 17.421,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 70,
+      "nl": "i need to know — find the normal force on a 5.6 kg block on a 60 degree slope",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 5.6,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 60,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 22.258,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 71,
+      "nl": "quick question: a 18.4 kg mass rests on a ramp inclined at 30 degrees. what is the normal force?",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 18.4,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 30,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 17.336,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 72,
+      "nl": "problem: what is the kinetic friction force given coefficient 0.53 and normal force 62.3 N. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'kinetic_friction_force' not in KB2",
+        "raw": {
+          "predicate": "kinetic_friction_force",
+          "unit": "N",
+          "context": "newtonian_motion",
+          "bindings": {
+            "mass": {
+              "value": 74.47,
+              "unit": "kg"
+            },
+            "normal_force": {
+              "value": 62.3,
+              "unit": "N"
+            },
+            "kinetic_friction_coefficient": {
+              "value": 0.53,
+              "unit": "dimensionless"
+            }
+          }
+        }
+      },
+      "elapsed": 26.565,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 73,
+      "nl": "i need to know — find the friction force on a sliding object with kinetic friction coefficient 0.59 and normal force 96.8 N",
+      "parsed": {
+        "predicate": "friction_force",
+        "unit": "N",
+        "context": "newtonian_motion",
+        "bindings": {
+          "kinetic_friction_coefficient": {
+            "value": 0.59,
+            "unit": "dimensionless"
+          },
+          "normal_force": {
+            "value": 96.8,
+            "unit": "N"
+          }
+        }
+      },
+      "elapsed": 21.139,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 74,
+      "nl": "Compute the kinetic friction force when mu_k = 0.45 and N = 644.5 N.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'kinetic_friction_force' not in KB2",
+        "raw": {
+          "predicate": "kinetic_friction_force",
+          "unit": "N",
+          "context": "newtonian_motion",
+          "bindings": {
+            "mu_k": {
+              "value": 0.45,
+              "unit": "dimensionless"
+            },
+            "N": {
+              "value": 644.5,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "elapsed": 20.599,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 75,
+      "nl": "quick question: what is the maximum static friction force with static coefficient 0.27 and normal force 168.4 N?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'newtonian_motion' not in ['static'] for predicate 'max_static_friction'",
+        "raw": {
+          "predicate": "max_static_friction",
+          "unit": "N",
+          "context": "newtonian_motion",
+          "bindings": {
+            "static_friction_coefficient": {
+              "value": 0.27,
+              "unit": "dimensionless"
+            },
+            "normal_force": {
+              "value": 168.4,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "elapsed": 20.74,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 76,
+      "nl": "quick question: find the maximum static friction for mu_s = 0.2 and N = 163.1 N?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'mu_s' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "max_static_friction",
+          "unit": "dimensionless",
+          "context": "newtonian_motion",
+          "bindings": {
+            "mu_s": {
+              "value": 0.2,
+              "unit": "dimensionless"
+            },
+            "N": {
+              "value": 163.1,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "elapsed": 22.843,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 77,
+      "nl": "quick question: what is the net force on an object pushed by an applied force of 162.4 N against friction of 92.7 N?",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "applied_force": {
+            "value": 162.4,
+            "unit": "N"
+          },
+          "friction_force": {
+            "value": 92.7,
+            "unit": "N"
+          }
+        }
+      },
+      "elapsed": 19.01,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 78,
+      "nl": "Find the net force given applied force 413.6 N and friction force 86.3 N opposing motion.",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "applied_force": {
+            "value": 413.6,
+            "unit": "N"
+          },
+          "friction_force": {
+            "value": 86.3,
+            "unit": "N"
+          }
+        }
+      },
+      "elapsed": 21.412,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 79,
+      "nl": "I've got a question — what is the net force on a 3.5 kg object on a frictionless 45 degree incline",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 3.5,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 45,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 17.251,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 80,
+      "nl": "give me the net force component along a 15 degree frictionless slope for a 1.7 kg mass",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 1.7,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 15,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 21.217,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 81,
+      "nl": "A 37.9 kg block slides on a frictionless ramp at 20 degrees. what is the net force?",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 37.9,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 20,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 17.502,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 82,
+      "nl": "i need to know — what is the net force on a 13.4 kg block on a 30 degree incline with friction force 8.0 N opposing motion",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 13.4,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 30,
+            "unit": "deg"
+          },
+          "friction_force": {
+            "value": 8.0,
+            "unit": "N"
+          }
+        }
+      },
+      "elapsed": 22.753,
+      "prompt_eval_count": 6750
+    },
+    {
+      "id": 83,
+      "nl": "i need to know — find the net force along the slope for a 27.3 kg mass on a 20 degree incline with 12.6 N of friction",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 27.3,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 20,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 18.493,
+      "prompt_eval_count": 6750
+    },
+    {
+      "id": 84,
+      "nl": "quick question: what is the acceleration of a 39.3 kg object under a net force of 83.2 N?",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "dynamics",
+        "bindings": {
+          "net_force": {
+            "value": 83.2,
+            "unit": "N"
+          }
+        }
+      },
+      "elapsed": 19.119,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 85,
+      "nl": "let's say we want the acceleration produced by a net force 89.1 N on a 35.0 kg mass",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "dynamics",
+        "bindings": {
+          "net_force": {
+            "value": 89.1,
+            "unit": "N"
+          }
+        }
+      },
+      "elapsed": 15.465,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 86,
+      "nl": "could you tell me the tension in a string supporting a stationary 49.8 kg mass, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "tension",
+          "unit": "N",
+          "context": "newtonian_motion_accelerating",
+          "bindings": {
+            "mass": {
+              "value": 49.8,
+              "unit": "kg"
+            },
+            "acceleration": {
+              "value": 2.815,
+              "unit": "m/s2"
+            }
+          }
+        }
+      },
+      "elapsed": 23.708,
+      "prompt_eval_count": 6733
+    },
+    {
+      "id": 87,
+      "nl": "quick question: find the tension in a rope holding a 33.3 kg object at rest?",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 33.3,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 0,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 22.617,
+      "prompt_eval_count": 6732
+    },
+    {
+      "id": 88,
+      "nl": "yo a 8.2 kg mass hangs motionless from a string. what is the tension",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 8.2,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 0,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 22.256,
+      "prompt_eval_count": 6731
+    },
+    {
+      "id": 89,
+      "nl": "let's say we want the tension in a string accelerating a 7.3 kg mass upward at 0.9 m/s squared",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 7.3,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 0.9,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 20.142,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 90,
+      "nl": "find the tension in a rope pulling a 16.7 kg mass upward with acceleration 6.1 m/s^2",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 16.7,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 6.1,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 20.383,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 91,
+      "nl": "a 2.5 kg mass is being pulled upward by a string at 4.1 m/s squared. give me the tension",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 2.5,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 4.1,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 20.158,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 92,
+      "nl": "could you tell me the centripetal acceleration of an object moving at 34.4 m/s in a circle of radius 8.3 metres, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "centripetal_acceleration",
+          "unit": "m/s2",
+          "context": "circular_motion",
+          "bindings": {
+            "mass": {
+              "value": 77.13,
+              "unit": "kg"
+            },
+            "velocity": {
+              "value": 76.25,
+              "unit": "m/s"
+            },
+            "radius": {
+              "value": 94.97,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 26.222,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 93,
+      "nl": "Calculate the centripetal acceleration for v = 5.0 m/s and r = 9.7 m.",
+      "parsed": {
+        "predicate": "centripetal_acceleration",
+        "unit": "m/s2",
+        "context": "circular_motion",
+        "bindings": {
+          "mass": {
+            "value": 0,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 5.0,
+            "unit": "m/s"
+          },
+          "radius": {
+            "value": 9.7,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 24.299,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 94,
+      "nl": "give me the centripetal force on a 7.3 kg object moving at 26.1 m/s in a circle of radius 20.5 metres",
+      "parsed": {
+        "predicate": "centripetal_force",
+        "unit": "N",
+        "context": "circular_motion",
+        "bindings": {
+          "mass": {
+            "value": 7.3,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 26.1,
+            "unit": "m/s"
+          },
+          "radius": {
+            "value": 20.5,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 23.908,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 95,
+      "nl": "Find the centripetal force for a 57.2 kg mass on a circular path with v = 18.2 m/s and r = 2.5 m.",
+      "parsed": {
+        "predicate": "centripetal_force",
+        "unit": "N",
+        "context": "circular_motion",
+        "bindings": {
+          "mass": {
+            "value": 57.2,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 18.2,
+            "unit": "m/s"
+          },
+          "radius": {
+            "value": 2.5,
+            "unit": "m"
+          },
+          "torque_angle": {
+            "value": 90,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 28.722,
+      "prompt_eval_count": 6751
+    },
+    {
+      "id": 96,
+      "nl": "a 42.2 kg object travels in a circle of radius 26.4 m at 18.3 m/s. compute the centripetal force",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "condition not stated in the query: torque_angle = 90",
+        "raw": {
+          "predicate": "centripetal_force",
+          "unit": "N",
+          "context": "circular_motion",
+          "bindings": {
+            "mass": {
+              "value": 42.2,
+              "unit": "kg"
+            },
+            "velocity": {
+              "value": 18.3,
+              "unit": "m/s"
+            },
+            "radius": {
+              "value": 26.4,
+              "unit": "m"
+            },
+            "torque_angle": {
+              "value": 90,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 28.73,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 97,
+      "nl": "for my homework: what is the period of an object moving at 13.6 m/s on a circular path of radius 5.6 m",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "circular_motion",
+        "bindings": {
+          "radius": {
+            "value": 5.6,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 11.955,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 98,
+      "nl": "problem: find the orbital period given radius 5.2 m and speed 8.2 m/s. show your work.",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "simple_harmonic_motion",
+        "bindings": {
+          "length": {
+            "value": 5.2,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 20.389,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 99,
+      "nl": "quick question: what is the angular velocity of an object with period 6.6 seconds?",
+      "parsed": {
+        "predicate": "angular_velocity",
+        "unit": "rad/s",
+        "context": "circular_motion",
+        "bindings": {
+          "period": {
+            "value": 6.6,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 15.843,
+      "prompt_eval_count": 6730
+    },
+    {
+      "id": 100,
+      "nl": "in plain numbers, find the angular velocity given a rotation period of 3.5 s",
+      "parsed": {
+        "predicate": "angular_velocity",
+        "unit": "rad/s",
+        "context": "circular_motion",
+        "bindings": {
+          "period": {
+            "value": 3.5,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 15.62,
+      "prompt_eval_count": 6729
+    },
+    {
+      "id": 101,
+      "nl": "Compute the tangential velocity at radius 0.2 m for angular velocity 18.7 rad/s.",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "circular_motion",
+        "bindings": {
+          "radius": {
+            "value": 0.2,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 18.7,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.49,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 102,
+      "nl": "Find the linear velocity given angular velocity 20.0 rad/s and radius 10.0 m.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'rotational_motion' not in ['circular_motion', 'elastic_collision', 'elastic_collision_object2', 'energy_conservation', 'free_fall', 'inelastic_collision', 'kinematics', 'newtonian_motion'] for predicate 'velocity'",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "rotational_motion",
+          "bindings": {
+            "angular_velocity": {
+              "value": 20.0,
+              "unit": "rad/s"
+            },
+            "radius": {
+              "value": 10.0,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 24.89,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 103,
+      "nl": "What is the torque produced by a 109.8 N force applied perpendicular to a lever arm of 2.58 metres?",
+      "parsed": {
+        "predicate": "torque",
+        "unit": "N*m",
+        "context": "rotational_motion",
+        "bindings": {
+          "force": {
+            "value": 109.8,
+            "unit": "N"
+          },
+          "radius": {
+            "value": 2.58,
+            "unit": "m"
+          },
+          "torque_angle": {
+            "value": 90,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 23.267,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 104,
+      "nl": "give me the torque for a force 187.0 N at perpendicular distance 4.42 m",
+      "parsed": {
+        "predicate": "torque",
+        "unit": "N*m",
+        "context": "rotational_motion",
+        "bindings": {
+          "force": {
+            "value": 187.0,
+            "unit": "N"
+          },
+          "radius": {
+            "value": 4.42,
+            "unit": "m"
+          },
+          "torque_angle": {
+            "value": 90,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 26.512,
+      "prompt_eval_count": 6737
+    },
+    {
+      "id": 105,
+      "nl": "I've got a question — what is the torque produced by a 56.4 N force at radius 1.57 m at an angle of 90 degrees",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "ollama transport error: timed out"
+      },
+      "elapsed": 180.003,
+      "prompt_eval_count": 6737
+    },
+    {
+      "id": 106,
+      "nl": "problem: find the torque for force 113.2 N, lever arm 1.65 m, and angle 30 degrees. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'lever_arm' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "torque",
+          "unit": "N*m",
+          "context": "rotational_motion",
+          "bindings": {
+            "force": {
+              "value": 113.2,
+              "unit": "N"
+            },
+            "lever_arm": {
+              "value": 1.65,
+              "unit": "m"
+            },
+            "torque_angle": {
+              "value": 30,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 24.04,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 107,
+      "nl": "problem: what is the rotational kinetic energy of an object with moment of inertia 16.43 kg m squared rotating at 4.8 rad/s. show your work.",
+      "parsed": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J",
+        "context": "rotational_motion",
+        "bindings": {
+          "moment_of_inertia": {
+            "value": 16.43,
+            "unit": "kg*m2"
+          },
+          "angular_velocity": {
+            "value": 4.8,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 22.443,
+      "prompt_eval_count": 6756
+    },
+    {
+      "id": 108,
+      "nl": "yo find the rotational KE for I = 2.52 kg*m^2 and angular velocity 13.2 rad/s",
+      "parsed": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J",
+        "context": "rotational_motion",
+        "bindings": {
+          "moment_of_inertia": {
+            "value": 2.52,
+            "unit": "kg*m2"
+          },
+          "angular_velocity": {
+            "value": 13.2,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.735,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 109,
+      "nl": "could you tell me the angular momentum of a body with moment of inertia 2.17 kg m squared rotating at 1.7 rad/s, please",
+      "parsed": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s",
+        "context": "rotational_motion",
+        "bindings": {
+          "moment_of_inertia": {
+            "value": 2.17,
+            "unit": "kg*m2"
+          },
+          "angular_velocity": {
+            "value": 1.7,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 22.705,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 110,
+      "nl": "hey, find the angular momentum given I = 2.75 kg*m^2 and omega = 3.7 rad/s?",
+      "parsed": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s",
+        "context": "rotational_motion",
+        "bindings": {
+          "moment_of_inertia": {
+            "value": 2.75,
+            "unit": "kg*m2"
+          },
+          "angular_velocity": {
+            "value": 3.7,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 25.06,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 111,
+      "nl": "problem: what is the moment of inertia of a 14.4 kg point mass at radius 1.1 metres. show your work.",
+      "parsed": {
+        "predicate": "moment_of_inertia",
+        "unit": "kg*m2",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 14.4,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 1.1,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 19.37,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 112,
+      "nl": "yo find the moment of inertia of a point mass 17.1 kg located 2.58 m from the rotation axis",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 3.841,
+              "unit": "m/s"
+            },
+            "acceleration": {
+              "value": 9.837,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 7.183,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 28.843,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 113,
+      "nl": "What is the period of a spring-mass oscillator with mass 4.54 kg and spring constant 426.0 N/m.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "period",
+          "unit": "s",
+          "context": "simple_harmonic_motion",
+          "bindings": {
+            "length": {
+              "value": 1.869,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 12.97,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 114,
+      "nl": "find the period of a 3.21 kg mass on a spring with stiffness 418.0 N/m",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'length' unit 'kg' != 'm'",
+        "raw": {
+          "predicate": "period",
+          "unit": "s",
+          "context": "simple_harmonic_motion",
+          "bindings": {
+            "length": {
+              "value": 3.21,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 12.872,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 115,
+      "nl": "in plain numbers, what is the period of a simple pendulum of length 0.12 metres",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "simple_harmonic_motion",
+        "bindings": {
+          "length": {
+            "value": 0.12,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 15.619,
+      "prompt_eval_count": 6733
+    },
+    {
+      "id": 116,
+      "nl": "yo find the period of a pendulum with length 0.74 m for small oscillations",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "simple_harmonic_motion",
+        "bindings": {
+          "length": {
+            "value": 0.74,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 17.434,
+      "prompt_eval_count": 6732
+    },
+    {
+      "id": 117,
+      "nl": "let's say we want the maximum velocity of an oscillator with amplitude 0.2 metres and angular frequency 9.4 rad/s",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "condition not stated in the query: initial_velocity = 0",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "acceleration": {
+              "value": 0,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 0,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 22.059,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 118,
+      "nl": "Find the peak velocity in simple harmonic motion with A = 0.46 m and omega = 1.2 rad/s.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'simple_harmonic_motion' not in ['circular_motion', 'elastic_collision', 'elastic_collision_object2', 'energy_conservation', 'free_fall', 'inelastic_collision', 'kinematics', 'newtonian_motion'] for predicate 'velocity'",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "simple_harmonic_motion",
+          "bindings": {
+            "amplitude": {
+              "value": 0.46,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 16.01,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 119,
+      "nl": "What is the final kinetic energy if an object starts with KE 189.0 J and 351.7 J of net work is done on it?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'final_kinetic_energy' not in KB2",
+        "raw": {
+          "predicate": "final_kinetic_energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "initial_kinetic_energy": {
+              "value": 189.0,
+              "unit": "J"
+            },
+            "net_work": {
+              "value": 351.7,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 20.031,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 120,
+      "nl": "Calculate the final ke after 420.6 j of work is performed on an object with initial ke 109.1 j.",
+      "parsed": {
+        "predicate": "kinetic_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "initial_kinetic_energy": {
+            "value": 109.1,
+            "unit": "J"
+          },
+          "work": {
+            "value": 420.6,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 17.951,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 121,
+      "nl": "for my homework: an object starts at height 15.7 m with velocity 5.5 m/s. what is its velocity at height 0.2 m by energy conservation",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 5.5,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 15.364,
+      "prompt_eval_count": 6750
+    },
+    {
+      "id": 122,
+      "nl": "using conservation of mechanical energy, give me the velocity at height 3.4 m given initial velocity 9.0 m/s and initial height 24.9 m",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 9.0,
+            "unit": "m/s"
+          },
+          "height": {
+            "value": 3.4,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 20.813,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 123,
+      "nl": "could you in a 1D elastic collision, a 3.9 kg object at 10.3 m/s hits a 7.0 kg object at -4.7 m/s. tell me the final velocity of the first object, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'final_velocity' not in KB2",
+        "raw": {
+          "predicate": "final_velocity",
+          "unit": "m/s",
+          "context": "elastic_collision",
+          "bindings": {
+            "mass_1": {
+              "value": 3.9,
+              "unit": "kg"
+            },
+            "initial_velocity_1": {
+              "value": 10.3,
+              "unit": "m/s"
+            },
+            "mass_2": {
+              "value": 7.0,
+              "unit": "kg"
+            },
+            "initial_velocity_2": {
+              "value": -4.7,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 31.638,
+      "prompt_eval_count": 6766
+    },
+    {
+      "id": 124,
+      "nl": "give me the final velocity of object 1 after an elastic collision: m1 = 8.9 kg, m2 = 4.4 kg, v1i = 9.7 m/s, v2i = -7.7 m/s",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'final_velocity' not in KB2",
+        "raw": {
+          "predicate": "final_velocity",
+          "unit": "m/s",
+          "context": "elastic_collision",
+          "bindings": {
+            "m1": {
+              "value": 8.9,
+              "unit": "kg"
+            },
+            "m2": {
+              "value": 4.4,
+              "unit": "kg"
+            },
+            "v1i": {
+              "value": 9.7,
+              "unit": "m/s"
+            },
+            "v2i": {
+              "value": -7.7,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 29.31,
+      "prompt_eval_count": 6767
+    },
+    {
+      "id": 125,
+      "nl": "i need to know — in a 1D elastic collision, a 2.7 kg object at 12.2 m/s hits a 2.0 kg object at -7.3 m/s. what is the final velocity of the second object",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "elastic_collision",
+        "bindings": {
+          "initial_velocity_1": {
+            "value": 12.2,
+            "unit": "m/s"
+          },
+          "initial_velocity_2": {
+            "value": -7.3,
+            "unit": "m/s"
+          },
+          "mass_1": {
+            "value": 2.7,
+            "unit": "kg"
+          },
+          "mass_2": {
+            "value": 2.0,
+            "unit": "kg"
+          }
+        }
+      },
+      "elapsed": 31.269,
+      "prompt_eval_count": 6767
+    },
+    {
+      "id": 126,
+      "nl": "in plain numbers, find the final velocity of object 2 after an elastic collision: m1 = 0.7 kg, m2 = 7.5 kg, v1i = 5.7 m/s, v2i = 4.0 m/s",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'final_velocity' not in KB2",
+        "raw": {
+          "predicate": "final_velocity",
+          "unit": "m/s",
+          "context": "elastic_collision",
+          "bindings": {
+            "m1": {
+              "value": 0.7,
+              "unit": "kg"
+            },
+            "m2": {
+              "value": 7.5,
+              "unit": "kg"
+            },
+            "v1i": {
+              "value": 5.7,
+              "unit": "m/s"
+            },
+            "v2i": {
+              "value": 4.0,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 29.326,
+      "prompt_eval_count": 6770
+    },
+    {
+      "id": 127,
+      "nl": "let's say two objects collide and stick together: m1 = 6.9 kg at 4.5 m/s, m2 = 7.5 kg at -2.6 m/s. we want the common final velocity",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'collision' not in ['circular_motion', 'elastic_collision', 'elastic_collision_object2', 'energy_conservation', 'free_fall', 'inelastic_collision', 'kinematics', 'newtonian_motion'] for predicate 'velocity'",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "collision",
+          "bindings": {
+            "initial_velocity_1": {
+              "value": 4.5,
+              "unit": "m/s"
+            },
+            "initial_velocity_2": {
+              "value": -2.6,
+              "unit": "m/s"
+            },
+            "mass_1": {
+              "value": 6.9,
+              "unit": "kg"
+            },
+            "mass_2": {
+              "value": 7.5,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 30.11,
+      "prompt_eval_count": 6763
+    },
+    {
+      "id": 128,
+      "nl": "I've got a question — find the final velocity after a perfectly inelastic collision between a 1.5 kg mass at 13.0 m/s and a 8.8 kg mass at -1.7 m/s",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'collision' not in ['circular_motion', 'elastic_collision', 'elastic_collision_object2', 'energy_conservation', 'free_fall', 'inelastic_collision', 'kinematics', 'newtonian_motion'] for predicate 'velocity'",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "collision",
+          "bindings": {
+            "mass_1": {
+              "value": 1.5,
+              "unit": "kg"
+            },
+            "mass_2": {
+              "value": 8.8,
+              "unit": "kg"
+            },
+            "initial_velocity_1": {
+              "value": 13.0,
+              "unit": "m/s"
+            },
+            "initial_velocity_2": {
+              "value": -1.7,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 30.246,
+      "prompt_eval_count": 6762
+    },
+    {
+      "id": 129,
+      "nl": "I've got a question — an object starts from rest and accelerates at 18.4 m/s squared for 5.6 seconds. what is its velocity",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 15.088,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 130,
+      "nl": "hey, what is the final velocity of an object with initial velocity 16.1 m/s after accelerating at 2.7 m/s^2 for 0.7 seconds?",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 16.1,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 2.7,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 0.7,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 28.254,
+      "prompt_eval_count": 6752
+    },
+    {
+      "id": 131,
+      "nl": "Starting at rest, an object accelerates at 6.3 m/s squared. how far has it traveled after 4.1 seconds.",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 6.3,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 4.1,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 26.879,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 132,
+      "nl": "i need to know — an object moving at 14.5 m/s accelerates at 2.6 m/s squared for 6.8 seconds. what is its displacement",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 14.5,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 2.6,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 6.8,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 27.667,
+      "prompt_eval_count": 6752
+    },
+    {
+      "id": 133,
+      "nl": "an object with initial velocity 6.8 m/s undergoes acceleration 8.6 m/s squared over a displacement of 17.9 metres. what is its final velocity",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 6.8,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 8.6,
+            "unit": "m/s2"
+          },
+          "displacement": {
+            "value": 17.9,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 24.755,
+      "prompt_eval_count": 6754
+    },
+    {
+      "id": 134,
+      "nl": "yo find the velocity of a freely falling object 1.8 seconds after release",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'gravity_acceleration' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "free_fall",
+          "bindings": {
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "mass": {
+              "value": 7.955,
+              "unit": "kg"
+            },
+            "gravity_acceleration": {
+              "value": 9.837,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 7.183,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 36.794,
+      "prompt_eval_count": 6727
+    },
+    {
+      "id": 135,
+      "nl": "yo how far does a freely falling object descend in 1.8 seconds",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "condition not stated in the query: initial_velocity = 0",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "free_fall",
+          "bindings": {
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "time": {
+              "value": 1.8,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 23.963,
+      "prompt_eval_count": 6726
+    },
+    {
+      "id": 136,
+      "nl": "for my homework: find the net force required to give a 3.5 kg mass an acceleration of 15.1 m/s^2",
+      "parsed": {
+        "predicate": "net_force",
+        "unit": "N",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 3.5,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 15.1,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 18.267,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 137,
+      "nl": "A force of 365.6 n is applied to a 16.0 kg object. compute its acceleration.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "condition not stated in the query: net_force = 365.6",
+        "raw": {
+          "predicate": "acceleration",
+          "unit": "m/s2",
+          "context": "dynamics",
+          "bindings": {
+            "net_force": {
+              "value": 365.6,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "elapsed": 21.284,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 138,
+      "nl": "What is the weight of a 98.4 kg object on Earth.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'weight' not in KB2",
+        "raw": {
+          "predicate": "weight",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 98.4,
+              "unit": "kg"
+            },
+            "gravity_constant": {
+              "value": 9.81,
+              "unit": "m/s2"
+            }
+          }
+        }
+      },
+      "elapsed": 19.693,
+      "prompt_eval_count": 6727
+    },
+    {
+      "id": 139,
+      "nl": "yo find the momentum of a 38.8 kg mass with velocity 17.5 m/s",
+      "parsed": {
+        "predicate": "momentum",
+        "unit": "kg*m/s",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 38.8,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 17.5,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 21.727,
+      "prompt_eval_count": 6734
+    },
+    {
+      "id": 140,
+      "nl": "could you compute the impulse of a 13.7 N force applied over 2.2 seconds, please",
+      "parsed": {
+        "predicate": "impulse",
+        "unit": "N*s",
+        "context": "dynamics",
+        "bindings": {
+          "force": {
+            "value": 13.7,
+            "unit": "N"
+          },
+          "time": {
+            "value": 2.2,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 20.238,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 141,
+      "nl": "let's say we want the gravitational force between a 925650.0 kg mass and a 538914.0 kg mass separated by 722.0 metres",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'gravitational_force' not in KB2",
+        "raw": {
+          "predicate": "gravitational_force",
+          "unit": "N",
+          "context": "newtonian_motion",
+          "bindings": {
+            "mass_1": {
+              "value": 925650.0,
+              "unit": "kg"
+            },
+            "mass_2": {
+              "value": 538914.0,
+              "unit": "kg"
+            },
+            "distance": {
+              "value": 722.0,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 26.021,
+      "prompt_eval_count": 6756
+    },
+    {
+      "id": 142,
+      "nl": "i need to know — find the KE of a 37.0 kg mass with velocity 6.3 m/s",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'KE' not in KB2",
+        "raw": {
+          "predicate": "KE",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "mass": {
+              "value": 37.0,
+              "unit": "kg"
+            },
+            "velocity": {
+              "value": 6.3,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 16.941,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 143,
+      "nl": "for my homework: a 4.0 kg object is at height 20.1 metres. what is its gravitational potential energy",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'gravity' not in ['energy'] for predicate 'gravitational_potential_energy'",
+        "raw": {
+          "predicate": "gravitational_potential_energy",
+          "unit": "J",
+          "context": "gravity",
+          "bindings": {
+            "height": {
+              "value": 20.1,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 14.928,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 144,
+      "nl": "What is the total mechanical energy if the kinetic energy is 315.3 J and the potential energy is 335.1 J.",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "kinetic_energy": {
+            "value": 315.3,
+            "unit": "J"
+          },
+          "gravitational_potential_energy": {
+            "value": 335.1,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 20.44,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 145,
+      "nl": "problem: find the work done when a 145.4 N force acts over 6.4 m at 45 degrees to the displacement. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'angle' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "work",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "force": {
+              "value": 145.4,
+              "unit": "N"
+            },
+            "displacement": {
+              "value": 6.4,
+              "unit": "m"
+            },
+            "angle": {
+              "value": 45,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 20.944,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 146,
+      "nl": "yo 2071.5 joules of work is delivered in 24.7 seconds. compute the power",
+      "parsed": {
+        "predicate": "power",
+        "unit": "W",
+        "context": "energy",
+        "bindings": {
+          "work": {
+            "value": 2071.5,
+            "unit": "J"
+          },
+          "time": {
+            "value": 24.7,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 22.448,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 147,
+      "nl": "problem: what is the magnitude of the spring force when a spring of constant 577.0 N/m is compressed by 0.1 metres. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'spring_force' not in KB2",
+        "raw": {
+          "predicate": "spring_force",
+          "unit": "N",
+          "context": "elasticity",
+          "bindings": {
+            "spring_constant": {
+              "value": 577.0,
+              "unit": "N/m"
+            }
+          }
+        }
+      },
+      "elapsed": 15.264,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 148,
+      "nl": "give me the spring potential energy for k = 943.0 N/m and displacement 0.35 m",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'spring_potential_energy' not in KB2",
+        "raw": {
+          "predicate": "spring_potential_energy",
+          "unit": "J",
+          "context": "elasticity",
+          "bindings": {
+            "spring_constant": {
+              "value": 943.0,
+              "unit": "N/m"
+            },
+            "displacement": {
+              "value": 0.35,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 18.717,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 149,
+      "nl": "i need to know — an object weighs 18.2 kg and occupies 2.87 cubic metres. what is its density",
+      "parsed": {
+        "predicate": "density",
+        "unit": "kg/m3",
+        "context": "mechanics",
+        "bindings": {
+          "mass": {
+            "value": 18.2,
+            "unit": "kg"
+          },
+          "volume": {
+            "value": 2.87,
+            "unit": "m3"
+          }
+        }
+      },
+      "elapsed": 17.242,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 150,
+      "nl": "yo what is the pressure when a 278.5 N force acts on an area of 0.05 square metres",
+      "parsed": {
+        "predicate": "pressure",
+        "unit": "Pa",
+        "context": "mechanics",
+        "bindings": {
+          "force": {
+            "value": 278.5,
+            "unit": "N"
+          }
+        }
+      },
+      "elapsed": 14.619,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 151,
+      "nl": "Compute the kinetic energy of a 6.7 kg object after falling for 4.8 seconds.",
+      "parsed": {
+        "predicate": "kinetic_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 6.7,
+            "unit": "kg"
+          },
+          "time": {
+            "value": 4.8,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 19.909,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 152,
+      "nl": "quick question: an object of mass 19.8 kg falls from rest. find its kinetic energy 3.1 seconds later?",
+      "parsed": {
+        "predicate": "kinetic_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 19.8,
+            "unit": "kg"
+          },
+          "time": {
+            "value": 3.1,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 17.208,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 153,
+      "nl": "in plain numbers, a 20.4 kg mass is dropped. how much kinetic energy does it have after 3.3 seconds of free fall",
+      "parsed": {
+        "predicate": "kinetic_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 20.4,
+            "unit": "kg"
+          },
+          "time": {
+            "value": 3.3,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 17.043,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 154,
+      "nl": "An object of mass 24.3 kg starts from rest under a net force of 182.2 N. how far has it travelled after 2.2 seconds.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "acceleration": {
+              "value": 8.22,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 2.2,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 23.573,
+      "prompt_eval_count": 6750
+    },
+    {
+      "id": 155,
+      "nl": "What is the displacement after 5.3 seconds of a 20.6 kg object accelerated from rest by a 71.1 N net force.",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 71.1,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 5.3,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 23.634,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 156,
+      "nl": "hey, an object of mass 16.6 kg with initial velocity 6.7 m/s receives an impulse of 76.4 N*s. what is its final velocity?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'dynamics' not in ['circular_motion', 'elastic_collision', 'elastic_collision_object2', 'energy_conservation', 'free_fall', 'inelastic_collision', 'kinematics', 'newtonian_motion'] for predicate 'velocity'",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "dynamics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 6.7,
+              "unit": "m/s"
+            },
+            "applied_force": {
+              "value": 76.4,
+              "unit": "N*s"
+            },
+            "applied_force_angle": {
+              "value": 0,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 24.745,
+      "prompt_eval_count": 6753
+    },
+    {
+      "id": 157,
+      "nl": "quick question: find the final velocity given mass 16.3 kg, initial velocity 0.5 m/s, and impulse 19.0 N s?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'impulse' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 0.5,
+              "unit": "m/s"
+            },
+            "mass": {
+              "value": 16.3,
+              "unit": "kg"
+            },
+            "impulse": {
+              "value": 19.0,
+              "unit": "N*s"
+            }
+          }
+        }
+      },
+      "elapsed": 27.768,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 158,
+      "nl": "give me the rotational kinetic energy of a 6.3 kg point mass at radius 2.35 m rotating at 5.1 rad/s",
+      "parsed": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 6.3,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 2.35,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 5.1,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.361,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 159,
+      "nl": "quick question: find the rotational KE of a point mass 6.5 kg located 0.74 m from the axis spinning at 7.3 rad/s?",
+      "parsed": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 6.5,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 0.74,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 7.3,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.216,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 160,
+      "nl": "give me the angular momentum of a 4.3 kg point mass at radius 0.61 m rotating at 8.6 rad/s",
+      "parsed": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 4.3,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 0.61,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 8.6,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.698,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 161,
+      "nl": "i need to know — find the angular momentum of a point particle of mass 7.6 kg, distance 2.36 m from axis, with angular velocity 2.2 rad/s",
+      "parsed": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 7.6,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 2.36,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 2.2,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.762,
+      "prompt_eval_count": 6752
+    },
+    {
+      "id": 162,
+      "nl": "what is the acceleration of a 8.1 kg object sliding down a frictionless 45 degree incline",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 8.1,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 45,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 22.213,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 163,
+      "nl": "quick question: find the acceleration of a 17.6 kg block on a frictionless ramp at 15 degrees?",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 17.6,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 15,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 19.455,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 164,
+      "nl": "could you tell me the centripetal force on a 3.1 kg object on a circular path of radius 2.48 m rotating at angular velocity 5.8 rad/s, please",
+      "parsed": {
+        "predicate": "centripetal_force",
+        "unit": "N",
+        "context": "circular_motion",
+        "bindings": {
+          "mass": {
+            "value": 3.1,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 2.48,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 5.8,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.167,
+      "prompt_eval_count": 6755
+    },
+    {
+      "id": 165,
+      "nl": "Calculate the centripetal force on a 12.1 kg mass with angular velocity 9.0 rad/s at radius 4.77 m.",
+      "parsed": {
+        "predicate": "centripetal_force",
+        "unit": "N",
+        "context": "circular_motion",
+        "bindings": {
+          "mass": {
+            "value": 12.1,
+            "unit": "kg"
+          },
+          "angular_velocity": {
+            "value": 9.0,
+            "unit": "rad/s"
+          },
+          "radius": {
+            "value": 4.77,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 24.296,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 166,
+      "nl": "i need to know — what is the tension in a string accelerating a 24.6 kg load upward at 7.2 m/s squared",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "condition not stated in the query: net_force = 246000",
+        "raw": {
+          "predicate": "acceleration",
+          "unit": "m/s2",
+          "context": "dynamics",
+          "bindings": {
+            "net_force": {
+              "value": 246000,
+              "unit": "N"
+            },
+            "mass": {
+              "value": 246000,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 22.143,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 167,
+      "nl": "give me the rope tension required to lift a 25.1 kg mass with upward acceleration 4.6 m/s^2",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 25.1,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 4.6,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 20.5,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 168,
+      "nl": "in plain numbers, what is the total mechanical energy of a 4.0 kg object moving at 13.0 m/s at height 9.3 metres",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 4.0,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 13.0,
+            "unit": "m/s"
+          },
+          "height": {
+            "value": 9.3,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 22.3,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 169,
+      "nl": "could you work out the mechanical energy of a 5.7 kg mass at 15.4 m height with velocity 9.7 m/s, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'energy' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "mechanical_energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "mass": {
+              "value": 5.7,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 15.4,
+              "unit": "m"
+            },
+            "velocity": {
+              "value": 9.7,
+              "unit": "m/s"
+            },
+            "displacement": {
+              "value": 0,
+              "unit": "m"
+            },
+            "work": {
+              "value": 0,
+              "unit": "J"
+            },
+            "energy": {
+              "value": 0,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 34.339,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 170,
+      "nl": "quick question: what is the period of a pendulum of length 2.04 metres where gravity is 7.1 m/s squared?",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "simple_harmonic_motion",
+        "bindings": {
+          "length": {
+            "value": 2.04,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 12.681,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 171,
+      "nl": "yo find the period of a 0.49 m pendulum on a body where g = 8.2 m/s^2",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "simple_harmonic_motion",
+        "bindings": {
+          "length": {
+            "value": 0.49,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 12.761,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 172,
+      "nl": "What is the weight of a 34.2 kg object where gravity is 22.5 m/s squared.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'weight' not in KB2",
+        "raw": {
+          "predicate": "weight",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 34.2,
+              "unit": "kg"
+            },
+            "gravity_acceleration": {
+              "value": 22.5,
+              "unit": "m/s2"
+            }
+          }
+        }
+      },
+      "elapsed": 17.984,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 173,
+      "nl": "let's say we want the weight of a 14.7 kg mass on a planet with g = 7.0 m/s^2",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'weight' not in KB2",
+        "raw": {
+          "predicate": "weight",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 14.7,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 13.353,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 174,
+      "nl": "for my homework: an object at height 10.3 m with velocity 0.8 m/s descends to height 1.2 m. what is its velocity",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0.8,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 15.449,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 175,
+      "nl": "i need to know — using energy conservation, find the speed at height 0.6 m given initial height 15.4 m and initial velocity 2.7 m/s",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 2.7,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 15.399,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 176,
+      "nl": "the kinetic energy of a 15.5 kg object is 168.0 J and it sits at height 28.4 metres. what is the total mechanical energy",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "kinetic_energy": {
+            "value": 168.0,
+            "unit": "J"
+          },
+          "gravitational_potential_energy": {
+            "value": 28400.0,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 23.253,
+      "prompt_eval_count": 6751
+    },
+    {
+      "id": 177,
+      "nl": "find the mechanical energy of a 15.4 kg mass at 11.7 m elevation with kinetic energy 345.6 J",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "kinetic_energy": {
+            "value": 345.6,
+            "unit": "J"
+          },
+          "gravitational_potential_energy": {
+            "value": 0,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 19.286,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 178,
+      "nl": "a 2.07 kg mass attached to a spring of constant 474.0 N/m is displaced 0.18 metres. what is its acceleration at that point",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 2.07,
+            "unit": "kg"
+          },
+          "spring_constant": {
+            "value": 474.0,
+            "unit": "N/m"
+          },
+          "displacement": {
+            "value": 0.18,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 24.406,
+      "prompt_eval_count": 6752
+    },
+    {
+      "id": 179,
+      "nl": "could you work out the acceleration of a 3.79 kg object on a 479.0 N/m spring at displacement 0.24 m, please",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 3.79,
+            "unit": "kg"
+          },
+          "spring_constant": {
+            "value": 479.0,
+            "unit": "N/m"
+          },
+          "displacement": {
+            "value": 0.24,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 24.434,
+      "prompt_eval_count": 6750
+    },
+    {
+      "id": 180,
+      "nl": "yo an object is pushed with a 162.0 N force over 18.0 metres in 14.9 seconds. what is the power output",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "power",
+          "unit": "W",
+          "context": "energy",
+          "bindings": {
+            "work": {
+              "value": 2592.0,
+              "unit": "J"
+            },
+            "time": {
+              "value": 14.9,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 19.504,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 181,
+      "nl": "problem: find the power required when a 92.8 N force moves a body 1.1 m in 10.4 seconds. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'work' unit 'N' != 'J'",
+        "raw": {
+          "predicate": "power",
+          "unit": "W",
+          "context": "energy",
+          "bindings": {
+            "work": {
+              "value": 92.8,
+              "unit": "N"
+            },
+            "time": {
+              "value": 10.4,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 18.821,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 182,
+      "nl": "I've got a question — what is the kinetic energy of a 24.0 kg object after falling for 4.5 seconds",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'final_velocity' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "free_fall",
+          "bindings": {
+            "mass": {
+              "value": 24.0,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 4.5,
+              "unit": "s"
+            },
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "final_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 32.282,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 183,
+      "nl": "what is the displacement after 5.4 seconds of a 5.6 kg object accelerated from rest by a 104.1 N net force",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 104.1,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 5.4,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 23.77,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 184,
+      "nl": "An object of mass 18.2 kg with initial velocity 6.6 m/s receives an impulse of 61.2 N*s. what is its final velocity.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'dynamics' not in ['circular_motion', 'elastic_collision', 'elastic_collision_object2', 'energy_conservation', 'free_fall', 'inelastic_collision', 'kinematics', 'newtonian_motion'] for predicate 'velocity'",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "dynamics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 6.6,
+              "unit": "m/s"
+            },
+            "applied_force": {
+              "value": 61.2,
+              "unit": "N*s"
+            },
+            "applied_force_angle": {
+              "value": 0,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 24.851,
+      "prompt_eval_count": 6751
+    },
+    {
+      "id": 185,
+      "nl": "find the rotational KE of a point mass 6.6 kg located 0.58 m from the axis spinning at 5.2 rad/s",
+      "parsed": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 6.6,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 0.58,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 5.2,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.134,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 186,
+      "nl": "for my homework: what is the angular momentum of a 3.0 kg point mass at radius 1.12 m rotating at 6.0 rad/s",
+      "parsed": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 3.0,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 1.12,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 6.0,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.721,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 187,
+      "nl": "yo find the acceleration of a 23.3 kg block on a frictionless ramp at 45 degrees",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 23.3,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 45,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 22.587,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 188,
+      "nl": "What is the centripetal force on a 15.2 kg object on a circular path of radius 4.21 m rotating at angular velocity 3.3 rad/s.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'velocity' unit 'rad/s' != 'm/s'",
+        "raw": {
+          "predicate": "centripetal_force",
+          "unit": "N",
+          "context": "circular_motion",
+          "bindings": {
+            "mass": {
+              "value": 15.2,
+              "unit": "kg"
+            },
+            "velocity": {
+              "value": 3.3,
+              "unit": "rad/s"
+            },
+            "radius": {
+              "value": 4.21,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 23.809,
+      "prompt_eval_count": 6753
+    },
+    {
+      "id": 189,
+      "nl": "find the rope tension required to lift a 14.6 kg mass with upward acceleration 6.1 m/s^2",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 14.6,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 6.1,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 20.291,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 190,
+      "nl": "in plain numbers, what is the total mechanical energy of a 20.0 kg object moving at 5.6 m/s at height 13.2 metres",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 20.0,
+            "unit": "kg"
+          },
+          "velocity": {
+            "value": 5.6,
+            "unit": "m/s"
+          },
+          "height": {
+            "value": 13.2,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 22.565,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 191,
+      "nl": "find the period of a 3.84 m pendulum on a body where g = 2.4 m/s^2",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "simple_harmonic_motion",
+        "bindings": {
+          "length": {
+            "value": 3.84,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 14.675,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 192,
+      "nl": "what is the weight of a 95.0 kg object where gravity is 6.3 m/s squared",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'weight' not in KB2",
+        "raw": {
+          "predicate": "weight",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 95.0,
+              "unit": "kg"
+            },
+            "gravity_acceleration": {
+              "value": 6.3,
+              "unit": "m/s2"
+            }
+          }
+        }
+      },
+      "elapsed": 21.957,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 193,
+      "nl": "Using energy conservation, find the speed at height 1.4 m given initial height 11.0 m and initial velocity 3.1 m/s.",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_height": {
+            "value": 11.0,
+            "unit": "m"
+          },
+          "initial_velocity": {
+            "value": 3.1,
+            "unit": "m/s"
+          },
+          "height": {
+            "value": 1.4,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 23.402,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 194,
+      "nl": "in plain numbers, the kinetic energy of a 4.8 kg object is 234.3 J and it sits at height 21.1 metres. what is the total mechanical energy",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "mechanical_energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "kinetic_energy": {
+              "value": 234.3,
+              "unit": "J"
+            },
+            "gravitational_potential_energy": {
+              "value": 211.1,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 20.11,
+      "prompt_eval_count": 6754
+    },
+    {
+      "id": 195,
+      "nl": "let's say we want the acceleration of a 4.83 kg object on a 216.0 N/m spring at displacement 0.32 m",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "goal state binds the quantity it asks for",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "acceleration": {
+              "value": 0,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 0,
+              "unit": "s"
+            },
+            "mass": {
+              "value": 4.83,
+              "unit": "kg"
+            },
+            "spring_constant": {
+              "value": 216,
+              "unit": "N/m"
+            },
+            "displacement": {
+              "value": 0.32,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 37.068,
+      "prompt_eval_count": 6750
+    },
+    {
+      "id": 196,
+      "nl": "An object is pushed with a 31.8 N force over 16.5 metres in 29.0 seconds. what is the power output.",
+      "parsed": {
+        "predicate": "power",
+        "unit": "W",
+        "context": "energy",
+        "bindings": {
+          "work": {
+            "value": 31800,
+            "unit": "J"
+          },
+          "time": {
+            "value": 29,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 18.759,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 197,
+      "nl": "Compute the kinetic energy of a 17.6 kg object after falling for 5.6 seconds.",
+      "parsed": {
+        "predicate": "kinetic_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 17.6,
+            "unit": "kg"
+          },
+          "time": {
+            "value": 5.6,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 20.209,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 198,
+      "nl": "let's say an object of mass 28.8 kg starts from rest under a net force of 141.9 N. how far has it travelled after 3.8 seconds",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "acceleration": {
+              "value": 42.666666666666664,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 3.8,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 26.848,
+      "prompt_eval_count": 6753
+    },
+    {
+      "id": 199,
+      "nl": "hey, find the final velocity given mass 4.8 kg, initial velocity 8.3 m/s, and impulse 61.2 N s?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'impulse' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 8.3,
+              "unit": "m/s"
+            },
+            "mass": {
+              "value": 4.8,
+              "unit": "kg"
+            },
+            "impulse": {
+              "value": 61.2,
+              "unit": "N*s"
+            }
+          }
+        }
+      },
+      "elapsed": 27.213,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 200,
+      "nl": "Compute the rotational kinetic energy of a 1.5 kg point mass at radius 2.36 m rotating at 8.7 rad/s.",
+      "parsed": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 1.5,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 2.36,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 8.7,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.167,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 201,
+      "nl": "find the angular momentum of a point particle of mass 8.2 kg, distance 2.43 m from axis, with angular velocity 7.2 rad/s",
+      "parsed": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 8.2,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 2.43,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 7.2,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.589,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 202,
+      "nl": "problem: what is the acceleration of a 11.7 kg object sliding down a frictionless 45 degree incline. show your work.",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 11.7,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 45,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 19.374,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 203,
+      "nl": "I've got a question — find the centripetal force on a 7.7 kg mass with angular velocity 4.1 rad/s at radius 2.68 m",
+      "parsed": {
+        "predicate": "centripetal_force",
+        "unit": "N",
+        "context": "circular_motion",
+        "bindings": {
+          "mass": {
+            "value": 7.7,
+            "unit": "kg"
+          },
+          "angular_velocity": {
+            "value": 4.1,
+            "unit": "rad/s"
+          },
+          "radius": {
+            "value": 2.68,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 23.911,
+      "prompt_eval_count": 6751
+    },
+    {
+      "id": 204,
+      "nl": "i need to know — what is the tension in a string accelerating a 13.2 kg load upward at 4.2 m/s squared",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "acceleration",
+          "unit": "m/s2",
+          "context": "dynamics",
+          "bindings": {
+            "net_force": {
+              "value": 220.9,
+              "unit": "N"
+            },
+            "mass": {
+              "value": 7.955,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 21.474,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 205,
+      "nl": "let's say we want the mechanical energy of a 19.3 kg mass at 16.7 m height with velocity 9.7 m/s",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "mechanical_energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "kinetic_energy": {
+              "value": 909.1,
+              "unit": "J"
+            },
+            "gravitational_potential_energy": {
+              "value": 362.1,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 20.453,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 206,
+      "nl": "could you tell me the period of a pendulum of length 0.78 metres where gravity is 5.6 m/s squared, please",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "simple_harmonic_motion",
+        "bindings": {
+          "length": {
+            "value": 0.78,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 14.676,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 207,
+      "nl": "in plain numbers, find the weight of a 96.6 kg mass on a planet with g = 7.9 m/s^2",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'weight' not in KB2",
+        "raw": {
+          "predicate": "weight",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 96.6,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 13.484,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 208,
+      "nl": "I've got a question — an object at height 24.4 m with velocity 4.6 m/s descends to height 1.4 m. what is its velocity",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 4.6,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 15.249,
+      "prompt_eval_count": 6751
+    },
+    {
+      "id": 209,
+      "nl": "I've got a question — find the mechanical energy of a 5.7 kg mass at 25.6 m elevation with kinetic energy 297.8 J",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "kinetic_energy": {
+            "value": 297.8,
+            "unit": "J"
+          },
+          "gravitational_potential_energy": {
+            "value": 0,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 19.236,
+      "prompt_eval_count": 6751
+    },
+    {
+      "id": 210,
+      "nl": "in plain numbers, a 2.36 kg mass attached to a spring of constant 471.0 N/m is displaced 0.18 metres. what is its acceleration at that point",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 2.36,
+            "unit": "kg"
+          },
+          "displacement": {
+            "value": 0.18,
+            "unit": "m"
+          },
+          "spring_constant": {
+            "value": 471.0,
+            "unit": "N/m"
+          }
+        }
+      },
+      "elapsed": 24.303,
+      "prompt_eval_count": 6756
+    },
+    {
+      "id": 211,
+      "nl": "find the power required when a 98.3 N force moves a body 12.4 m in 11.7 seconds",
+      "parsed": {
+        "predicate": "power",
+        "unit": "W",
+        "context": "energy",
+        "bindings": {
+          "work": {
+            "value": 983,
+            "unit": "J"
+          },
+          "time": {
+            "value": 11.7,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 18.577,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 212,
+      "nl": "quick question: what is the kinetic energy of a 15.1 kg object after falling for 2.3 seconds?",
+      "parsed": {
+        "predicate": "kinetic_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 15.1,
+            "unit": "kg"
+          },
+          "time": {
+            "value": 2.3,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 17.095,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 213,
+      "nl": "give me the displacement after 3.4 seconds of a 24.3 kg object accelerated from rest by a 58.2 N net force",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 58.2,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 3.4,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 23.659,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 214,
+      "nl": "could you an object of mass 12.3 kg with initial velocity 5.6 m/s receives an impulse of 88.6 N*s. tell me its final velocity, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'dynamics' not in ['circular_motion', 'elastic_collision', 'elastic_collision_object2', 'energy_conservation', 'free_fall', 'inelastic_collision', 'kinematics', 'newtonian_motion'] for predicate 'velocity'",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "dynamics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 5.6,
+              "unit": "m/s"
+            },
+            "applied_force": {
+              "value": 88.6,
+              "unit": "N*s"
+            },
+            "applied_force_angle": {
+              "value": 0,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 24.869,
+      "prompt_eval_count": 6754
+    },
+    {
+      "id": 215,
+      "nl": "quick question: find the rotational KE of a point mass 9.5 kg located 0.44 m from the axis spinning at 7.5 rad/s?",
+      "parsed": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 9.5,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 0.44,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 7.5,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.142,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 216,
+      "nl": "let's say we want the angular momentum of a 5.8 kg point mass at radius 0.87 m rotating at 6.2 rad/s",
+      "parsed": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 5.8,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 0.87,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 6.2,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.527,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 217,
+      "nl": "Find the acceleration of a 15.7 kg block on a frictionless ramp at 15 degrees.",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 15.7,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 15,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 22.678,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 218,
+      "nl": "problem: what is the centripetal force on a 6.2 kg object on a circular path of radius 2.2 m rotating at angular velocity 3.2 rad/s. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'velocity' unit 'rad/s' != 'm/s'",
+        "raw": {
+          "predicate": "centripetal_force",
+          "unit": "N",
+          "context": "circular_motion",
+          "bindings": {
+            "mass": {
+              "value": 6.2,
+              "unit": "kg"
+            },
+            "velocity": {
+              "value": 3.2,
+              "unit": "rad/s"
+            },
+            "radius": {
+              "value": 2.2,
+              "unit": "m"
+            },
+            "torque_angle": {
+              "value": 90,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 27.973,
+      "prompt_eval_count": 6757
+    },
+    {
+      "id": 219,
+      "nl": "could you work out the rope tension required to lift a 17.9 kg mass with upward acceleration 4.0 m/s^2, please",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 17.9,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 4.0,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 20.256,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 220,
+      "nl": "for my homework: what is the total mechanical energy of a 7.5 kg object moving at 15.0 m/s at height 11.2 metres",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "mechanical_energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "kinetic_energy": {
+              "value": 112.5,
+              "unit": "J"
+            },
+            "gravitational_potential_energy": {
+              "value": 1050,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 20.02,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 221,
+      "nl": "yo find the period of a 2.87 m pendulum on a body where g = 7.9 m/s^2",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "simple_harmonic_motion",
+        "bindings": {
+          "length": {
+            "value": 2.87,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 12.902,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 222,
+      "nl": "for my homework: what is the weight of a 23.8 kg object where gravity is 18.5 m/s squared",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'weight' not in KB2",
+        "raw": {
+          "predicate": "weight",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 23.8,
+              "unit": "kg"
+            },
+            "gravity_acceleration": {
+              "value": 18.5,
+              "unit": "m/s2"
+            }
+          }
+        }
+      },
+      "elapsed": 18.148,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 223,
+      "nl": "Using energy conservation, find the speed at height 2.3 m given initial height 18.4 m and initial velocity 0.6 m/s?",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_height": {
+            "value": 18.4,
+            "unit": "m"
+          },
+          "initial_velocity": {
+            "value": 0.6,
+            "unit": "m/s"
+          },
+          "height": {
+            "value": 2.3,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 23.605,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 224,
+      "nl": "The kinetic energy of a 14.9 kg object is 92.8 j and it sits at height 8.7 metres. compute the total mechanical energy.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'gravitational_potential_energy' unit 'm' != 'J'",
+        "raw": {
+          "predicate": "mechanical_energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "kinetic_energy": {
+              "value": 92.8,
+              "unit": "J"
+            },
+            "gravitational_potential_energy": {
+              "value": 8.7,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 19.468,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 225,
+      "nl": "Find the acceleration of a 1.56 kg object on a 489.0 N/m spring at displacement 0.29 m.",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 1.56,
+            "unit": "kg"
+          },
+          "spring_constant": {
+            "value": 489.0,
+            "unit": "N/m"
+          },
+          "displacement": {
+            "value": 0.29,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 24.235,
+      "prompt_eval_count": 6746
+    },
+    {
+      "id": 226,
+      "nl": "yo an object is pushed with a 168.2 N force over 6.3 metres in 11.1 seconds. what is the power output",
+      "parsed": {
+        "predicate": "power",
+        "unit": "W",
+        "context": "energy",
+        "bindings": {
+          "work": {
+            "value": 168200,
+            "unit": "J"
+          },
+          "time": {
+            "value": 111,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 19.3,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 227,
+      "nl": "yo what is the kinetic energy of a 0.9 kg object after falling for 3.4 seconds",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "free_fall",
+          "bindings": {
+            "mass": {
+              "value": 0.9,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 10,
+              "unit": "m"
+            },
+            "time": {
+              "value": 3.4,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 24.242,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 228,
+      "nl": "An object of mass 3.5 kg starts from rest under a net force of 28.2 N. how far has it travelled after 3.0 seconds?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "acceleration": {
+              "value": 9.36,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 3,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 23.105,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 229,
+      "nl": "find the final velocity given mass 13.1 kg, initial velocity 1.0 m/s, and impulse 76.5 N s",
+      "parsed": {
+        "predicate": "velocity",
+        "unit": "m/s",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 1.0,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 15.506,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 230,
+      "nl": "What is the rotational kinetic energy of a 6.0 kg point mass at radius 1.51 m rotating at 5.0 rad/s?",
+      "parsed": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 6.0,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 1.51,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 5.0,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.086,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 231,
+      "nl": "Find the angular momentum of a point particle of mass 9.7 kg, distance 0.91 m from axis, with angular velocity 10.5 rad/s.",
+      "parsed": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 9.7,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 0.91,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 10.5,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 25.026,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 232,
+      "nl": "quick question: what is the acceleration of a 25.0 kg object sliding down a frictionless 45 degree incline?",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 25.0,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 45.0,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 20.256,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 233,
+      "nl": "Find the centripetal force on a 1.9 kg mass with angular velocity 1.5 rad/s at radius 3.26 m?",
+      "parsed": {
+        "predicate": "centripetal_force",
+        "unit": "N",
+        "context": "circular_motion",
+        "bindings": {
+          "mass": {
+            "value": 1.9,
+            "unit": "kg"
+          },
+          "angular_velocity": {
+            "value": 1.5,
+            "unit": "rad/s"
+          },
+          "radius": {
+            "value": 3.26,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 24.026,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 234,
+      "nl": "What is the tension in a string accelerating a 24.5 kg load upward at 7.6 m/s squared.",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 24.5,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 7.6,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 20.771,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 235,
+      "nl": "Calculate the mechanical energy of a 19.9 kg mass at 15.4 m height with velocity 2.2 m/s.",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "mass": {
+            "value": 19.9,
+            "unit": "kg"
+          },
+          "height": {
+            "value": 15.4,
+            "unit": "m"
+          },
+          "velocity": {
+            "value": 2.2,
+            "unit": "m/s"
+          }
+        }
+      },
+      "elapsed": 22.405,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 236,
+      "nl": "in plain numbers, what is the period of a pendulum of length 2.47 metres where gravity is 16.0 m/s squared",
+      "parsed": {
+        "predicate": "period",
+        "unit": "s",
+        "context": "simple_harmonic_motion",
+        "bindings": {
+          "length": {
+            "value": 2.47,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 12.748,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 237,
+      "nl": "quick question: find the weight of a 52.7 kg mass on a planet with g = 12.1 m/s^2?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'weight' not in KB2",
+        "raw": {
+          "predicate": "weight",
+          "unit": "N",
+          "context": "gravity",
+          "bindings": {
+            "mass": {
+              "value": 52.7,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 13.431,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 238,
+      "nl": "An object at height 19.7 m with velocity 1.5 m/s descends to height 1.3 m. compute its velocity.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'final_height' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "kinematics",
+          "bindings": {
+            "initial_height": {
+              "value": 19.7,
+              "unit": "m"
+            },
+            "final_height": {
+              "value": 1.3,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 1.5,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 23.913,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 239,
+      "nl": "in plain numbers, find the mechanical energy of a 12.4 kg mass at 22.3 m elevation with kinetic energy 256.0 J",
+      "parsed": {
+        "predicate": "mechanical_energy",
+        "unit": "J",
+        "context": "energy",
+        "bindings": {
+          "kinetic_energy": {
+            "value": 256.0,
+            "unit": "J"
+          },
+          "gravitational_potential_energy": {
+            "value": 22300.0,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 20.674,
+      "prompt_eval_count": 6749
+    },
+    {
+      "id": 240,
+      "nl": "A 3.37 kg mass attached to a spring of constant 144.0 N/m is displaced 0.14 metres. what is its acceleration at that point?",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "dynamics",
+        "bindings": {
+          "mass": {
+            "value": 3.37,
+            "unit": "kg"
+          },
+          "spring_constant": {
+            "value": 144.0,
+            "unit": "N/m"
+          },
+          "displacement": {
+            "value": 0.14,
+            "unit": "m"
+          }
+        }
+      },
+      "elapsed": 24.418,
+      "prompt_eval_count": 6753
+    },
+    {
+      "id": 241,
+      "nl": "i need to know — find the power required when a 55.6 N force moves a body 11.3 m in 5.1 seconds",
+      "parsed": {
+        "predicate": "power",
+        "unit": "W",
+        "context": "energy",
+        "bindings": {
+          "work": {
+            "value": 556,
+            "unit": "J"
+          }
+        }
+      },
+      "elapsed": 12.658,
+      "prompt_eval_count": 6744
+    },
+    {
+      "id": 242,
+      "nl": "yo what is the kinetic energy of a 13.8 kg object after falling for 3.8 seconds",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "condition not stated in the query: initial_velocity = 0",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "free_fall",
+          "bindings": {
+            "mass": {
+              "value": 13.8,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 3.8,
+              "unit": "m"
+            },
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "time": {
+              "value": 3.8,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 34.301,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 243,
+      "nl": "I've got a question — what is the displacement after 3.0 seconds of a 10.1 kg object accelerated from rest by a 25.9 N net force",
+      "parsed": {
+        "predicate": "displacement",
+        "unit": "m",
+        "context": "kinematics",
+        "bindings": {
+          "initial_velocity": {
+            "value": 0,
+            "unit": "m/s"
+          },
+          "acceleration": {
+            "value": 2.59,
+            "unit": "m/s2"
+          },
+          "time": {
+            "value": 3,
+            "unit": "s"
+          }
+        }
+      },
+      "elapsed": 22.91,
+      "prompt_eval_count": 6752
+    },
+    {
+      "id": 244,
+      "nl": "in plain numbers, an object of mass 9.6 kg with initial velocity 9.2 m/s receives an impulse of 70.3 N*s. what is its final velocity",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "context 'dynamics' not in ['circular_motion', 'elastic_collision', 'elastic_collision_object2', 'energy_conservation', 'free_fall', 'inelastic_collision', 'kinematics', 'newtonian_motion'] for predicate 'velocity'",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "dynamics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 9.2,
+              "unit": "m/s"
+            },
+            "applied_force": {
+              "value": 70.3,
+              "unit": "N*s"
+            },
+            "applied_force_angle": {
+              "value": 0,
+              "unit": "deg"
+            }
+          }
+        }
+      },
+      "elapsed": 24.893,
+      "prompt_eval_count": 6753
+    },
+    {
+      "id": 245,
+      "nl": "hey, find the rotational KE of a point mass 8.0 kg located 1.85 m from the axis spinning at 8.2 rad/s?",
+      "parsed": {
+        "predicate": "rotational_kinetic_energy",
+        "unit": "J",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 8.0,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 1.85,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 8.2,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.145,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 246,
+      "nl": "give me the angular momentum of a 4.5 kg point mass at radius 1.72 m rotating at 8.1 rad/s",
+      "parsed": {
+        "predicate": "angular_momentum",
+        "unit": "kg*m2/s",
+        "context": "rotational_motion",
+        "bindings": {
+          "mass": {
+            "value": 4.5,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 1.72,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 8.1,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 24.555,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 247,
+      "nl": "Find the acceleration of a 9.4 kg block on a frictionless ramp at 20 degrees.",
+      "parsed": {
+        "predicate": "acceleration",
+        "unit": "m/s2",
+        "context": "newtonian_motion",
+        "bindings": {
+          "mass": {
+            "value": 9.4,
+            "unit": "kg"
+          },
+          "incline_angle": {
+            "value": 20,
+            "unit": "deg"
+          }
+        }
+      },
+      "elapsed": 22.245,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 248,
+      "nl": "I've got a question — what is the centripetal force on a 1.7 kg object on a circular path of radius 4.03 m rotating at angular velocity 6.4 rad/s",
+      "parsed": {
+        "predicate": "centripetal_force",
+        "unit": "N",
+        "context": "circular_motion",
+        "bindings": {
+          "mass": {
+            "value": 1.7,
+            "unit": "kg"
+          },
+          "radius": {
+            "value": 4.03,
+            "unit": "m"
+          },
+          "angular_velocity": {
+            "value": 6.4,
+            "unit": "rad/s"
+          }
+        }
+      },
+      "elapsed": 23.879,
+      "prompt_eval_count": 6758
+    },
+    {
+      "id": 249,
+      "nl": "Find the rope tension required to lift a 17.5 kg mass with upward acceleration 2.7 m/s^2.",
+      "parsed": {
+        "predicate": "tension",
+        "unit": "N",
+        "context": "newtonian_motion_accelerating",
+        "bindings": {
+          "mass": {
+            "value": 17.5,
+            "unit": "kg"
+          },
+          "acceleration": {
+            "value": 2.7,
+            "unit": "m/s2"
+          }
+        }
+      },
+      "elapsed": 20.393,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 250,
+      "nl": "yo what is the total mechanical energy of a 9.9 kg object moving at 4.9 m/s at height 8.3 metres",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "mechanical_energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "kinetic_energy": {
+              "value": 99,
+              "unit": "J"
+            },
+            "gravitational_potential_energy": {
+              "value": 384.1,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 19.448,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 251,
+      "nl": "could you tell me the magnetic flux through a coil of area 0.5 square metres in a 2 T field, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'magnetic_flux' not in KB2",
+        "raw": {
+          "predicate": "magnetic_flux",
+          "unit": "T*m2",
+          "context": "n/a",
+          "bindings": {
+            "area": {
+              "value": 0.5,
+              "unit": "m2"
+            },
+            "field": {
+              "value": 2,
+              "unit": "T"
+            }
+          }
+        }
+      },
+      "elapsed": 17.919,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 252,
+      "nl": "could you tell me the electric field at a distance of 2 metres from a 5 microcoulomb charge, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'electric_field' not in KB2",
+        "raw": {
+          "predicate": "electric_field",
+          "unit": "N/C",
+          "context": "electricity",
+          "bindings": {
+            "charge": {
+              "value": 5e-06,
+              "unit": "C"
+            },
+            "distance": {
+              "value": 2,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 20.377,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 253,
+      "nl": "quick question: find the resistance of a wire with voltage 12 V and current 3 A?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "free_fall",
+          "bindings": {
+            "mass": {
+              "value": 7.955,
+              "unit": "kg"
+            },
+            "height": {
+              "value": 1.869,
+              "unit": "m"
+            },
+            "initial_height": {
+              "value": 0,
+              "unit": "m"
+            },
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "time": {
+              "value": 7.183,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 35.054,
+      "prompt_eval_count": 6732
+    },
+    {
+      "id": 254,
+      "nl": "quick question: what is the capacitance of a parallel plate capacitor with area 0.01 square metres and separation 1 mm?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'energy' not in KB2",
+        "raw": {
+          "predicate": "energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "kinetic_energy": {
+              "value": 909.1,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 13.851,
+      "prompt_eval_count": 6741
+    },
+    {
+      "id": 255,
+      "nl": "What is the electric flux through a Gaussian surface enclosing 8 microcoulombs.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'electric_flux' not in KB2",
+        "raw": {
+          "predicate": "electric_flux",
+          "unit": "C/m2",
+          "context": "electricity",
+          "bindings": {
+            "electric_charge": {
+              "value": 8,
+              "unit": "C"
+            }
+          }
+        }
+      },
+      "elapsed": 16.504,
+      "prompt_eval_count": 6731
+    },
+    {
+      "id": 256,
+      "nl": "Calculate the magnetic force on a 2 metre wire carrying 5 a in a 0.3 t field.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'magnetic_force' not in KB2",
+        "raw": {
+          "predicate": "magnetic_force",
+          "unit": "N",
+          "context": "n/a",
+          "bindings": {
+            "wire_length": {
+              "value": 2,
+              "unit": "m"
+            },
+            "current": {
+              "value": 5,
+              "unit": "A"
+            },
+            "magnetic_field": {
+              "value": 0.3,
+              "unit": "T"
+            }
+          }
+        }
+      },
+      "elapsed": 25.721,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 257,
+      "nl": "what is the inductance of a solenoid with 200 turns and length 0.2 m",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'inductance' not in KB2",
+        "raw": {
+          "predicate": "inductance",
+          "unit": "H",
+          "context": "n/a",
+          "bindings": {
+            "number_of_turns": {
+              "value": 200,
+              "unit": "turns"
+            },
+            "length": {
+              "value": 0.2,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 21.329,
+      "prompt_eval_count": 6735
+    },
+    {
+      "id": 258,
+      "nl": "give me the impedance of an RL circuit with R = 50 ohms and L = 0.1 H at 60 Hz",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'impedance' not in KB2",
+        "raw": {
+          "predicate": "impedance",
+          "unit": "Ohm",
+          "context": "electricity",
+          "bindings": {
+            "R": {
+              "value": 50,
+              "unit": "Ohm"
+            },
+            "L": {
+              "value": 0.1,
+              "unit": "Henry"
+            }
+          }
+        }
+      },
+      "elapsed": 16.361,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 259,
+      "nl": "i need to know — what is the heat capacity of 2 kg of water heated by 500 J",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'heat_capacity' not in KB2",
+        "raw": {
+          "predicate": "heat_capacity",
+          "unit": "J/kg",
+          "context": "thermodynamics",
+          "bindings": {
+            "mass": {
+              "value": 2,
+              "unit": "kg"
+            },
+            "heat_added": {
+              "value": 500,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 20.13,
+      "prompt_eval_count": 6734
+    },
+    {
+      "id": 260,
+      "nl": "let's say we want the entropy change in a reversible isothermal expansion at 300 K",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'entropy' not in KB2",
+        "raw": {
+          "predicate": "entropy",
+          "unit": "J/kg*K",
+          "context": "thermodynamics",
+          "bindings": {
+            "mass": {
+              "value": 1,
+              "unit": "kg"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            }
+          }
+        }
+      },
+      "elapsed": 20.453,
+      "prompt_eval_count": 6734
+    },
+    {
+      "id": 261,
+      "nl": "for my homework: find the efficiency of a Carnot engine operating between 500 K and 300 K",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'energy' not in KB2",
+        "raw": {
+          "predicate": "energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "Q": {
+              "value": 1000,
+              "unit": "J"
+            },
+            "W": {
+              "value": 500,
+              "unit": "W"
+            },
+            "T": {
+              "value": 300,
+              "unit": "K"
+            },
+            "Tc": {
+              "value": 500,
+              "unit": "K"
+            }
+          }
+        }
+      },
+      "elapsed": 28.252,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 262,
+      "nl": "Compute the internal energy change in an isobaric process at 1 atm with volume change 0.1 m^3.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'internal_energy' not in KB2",
+        "raw": {
+          "predicate": "internal_energy",
+          "unit": "J",
+          "context": "thermodynamics",
+          "bindings": {
+            "pressure": {
+              "value": 1,
+              "unit": "atm"
+            },
+            "volume_change": {
+              "value": 0.1,
+              "unit": "m3"
+            }
+          }
+        }
+      },
+      "elapsed": 18.717,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 263,
+      "nl": "yo find the work done in an adiabatic compression of an ideal gas",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "binding 'pressure' not in KB2 bindings_schema",
+        "raw": {
+          "predicate": "work",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "mass": {
+              "value": 0.01,
+              "unit": "kg"
+            },
+            "volume": {
+              "value": 0.001,
+              "unit": "m3"
+            },
+            "pressure": {
+              "value": 100000,
+              "unit": "Pa"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            },
+            "ideal_gas": {
+              "value": "true",
+              "unit": "dimensionless"
+            }
+          }
+        }
+      },
+      "elapsed": 37.076,
+      "prompt_eval_count": 6727
+    },
+    {
+      "id": 264,
+      "nl": "what is the rms speed of nitrogen molecules at 300 K",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "condition not stated in the query: initial_velocity = 0",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 17.349,
+      "prompt_eval_count": 6728
+    },
+    {
+      "id": 265,
+      "nl": "Find the change in Gibbs free energy at standard temperature.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'Gibbs_free_energy' not in KB2",
+        "raw": {
+          "predicate": "Gibbs_free_energy",
+          "unit": "J",
+          "context": "thermodynamics",
+          "bindings": {
+            "T": {
+              "value": 298.15,
+              "unit": "K"
+            },
+            "G": {
+              "value": 1000.0,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 21.552,
+      "prompt_eval_count": 6723
+    },
+    {
+      "id": 266,
+      "nl": "hey, what is the wavelength of light with frequency 5 times 10 to the 14 Hz?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'frequency' not in KB2",
+        "raw": {
+          "predicate": "frequency",
+          "unit": "Hz",
+          "context": "energy",
+          "bindings": {
+            "frequency": {
+              "value": 500000000000000.0,
+              "unit": "Hz"
+            }
+          }
+        }
+      },
+      "elapsed": 14.346,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 267,
+      "nl": "problem: what is the index of refraction of a medium where light slows from c to 2 times 10 to the 8 m/s. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'index_of_refraction' not in KB2",
+        "raw": {
+          "predicate": "index_of_refraction",
+          "unit": "dimensionless",
+          "context": "n/a",
+          "bindings": {
+            "speed_of_light": {
+              "value": 299792458,
+              "unit": "m/s"
+            },
+            "medium_speed": {
+              "value": 2,
+              "unit": "dimensionless"
+            }
+          }
+        }
+      },
+      "elapsed": 21.287,
+      "prompt_eval_count": 6748
+    },
+    {
+      "id": 268,
+      "nl": "I've got a question — find the focal length of a converging lens with object distance 30 cm and image distance 60 cm",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'focal_length' not in KB2",
+        "raw": {
+          "predicate": "focal_length",
+          "unit": "cm",
+          "context": "optics",
+          "bindings": {
+            "object_distance": {
+              "value": 30,
+              "unit": "cm"
+            },
+            "image_distance": {
+              "value": 60,
+              "unit": "cm"
+            }
+          }
+        }
+      },
+      "elapsed": 16.358,
+      "prompt_eval_count": 6742
+    },
+    {
+      "id": 269,
+      "nl": "I've got a question — what is the diffraction angle for a single slit of width 0.001 m at wavelength 600 nm",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'diffraction_angle' not in KB2",
+        "raw": {
+          "predicate": "diffraction_angle",
+          "unit": "deg",
+          "context": "n/a",
+          "bindings": {
+            "slit_width": {
+              "value": 0.001,
+              "unit": "m"
+            },
+            "wavelength": {
+              "value": 600,
+              "unit": "nm"
+            }
+          }
+        }
+      },
+      "elapsed": 18.66,
+      "prompt_eval_count": 6747
+    },
+    {
+      "id": 270,
+      "nl": "Calculate the polarization angle for light reflecting off glass with n = 1.5.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'polarization_angle' not in KB2",
+        "raw": {
+          "predicate": "polarization_angle",
+          "unit": "deg",
+          "context": "optics",
+          "bindings": {
+            "n": {
+              "value": 1.5,
+              "unit": "dimensionless"
+            }
+          }
+        }
+      },
+      "elapsed": 15.325,
+      "prompt_eval_count": 6731
+    },
+    {
+      "id": 271,
+      "nl": "Compute the radius of curvature of a concave mirror with focal length 20 cm.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'radius_of_curvature' not in KB2",
+        "raw": {
+          "predicate": "radius_of_curvature",
+          "unit": "cm",
+          "context": "optics",
+          "bindings": {
+            "focal_length": {
+              "value": 20,
+              "unit": "cm"
+            }
+          }
+        }
+      },
+      "elapsed": 15.828,
+      "prompt_eval_count": 6732
+    },
+    {
+      "id": 272,
+      "nl": "what is the nuclear binding energy of helium-4",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'nuclear_binding_energy' not in KB2",
+        "raw": {
+          "predicate": "nuclear_binding_energy",
+          "unit": "J",
+          "context": "nuclear_physics",
+          "bindings": {
+            "atomic_number": {
+              "value": 2,
+              "unit": "dimensionless"
+            },
+            "atomic_mass": {
+              "value": 6.014,
+              "unit": "amu"
+            }
+          }
+        }
+      },
+      "elapsed": 21.238,
+      "prompt_eval_count": 6723
+    },
+    {
+      "id": 273,
+      "nl": "in plain numbers, find the half-life of carbon-14 given a decay constant of 1.21 times 10 to the -4 per year",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'half_life' not in KB2",
+        "raw": {
+          "predicate": "half_life",
+          "unit": "year",
+          "context": "nuclear_physics",
+          "bindings": {
+            "decay_constant": {
+              "value": 0.000121,
+              "unit": "year^-1"
+            }
+          }
+        }
+      },
+      "elapsed": 14.734,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 274,
+      "nl": "problem: what is the activity of a 5 microgram sample of radium-226. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'energy' not in KB2",
+        "raw": {
+          "predicate": "energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "kinetic_energy": {
+              "value": 1.111e-10,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 18.179,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 275,
+      "nl": "I've got a question — find the energy released in the fission of one uranium-235 nucleus",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "ollama transport error: HTTP Error 500: Internal Server Error"
+      },
+      "elapsed": 36.024,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 276,
+      "nl": "yo what is the mass-energy equivalent of 1 gram",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'energy' not in KB2",
+        "raw": {
+          "predicate": "energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "mass": {
+              "value": 1,
+              "unit": "g"
+            }
+          }
+        }
+      },
+      "elapsed": 12.944,
+      "prompt_eval_count": 6723
+    },
+    {
+      "id": 277,
+      "nl": "Compute the de broglie wavelength of an electron moving at 10 to the 6 m/s.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'de_broglie_wavelength' not in KB2",
+        "raw": {
+          "predicate": "de_broglie_wavelength",
+          "unit": "m",
+          "context": "n/a",
+          "bindings": {
+            "velocity": {
+              "value": 10,
+              "unit": "m/s"
+            }
+          }
+        }
+      },
+      "elapsed": 18.714,
+      "prompt_eval_count": 6736
+    },
+    {
+      "id": 278,
+      "nl": "find the energy of a photon with wavelength 500 nm",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'energy' not in KB2",
+        "raw": {
+          "predicate": "energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "energy": {
+              "value": 0,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 12.946,
+      "prompt_eval_count": 6727
+    },
+    {
+      "id": 279,
+      "nl": "in plain numbers, what is the ground state energy of a hydrogen atom",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'energy' not in KB2",
+        "raw": {
+          "predicate": "energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "kinetic_energy": {
+              "value": 909.1,
+              "unit": "J"
+            },
+            "gravitational_potential_energy": {
+              "value": 362.1,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 20.181,
+      "prompt_eval_count": 6726
+    },
+    {
+      "id": 280,
+      "nl": "in plain numbers, find the uncertainty in position given an uncertainty in momentum of 10 to the -25 kg m/s",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "condition not stated in the query: initial_velocity = 0",
+        "raw": {
+          "predicate": "displacement",
+          "unit": "m",
+          "context": "kinematics",
+          "bindings": {
+            "initial_velocity": {
+              "value": 0,
+              "unit": "m/s"
+            },
+            "acceleration": {
+              "value": 0,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 0,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 28.608,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 281,
+      "nl": "What is the probability of finding a particle in the second excited state of a 1D box?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "ollama transport error: HTTP Error 500: Internal Server Error"
+      },
+      "elapsed": 107.346,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 282,
+      "nl": "quick question: what is the pH of a 0.01 molar HCl solution?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'pH' not in KB2",
+        "raw": {
+          "predicate": "pH",
+          "unit": "dimensionless",
+          "context": "chemistry",
+          "bindings": {
+            "molarity": {
+              "value": 0.01,
+              "unit": "mol/L"
+            }
+          }
+        }
+      },
+      "elapsed": 16.478,
+      "prompt_eval_count": 6732
+    },
+    {
+      "id": 283,
+      "nl": "could you work out the equilibrium constant for the reaction A + B = C at 298 K with delta G = -10 kJ, please",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'equilibrium_constant' not in KB2",
+        "raw": {
+          "predicate": "equilibrium_constant",
+          "unit": "dimensionless",
+          "context": "chemistry",
+          "bindings": {
+            "delta_G": {
+              "value": -10,
+              "unit": "J"
+            }
+          }
+        }
+      },
+      "elapsed": 12.426,
+      "prompt_eval_count": 6743
+    },
+    {
+      "id": 284,
+      "nl": "problem: what is the molarity of a solution containing 5.85 g of NaCl in 0.5 L of water. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'molarity' not in KB2",
+        "raw": {
+          "predicate": "molarity",
+          "unit": "mol/L",
+          "context": "chemistry",
+          "bindings": {
+            "mass": {
+              "value": 5.85,
+              "unit": "g"
+            },
+            "volume": {
+              "value": 0.5,
+              "unit": "L"
+            }
+          }
+        }
+      },
+      "elapsed": 17.706,
+      "prompt_eval_count": 6745
+    },
+    {
+      "id": 285,
+      "nl": "quick question: what is the rate constant of a first-order reaction with half-life 10 s?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'rate_constant' not in KB2",
+        "raw": {
+          "predicate": "rate_constant",
+          "unit": "s^-1",
+          "context": "chemistry",
+          "bindings": {
+            "half_life": {
+              "value": 10,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 14.841,
+      "prompt_eval_count": 6734
+    },
+    {
+      "id": 286,
+      "nl": "give me the boiling point elevation of water with 0.5 mol/kg NaCl",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'boiling_point_elevation' not in KB2",
+        "raw": {
+          "predicate": "boiling_point_elevation",
+          "unit": "K",
+          "context": "thermodynamics",
+          "bindings": {
+            "mass_fraction_sodium": {
+              "value": 0.5,
+              "unit": "mol/kg"
+            }
+          }
+        }
+      },
+      "elapsed": 18.103,
+      "prompt_eval_count": 6731
+    },
+    {
+      "id": 287,
+      "nl": "yo what is the relativistic momentum of an electron moving at 0.9c",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'relativistic_momentum' not in KB2",
+        "raw": {
+          "predicate": "relativistic_momentum",
+          "unit": "kg*m/s",
+          "context": "relativity",
+          "bindings": {
+            "mass": {
+              "value": 9.10938356e-31,
+              "unit": "kg"
+            },
+            "velocity": {
+              "value": 0.9,
+              "unit": "c"
+            }
+          }
+        }
+      },
+      "elapsed": 22.883,
+      "prompt_eval_count": 6728
+    },
+    {
+      "id": 288,
+      "nl": "Find the time dilation factor for a clock moving at 0.8c?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'time_dilation_factor' not in KB2",
+        "raw": {
+          "predicate": "time_dilation_factor",
+          "unit": "dimensionless",
+          "context": "relativity",
+          "bindings": {
+            "velocity": {
+              "value": 0.8,
+              "unit": "c"
+            }
+          }
+        }
+      },
+      "elapsed": 15.859,
+      "prompt_eval_count": 6728
+    },
+    {
+      "id": 289,
+      "nl": "Compute the rest energy of a proton.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'rest_energy' not in KB2",
+        "raw": {
+          "predicate": "rest_energy",
+          "unit": "J",
+          "context": "physics",
+          "bindings": {
+            "mass": {
+              "value": 1.6021766217662176e-27,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 18.194,
+      "prompt_eval_count": 6721
+    },
+    {
+      "id": 290,
+      "nl": "i need to know — find the relativistic kinetic energy of a particle with rest mass 1 kg moving at 0.6c",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'relativistic_kinetic_energy' not in KB2",
+        "raw": {
+          "predicate": "relativistic_kinetic_energy",
+          "unit": "J",
+          "context": "energy",
+          "bindings": {
+            "mass": {
+              "value": 1,
+              "unit": "kg"
+            },
+            "velocity": {
+              "value": 0.6,
+              "unit": "c"
+            }
+          }
+        }
+      },
+      "elapsed": 17.227,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 291,
+      "nl": "problem: what is the resting metabolic rate of a 70 kg human. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'metabolic_rate' not in KB2",
+        "raw": {
+          "predicate": "metabolic_rate",
+          "unit": "kcal/day",
+          "context": "energy",
+          "bindings": {
+            "weight": {
+              "value": 70,
+              "unit": "kg"
+            }
+          }
+        }
+      },
+      "elapsed": 17.207,
+      "prompt_eval_count": 6733
+    },
+    {
+      "id": 292,
+      "nl": "I've got a question — find the osmotic pressure of a 0.5 M sucrose solution at 298 K",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'osmotic_pressure' not in KB2",
+        "raw": {
+          "predicate": "osmotic_pressure",
+          "unit": "Pa",
+          "context": "osmosis",
+          "bindings": {
+            "solute_concentration": {
+              "value": 0.5,
+              "unit": "M"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            }
+          }
+        }
+      },
+      "elapsed": 18.587,
+      "prompt_eval_count": 6740
+    },
+    {
+      "id": 293,
+      "nl": "quick question: what is the Reynolds number for water flowing at 1 m/s in a 0.1 m diameter pipe?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'Reynolds number' not in KB2",
+        "raw": {
+          "predicate": "Reynolds number",
+          "unit": "dimensionless",
+          "context": "n/a",
+          "bindings": {
+            "velocity": {
+              "value": 1,
+              "unit": "m/s"
+            },
+            "diameter": {
+              "value": 0.1,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 18.356,
+      "prompt_eval_count": 6739
+    },
+    {
+      "id": 294,
+      "nl": "What is the membrane potential of a neuron at rest.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'membrane_potential' not in KB2",
+        "raw": {
+          "predicate": "membrane_potential",
+          "unit": "V",
+          "context": "n/a",
+          "bindings": {
+            "rest": {
+              "value": "at rest"
+            }
+          }
+        }
+      },
+      "elapsed": 14.876,
+      "prompt_eval_count": 6724
+    },
+    {
+      "id": 295,
+      "nl": "quick question: what is the standard deviation of a normal distribution with variance 16?",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'standard_deviation' not in KB2",
+        "raw": {
+          "predicate": "standard_deviation",
+          "unit": "n/a",
+          "context": "n/a",
+          "bindings": {
+            "variance": {
+              "value": 16,
+              "unit": "n/a"
+            }
+          }
+        }
+      },
+      "elapsed": 17.595,
+      "prompt_eval_count": 6730
+    },
+    {
+      "id": 296,
+      "nl": "for my homework: find the half-life of a population growing at rate 0.1 per year",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'half_life' not in KB2",
+        "raw": {
+          "predicate": "half_life",
+          "unit": "year",
+          "context": "population_growth",
+          "bindings": {
+            "growth_rate": {
+              "value": 0.1,
+              "unit": "year"
+            }
+          }
+        }
+      },
+      "elapsed": 18.043,
+      "prompt_eval_count": 6732
+    },
+    {
+      "id": 297,
+      "nl": "i need to know — what is the Schwarzschild radius of a 1 solar mass black hole",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "predicate 'Schwarzschild radius' not in KB2",
+        "raw": {
+          "predicate": "Schwarzschild radius",
+          "unit": "m",
+          "context": "general_relativity",
+          "bindings": {
+            "mass": {
+              "value": 1,
+              "unit": "solar mass"
+            }
+          }
+        }
+      },
+      "elapsed": 15.214,
+      "prompt_eval_count": 6732
+    },
+    {
+      "id": 298,
+      "nl": "for my homework: find the orbital period of a satellite at 400 km altitude using Kepler's third law",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "period",
+          "unit": "s",
+          "context": "simple_harmonic_motion",
+          "bindings": {
+            "length": {
+              "value": 1.869,
+              "unit": "m"
+            }
+          }
+        }
+      },
+      "elapsed": 12.871,
+      "prompt_eval_count": 6738
+    },
+    {
+      "id": 299,
+      "nl": "for my homework: what is the cross-section of a benzene molecule",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "bound value not stated in the query",
+        "raw": {
+          "predicate": "velocity",
+          "unit": "m/s",
+          "context": "newtonian_motion",
+          "bindings": {
+            "mass": {
+              "value": 1.989,
+              "unit": "kg"
+            },
+            "acceleration": {
+              "value": 9.81,
+              "unit": "m/s2"
+            },
+            "time": {
+              "value": 2.0,
+              "unit": "s"
+            }
+          }
+        }
+      },
+      "elapsed": 26.925,
+      "prompt_eval_count": 6728
+    },
+    {
+      "id": 300,
+      "nl": "problem: what is the rotational temperature of nitrogen at 300 K. show your work.",
+      "parsed": {
+        "status": "failure",
+        "type": "F4",
+        "reason": "ollama transport error: timed out"
+      },
+      "elapsed": 180.014,
+      "prompt_eval_count": 6728
+    }
+  ],
+  "finished_at": "2026-11-24T09:41:11",
+  "run": 4
+}

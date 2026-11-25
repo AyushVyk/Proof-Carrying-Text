@@ -1,0 +1,18 @@
+# PCT runtime dependencies.
+# Install with:
+#   python -m venv .venv
+#   .venv/Scripts/activate    (Windows)  OR  source .venv/bin/activate  (POSIX)
+#   pip install -r requirements.txt
+#
+# External (NOT installed by pip):
+#   - Ollama daemon serving `mistral:7b-instruct-q4_K_M`
+#       Install: https://ollama.com  -->  ollama pull mistral:7b-instruct-q4_K_M
+#
+# Engine + parser + renderer use only the standard library; the deps below
+# are for the RAG baseline (sentence-transformers, faiss) and the tractability
+# figure (matplotlib, numpy).
+
+sentence-transformers>=5.0,<6.0
+faiss-cpu>=1.13,<2.0
+matplotlib>=3.10,<4.0
+numpy>=2.0,<3.0

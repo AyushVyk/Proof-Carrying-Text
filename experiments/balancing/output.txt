@@ -1,0 +1,94 @@
+================================================================================================
+REACTION 1  H2 + O2 -> H2O
+  basis supplied by the query : {'H2': 1}   (a normalisation choice, not an answer)
+================================================================================================
+
+  coeff_H2O = 1.0   (1 rules)
+      binding   coeff_H2 = 1 (basis)
+      primitive H_in_H2: atoms_H_in_H2 = 2
+      primitive H_in_H2O: atoms_H_in_H2O = 2
+      rule h2o_from_hydrogen_conservation
+           c_H2 * H_H2 / H_H2O   with [c_H2=1, H_H2=2, H_H2O=2]  ->  1.0
+
+  coeff_O2 = 0.5   (2 rules)
+      binding   coeff_H2 = 1 (basis)
+      primitive H_in_H2: atoms_H_in_H2 = 2
+      primitive H_in_H2O: atoms_H_in_H2O = 2
+      rule h2o_from_hydrogen_conservation
+           c_H2 * H_H2 / H_H2O   with [c_H2=1, H_H2=2, H_H2O=2]  ->  1.0
+      primitive O_in_H2O: atoms_O_in_H2O = 1
+      primitive O_in_O2: atoms_O_in_O2 = 2
+      rule o2_from_oxygen_conservation
+           c_H2O * O_H2O / O_O2   with [c_H2O=1.0, O_H2O=1, O_O2=2]  ->  0.5
+
+  derived ratios     : {'H2': '1', 'H2O': '1', 'O2': '1/2'}
+  smallest integers  : {'H2': 2, 'H2O': 2, 'O2': 1}
+  accepted answer    : {'H2': 2, 'H2O': 2, 'O2': 1}
+  MATCH: True
+  NOTE: the integer scaling above is done HERE, not by a rule -- it needs
+        the whole coefficient set at once (an LCM over all denominators),
+        which no fixed-arity rule can express.
+
+================================================================================================
+REACTION 2  CH4 + O2 -> CO2 + H2O
+  basis supplied by the query : {'CH4': 1}   (a normalisation choice, not an answer)
+================================================================================================
+
+  coeff_CO2 = 1.0   (1 rules)
+      binding   coeff_CH4 = 1 (basis)
+      primitive C_in_CH4: atoms_C_in_CH4 = 1
+      primitive C_in_CO2: atoms_C_in_CO2 = 1
+      rule co2_from_carbon_conservation
+           c_CH4 * C_CH4 / C_CO2   with [c_CH4=1, C_CH4=1, C_CO2=1]  ->  1.0
+
+  coeff_H2O = 2.0   (1 rules)
+      binding   coeff_CH4 = 1 (basis)
+      primitive H_in_CH4: atoms_H_in_CH4 = 4
+      primitive H_in_H2O: atoms_H_in_H2O = 2
+      rule h2o_from_hydrogen_conservation_methane
+           c_CH4 * H_CH4 / H_H2O   with [c_CH4=1, H_CH4=4, H_H2O=2]  ->  2.0
+
+  coeff_O2 = 2.0   (3 rules)
+      binding   coeff_CH4 = 1 (basis)
+      primitive C_in_CH4: atoms_C_in_CH4 = 1
+      primitive C_in_CO2: atoms_C_in_CO2 = 1
+      rule co2_from_carbon_conservation
+           c_CH4 * C_CH4 / C_CO2   with [c_CH4=1, C_CH4=1, C_CO2=1]  ->  1.0
+      primitive H_in_CH4: atoms_H_in_CH4 = 4
+      primitive H_in_H2O: atoms_H_in_H2O = 2
+      rule h2o_from_hydrogen_conservation_methane
+           c_CH4 * H_CH4 / H_H2O   with [c_CH4=1, H_CH4=4, H_H2O=2]  ->  2.0
+      primitive O_in_CO2: atoms_O_in_CO2 = 2
+      primitive O_in_H2O: atoms_O_in_H2O = 1
+      primitive O_in_O2: atoms_O_in_O2 = 2
+      rule o2_from_oxygen_conservation_methane
+           (c_CO2 * O_CO2 + c_H2O * O_H2O) / O_O2   with [c_CO2=1.0, O_CO2=2, c_H2O=2.0, O_H2O=1, O_O2=2]  ->  2.0
+
+  derived ratios     : {'CH4': '1', 'CO2': '1', 'H2O': '2', 'O2': '2'}
+  smallest integers  : {'CH4': 1, 'CO2': 1, 'H2O': 2, 'O2': 2}
+  accepted answer    : {'CH4': 1, 'CO2': 1, 'H2O': 2, 'O2': 2}
+  MATCH: True
+  NOTE: the integer scaling above is done HERE, not by a rule -- it needs
+        the whole coefficient set at once (an LCM over all denominators),
+        which no fixed-arity rule can express.
+
+================================================================================================
+REACTION 3  NO + NO2 -> N2O3   (propagation stalls from every basis)
+  basis supplied by the query : {'NO': 1}   (a normalisation choice, not an answer)
+================================================================================================
+
+  coeff_NO2: F5  cycle: coeff_NO2 in context 'nitrogen_oxide_synthesis' is already on the derivation path
+           cycle=True  <-- the engine detected the coupling
+
+  coeff_N2O3: F5  cycle: coeff_N2O3 in context 'nitrogen_oxide_synthesis' is already on the derivation path
+           cycle=True  <-- the engine detected the coupling
+
+================================================================================================
+REACTION 3, every basis choice tried
+================================================================================================
+  basis coeff_NO=1  ->  coeff_NO2   : F5 cycle     cycle: coeff_NO2 in context 'nitrogen_oxide_synthesis' is 
+  basis coeff_NO=1  ->  coeff_N2O3  : F5 cycle     cycle: coeff_N2O3 in context 'nitrogen_oxide_synthesis' is
+  basis coeff_NO2=1  ->  coeff_NO    : F5           underivable: no rule in the KB produces this predicate
+  basis coeff_NO2=1  ->  coeff_N2O3  : F5           underivable: no rule in the KB produces this predicate
+  basis coeff_N2O3=1  ->  coeff_NO    : F5           underivable: no rule in the KB produces this predicate
+  basis coeff_N2O3=1  ->  coeff_NO2   : F5           underivable: no rule in the KB produces this predicate

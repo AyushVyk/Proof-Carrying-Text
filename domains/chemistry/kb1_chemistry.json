@@ -1,0 +1,841 @@
+{
+  "_provenance": {
+    "atomic_weights": "IUPAC standard atomic weights (CIAAW), as tabulated on the Wikipedia 'List of chemical elements' page, which presents the IUPAC standard atomic weight system. Values are abridged (uncertainties not carried). Fetched 2026-09-26.",
+    "avogadro": "SI defining constant, exact since the 2019 revision of the SI effective 20 May 2019: N_A = 6.02214076e23 mol^-1. Source: BIPM via Wikipedia 'Avogadro constant' -- 'It is an SI defining constant with the exact value 6.02214076x10^23 mol^-1'.",
+    "molar_volume": "Molar volume of an ideal gas, from Wikipedia 'Molar volume'. TWO definitions of STP exist and they give different values; both are recorded here and the KB uses the modern IUPAC one explicitly. Modern IUPAC STP (0 degC, 100 kPa): 0.022710954641485 m3/mol = 22.710954641485 L/mol. Older standard (0 degC, 1 atm = 101.325 kPa): 0.022413969545014 m3/mol = 22.413969545014 L/mol.",
+    "reactions": "Balanced equations copied verbatim from OpenStax Chemistry 2e, Section 4.1 'Writing and Balancing Chemical Equations'. Net-ionic equations from that section are excluded because they carry charges, which this domain does not model. Every reaction's balancing is re-verified arithmetically by make_kb_stoich.py against the species compositions below; the build fails if any reaction does not balance.",
+    "compositions": "Element counts are read off each species' molecular formula as written in the sourced equations. No composition is recalled from memory.",
+    "molar_masses": "NOT taken from any source. Computed by make_kb_stoich.py as the sum over the species composition of (atom count x IUPAC standard atomic weight), so each molar mass is traceable to the atomic weights above."
+  },
+  "_design_note": "Rules are UNIVERSAL laws, species- and reaction-agnostic, each a single arithmetic expression over role-named inputs. Reaction-specific facts are DATA: `reactions` holds verified coefficients, `species` holds compositions and molar masses, and `primitives` holds the molar masses and the two universal constants. Adding a reaction adds data only, never a rule.",
+  "_reaction_access_note": "engine._find_primitive matches on predicate name and ignores context, so a primitive cannot vary per reaction; bindings are the only per-call channel. Universal rule inputs (coeff_reactant, molar_mass_product, ...) are therefore satisfied from BINDINGS, which tools/eval/eval_chemistry.py fills by looking up the query's named reaction and species in the `reactions` and `species` data below. That lookup is the parser's role in the bowtie; the engine only backward-chains over universal rules. `avogadro` and `molar_volume_stp` have fixed predicate names and are read directly from primitives by the rules.",
+  "_limitation_note": "The limiting-reactant rules cover exactly two candidate reactants (roles a and b), because a rule's input list has fixed arity. A three-reactant limiting problem would need another rule pair.",
+  "context_transitions": [],
+  "_context_transitions_note": "Every rule lives in the single 'stoichiometry' context, so no subgoal crosses a context boundary and no transitions are declared.",
+  "predicate_aliases": {},
+  "_predicate_aliases_note": "No synonyms: each role-named quantity has exactly one predicate.",
+  "domain_scope": [
+    "Gases are ideal.",
+    "Substances are pure; molar masses use IUPAC/CIAAW standard atomic weights.",
+    "Reactions proceed as written by the recorded balanced equations; computed amounts are theoretical (the limiting reactant is consumed completely)."
+  ],
+  "primitives": [
+    {
+      "id": "avogadro_constant",
+      "predicate": "avogadro",
+      "context": "constants",
+      "value": 6.02214076e+23,
+      "unit": "1/mol",
+      "source": "SI defining constant, exact since 20 May 2019 (2019 revision of the SI). BIPM, via Wikipedia 'Avogadro constant'."
+    },
+    {
+      "id": "molar_volume_stp",
+      "predicate": "molar_volume_stp",
+      "context": "constants",
+      "value": 22.710954641485,
+      "unit": "L/mol",
+      "source": "Wikipedia 'Molar volume': '0.022710954641485... m3/mol at 0 degC' at 100 kPa (1 bar). Conditions: 0 degC, 100 kPa (modern IUPAC STP). The older 1 atm standard gives 22.413969545014 L/mol at 0 degC; this KB uses the modern IUPAC value and states the conditions in the primitive's source string so a reader cannot confuse the two."
+    },
+    {
+      "id": "molar_mass_AgCl",
+      "predicate": "molar_mass_of_AgCl",
+      "context": "molar_masses",
+      "value": 143.32,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula AgCl of (atom count x IUPAC standard atomic weight): 1x107.87(Ag) + 1x35.45(Cl) = 143.32 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_AgNO3",
+      "predicate": "molar_mass_of_AgNO3",
+      "context": "molar_masses",
+      "value": 169.874,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula AgNO3 of (atom count x IUPAC standard atomic weight): 1x107.87(Ag) + 1x14.007(N) + 3x15.999(O) = 169.874 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_C2H6",
+      "predicate": "molar_mass_of_C2H6",
+      "context": "molar_masses",
+      "value": 30.07,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula C2H6 of (atom count x IUPAC standard atomic weight): 2x12.011(C) + 6x1.008(H) = 30.07 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_CH4",
+      "predicate": "molar_mass_of_CH4",
+      "context": "molar_masses",
+      "value": 16.043,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula CH4 of (atom count x IUPAC standard atomic weight): 1x12.011(C) + 4x1.008(H) = 16.043 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_CO2",
+      "predicate": "molar_mass_of_CO2",
+      "context": "molar_masses",
+      "value": 44.009,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula CO2 of (atom count x IUPAC standard atomic weight): 1x12.011(C) + 2x15.999(O) = 44.009 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_Ca(NO3)2",
+      "predicate": "molar_mass_of_Ca(NO3)2",
+      "context": "molar_masses",
+      "value": 164.086,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula Ca(NO3)2 of (atom count x IUPAC standard atomic weight): 1x40.078(Ca) + 2x14.007(N) + 6x15.999(O) = 164.086 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_CaCO3",
+      "predicate": "molar_mass_of_CaCO3",
+      "context": "molar_masses",
+      "value": 100.086,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula CaCO3 of (atom count x IUPAC standard atomic weight): 1x40.078(Ca) + 1x12.011(C) + 3x15.999(O) = 100.086 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_CaCl2",
+      "predicate": "molar_mass_of_CaCl2",
+      "context": "molar_masses",
+      "value": 110.978,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula CaCl2 of (atom count x IUPAC standard atomic weight): 1x40.078(Ca) + 2x35.45(Cl) = 110.978 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_CaO",
+      "predicate": "molar_mass_of_CaO",
+      "context": "molar_masses",
+      "value": 56.077,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula CaO of (atom count x IUPAC standard atomic weight): 1x40.078(Ca) + 1x15.999(O) = 56.077 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_Cl2",
+      "predicate": "molar_mass_of_Cl2",
+      "context": "molar_masses",
+      "value": 70.9,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula Cl2 of (atom count x IUPAC standard atomic weight): 2x35.45(Cl) = 70.9 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_H2",
+      "predicate": "molar_mass_of_H2",
+      "context": "molar_masses",
+      "value": 2.016,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula H2 of (atom count x IUPAC standard atomic weight): 2x1.008(H) = 2.016 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_H2O",
+      "predicate": "molar_mass_of_H2O",
+      "context": "molar_masses",
+      "value": 18.015,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula H2O of (atom count x IUPAC standard atomic weight): 2x1.008(H) + 1x15.999(O) = 18.015 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_N2",
+      "predicate": "molar_mass_of_N2",
+      "context": "molar_masses",
+      "value": 28.014,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula N2 of (atom count x IUPAC standard atomic weight): 2x14.007(N) = 28.014 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_N2O5",
+      "predicate": "molar_mass_of_N2O5",
+      "context": "molar_masses",
+      "value": 108.009,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula N2O5 of (atom count x IUPAC standard atomic weight): 2x14.007(N) + 5x15.999(O) = 108.009 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_NH3",
+      "predicate": "molar_mass_of_NH3",
+      "context": "molar_masses",
+      "value": 17.031,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula NH3 of (atom count x IUPAC standard atomic weight): 1x14.007(N) + 3x1.008(H) = 17.031 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_NH4NO3",
+      "predicate": "molar_mass_of_NH4NO3",
+      "context": "molar_masses",
+      "value": 80.043,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula NH4NO3 of (atom count x IUPAC standard atomic weight): 2x14.007(N) + 4x1.008(H) + 3x15.999(O) = 80.043 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_Na",
+      "predicate": "molar_mass_of_Na",
+      "context": "molar_masses",
+      "value": 22.99,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula Na of (atom count x IUPAC standard atomic weight): 1x22.99(Na) = 22.99 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_Na2CO3",
+      "predicate": "molar_mass_of_Na2CO3",
+      "context": "molar_masses",
+      "value": 105.988,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula Na2CO3 of (atom count x IUPAC standard atomic weight): 2x22.99(Na) + 1x12.011(C) + 3x15.999(O) = 105.988 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_NaCl",
+      "predicate": "molar_mass_of_NaCl",
+      "context": "molar_masses",
+      "value": 58.44,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula NaCl of (atom count x IUPAC standard atomic weight): 1x22.99(Na) + 1x35.45(Cl) = 58.44 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_NaOH",
+      "predicate": "molar_mass_of_NaOH",
+      "context": "molar_masses",
+      "value": 39.997,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula NaOH of (atom count x IUPAC standard atomic weight): 1x22.99(Na) + 1x15.999(O) + 1x1.008(H) = 39.997 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    },
+    {
+      "id": "molar_mass_O2",
+      "predicate": "molar_mass_of_O2",
+      "context": "molar_masses",
+      "value": 31.998,
+      "unit": "g/mol",
+      "source": "Computed as the sum over the formula O2 of (atom count x IUPAC standard atomic weight): 2x15.999(O) = 31.998 g/mol. Atomic weights: IUPAC/CIAAW standard atomic weights."
+    }
+  ],
+  "species": {
+    "AgCl": {
+      "composition": {
+        "Ag": 1,
+        "Cl": 1
+      },
+      "molar_mass": 143.32,
+      "unit": "g/mol"
+    },
+    "AgNO3": {
+      "composition": {
+        "Ag": 1,
+        "N": 1,
+        "O": 3
+      },
+      "molar_mass": 169.874,
+      "unit": "g/mol"
+    },
+    "C2H6": {
+      "composition": {
+        "C": 2,
+        "H": 6
+      },
+      "molar_mass": 30.07,
+      "unit": "g/mol"
+    },
+    "CH4": {
+      "composition": {
+        "C": 1,
+        "H": 4
+      },
+      "molar_mass": 16.043,
+      "unit": "g/mol"
+    },
+    "CO2": {
+      "composition": {
+        "C": 1,
+        "O": 2
+      },
+      "molar_mass": 44.009,
+      "unit": "g/mol"
+    },
+    "Ca(NO3)2": {
+      "composition": {
+        "Ca": 1,
+        "N": 2,
+        "O": 6
+      },
+      "molar_mass": 164.086,
+      "unit": "g/mol"
+    },
+    "CaCO3": {
+      "composition": {
+        "Ca": 1,
+        "C": 1,
+        "O": 3
+      },
+      "molar_mass": 100.086,
+      "unit": "g/mol"
+    },
+    "CaCl2": {
+      "composition": {
+        "Ca": 1,
+        "Cl": 2
+      },
+      "molar_mass": 110.978,
+      "unit": "g/mol"
+    },
+    "CaO": {
+      "composition": {
+        "Ca": 1,
+        "O": 1
+      },
+      "molar_mass": 56.077,
+      "unit": "g/mol"
+    },
+    "Cl2": {
+      "composition": {
+        "Cl": 2
+      },
+      "molar_mass": 70.9,
+      "unit": "g/mol"
+    },
+    "H2": {
+      "composition": {
+        "H": 2
+      },
+      "molar_mass": 2.016,
+      "unit": "g/mol"
+    },
+    "H2O": {
+      "composition": {
+        "H": 2,
+        "O": 1
+      },
+      "molar_mass": 18.015,
+      "unit": "g/mol"
+    },
+    "N2": {
+      "composition": {
+        "N": 2
+      },
+      "molar_mass": 28.014,
+      "unit": "g/mol"
+    },
+    "N2O5": {
+      "composition": {
+        "N": 2,
+        "O": 5
+      },
+      "molar_mass": 108.009,
+      "unit": "g/mol"
+    },
+    "NH3": {
+      "composition": {
+        "N": 1,
+        "H": 3
+      },
+      "molar_mass": 17.031,
+      "unit": "g/mol"
+    },
+    "NH4NO3": {
+      "composition": {
+        "N": 2,
+        "H": 4,
+        "O": 3
+      },
+      "molar_mass": 80.043,
+      "unit": "g/mol"
+    },
+    "Na": {
+      "composition": {
+        "Na": 1
+      },
+      "molar_mass": 22.99,
+      "unit": "g/mol"
+    },
+    "Na2CO3": {
+      "composition": {
+        "Na": 2,
+        "C": 1,
+        "O": 3
+      },
+      "molar_mass": 105.988,
+      "unit": "g/mol"
+    },
+    "NaCl": {
+      "composition": {
+        "Na": 1,
+        "Cl": 1
+      },
+      "molar_mass": 58.44,
+      "unit": "g/mol"
+    },
+    "NaOH": {
+      "composition": {
+        "Na": 1,
+        "O": 1,
+        "H": 1
+      },
+      "molar_mass": 39.997,
+      "unit": "g/mol"
+    },
+    "O2": {
+      "composition": {
+        "O": 2
+      },
+      "molar_mass": 31.998,
+      "unit": "g/mol"
+    }
+  },
+  "reactions": {
+    "methane_combustion": {
+      "equation": "CH4 + 2 O2 -> CO2 + 2 H2O",
+      "reactants": {
+        "CH4": 1,
+        "O2": 2
+      },
+      "products": {
+        "CO2": 1,
+        "H2O": 2
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1 (combustion of methane)"
+    },
+    "water_decomposition": {
+      "equation": "2 H2O -> 2 H2 + O2",
+      "reactants": {
+        "H2O": 2
+      },
+      "products": {
+        "H2": 2,
+        "O2": 1
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1 (decomposition of water)"
+    },
+    "dinitrogen_pentoxide_formation": {
+      "equation": "2 N2 + 5 O2 -> 2 N2O5",
+      "reactants": {
+        "N2": 2,
+        "O2": 5
+      },
+      "products": {
+        "N2O5": 2
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1, Example 4.1"
+    },
+    "ammonium_nitrate_decomposition": {
+      "equation": "2 NH4NO3 -> 2 N2 + O2 + 4 H2O",
+      "reactants": {
+        "NH4NO3": 2
+      },
+      "products": {
+        "N2": 2,
+        "O2": 1,
+        "H2O": 4
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1, Check Your Learning"
+    },
+    "ethane_combustion": {
+      "equation": "2 C2H6 + 7 O2 -> 6 H2O + 4 CO2",
+      "reactants": {
+        "C2H6": 2,
+        "O2": 7
+      },
+      "products": {
+        "H2O": 6,
+        "CO2": 4
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1 (combustion of ethane)"
+    },
+    "ammonia_synthesis": {
+      "equation": "N2 + 3 H2 -> 2 NH3",
+      "reactants": {
+        "N2": 1,
+        "H2": 3
+      },
+      "products": {
+        "NH3": 2
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1 (formation of ammonia)"
+    },
+    "sodium_water": {
+      "equation": "2 Na + 2 H2O -> 2 NaOH + H2",
+      "reactants": {
+        "Na": 2,
+        "H2O": 2
+      },
+      "products": {
+        "NaOH": 2,
+        "H2": 1
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1 (sodium reacting with water)"
+    },
+    "calcium_carbonate_decomposition": {
+      "equation": "CaCO3 -> CaO + CO2",
+      "reactants": {
+        "CaCO3": 1
+      },
+      "products": {
+        "CaO": 1,
+        "CO2": 1
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1 (thermal decomposition of calcium carbonate)"
+    },
+    "silver_chloride_precipitation": {
+      "equation": "CaCl2 + 2 AgNO3 -> Ca(NO3)2 + 2 AgCl",
+      "reactants": {
+        "CaCl2": 1,
+        "AgNO3": 2
+      },
+      "products": {
+        "Ca(NO3)2": 1,
+        "AgCl": 2
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1 (precipitation, molecular equation)"
+    },
+    "carbon_dioxide_hydroxide": {
+      "equation": "CO2 + 2 NaOH -> Na2CO3 + H2O",
+      "reactants": {
+        "CO2": 1,
+        "NaOH": 2
+      },
+      "products": {
+        "Na2CO3": 1,
+        "H2O": 1
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1, Example 4.2 (molecular equation)"
+    },
+    "brine_electrolysis": {
+      "equation": "2 NaCl + 2 H2O -> 2 NaOH + H2 + Cl2",
+      "reactants": {
+        "NaCl": 2,
+        "H2O": 2
+      },
+      "products": {
+        "NaOH": 2,
+        "H2": 1,
+        "Cl2": 1
+      },
+      "source": "OpenStax Chemistry 2e, Sec 4.1, Check Your Learning (molecular equation)"
+    }
+  },
+  "rules": [
+    {
+      "id": "moles_from_mass",
+      "predicate": "moles_reactant",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "mass_reactant",
+          "predicate": "mass_reactant",
+          "unit": "g"
+        },
+        {
+          "name": "molar_mass_reactant",
+          "predicate": "molar_mass_reactant",
+          "unit": "g/mol"
+        }
+      ],
+      "output": {
+        "predicate": "moles_reactant",
+        "unit": "mol"
+      },
+      "guard": "molar_mass_reactant != 0",
+      "formula": "mass_reactant / molar_mass_reactant",
+      "proof": "n = m / M. The amount of substance is the mass divided by the molar mass. Guard: molar mass must be non-zero. OpenStax Chemistry 2e, Ch 3.1 (Formula Mass and the Mole Concept)."
+    },
+    {
+      "id": "moles_from_concentration_volume",
+      "predicate": "moles_reactant",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "concentration",
+          "predicate": "concentration",
+          "unit": "mol/L"
+        },
+        {
+          "name": "volume_solution",
+          "predicate": "volume_solution",
+          "unit": "L"
+        }
+      ],
+      "output": {
+        "predicate": "moles_reactant",
+        "unit": "mol"
+      },
+      "formula": "concentration * volume_solution",
+      "proof": "n = c x V. Molarity is moles of solute per litre of solution, so moles equals molarity times volume. OpenStax Chemistry 2e, Ch 3.3 (Molarity)."
+    },
+    {
+      "id": "mole_ratio",
+      "predicate": "moles_product",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "moles_reactant",
+          "predicate": "moles_reactant",
+          "unit": "mol"
+        },
+        {
+          "name": "coeff_reactant",
+          "predicate": "coeff_reactant",
+          "unit": "dimensionless"
+        },
+        {
+          "name": "coeff_product",
+          "predicate": "coeff_product",
+          "unit": "dimensionless"
+        },
+        {
+          "name": "other_reactants",
+          "predicate": "other_reactants",
+          "unit": "condition"
+        }
+      ],
+      "output": {
+        "predicate": "moles_product",
+        "unit": "mol"
+      },
+      "guard": "coeff_reactant != 0 and other_reactants == 'excess'",
+      "formula": "moles_reactant * coeff_product / coeff_reactant",
+      "proof": "The stoichiometric coefficients of a balanced equation are the mole ratio in which species are consumed and formed, so n(product) = n(reactant) x (coeff_product / coeff_reactant). Coefficients come from this KB's verified reaction DATA, not from a rule. Guard: the reactant coefficient must be non-zero. Law of definite proportions / conservation of mass: a balanced equation's coefficients give the fixed mole ratios in which species react. OpenStax Chemistry 2e, Ch 4 (Stoichiometry of Chemical Reactions). CONDITION (2026-11-22): the given reactant fixes the product amount only if it is the limiting reactant, i.e. every other reactant is in excess; other_reactants is a categorical input guarded == 'excess', bound only when the query states it ('excess <reactant>', 'reacts completely', 'is completely consumed', 'is used up'), or from reaction data when the reaction has a single reactant (no other reactant: vacuously true)."
+    },
+    {
+      "id": "mass_from_moles",
+      "predicate": "mass_product",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "moles_product",
+          "predicate": "moles_product",
+          "unit": "mol"
+        },
+        {
+          "name": "molar_mass_product",
+          "predicate": "molar_mass_product",
+          "unit": "g/mol"
+        }
+      ],
+      "output": {
+        "predicate": "mass_product",
+        "unit": "g"
+      },
+      "formula": "moles_product * molar_mass_product",
+      "proof": "m = n x M, the inverse of n = m / M. OpenStax Chemistry 2e, Ch 3.1."
+    },
+    {
+      "id": "particles_from_moles",
+      "predicate": "particles_product",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "moles_product",
+          "predicate": "moles_product",
+          "unit": "mol"
+        },
+        {
+          "name": "avogadro",
+          "predicate": "avogadro",
+          "unit": "1/mol"
+        }
+      ],
+      "output": {
+        "predicate": "particles_product",
+        "unit": "particles"
+      },
+      "formula": "moles_product * avogadro",
+      "proof": "N = n x N_A. One mole contains exactly N_A constituent particles, N_A being an SI defining constant since the 2019 revision of the SI. OpenStax Chemistry 2e, Ch 3.1."
+    },
+    {
+      "id": "gas_volume_from_moles_stp",
+      "predicate": "volume_gas_product",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "moles_product",
+          "predicate": "moles_product",
+          "unit": "mol"
+        },
+        {
+          "name": "molar_volume_stp",
+          "predicate": "molar_volume_stp",
+          "unit": "L/mol"
+        },
+        {
+          "name": "gas_conditions",
+          "predicate": "gas_conditions",
+          "unit": "condition"
+        }
+      ],
+      "output": {
+        "predicate": "volume_gas_product",
+        "unit": "L"
+      },
+      "guard": "gas_conditions == 'stp'",
+      "formula": "moles_product * molar_volume_stp",
+      "proof": "V = n x V_m. At a stated temperature and pressure one mole of an ideal gas occupies the molar volume V_m; this KB's primitive is the modern IUPAC STP value (0 degC, 100 kPa). OpenStax Chemistry 2e, Ch 9.3 (Stoichiometry of Gaseous Substances). CONDITION: the molar volume holds only at STP; gas_conditions is a categorical input guarded == 'stp', bound only when the query states STP."
+    },
+    {
+      "id": "moles_a_from_mass",
+      "predicate": "moles_reactant_a",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "mass_reactant_a",
+          "predicate": "mass_reactant_a",
+          "unit": "g"
+        },
+        {
+          "name": "molar_mass_reactant_a",
+          "predicate": "molar_mass_reactant_a",
+          "unit": "g/mol"
+        }
+      ],
+      "output": {
+        "predicate": "moles_reactant_a",
+        "unit": "mol"
+      },
+      "guard": "molar_mass_reactant_a != 0",
+      "formula": "mass_reactant_a / molar_mass_reactant_a",
+      "proof": "n = m / M applied to the first of two reactants in a limiting-reactant problem. OpenStax Chemistry 2e, Ch 3.1."
+    },
+    {
+      "id": "moles_b_from_mass",
+      "predicate": "moles_reactant_b",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "mass_reactant_b",
+          "predicate": "mass_reactant_b",
+          "unit": "g"
+        },
+        {
+          "name": "molar_mass_reactant_b",
+          "predicate": "molar_mass_reactant_b",
+          "unit": "g/mol"
+        }
+      ],
+      "output": {
+        "predicate": "moles_reactant_b",
+        "unit": "mol"
+      },
+      "guard": "molar_mass_reactant_b != 0",
+      "formula": "mass_reactant_b / molar_mass_reactant_b",
+      "proof": "n = m / M applied to the second of two reactants in a limiting-reactant problem. OpenStax Chemistry 2e, Ch 3.1."
+    },
+    {
+      "id": "limiting_product_from_reactant_a",
+      "predicate": "moles_product_limited",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "moles_reactant_a",
+          "predicate": "moles_reactant_a",
+          "unit": "mol"
+        },
+        {
+          "name": "coeff_reactant_a",
+          "predicate": "coeff_reactant_a",
+          "unit": "dimensionless"
+        },
+        {
+          "name": "moles_reactant_b",
+          "predicate": "moles_reactant_b",
+          "unit": "mol"
+        },
+        {
+          "name": "coeff_reactant_b",
+          "predicate": "coeff_reactant_b",
+          "unit": "dimensionless"
+        },
+        {
+          "name": "coeff_product",
+          "predicate": "coeff_product",
+          "unit": "dimensionless"
+        }
+      ],
+      "output": {
+        "predicate": "moles_product_limited",
+        "unit": "mol"
+      },
+      "guard": "coeff_reactant_a != 0 and coeff_reactant_b != 0 and moles_reactant_a / coeff_reactant_a <= moles_reactant_b / coeff_reactant_b",
+      "formula": "moles_reactant_a / coeff_reactant_a * coeff_product",
+      "proof": "Limiting-reactant determination. Dividing each reactant's amount by its coefficient gives how many 'reaction units' each could supply; the smaller quotient limits the reaction. This rule APPLIES when reactant A is limiting, which is exactly what its guard states, and then the product amount follows from A's mole ratio. The applicability condition is in the guard, not the formula, so a non-match is a typed non-match rather than an error. OpenStax Chemistry 2e, Ch 4.4 (Reaction Yields)."
+    },
+    {
+      "id": "limiting_product_from_reactant_b",
+      "predicate": "moles_product_limited",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "moles_reactant_a",
+          "predicate": "moles_reactant_a",
+          "unit": "mol"
+        },
+        {
+          "name": "coeff_reactant_a",
+          "predicate": "coeff_reactant_a",
+          "unit": "dimensionless"
+        },
+        {
+          "name": "moles_reactant_b",
+          "predicate": "moles_reactant_b",
+          "unit": "mol"
+        },
+        {
+          "name": "coeff_reactant_b",
+          "predicate": "coeff_reactant_b",
+          "unit": "dimensionless"
+        },
+        {
+          "name": "coeff_product",
+          "predicate": "coeff_product",
+          "unit": "dimensionless"
+        }
+      ],
+      "output": {
+        "predicate": "moles_product_limited",
+        "unit": "mol"
+      },
+      "guard": "coeff_reactant_a != 0 and coeff_reactant_b != 0 and moles_reactant_b / coeff_reactant_b < moles_reactant_a / coeff_reactant_a",
+      "formula": "moles_reactant_b / coeff_reactant_b * coeff_product",
+      "proof": "The complementary case of limiting_product_from_reactant_a: this rule applies when reactant B supplies the smaller number of reaction units and therefore limits. The two guards are mutually exclusive and jointly exhaustive over non-zero coefficients, so exactly one applies. OpenStax Chemistry 2e, Ch 4.4."
+    },
+    {
+      "id": "theoretical_mass_from_limited_moles",
+      "predicate": "theoretical_mass_product",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "moles_product_limited",
+          "predicate": "moles_product_limited",
+          "unit": "mol"
+        },
+        {
+          "name": "molar_mass_product",
+          "predicate": "molar_mass_product",
+          "unit": "g/mol"
+        }
+      ],
+      "output": {
+        "predicate": "theoretical_mass_product",
+        "unit": "g"
+      },
+      "formula": "moles_product_limited * molar_mass_product",
+      "proof": "Theoretical yield: the mass of product obtainable if the limiting reactant is consumed completely, m = n x M. OpenStax Chemistry 2e, Ch 4.4 (Reaction Yields)."
+    },
+    {
+      "id": "percent_yield_from_masses",
+      "predicate": "percent_yield",
+      "context": "stoichiometry",
+      "inputs": [
+        {
+          "name": "actual_mass_product",
+          "predicate": "actual_mass_product",
+          "unit": "g"
+        },
+        {
+          "name": "theoretical_mass_product",
+          "predicate": "theoretical_mass_product",
+          "unit": "g"
+        }
+      ],
+      "output": {
+        "predicate": "percent_yield",
+        "unit": "percent"
+      },
+      "guard": "theoretical_mass_product != 0",
+      "formula": "actual_mass_product / theoretical_mass_product * 100",
+      "proof": "Percent yield = (actual yield / theoretical yield) x 100. Guard: the theoretical yield must be non-zero. OpenStax Chemistry 2e, Ch 4.4."
+    }
+  ]
+}

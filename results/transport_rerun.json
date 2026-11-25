@@ -1,0 +1,537 @@
+{
+  "run_started": "2026-11-24T16:47:34",
+  "domains": {
+    "physics": {
+      "settings_identical": {
+        "chunks_sha256": true,
+        "rag_system_prompt": true,
+        "model": true,
+        "options": true,
+        "top_k": true,
+        "embed_model": true
+      },
+      "raw_system_prompt": null
+    },
+    "chemistry": {
+      "settings_identical": {
+        "chunks_sha256": true,
+        "rag_system_prompt": true,
+        "model": true,
+        "options": true,
+        "top_k": true,
+        "embed_model": true
+      },
+      "raw_system_prompt": null
+    },
+    "biology": {
+      "settings_identical": {
+        "chunks_sha256": true,
+        "rag_system_prompt": true,
+        "model": true,
+        "options": true,
+        "top_k": true,
+        "embed_model": true
+      },
+      "raw_system_prompt": null
+    }
+  },
+  "rows": [
+    {
+      "domain": "physics",
+      "system": "rag",
+      "id": 5,
+      "nl": "problem: what is the final velocity of an object with initial velocity 10.6 m/s after accelerating at 0.8 m/s^2 for 2.4 seconds. show your work.",
+      "old": "(transport error: timed out)",
+      "new": "\nTo find the final velocity of the object, we can use the kinematic equation:\n\nv = v0 + at\n\nwhere v is the final velocity, v0 is the initial velocity, a is the acceleration, and t is the time.\n\nIn this case, we are given:\n\nv0 = 10.6 m/s\na = 0.8 m/s^2\nt = 2.4 s\n\nSo we can plug these values into the equation:\n\nv = 10.6 m/s + (0.8 m/s^2) \\* (2.4 s)\nv = 25.92 m/s\n\nTherefore, the final velocity of the object is 25.92 m/s.",
+      "same_retrieval": true,
+      "elapsed": 180.101,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "\nTo find the final velocity of the object, we can use the kinematic equation:\n\nv = v0 + at\n\nwhere v is the final velocity, v0 is the initial velocity, a is the acceleration, and t is the time.\n\nIn this case, we are given:\n\nv0 = 10.6 m/s\na = 0.8 m/s^2\nt = 2.4 s\n\nSo we can plug these values into the equation:\n\nv = 10.6 m/s + (0.8 m/s^2) \\* (2.4 s)\nv = 25.92 m/s\n\nTherefore, the final velocity of the object is 25.92 m/s.",
+        "elapsed": 30.841,
+        "exceeded_15_min": false
+      },
+      "no_response": false
+    },
+    {
+      "domain": "physics",
+      "system": "rag",
+      "id": 45,
+      "nl": "I've got a question — what is the total mechanical energy if the kinetic energy is 97.5 J and the potential energy is 457.2 J",
+      "old": "(transport error: timed out)",
+      "new": "\nThe total mechanical energy can be calculated by adding the kinetic energy and potential energy.\n\nKE = 0.5 * m * v**2\nPE = mgh\n\nKE = 97.5 J\nPE = mgh\n\nKE + PE = 97.5 J + mgh\n\nKE + PE = 457.2 J\n\nmgh = 359.7 J\n\nm = 359.7 J / g\n\nm = 11.8 kg\n\nKE + PE = 457.2 J\n\nKE + PE = 554.7 J\n\nKE + PE = 1032.2 J\n\nKE + PE = 1489.9 J\n\nKE + PE = 2047.1 J\n\nKE + PE = 2504.9 J\n\nKE + PE = 2962.8 J\n\nKE + PE = 3421.7 J\n\nKE + PE = 3881.7 J\n\nKE + PE = 4342.7 J\n\nKE + PE = 4803.7 J\n\nKE + PE = 5264.7 J\n\nKE + PE = 5725.7 J\n\nKE + PE = 6186.7 J\n\nKE + PE = 6647.7 J\n\nKE + PE = 7108.7 J\n\nKE + PE = 7570.7 J\n\nKE + PE = 8032.7 J\n\nKE + PE = 8494.7 J\n\nKE + PE = 8956.7 J\n\nKE + PE = 9418.7 J\n\nKE + PE = 9880.7 J\n\nKE + PE = 10342.7 J\n\nKE + PE = 10804.7 J\n\nKE + PE = 11266.7 J\n\nKE + PE = 11728.7 J\n\nKE + PE = 12190.7 J\n\nKE + PE = 12652.7 J\n\nKE + PE = 13114.7 J\n\nKE + PE = 13576.7 J\n\nKE + PE = 14038.7 J\n\nKE + PE = 14499.7 J\n\nKE + PE = 15060.7 J\n\nKE + PE = 15621.7 J\n\nKE + PE = 16182.7 J\n\nKE + PE = 16743.7 J\n\nKE + PE = 17304.7 J\n\nKE + PE = 17865.7 J\n\nKE + PE = 18426.7 J\n\nKE + PE = 19087.7 J\n\nKE + PE = 19748.7 J\n\nKE + PE = 20409.7 J\n\nKE + PE = 21070.7 J\n\nKE + PE = 21731.7 J\n\nKE + PE = 22392.7 J\n\nKE + PE = 22853.7 J\n\nKE + PE = 23314.7 J\n\nKE + PE = 23775.7 J\n\nKE + PE = 24236.7 J\n\nKE + PE = 24697.7 J\n\nKE + PE = 25158.7 J\n\nKE + PE = 25619.7 J\n\nKE + PE = 26079.7 J\n\nKE + PE = 26539.7 J\n\nKE + PE = 27000 J\n\nKE + PE = 27459.7 J\n\nKE + PE = 27918.7 J\n\nKE + PE = 28377.7 J\n\nKE + PE = 28836.7 J\n\nKE + PE = 29295.7 J\n\nKE + PE = 29754.7 J\n\nKE + PE = 30213.7 J\n\nKE + PE = 30672.7 J\n\nKE + PE = 31131.7 J\n\nKE + PE = 31590.7 J\n\nKE + PE = 32049.7 J\n\nKE + PE = 32508.7 J\n\nKE + PE = 32967.7 J\n\nKE + PE = 33426.7 J\n\nKE + PE = 33885.7 J\n\nKE + PE = 34344.7 J\n\nKE + PE = 34803.7 J\n\nKE + PE = 35262.7 J\n\nKE + PE = 35721.7 J\n\nKE + PE = 36180.7 J\n\nKE + PE = 36639.7 J\n\nKE + PE = 37098.7 J\n\nKE + PE = 37557.7 J\n\nKE + PE = 38016.7 J\n\nKE + PE = 38475.7 J\n\nKE + PE = 38934.7 J\n\nKE + PE = 39393.7 J\n\nKE + PE = 39852.7 J\n\nKE + PE = 40311.7 J\n\nKE + PE = 40769.7 J\n\nKE + PE = 41227.7 J\n\nKE + PE = 41685.7 J\n\nKE + PE = 42143.7 J\n\nKE + PE = 42601.7 J\n\nKE + PE = 43059.7 J\n\nKE + PE = 43517.7 J\n\nKE + PE = 44",
+      "same_retrieval": true,
+      "elapsed": 180.057,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "\nThe total mechanical energy can be calculated by adding the kinetic energy and potential energy.\n\nKE = 0.5 * m * v**2\nPE = mgh\n\nKE = 97.5 J\nPE = mgh\n\nKE + PE = 97.5 J + mgh\n\nKE + PE = 457.2 J\n\nmgh = 359.7 J\n\nm = 359.7 J / g\n\nm = 11.8 kg\n\nKE + PE = 457.2 J\n\nKE + PE = 554.7 J\n\nKE + PE = 1032.2 J\n\nKE + PE = 1489.9 J\n\nKE + PE = 2047.1 J\n\nKE + PE = 2504.9 J\n\nKE + PE = 2962.8 J\n\nKE + PE = 3421.7 J\n\nKE + PE = 3881.7 J\n\nKE + PE = 4342.7 J\n\nKE + PE = 4803.7 J\n\nKE + PE = 5264.7 J\n\nKE + PE = 5725.7 J\n\nKE + PE = 6186.7 J\n\nKE + PE = 6647.7 J\n\nKE + PE = 7108.7 J\n\nKE + PE = 7570.7 J\n\nKE + PE = 8032.7 J\n\nKE + PE = 8494.7 J\n\nKE + PE = 8956.7 J\n\nKE + PE = 9418.7 J\n\nKE + PE = 9880.7 J\n\nKE + PE = 10342.7 J\n\nKE + PE = 10804.7 J\n\nKE + PE = 11266.7 J\n\nKE + PE = 11728.7 J\n\nKE + PE = 12190.7 J\n\nKE + PE = 12652.7 J\n\nKE + PE = 13114.7 J\n\nKE + PE = 13576.7 J\n\nKE + PE = 14038.7 J\n\nKE + PE = 14499.7 J\n\nKE + PE = 15060.7 J\n\nKE + PE = 15621.7 J\n\nKE + PE = 16182.7 J\n\nKE + PE = 16743.7 J\n\nKE + PE = 17304.7 J\n\nKE + PE = 17865.7 J\n\nKE + PE = 18426.7 J\n\nKE + PE = 19087.7 J\n\nKE + PE = 19748.7 J\n\nKE + PE = 20409.7 J\n\nKE + PE = 21070.7 J\n\nKE + PE = 21731.7 J\n\nKE + PE = 22392.7 J\n\nKE + PE = 22853.7 J\n\nKE + PE = 23314.7 J\n\nKE + PE = 23775.7 J\n\nKE + PE = 24236.7 J\n\nKE + PE = 24697.7 J\n\nKE + PE = 25158.7 J\n\nKE + PE = 25619.7 J\n\nKE + PE = 26079.7 J\n\nKE + PE = 26539.7 J\n\nKE + PE = 27000 J\n\nKE + PE = 27459.7 J\n\nKE + PE = 27918.7 J\n\nKE + PE = 28377.7 J\n\nKE + PE = 28836.7 J\n\nKE + PE = 29295.7 J\n\nKE + PE = 29754.7 J\n\nKE + PE = 30213.7 J\n\nKE + PE = 30672.7 J\n\nKE + PE = 31131.7 J\n\nKE + PE = 31590.7 J\n\nKE + PE = 32049.7 J\n\nKE + PE = 32508.7 J\n\nKE + PE = 32967.7 J\n\nKE + PE = 33426.7 J\n\nKE + PE = 33885.7 J\n\nKE + PE = 34344.7 J\n\nKE + PE = 34803.7 J\n\nKE + PE = 35262.7 J\n\nKE + PE = 35721.7 J\n\nKE + PE = 36180.7 J\n\nKE + PE = 36639.7 J\n\nKE + PE = 37098.7 J\n\nKE + PE = 37557.7 J\n\nKE + PE = 38016.7 J\n\nKE + PE = 38475.7 J\n\nKE + PE = 38934.7 J\n\nKE + PE = 39393.7 J\n\nKE + PE = 39852.7 J\n\nKE + PE = 40311.7 J\n\nKE + PE = 40769.7 J\n\nKE + PE = 41227.7 J\n\nKE + PE = 41685.7 J\n\nKE + PE = 42143.7 J\n\nKE + PE = 42601.7 J\n\nKE + PE = 43059.7 J\n\nKE + PE = 43517.7 J\n\nKE + PE = 44",
+        "elapsed": 205.953,
+        "exceeded_15_min": false
+      },
+      "no_response": false
+    },
+    {
+      "domain": "physics",
+      "system": "baseline",
+      "id": 98,
+      "nl": "problem: find the orbital period given radius 5.2 m and speed 8.2 m/s. show your work.",
+      "old": "(transport error: timed out)",
+      "new": "To find the orbital period of a planet, we can use Kepler's Third Law of Planetary Motion, which states that the square of the orbital period (T) is proportional to the cube of the semi-major axis (a). In other words, T^2 ∝ a^3.\n\nThe semi-major axis (a) is related to the radius (r) and speed (v) of the planet's orbit by the equation:\n\na = (r^2 + v^2)^(1/2)\n\nSubstituting the given values for r and v, we get:\n\na = (5.2 m)^2 + (8.2 m/s)^2\na = 27.7 m^2 + 68.8 m^2\na = 96.5 m^2\n\nNow we can use Kepler's Third Law to find the orbital period:\n\nT^2 ∝ a^3\nT^2 ∝ (96.5 m^2)^(1/3)\nT^2 ∝ 3.05 m\n\nTaking the square root of both sides, we get:\n\nT ∝ 1.77 m\n\nTherefore, the orbital period of the planet is approximately 1.77 m.",
+      "same_retrieval": null,
+      "elapsed": 35.792,
+      "still_transport_error": false
+    },
+    {
+      "domain": "physics",
+      "system": "rag",
+      "id": 145,
+      "nl": "problem: find the work done when a 145.4 N force acts over 6.4 m at 45 degrees to the displacement. show your work.",
+      "old": "(transport error: timed out)",
+      "new": "\nTo find the work done when a 145.4 N force acts over 6.4 m at 45 degrees to the displacement, we can use the formula:\n\nW = F \\* d \\* cos(theta)\n\nwhere:\n\n* W is the work done (J)\n* F is the force (N)\n* d is the displacement (m)\n* theta is the angle between the force and displacement vectors (deg)\n\nIn this case, the force (F) is 145.4 N, the displacement (d) is 6.4 m, and the angle (theta) is 45 degrees. Plugging these values into the formula, we get:\n\nW = 145.4 N \\* 6.4 m \\* cos(45 degrees)\n\nUsing the trigonometric identity cos(45 degrees) = sqrt(2)/2, we can simplify the expression:\n\nW = 145.4 N \\* 6.4 m \\* sqrt(2)/2\n\nW = 145.4 N \\* 3.2 m \\* sqrt(2)\n\nW = 225.8 N \\* m \\* sqrt(2)\n\nTherefore, the work done when a 145.4 N force acts over 6.4 m at 45 degrees to the displacement is 225.8 N \\* m \\* sqrt(2) J.",
+      "same_retrieval": true,
+      "elapsed": 45.132,
+      "still_transport_error": false
+    },
+    {
+      "domain": "physics",
+      "system": "rag",
+      "id": 212,
+      "nl": "quick question: what is the kinetic energy of a 15.1 kg object after falling for 2.3 seconds?",
+      "old": "(transport error: timed out)",
+      "new": "\nTo calculate the kinetic energy of a 15.1 kg object after falling for 2.3 seconds, we need to use the conservation of mechanical energy formula:\n\nv = sqrt(v0^2 + 2g(h0-h))\n\nwhere v is the final velocity, v0 is the initial velocity, h0 is the initial height, h is the height, g is the gravitational acceleration, and W\\_nc is the nonconservative work.\n\nWe are given that the object falls from rest, so v0 = 0 m/s. We also know that the object falls for 2.3 seconds, so we can calculate the height h using the formula:\n\nh = h0 - gt\n\nwhere t is the time. We are not given the initial height h0, so we cannot calculate the height h. Therefore, we cannot determine the kinetic energy of the object after falling for 2.3 seconds.\n\nI cannot answer this.",
+      "same_retrieval": true,
+      "elapsed": 180.04,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "\nTo calculate the kinetic energy of a 15.1 kg object after falling for 2.3 seconds, we need to use the conservation of mechanical energy formula:\n\nv = sqrt(v0^2 + 2g(h0-h))\n\nwhere v is the final velocity, v0 is the initial velocity, h0 is the initial height, h is the height, g is the gravitational acceleration, and W\\_nc is the nonconservative work.\n\nWe are given that the object falls from rest, so v0 = 0 m/s. We also know that the object falls for 2.3 seconds, so we can calculate the height h using the formula:\n\nh = h0 - gt\n\nwhere t is the time. We are not given the initial height h0, so we cannot calculate the height h. Therefore, we cannot determine the kinetic energy of the object after falling for 2.3 seconds.\n\nI cannot answer this.",
+        "elapsed": 30.411,
+        "exceeded_15_min": false
+      },
+      "no_response": false
+    },
+    {
+      "domain": "physics",
+      "system": "rag",
+      "id": 228,
+      "nl": "An object of mass 3.5 kg starts from rest under a net force of 28.2 N. how far has it travelled after 3.0 seconds?",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": true,
+      "elapsed": 180.051,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.044,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "physics",
+      "system": "baseline",
+      "id": 251,
+      "nl": "could you tell me the magnetic flux through a coil of area 0.5 square metres in a 2 T field, please",
+      "old": "(transport error: timed out)",
+      "new": "\nThe magnetic flux through a coil of area 0.5 square meters in a 2 T field can be calculated using the formula:\n\nB \\* A = F\n\nwhere B is the magnetic field strength, A is the area of the coil, and F is the magnetic flux.\n\nIn this case, B = 2 T and A = 0.5 square meters. Plugging these values into the formula, we get:\n\nF = B \\* A = 2 T \\* 0.5 m^2 = 1 T m^2\n\nTherefore, the magnetic flux through the coil is 1 T m^2.",
+      "same_retrieval": null,
+      "elapsed": 16.479,
+      "still_transport_error": false
+    },
+    {
+      "domain": "physics",
+      "system": "baseline",
+      "id": 299,
+      "nl": "for my homework: what is the cross-section of a benzene molecule",
+      "old": "(transport error: timed out)",
+      "new": "\nThe cross-section of a benzene molecule refers to the two-dimensional representation of the molecule's shape, viewed from above or below the plane of the ring. In this case, the cross-section would show the six-membered ring of carbon atoms and the six pairs of hydrogen atoms bonded to them.\n\nThe cross-section of a benzene molecule is a regular hexagon, with each carbon atom at the corner of the hexagon and each hydrogen atom bonded to the corresponding carbon atom. The bond angles are all 109.5 degrees, and the bond lengths are approximately 1.39 Å for the carbon-carbon bonds and 1.05 Å for the carbon-hydrogen bonds.\n\nIt's important to note that the cross-section of a benzene molecule is not a perfect hexagon due to the presence of lone pairs of electrons on the carbon atoms, which cause the molecule to have a slightly distorted shape.",
+      "same_retrieval": null,
+      "elapsed": 26.733,
+      "still_transport_error": false
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 16,
+      "nl": "What mass of N2O5 forms from 56.0 g of N2 in the reaction 2 N2 + 5 O2 -> 2 N2O5?",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": true,
+      "elapsed": 180.021,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 905.928,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 118,
+      "nl": "How many litres of chlorine is 5.83 mol?",
+      "old": "(transport error: HTTP Error 500: Internal Server Error)",
+      "new": "\nTo calculate the volume of chlorine gas at standard temperature and pressure (STP), we can use the ideal gas law:\n\nPV = nRT\n\nwhere P is the pressure in pascals, V is the volume in cubic meters, n is the number of moles, R is the gas constant (8.314 J/mol K), and T is the temperature in Kelvin.\n\nWe are given the number of moles (n = 5.83 mol) and the molar mass of chlorine gas (molar\\_mass\\_Cl2 = 70.9 g/mol). To convert the molar mass to grams per mole, we can use the formula:\n\nmolar\\_mass = sum(atom\\_count x atomic\\_weight)\n\nwhere atom\\_count is the number of atoms of each element in the formula, and atomic\\_weight is the standard atomic weight of that element.\n\nFor chlorine gas (Cl2), we have:\n\nmolar\\_mass = 2 x 35.45 g/mol = 70.9 g/mol\n\nTo convert grams per mole to kilograms per mole, we divide by 1000:\n\nmolar\\_mass = 70.9 g/mol / 1000 = 0.0709 kg/mol\n\nNow we can use the ideal gas law to calculate the volume:\n\nPV = nRT\n\nWe need to convert the pressure from pascals to atmospheres (1 atm = 101.325 kPa). We can use the conversion factor:\n\n1 atm = 101.325 kPa\n\nSo, the pressure in atmospheres is:\n\nP = 101.325 kPa / 101.325 kPa/atm = 1 atm\n\nWe can use the molar volume constant (molar\\_volume\\_stp = 22.710954641485 L/mol) to calculate the volume:\n\nV = nRT / molar\\_volume\\_stp\n\nV = (5.83 mol) x (8.314 J/mol K) x (298.15 K) / (22.710954641485 L/mol)\n\nV = 1.11 L\n\nTherefore, 5.83 moles of chlorine gas occupy a volume of 1.11 liters at standard temperature and pressure.",
+      "same_retrieval": true,
+      "elapsed": 180.059,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "\nTo calculate the volume of chlorine gas at standard temperature and pressure (STP), we can use the ideal gas law:\n\nPV = nRT\n\nwhere P is the pressure in pascals, V is the volume in cubic meters, n is the number of moles, R is the gas constant (8.314 J/mol K), and T is the temperature in Kelvin.\n\nWe are given the number of moles (n = 5.83 mol) and the molar mass of chlorine gas (molar\\_mass\\_Cl2 = 70.9 g/mol). To convert the molar mass to grams per mole, we can use the formula:\n\nmolar\\_mass = sum(atom\\_count x atomic\\_weight)\n\nwhere atom\\_count is the number of atoms of each element in the formula, and atomic\\_weight is the standard atomic weight of that element.\n\nFor chlorine gas (Cl2), we have:\n\nmolar\\_mass = 2 x 35.45 g/mol = 70.9 g/mol\n\nTo convert grams per mole to kilograms per mole, we divide by 1000:\n\nmolar\\_mass = 70.9 g/mol / 1000 = 0.0709 kg/mol\n\nNow we can use the ideal gas law to calculate the volume:\n\nPV = nRT\n\nWe need to convert the pressure from pascals to atmospheres (1 atm = 101.325 kPa). We can use the conversion factor:\n\n1 atm = 101.325 kPa\n\nSo, the pressure in atmospheres is:\n\nP = 101.325 kPa / 101.325 kPa/atm = 1 atm\n\nWe can use the molar volume constant (molar\\_volume\\_stp = 22.710954641485 L/mol) to calculate the volume:\n\nV = nRT / molar\\_volume\\_stp\n\nV = (5.83 mol) x (8.314 J/mol K) x (298.15 K) / (22.710954641485 L/mol)\n\nV = 1.11 L\n\nTherefore, 5.83 moles of chlorine gas occupy a volume of 1.11 liters at standard temperature and pressure.",
+        "elapsed": 79.078,
+        "exceeded_15_min": false
+      },
+      "no_response": false
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 121,
+      "nl": "Calculate the volume of 0.0618 moles of NH3.",
+      "old": "(transport error: timed out)",
+      "new": "\nTo calculate the volume of 0.0618 moles of NH3, we need to use the moles_from_concentration_volume formula:\n\nmoles_reactant = concentration * volume_solution\n\nWe are given the molar mass of NH3 (17.031 g/mol) and the number of moles (0.0618). We need to solve for the volume_solution.\n\nFirst, we can use the molar_mass_NH3 value to convert the moles to grams:\n\n0.0618 moles \\* 17.031 g/mol = 1.054 g\n\nNow, we can use the molar_mass_NH4NO3 value to convert the grams to moles:\n\n1.054 g / (14.007 g/mol + 4 \\* 1.008 g/mol + 3 \\* 15.999 g/mol) = 0.0618 moles\n\nTherefore, the volume_solution is:\n\n0.0618 moles / (14.007 g/mol + 4 \\* 1.008 g/mol + 3 \\* 15.999 g/mol) = 0.0001 L\n\nSo, the volume of 0.0618 moles of NH3 is 0.0001 L.",
+      "same_retrieval": true,
+      "elapsed": 46.059,
+      "still_transport_error": false
+    },
+    {
+      "domain": "chemistry",
+      "system": "baseline",
+      "id": 141,
+      "nl": "0.347 mol of ammonium nitrate reacts. How many moles of water (H2O) form?",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": null,
+      "elapsed": 180.017,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.013,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "baseline",
+      "id": 145,
+      "nl": "Calculate the moles of H2O formed from 0.268 mol of ethane (2 C2H6 + 7 O2 -> 6 H2O + 4 CO2). All of the ethane is used up.",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": null,
+      "elapsed": 180.016,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.018,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 149,
+      "nl": "How many moles of NaOH are produced when 0.105 mol of NaCl reacts (2 NaCl + 2 H2O -> 2 NaOH + H2 + Cl2)? Assume the H2O is present in excess.",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": true,
+      "elapsed": 180.043,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.064,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "baseline",
+      "id": 153,
+      "nl": "How many moles of chlorine (Cl2) are produced when 0.203 mol of sodium chloride reacts according to 2 NaCl + 2 H2O -> 2 NaOH + H2 + Cl2? The sodium chloride reacts completely.",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": null,
+      "elapsed": 180.005,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.027,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "baseline",
+      "id": 175,
+      "nl": "28.0 g of water reacts in the reaction 2 NaCl + 2 H2O -> 2 NaOH + H2 + Cl2. How many moles of Cl2 are produced?",
+      "old": "(transport error: timed out)",
+      "new": "To find the number of moles of Cl2 produced, we need to use the balanced chemical equation for the given reaction:\n2 NaCl + 2 H2O -> 2 NaOH + H2 + Cl2\nWe know that 28.0 g of water reacts in the reaction, so we can set up a proportion to find the number of moles of Cl2:\n(28.0 g water) / (2 moles H2O) = (x moles Cl2) / (1 mole Cl2)\nSolving for x, we get:\nx = (28.0 g water) / (2 moles H2O)\nx = 14.0 g / 2\nx = 7.0 g / 2\nx = 3.5 g / 2\nx = 1.75 g / 2\nx = 0.875 g / 2\nx = 0.4375 g / 2\nx = 0.21875 g / 2\nx = 0.109375 g / 2\nx = 0.0546875 g / 2\nx = 0.02734375 g / 2\nx = 0.013671875 g / 2\nx = 0.0068359375 g / 2\nx = 0.00341796875 g / 2\nx = 0.001708984375 g / 2\nx = 0.0008544921875 g / 2\nx = 0.00042724609375 g / 2\nx = 0.000213623046875 g / 2\nx = 0.0001068115234375 g / 2\nx = 0.00005340576125 g / 2\nx = 0.00002670288125 g / 2\nx = 0.000013351440625 g / 2\nx = 0.000006675721875 g / 2\nx = 0.0000033378609375 g / 2\nx = 0.00000166892578125 g / 2\nx = 0.000000834462890625 g / 2\nx = 0.0000004172314453125 g / 2\nx = 0.0000002086107319375 g / 2\nx = 0.0000001043053125 g / 2\nx = 0.00000005215265625 g / 2\nx = 0.000000026078125 g / 2\nx = 0.0000000130390625 g / 2\nx = 0.000000006519765625 g / 2\nx = 0.00000000325988125 g / 2\nx = 0.00000000162994375 g / 2\nx = 0.000000000814971875 g / 2\nx = 0.000000000407484375 g / 2\nx = 0.0000000002037421875 g / 2\nx = 0.0000000001018709375 g / 2\nx = 0.00000000005093546875 g / 2\nx = 0.000000000025467734375 g / 2\nx = 0.0000000000127338625 g / 2\nx = 0.0000000000063669765625 g / 2\nx = 0.0000000000031834765625 g / 2\nx = 0.00000000000159171875 g / 2\nx = 0.00000000000079589375 g / 2\nx = 0.000000000000397953125 g / 2\nx = 0.00000000000019890625 g / 2\nx = 0.000000000000099453125 g / 2\nx = 0.00000000000004970625 g / 2\nx = 0.00000000000002484375 g / 2\nx = 0.000000000000012421875 g / 2\nx = 0.0000000000000062109375 g / 2\nx = 0.0000000000000031046875 g / 2\nx = 0.0000000000000015529375 g / 2\nx = 0.00000000000000077646875 g / 2\nx = 0.000000000000000388234375 g / 2\nx = 0.0000000000000001941171875 g / 2\nx = 0.000000000000000097065625 g / 2\nx = 0.00000000000000004853125 g / 2\nx = 0.0000000000000000242890625 g / 2\nx = 0.0000000000000000121453125 g / 2\nx = 0.0000000000000000060734375 g / 2\nx = 0.00000000000000000303671875 g / 2\nx = 0.000000000000000001518109375 g / 2\nx = 0.000000000000000000759765625 g / 2\nx = 0.00000000000000000037984375 g / 2\nx = 0.00000000000000000018984375 g / 2\nx = 0.000000000000000000094999999999999 g / 2\nTherefore, 0.00000000000000000009499999999999 g or 0.000000000000000000094999999999999 moles of Cl2 are produced.",
+      "same_retrieval": null,
+      "elapsed": 180.016,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "To find the number of moles of Cl2 produced, we need to use the balanced chemical equation for the given reaction:\n2 NaCl + 2 H2O -> 2 NaOH + H2 + Cl2\nWe know that 28.0 g of water reacts in the reaction, so we can set up a proportion to find the number of moles of Cl2:\n(28.0 g water) / (2 moles H2O) = (x moles Cl2) / (1 mole Cl2)\nSolving for x, we get:\nx = (28.0 g water) / (2 moles H2O)\nx = 14.0 g / 2\nx = 7.0 g / 2\nx = 3.5 g / 2\nx = 1.75 g / 2\nx = 0.875 g / 2\nx = 0.4375 g / 2\nx = 0.21875 g / 2\nx = 0.109375 g / 2\nx = 0.0546875 g / 2\nx = 0.02734375 g / 2\nx = 0.013671875 g / 2\nx = 0.0068359375 g / 2\nx = 0.00341796875 g / 2\nx = 0.001708984375 g / 2\nx = 0.0008544921875 g / 2\nx = 0.00042724609375 g / 2\nx = 0.000213623046875 g / 2\nx = 0.0001068115234375 g / 2\nx = 0.00005340576125 g / 2\nx = 0.00002670288125 g / 2\nx = 0.000013351440625 g / 2\nx = 0.000006675721875 g / 2\nx = 0.0000033378609375 g / 2\nx = 0.00000166892578125 g / 2\nx = 0.000000834462890625 g / 2\nx = 0.0000004172314453125 g / 2\nx = 0.0000002086107319375 g / 2\nx = 0.0000001043053125 g / 2\nx = 0.00000005215265625 g / 2\nx = 0.000000026078125 g / 2\nx = 0.0000000130390625 g / 2\nx = 0.000000006519765625 g / 2\nx = 0.00000000325988125 g / 2\nx = 0.00000000162994375 g / 2\nx = 0.000000000814971875 g / 2\nx = 0.000000000407484375 g / 2\nx = 0.0000000002037421875 g / 2\nx = 0.0000000001018709375 g / 2\nx = 0.00000000005093546875 g / 2\nx = 0.000000000025467734375 g / 2\nx = 0.0000000000127338625 g / 2\nx = 0.0000000000063669765625 g / 2\nx = 0.0000000000031834765625 g / 2\nx = 0.00000000000159171875 g / 2\nx = 0.00000000000079589375 g / 2\nx = 0.000000000000397953125 g / 2\nx = 0.00000000000019890625 g / 2\nx = 0.000000000000099453125 g / 2\nx = 0.00000000000004970625 g / 2\nx = 0.00000000000002484375 g / 2\nx = 0.000000000000012421875 g / 2\nx = 0.0000000000000062109375 g / 2\nx = 0.0000000000000031046875 g / 2\nx = 0.0000000000000015529375 g / 2\nx = 0.00000000000000077646875 g / 2\nx = 0.000000000000000388234375 g / 2\nx = 0.0000000000000001941171875 g / 2\nx = 0.000000000000000097065625 g / 2\nx = 0.00000000000000004853125 g / 2\nx = 0.0000000000000000242890625 g / 2\nx = 0.0000000000000000121453125 g / 2\nx = 0.0000000000000000060734375 g / 2\nx = 0.00000000000000000303671875 g / 2\nx = 0.000000000000000001518109375 g / 2\nx = 0.000000000000000000759765625 g / 2\nx = 0.00000000000000000037984375 g / 2\nx = 0.00000000000000000018984375 g / 2\nx = 0.000000000000000000094999999999999 g / 2\nTherefore, 0.00000000000000000009499999999999 g or 0.000000000000000000094999999999999 moles of Cl2 are produced.",
+        "elapsed": 271.683,
+        "exceeded_15_min": false
+      },
+      "no_response": false
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 178,
+      "nl": "How many moles of H2 form when 14.2 g of water (H2O) reacts in the reaction of sodium metal with water? Assume the sodium (Na) is present in excess.",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": true,
+      "elapsed": 180.089,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.07,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 179,
+      "nl": "How many moles of AgCl form when 17.1 g of calcium chloride (CaCl2) reacts in the reaction CaCl2 + 2 AgNO3 -> Ca(NO3)2 + 2 AgCl? All of the calcium chloride (CaCl2) is used up.",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": true,
+      "elapsed": 180.058,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.07,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 180,
+      "nl": "How many moles of dinitrogen pentoxide form when 47.7 g of O2 reacts in the presence of excess N2?",
+      "old": "(transport error: timed out)",
+      "new": "\nTo determine the number of moles of dinitrogen pentoxide formed, we need to use the balanced equation for the reaction between dinitrogen pentoxide and oxygen:\n\n2 N2 + 5 O2 -> 2 N2O5\n\nWe are given that 47.7 g of O2 reacts in the presence of excess N2. First, we need to convert the mass of O2 to moles. We know that the molar mass of O2 is 31.998 g/mol, so:\n\n47.7 g O2 / 31.998 g/mol = 1.47 mol O2\n\nNext, we need to determine the number of moles of N2 that are present in the reaction. Since the reaction is balanced, the number of moles of N2 is equal to the number of moles of O2, which is 1.47 mol.\n\nNow, we can use the balanced equation to determine the number of moles of N2O5 formed:\n\n2 N2 + 5 O2 -> 2 N2O5\n\nSince we know that 1.47 mol of O2 reacts, we can set up the equation:\n\n2 N2 + 5 x 1.47 mol O2 -> 2 N2O5\n\nSimplifying the equation, we get:\n\n2 N2 + 7.35 mol O2 -> 2 N2O5\n\nNow, we can solve for the number of moles of N2O5:\n\n2 N2 + 7.35 mol O2 - 2 N2O5 = 0\n\n7.35 mol O2 - 2 N2O5 = -2 N2\n\n7.35 mol O2 / 2 = -1 N2\n\n-3.675 mol O2 = -1 N2\n\n1.47 mol O2 / -1 N2 = -1 N2\n\n1.47 mol O2 = 1 N2\n\nThis means that for every mole of N2 that reacts, 1.47 moles of O2 reacts, resulting in 2.94 moles of N2O5 formed.\n\nTherefore, when 47.7 g of O2 reacts in the presence of excess N2, 138.16 g of N2O5 forms (138.16 g = 2.94 mol x 44.009 g/mol).",
+      "same_retrieval": true,
+      "elapsed": 75.25,
+      "still_transport_error": false
+    },
+    {
+      "domain": "chemistry",
+      "system": "baseline",
+      "id": 188,
+      "nl": "60.4 g of methane reacts burned in oxygen in the combustion of methane. Calculate the mass of carbon dioxide formed.",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": null,
+      "elapsed": 180.01,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.014,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 188,
+      "nl": "60.4 g of methane reacts burned in oxygen in the combustion of methane. Calculate the mass of carbon dioxide formed.",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": true,
+      "elapsed": 180.052,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.055,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 192,
+      "nl": "How many grams of oxygen can be made from 0.620 g of NH4NO3 in the reaction 2 NH4NO3 -> 2 N2 + O2 + 4 H2O?",
+      "old": "(transport error: timed out)",
+      "new": "\nTo determine how many grams of oxygen can be made from 0.620 g of NH4NO3 in the reaction 2 NH4NO3 -> 2 N2 + O2 + 4 H2O, we need to use the balanced equation and the molar masses of the reactants and products.\n\nFirst, we can use the balanced equation to find the number of moles of each reactant and product:\n\n2 NH4NO3 -> 2 N2 + O2 + 4 H2O\n\nReactant coefficients: NH4NO3 2, N2 2, O2 1, H2O 4\n\nProduct coefficients: N2 2, O2 1, H2O 4\n\nSince we have 0.620 g of NH4NO3, we can find the number of moles of NH4NO3 by dividing by its molar mass:\n\n0.620 g / 80.043 g/mol = 0.00775 mol\n\nNow we can use the balanced equation to find the number of moles of each product:\n\n2 x 0.00775 mol = 1.55 mol N2\n1 x 0.00775 mol = 0.775 mol O2\n4 x 0.00775 mol = 3.09 mol H2O\n\nNext, we can use the molar masses of the products to find the number of grams of each product:\n\n1.55 mol x 28.015 g/mol = 42.84 g N2\n0.775 mol x 15.999 g/mol = 11.74 g O2\n3.09 mol x 15.999 g/mol = 47.99 g H2O\n\nFinally, we can add up the grams of each product to find the total amount of oxygen:\n\n11.74 g + 47.99 g = 59.73 g\n\nTherefore, 0.620 g of NH4NO3 can be used to make 59.73 grams of oxygen in the reaction 2 NH4NO3 -> 2 N2 + O2 + 4 H2O.",
+      "same_retrieval": true,
+      "elapsed": 69.472,
+      "still_transport_error": false
+    },
+    {
+      "domain": "chemistry",
+      "system": "baseline",
+      "id": 197,
+      "nl": "What mass of H2O is produced when 168 g of CO2 reacts during the reaction of carbon dioxide with sodium hydroxide?",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": null,
+      "elapsed": 180.015,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.006,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "baseline",
+      "id": 200,
+      "nl": "120 g of sodium chloride reacts. How many molecules of H2 form? The water is also present.",
+      "old": "(transport error: HTTP Error 500: Internal Server Error)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": null,
+      "elapsed": 69.677,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: HTTP Error 500: Internal Server Error)",
+        "elapsed": 69.732,
+        "exceeded_15_min": false
+      },
+      "no_response": true,
+      "note": "retry failed after 70 s with HTTP 500 (server error), not the 15-min limit; not recorded as no response; not merged; awaiting user decision",
+      "retry2": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.135,
+        "failed": true,
+        "cause": "generation exceeded 15 min"
+      }
+    },
+    {
+      "domain": "chemistry",
+      "system": "baseline",
+      "id": 210,
+      "nl": "7.33 g of water reacts with sodium chloride in the reaction 2 NaCl + 2 H2O -> 2 NaOH + H2 + Cl2. What volume of H2 forms?",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": null,
+      "elapsed": 180.015,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.008,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "baseline",
+      "id": 214,
+      "nl": "3.66 g of H2O reacts. What volume of O2 forms at standard temperature and pressure?",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": null,
+      "elapsed": 180.016,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.008,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    },
+    {
+      "domain": "chemistry",
+      "system": "rag",
+      "id": 269,
+      "nl": "Calculate the buffer pH of 0.20 M acetic acid and 0.10 M sodium acetate.",
+      "old": "(transport error: timed out)",
+      "new": "\nTo calculate the buffer pH, we need to use the Henderson-Hasselbalch equation:\n\npH = pKa + log10[A-]/[HA]\n\nwhere pKa is the dissociation constant of the acid (in this case, acetic acid), [A-] is the concentration of the conjugate base (in this case, sodium acetate), and [HA] is the concentration of the acid (in this case, 0.20 M acetic acid).\n\nFirst, we need to find the pKa of acetic acid. According to OpenStax Chemistry 2e, Sec 4.1, the pKa of acetic acid is 4.76.\n\nNext, we can plug in the values into the Henderson-Hasselbalch equation:\n\npH = 4.76 + log10[0.10]/[0.20]\n\npH = 4.76 + log10(0.5)\n\npH = 4.76 + 0.30\n\npH = 5.06\n\nTherefore, the buffer pH of 0.20 M acetic acid and 0.10 M sodium acetate is 5.06.",
+      "same_retrieval": true,
+      "elapsed": 37.029,
+      "still_transport_error": false
+    },
+    {
+      "domain": "biology",
+      "system": "baseline",
+      "id": 166,
+      "nl": "a wild cat with a head-body length of 100 cm, recorded in shrubland in southern China: what is it?",
+      "old": "(transport error: timed out)",
+      "new": "(no response: generation exceeded 15 min)",
+      "same_retrieval": null,
+      "elapsed": 180.007,
+      "still_transport_error": false,
+      "retry": {
+        "client_timeout_s": 900,
+        "content": "(transport error: timed out)",
+        "elapsed": 900.02,
+        "exceeded_15_min": true
+      },
+      "no_response": true
+    }
+  ],
+  "run_finished": "2026-11-24T17:51:58",
+  "retry": {
+    "client_timeout_s": 900,
+    "started": "2026-11-24T17:52:36",
+    "ids": [
+      "physics:rag:5",
+      "physics:rag:45",
+      "physics:rag:212",
+      "physics:rag:228",
+      "chemistry:rag:16",
+      "chemistry:rag:118",
+      "chemistry:baseline:141",
+      "chemistry:baseline:145",
+      "chemistry:rag:149",
+      "chemistry:baseline:153",
+      "chemistry:baseline:175",
+      "chemistry:rag:178",
+      "chemistry:rag:179",
+      "chemistry:baseline:188",
+      "chemistry:rag:188",
+      "chemistry:baseline:197",
+      "chemistry:baseline:200",
+      "chemistry:baseline:210",
+      "chemistry:baseline:214",
+      "biology:baseline:166"
+    ],
+    "note": "only the client wait limit differs from the original run; model, prompts, options, retrieval unchanged",
+    "finished": "2026-11-24T21:34:10",
+    "corrections": [
+      "chemistry:baseline:200 relabelled: HTTP 500 at 70 s, not a timeout"
+    ]
+  },
+  "retry2": {
+    "client_timeout_s": 900,
+    "ids": [
+      "chemistry:baseline:200"
+    ],
+    "started": "2026-11-24T21:45:52",
+    "rule": "re-sent once with identical settings; any failure -> no response",
+    "finished": "2026-11-24T22:00:53"
+  }
+}
